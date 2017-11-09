@@ -7,14 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		559029651FB41A0E0055E9D9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559029641FB41A0E0055E9D9 /* DataManager.swift */; };
+		559029671FB41A490055E9D9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559029661FB41A490055E9D9 /* CoreDataStack.swift */; };
+		5590296B1FB41FC10055E9D9 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590296A1FB41FC10055E9D9 /* Box.swift */; };
+		5590296D1FB41FFB0055E9D9 /* RecipeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590296C1FB41FFB0055E9D9 /* RecipeTableViewModel.swift */; };
+		5590296F1FB4AC320055E9D9 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5590296E1FB4AC320055E9D9 /* recipes.json */; };
 		55BDEAF41FB1357D00CE4AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEAF31FB1357D00CE4AB8 /* AppDelegate.swift */; };
-		55BDEAF61FB1357D00CE4AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEAF51FB1357D00CE4AB8 /* ViewController.swift */; };
 		55BDEAF91FB1357D00CE4AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BDEAF71FB1357D00CE4AB8 /* Main.storyboard */; };
 		55BDEAFC1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEAFA1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld */; };
 		55BDEAFE1FB1357D00CE4AB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BDEAFD1FB1357D00CE4AB8 /* Assets.xcassets */; };
 		55BDEB011FB1357D00CE4AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BDEAFF1FB1357D00CE4AB8 /* LaunchScreen.storyboard */; };
 		55BDEB0C1FB1357D00CE4AB8 /* BlueCartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB0B1FB1357D00CE4AB8 /* BlueCartTests.swift */; };
 		55BDEB171FB1357D00CE4AB8 /* BlueCartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB161FB1357D00CE4AB8 /* BlueCartUITests.swift */; };
+		55BDEB2B1FB1366100CE4AB8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB2A1FB1366100CE4AB8 /* APIManager.swift */; };
+		55BDEB2D1FB1368100CE4AB8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB2C1FB1368100CE4AB8 /* Request.swift */; };
+		55BDEB2F1FB13D6700CE4AB8 /* RecipeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB2E1FB13D6700CE4AB8 /* RecipeTableVC.swift */; };
+		55BDEB311FB141AC00CE4AB8 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB301FB141AC00CE4AB8 /* RecipeTableViewCell.swift */; };
+		55BDEB341FB145DF00CE4AB8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB331FB145DF00CE4AB8 /* Constants.swift */; };
+		55BDEB361FB1611E00CE4AB8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB351FB1611E00CE4AB8 /* Food.swift */; };
+		55BDEB381FB1649C00CE4AB8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB371FB1649C00CE4AB8 /* Colors.swift */; };
+		55BDEB3A1FB169E300CE4AB8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 55BDEB391FB169E300CE4AB8 /* .gitignore */; };
+		55BDEB3C1FB17C7000CE4AB8 /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB3B1FB17C7000CE4AB8 /* RecipeDetailVC.swift */; };
+		55BDEB3F1FB183FB00CE4AB8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB3E1FB183FB00CE4AB8 /* Extensions.swift */; };
+		55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB401FB1855D00CE4AB8 /* Recipe.swift */; };
+		55BDEB431FB18A9200CE4AB8 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB421FB18A9200CE4AB8 /* APIKey.swift */; };
+		55BDEB661FB2C0C800CE4AB8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */; };
+		55BDEB681FB2C0F500CE4AB8 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +53,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		559029641FB41A0E0055E9D9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		559029661FB41A490055E9D9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		5590296A1FB41FC10055E9D9 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		5590296C1FB41FFB0055E9D9 /* RecipeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewModel.swift; sourceTree = "<group>"; };
+		5590296E1FB4AC320055E9D9 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		55BDEAF01FB1357D00CE4AB8 /* BlueCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BDEAF31FB1357D00CE4AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55BDEAF51FB1357D00CE4AB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55BDEAF81FB1357D00CE4AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55BDEAFB1FB1357D00CE4AB8 /* BlueCart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlueCart.xcdatamodel; sourceTree = "<group>"; };
 		55BDEAFD1FB1357D00CE4AB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +71,20 @@
 		55BDEB121FB1357D00CE4AB8 /* BlueCartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlueCartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BDEB161FB1357D00CE4AB8 /* BlueCartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCartUITests.swift; sourceTree = "<group>"; };
 		55BDEB181FB1357D00CE4AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55BDEB2A1FB1366100CE4AB8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		55BDEB2C1FB1368100CE4AB8 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		55BDEB2E1FB13D6700CE4AB8 /* RecipeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableVC.swift; sourceTree = "<group>"; };
+		55BDEB301FB141AC00CE4AB8 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		55BDEB331FB145DF00CE4AB8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		55BDEB351FB1611E00CE4AB8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		55BDEB371FB1649C00CE4AB8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		55BDEB391FB169E300CE4AB8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		55BDEB3B1FB17C7000CE4AB8 /* RecipeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
+		55BDEB3E1FB183FB00CE4AB8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		55BDEB401FB1855D00CE4AB8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		55BDEB421FB18A9200CE4AB8 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +112,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		559029691FB41FAC0055E9D9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5590296A1FB41FC10055E9D9 /* Box.swift */,
+				5590296C1FB41FFB0055E9D9 /* RecipeTableViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		55BDEAE71FB1357D00CE4AB8 = {
 			isa = PBXGroup;
 			children = (
+				5590296E1FB4AC320055E9D9 /* recipes.json */,
+				55BDEB391FB169E300CE4AB8 /* .gitignore */,
 				55BDEAF21FB1357D00CE4AB8 /* BlueCart */,
 				55BDEB0A1FB1357D00CE4AB8 /* BlueCartTests */,
 				55BDEB151FB1357D00CE4AB8 /* BlueCartUITests */,
@@ -100,12 +147,16 @@
 			isa = PBXGroup;
 			children = (
 				55BDEAF31FB1357D00CE4AB8 /* AppDelegate.swift */,
-				55BDEAF51FB1357D00CE4AB8 /* ViewController.swift */,
-				55BDEAF71FB1357D00CE4AB8 /* Main.storyboard */,
 				55BDEAFD1FB1357D00CE4AB8 /* Assets.xcassets */,
-				55BDEAFF1FB1357D00CE4AB8 /* LaunchScreen.storyboard */,
-				55BDEB021FB1357D00CE4AB8 /* Info.plist */,
 				55BDEAFA1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld */,
+				55BDEB021FB1357D00CE4AB8 /* Info.plist */,
+				55BDEB241FB1358A00CE4AB8 /* Controllers */,
+				55BDEB261FB135B200CE4AB8 /* Models */,
+				55BDEB291FB1363900CE4AB8 /* Services */,
+				55BDEB251FB1359D00CE4AB8 /* Storyboards */,
+				55BDEB321FB145CA00CE4AB8 /* Utilities */,
+				559029691FB41FAC0055E9D9 /* ViewModels */,
+				55BDEB271FB135D400CE4AB8 /* Views */,
 			);
 			path = BlueCart;
 			sourceTree = "<group>";
@@ -126,6 +177,65 @@
 				55BDEB181FB1357D00CE4AB8 /* Info.plist */,
 			);
 			path = BlueCartUITests;
+			sourceTree = "<group>";
+		};
+		55BDEB241FB1358A00CE4AB8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				55BDEB2E1FB13D6700CE4AB8 /* RecipeTableVC.swift */,
+				55BDEB3B1FB17C7000CE4AB8 /* RecipeDetailVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		55BDEB251FB1359D00CE4AB8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				55BDEAFF1FB1357D00CE4AB8 /* LaunchScreen.storyboard */,
+				55BDEAF71FB1357D00CE4AB8 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		55BDEB261FB135B200CE4AB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55BDEB351FB1611E00CE4AB8 /* Food.swift */,
+				55BDEB401FB1855D00CE4AB8 /* Recipe.swift */,
+				559029661FB41A490055E9D9 /* CoreDataStack.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		55BDEB271FB135D400CE4AB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55BDEB301FB141AC00CE4AB8 /* RecipeTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		55BDEB291FB1363900CE4AB8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				55BDEB2A1FB1366100CE4AB8 /* APIManager.swift */,
+				55BDEB2C1FB1368100CE4AB8 /* Request.swift */,
+				55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */,
+				559029641FB41A0E0055E9D9 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		55BDEB321FB145CA00CE4AB8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				55BDEB421FB18A9200CE4AB8 /* APIKey.swift */,
+				55BDEB371FB1649C00CE4AB8 /* Colors.swift */,
+				55BDEB331FB145DF00CE4AB8 /* Constants.swift */,
+				55BDEB3E1FB183FB00CE4AB8 /* Extensions.swift */,
+				55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +345,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5590296F1FB4AC320055E9D9 /* recipes.json in Resources */,
+				55BDEB3A1FB169E300CE4AB8 /* .gitignore in Resources */,
 				55BDEB011FB1357D00CE4AB8 /* LaunchScreen.storyboard in Resources */,
 				55BDEAFE1FB1357D00CE4AB8 /* Assets.xcassets in Resources */,
 				55BDEAF91FB1357D00CE4AB8 /* Main.storyboard in Resources */,
@@ -262,8 +374,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55BDEB2B1FB1366100CE4AB8 /* APIManager.swift in Sources */,
+				559029651FB41A0E0055E9D9 /* DataManager.swift in Sources */,
+				5590296D1FB41FFB0055E9D9 /* RecipeTableViewModel.swift in Sources */,
+				55BDEB381FB1649C00CE4AB8 /* Colors.swift in Sources */,
 				55BDEAFC1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld in Sources */,
-				55BDEAF61FB1357D00CE4AB8 /* ViewController.swift in Sources */,
+				55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */,
+				55BDEB3C1FB17C7000CE4AB8 /* RecipeDetailVC.swift in Sources */,
+				55BDEB2F1FB13D6700CE4AB8 /* RecipeTableVC.swift in Sources */,
+				55BDEB311FB141AC00CE4AB8 /* RecipeTableViewCell.swift in Sources */,
+				55BDEB681FB2C0F500CE4AB8 /* ImageViewExtension.swift in Sources */,
+				5590296B1FB41FC10055E9D9 /* Box.swift in Sources */,
+				55BDEB341FB145DF00CE4AB8 /* Constants.swift in Sources */,
+				55BDEB361FB1611E00CE4AB8 /* Food.swift in Sources */,
+				55BDEB2D1FB1368100CE4AB8 /* Request.swift in Sources */,
+				559029671FB41A490055E9D9 /* CoreDataStack.swift in Sources */,
+				55BDEB3F1FB183FB00CE4AB8 /* Extensions.swift in Sources */,
+				55BDEB431FB18A9200CE4AB8 /* APIKey.swift in Sources */,
+				55BDEB661FB2C0C800CE4AB8 /* ImageCache.swift in Sources */,
 				55BDEAF41FB1357D00CE4AB8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64ZMRUDATB;
 				INFOPLIST_FILE = BlueCart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daverothschild.BlueCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64ZMRUDATB;
 				INFOPLIST_FILE = BlueCart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daverothschild.BlueCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
