@@ -21,7 +21,7 @@ class APIManager {
     
     func getRecipesForPage(pageNumber: Int, completion: @escaping CompletionHandler) {
         print("*** in APIManager: next pageNumber to get is:", pageNumber)
-        let urlString = "\(Constants.SEARCH_URL)\(API_KEY)&page=\(pageNumber)"
+        let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&page=\(pageNumber)"
         guard let url = URL(string: urlString) else { return }
         getRecipesForPageWithURL(url: url, pageNumber: pageNumber, completion: completion)
     }

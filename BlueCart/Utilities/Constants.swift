@@ -18,7 +18,7 @@ struct Constants {
     static let RECIPE_URL = "http://food2fork.com/api/get"
     static let SCHEME = " http"
     static let HOST = "food2fork.com"
-    static let PATH = "/api/search/?key=\(API_KEY)"
+    static let PATH = "/api/search/?key=\(APIKeyService.API_KEY)"
     
     // Cell identifiers
     static let RECIPE_CELL = "RecipeCell"
