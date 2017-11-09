@@ -90,7 +90,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 //        }
 //        print("count is: ", Constants().food.count)
 //        return Constants().food.count
-        print("### count is: ", viewModel.getRecipeCount())
+        print("### count is: ", viewModel.getRecipeCount() ?? 56)
         return viewModel.getRecipeCount() ?? 0
     }
 

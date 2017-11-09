@@ -24,7 +24,7 @@ class RecipeTableViewCell: UITableViewCell {
     }
 
     func setupView(recipe: Recipe) {
-        foodCategoryLabel.text = recipe.title   // food.category
-        foodNameLabel.text = recipe.recipeID // food.name
+        foodCategoryLabel.text = recipe.recipeID   // food.category
+        foodNameLabel.text = recipe.title // food.name
     }
 }
