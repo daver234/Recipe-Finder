@@ -12,26 +12,14 @@ import Foundation
 class RecipeTableViewModel {
     
     // MARK: - Properties
-    // fileprivate var pageNumber = 1
-    // var recipeCount: Box<Int> = Box(0)
     var didGetRecipes: Box<Bool> = Box(false)
     var recipePageNumber: Box<Int> = Box(0)
     fileprivate(set) var flatAllRecipes = [Recipe]()
-    
 }
 
+
+/// Functions to access the DataManager singleton
 extension RecipeTableViewModel {
-    func loadRecipes(pageNumber: Int) {
-        let request = Request()
-        let apiManager = APIManager(request: request)
-        apiManager.getRecipesForPage(pageNumber: pageNumber) { [weak self] success in
-            if success {
-                self?.recipePageNumber.value += 1
-                self?.didGetRecipes.value = true
-            }
-        }
-    }
-    
     func getRecipeCount() -> Int? {
         return DataManager.instance.totalRecipesRetrieved
     }
@@ -59,5 +47,19 @@ extension RecipeTableViewModel {
     func incrementPageNumber() {
         recipePageNumber.value += 1
     }
-    
+}
+
+
+/// Functions for accessing backend server
+extension RecipeTableViewModel {
+    func loadRecipes(pageNumber: Int) {
+        let request = Request()
+        let apiManager = APIManager(request: request)
+        apiManager.getRecipesForPage(pageNumber: pageNumber) { [weak self] success in
+            if success {
+                self?.recipePageNumber.value += 1
+                self?.didGetRecipes.value = true
+            }
+        }
+    }
 }

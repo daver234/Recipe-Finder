@@ -12,6 +12,7 @@ import Foundation
 class DataManager {
     
     static let instance = DataManager()
+    
     // MARK: - Variables
     fileprivate(set) var allRecipes = [RecipePage]()
     fileprivate(set) var numberOfPagesRetrieved = 0

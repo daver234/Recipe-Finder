@@ -23,54 +23,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="i5u-8p-Qv8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Finder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXs-T2-tq8">
-                                <rect key="frame" x="0.0" y="110" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="195" width="375" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="0.55217251712328763" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="nFX-L4-vqp">
-                                <rect key="frame" x="0.0" y="586" width="375" height="51"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="nFX-L4-vqp">
+                                <rect key="frame" x="0.0" y="592" width="375" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Dave Rothschild" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzW-3V-mWj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
+                                        <color key="backgroundColor" white="1" alpha="0.55466074486301364" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="November 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYx-Cw-a0H">
-                                        <rect key="frame" x="0.0" y="29" width="375" height="22"/>
+                                        <rect key="frame" x="0.0" y="23" width="375" height="22"/>
+                                        <color key="backgroundColor" white="1" alpha="0.55120933219178081" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluecart" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-Su-tSN">
-                                <rect key="frame" x="75" y="293" width="225" height="80"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food2ForkLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Dqz-6S-BkL">
+                                <rect key="frame" x="124" y="82" width="127" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="If9-aF-gBv"/>
-                                    <constraint firstAttribute="height" constant="80" id="hiZ-9Q-Q6Q"/>
+                                    <constraint firstAttribute="width" constant="127" id="Rlk-AL-Teg"/>
+                                    <constraint firstAttribute="height" constant="36" id="X1k-QL-VPc"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aXs-T2-tq8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="ACJ-Mz-uYF"/>
+                            <constraint firstItem="i5u-8p-Qv8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0ra-VE-PI1"/>
+                            <constraint firstItem="aXs-T2-tq8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="175" id="ACJ-Mz-uYF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nFX-L4-vqp" secondAttribute="trailing" id="AXK-2i-m3R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aXs-T2-tq8" secondAttribute="trailing" id="Jew-De-4G8"/>
                             <constraint firstItem="aXs-T2-tq8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MOU-Lu-AiG"/>
-                            <constraint firstItem="hYS-Su-tSN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="S1A-Nz-MQf"/>
+                            <constraint firstItem="Dqz-6S-BkL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MV7-pG-4DD"/>
+                            <constraint firstItem="i5u-8p-Qv8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aEH-l8-tcv"/>
                             <constraint firstItem="nFX-L4-vqp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j5n-rP-QiN"/>
-                            <constraint firstItem="hYS-Su-tSN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jUS-0A-SXW"/>
+                            <constraint firstItem="i5u-8p-Qv8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kqn-DA-DYu"/>
+                            <constraint firstItem="i5u-8p-Qv8" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="nFv-Lg-JUa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nFX-L4-vqp" secondAttribute="bottom" constant="30" id="nQf-wD-a4K"/>
+                            <constraint firstItem="Dqz-6S-BkL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="xga-NW-Ozx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="51.5" y="374.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bluecart" width="449" height="159"/>
+        <image name="food2ForkLogo" width="560" height="155"/>
+        <image name="pizza" width="1080" height="1920"/>
     </resources>
 </document>

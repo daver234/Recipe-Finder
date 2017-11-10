@@ -5,7 +5,7 @@
 //  Created by David Rothschild on 11/7/17.
 //  Copyright © 2017 Dave Rothschild. All rights reserved.
 //
-
+/*
 import UIKit
 
 /// Handle loading image from network or from cache
@@ -92,3 +92,4 @@ extension UIImageView {
         task.resume()
     }
 }
+*/

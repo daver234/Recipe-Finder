@@ -14,6 +14,7 @@
 		5590296D1FB41FFB0055E9D9 /* RecipeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590296C1FB41FFB0055E9D9 /* RecipeTableViewModel.swift */; };
 		5590296F1FB4AC320055E9D9 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5590296E1FB4AC320055E9D9 /* recipes.json */; };
 		559029711FB4B0520055E9D9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559029701FB4B0520055E9D9 /* APIKey.swift */; };
+		55B35E231FB573DA00061C11 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B35E221FB573DA00061C11 /* RecipeDetailViewModel.swift */; };
 		55BDEAF41FB1357D00CE4AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEAF31FB1357D00CE4AB8 /* AppDelegate.swift */; };
 		55BDEAF91FB1357D00CE4AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BDEAF71FB1357D00CE4AB8 /* Main.storyboard */; };
 		55BDEAFC1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEAFA1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld */; };
@@ -66,7 +67,8 @@
 		5590296C1FB41FFB0055E9D9 /* RecipeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewModel.swift; sourceTree = "<group>"; };
 		5590296E1FB4AC320055E9D9 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		559029701FB4B0520055E9D9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		55BDEAF01FB1357D00CE4AB8 /* BlueCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B35E221FB573DA00061C11 /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
+		55BDEAF01FB1357D00CE4AB8 /* Recipe Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BDEAF31FB1357D00CE4AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55BDEAF81FB1357D00CE4AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55BDEAFB1FB1357D00CE4AB8 /* BlueCart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlueCart.xcdatamodel; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				5590296A1FB41FC10055E9D9 /* Box.swift */,
+				55B35E221FB573DA00061C11 /* RecipeDetailViewModel.swift */,
 				5590296C1FB41FFB0055E9D9 /* RecipeTableViewModel.swift */,
 			);
 			path = ViewModels;
@@ -153,7 +156,7 @@
 		55BDEAF11FB1357D00CE4AB8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55BDEAF01FB1357D00CE4AB8 /* BlueCart.app */,
+				55BDEAF01FB1357D00CE4AB8 /* Recipe Finder.app */,
 				55BDEB071FB1357D00CE4AB8 /* BlueCartTests.xctest */,
 				55BDEB121FB1357D00CE4AB8 /* BlueCartUITests.xctest */,
 			);
@@ -298,7 +301,7 @@
 			);
 			name = BlueCart;
 			productName = BlueCart;
-			productReference = 55BDEAF01FB1357D00CE4AB8 /* BlueCart.app */;
+			productReference = 55BDEAF01FB1357D00CE4AB8 /* Recipe Finder.app */;
 			productType = "com.apple.product-type.application";
 		};
 		55BDEB061FB1357D00CE4AB8 /* BlueCartTests */ = {
@@ -574,6 +577,7 @@
 				55BDEB681FB2C0F500CE4AB8 /* ImageViewExtension.swift in Sources */,
 				5590296B1FB41FC10055E9D9 /* Box.swift in Sources */,
 				55BDEB341FB145DF00CE4AB8 /* Constants.swift in Sources */,
+				55B35E231FB573DA00061C11 /* RecipeDetailViewModel.swift in Sources */,
 				55BDEB361FB1611E00CE4AB8 /* Food.swift in Sources */,
 				55BDEB2D1FB1368100CE4AB8 /* Request.swift in Sources */,
 				559029671FB41A490055E9D9 /* CoreDataStack.swift in Sources */,
@@ -752,7 +756,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daverothschild.BlueCart;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Recipe Finder";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -769,7 +773,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daverothschild.BlueCart;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Recipe Finder";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RecipeTableViewCell: UITableViewCell {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var recipeTitleLabel: UILabel!
     
-    @IBOutlet weak var foodCategoryLabel: UILabel!
-    @IBOutlet weak var foodNameLabel: UILabel!
-    
-    
+    // MARK: - Functions
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,7 +25,14 @@ class RecipeTableViewCell: UITableViewCell {
     }
 
     func setupView(recipe: Recipe) {
-        foodCategoryLabel.text = recipe.recipeID   // food.category
-        foodNameLabel.text = recipe.title // food.name
+        guard let title = recipe.title else { return }
+        recipeTitleLabel.text = title
+        print("recipe title", recipe.title ?? "")
+        /// First get image out of assets as a placeholder while downloading the image from a URL
+        let image = UIImage(named: Constants.LOADING_IMAGE)
+        guard let urlString = recipe.imageUrl, let url = URL(string: urlString) else { return }
+        DispatchQueue.main.async {
+            self.recipeImage.kf.setImage(with: url, placeholder: image)
+        }
     }
 }

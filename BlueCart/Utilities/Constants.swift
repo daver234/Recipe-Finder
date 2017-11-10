@@ -15,10 +15,16 @@ struct Constants {
     
     // URLs
     static let SEARCH_URL = "http://food2fork.com/api/search/?key="
-    static let RECIPE_URL = "http://food2fork.com/api/get"
+    static let RECIPE_URL = "http://food2fork.com/api/get/?key="
     static let SCHEME = " http"
     static let HOST = "food2fork.com"
     static let PATH = "/api/search/?key=\(APIKeyService.API_KEY)"
+    
+    // URL parameters
+    static let SEARCH_QUERY = "q"       // Search query; separate ingredients by commas
+    static let RECIPE_ID = "rId"        // ID of receipe for search query
+    static let SORT_BY_RATING = "r"       // Social media ratings
+    static let SORT_BY_TRENDING = "t"     // Trend score
     
     // Cell identifiers
     static let RECIPE_CELL = "RecipeCell"
@@ -28,6 +34,7 @@ struct Constants {
     
     // Other
     static let PAGE_SIZE = 30
+    static let LOADING_IMAGE = "loadingImage.jpg"
     
     // Data
     var food = [
