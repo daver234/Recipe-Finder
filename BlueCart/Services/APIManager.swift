@@ -27,7 +27,6 @@ class APIManager {
     }
     
     func getSpecificSearch(searchString: String, pageSize: Int, completion: @escaping CompletionHandler) {
-        // let urlString = "\(Constants().SEARCH_URL)\(API_KEY)&q\(searchString)"
         guard let url = URLComponents(scheme: Constants.SCHEME, host: Constants.HOST, path: Constants.PATH, queryItems: [URLQueryItem(name: "q", value: searchString)]).url else { return }
         print("here is URL",url)
         
@@ -35,13 +34,6 @@ class APIManager {
     
     /// This function signature can be used for testing since a URL can be passed in. Could pass in local JSON for XCTest
     fileprivate func getRecipesForPageWithURL(url: URL, pageNumber: Int, completion: @escaping CompletionHandler) {
-        /// Check to see if we have already retrieved all the data.  If so, return and don't call the API again.
-//        guard !DataManager.instance.checkForEndOfDataIsTrue() else {
-//            print("GOT TO END DATA")
-//            completion(false)
-//            return
-//        }
-        // request.url = url
         request.callAPI(url: url, completion: completion)
     }
 }

@@ -13,7 +13,7 @@ class RecipeDetailVC: UIViewController {
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var foodCategoryLabel: UILabel!
     
-    var detailFood: Food? {
+    var detailRecipe: Recipe? {
         didSet {
             configureView()
         }
@@ -25,10 +25,10 @@ class RecipeDetailVC: UIViewController {
     }
     
     func configureView() {
-        guard let detailFoody = detailFood else { return }
-        guard let foodNameLabel2 = foodNameLabel, let foodCategoryLabel2 = foodCategoryLabel else { return }
-        foodNameLabel2.text = detailFoody.name
-        foodCategoryLabel2.text = detailFoody.category
+        guard let detailRecipe = detailRecipe else { return }
+        guard let recipeNameLabel = foodNameLabel, let recipeNumber = foodCategoryLabel else { return }
+        recipeNameLabel.text = detailRecipe.title
+        recipeNumber.text = detailRecipe.recipeID
     }
 
 }

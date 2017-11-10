@@ -33,7 +33,7 @@ struct Recipe {
     var sourceUrl: String?
     var recipeID: String?
     var imageUrl: String?
-    var socialRank: Int?
+    var socialRank: Double?
     var publisherUrl: String?
 }
 
@@ -46,7 +46,7 @@ extension Recipe: Decodable {
         sourceUrl = try container.decode(String.self, forKey: .sourceUrl)
         recipeID = try container.decode(String.self, forKey: .recipeID)
         imageUrl = try container.decode(String.self, forKey: .imageUrl)
-        socialRank = try container.decode(Int?.self, forKey: .socialRank)
+        socialRank = try container.decode(Double?.self, forKey: .socialRank)
         publisherUrl = try container.decode(String.self, forKey: .publisherUrl)
         
     }

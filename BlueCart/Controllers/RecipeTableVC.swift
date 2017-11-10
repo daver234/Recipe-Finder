@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Kingfisher
 
-class RecipeTableVC: UIViewController {
+class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
     
     // MARK: - Properties
-    var filteredData = [Food]()
+    var filteredRecipe = [Recipe]()
     let searchController = UISearchController(searchResultsController: nil)
     private var viewModel = RecipeTableViewModel()
     
@@ -20,11 +21,14 @@ class RecipeTableVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.loadRecipes()
+        viewModel.loadRecipes(pageNumber: 0)
         setupNavBarTitle()
         setupSearchBar()
         monitorProperties()
         tableView.dataSource = self
+        if #available(iOS 10.0, *) {
+            self.tableView.prefetchDataSource = self
+        }
         
     }
     
@@ -58,9 +62,19 @@ class RecipeTableVC: UIViewController {
     }
     
     func monitorProperties() {
+        /// When page number increments, more data is available so reload the tableView
         viewModel.recipePageNumber.bind { [unowned self] (value) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+            }
+        }
+        
+        viewModel.didGetRecipes.bind { [unowned self] (isNewRecipe) in
+            if isNewRecipe {
+                DispatchQueue.main.async {
+                    self.setupNavBarTitle()
+                    self.filteredRecipe = self.viewModel.getAllRecipesWithoutPages()
+                }
             }
         }
     }
@@ -71,11 +85,59 @@ class RecipeTableVC: UIViewController {
         label.numberOfLines = 0
         label.font = UIFont(name: "Avenir-Heavy", size: 15)
         label.textAlignment = NSTextAlignment.center
-        label.text = "Search For Recipes\nFound X Results"
+        let results = DataManager.instance.totalRecipesRetrieved
+        label.text = "Search For Recipes\nFound \(results) Results"
         self.navigationItem.titleView = label
     }
 }
 
+
+// MARK: - Prefetch data for tablevView
+extension RecipeTableVC {
+    /// Here we prefetch the images for the tableview using Kingfisher.
+    /// And, prefetch more data if the user is getting to the end of the tableview.
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        /// First get the images
+        let currentPage = viewModel.getPagesRetrieved() - 1
+        let recipes = viewModel.getRecipes(pageNumber: currentPage)
+        var stringToUrl = [URL]()
+        for item in recipes {
+            guard let stringUrl = item.imageUrl, let url = URL(string: stringUrl) else { return }
+            stringToUrl.append(url)
+        }
+        // let stringToUrl = recipes { URL(string: $0) }
+        let urls = stringToUrl.flatMap { $0 }
+        ImagePrefetcher(urls: urls).start()
+        
+        /// This section is for prefetching more data before the user gets to the end of the tableview with the current data
+        /// First, build an array of all the upcoming rows.
+        let upcomingRows = indexPaths.map { $0.row }
+        print("&&& here is upcoming rows", upcomingRows)
+        
+        /// Check to see what the max upcoming row number is
+        if let maxIndex = upcomingRows.max() {
+            fetchMoreData(maxIndex: maxIndex, currentPage: currentPage)
+        }
+    }
+    
+    /// Fetch more data if the user is getting to the end of the tableview
+    func fetchMoreData(maxIndex: Int, currentPage: Int) {
+        /// Here take maxIndex and add 5 to give some buffer for how soon we should get more data from the server.
+        /// This will improve the user experience so no delay is perceived when scrolling the table.
+        /// All of this determines the nextPage to get
+        let nextPage: Int = ( (maxIndex + 5) / Constants.PAGE_SIZE)
+
+        /// If the user is getting to the end of the table, nextPage will be greater than current page.
+        /// This will then trigger a API call to get more data from the server and return, ideally, before
+        /// the user gets to the end of the table.
+        if nextPage > currentPage {
+            print("&&& in nextPage >", nextPage)
+            print("&&& Here is current page", currentPage)
+            print("&&& here is maxIndex", maxIndex)
+            viewModel.loadRecipes(pageNumber: nextPage)
+        }
+    }
+}
 
 // MARK: - Table view data source
 extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
@@ -85,12 +147,10 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if isSearching() {
-//            return filteredData.count
-//        }
-//        print("count is: ", Constants().food.count)
-//        return Constants().food.count
-        print("### count is: ", viewModel.getRecipeCount() ?? 56)
+        if isSearching() {
+            return filteredRecipe.count
+        }
+        //print("### count is: ", viewModel.getRecipeCount() ?? 56)
         return viewModel.getRecipeCount() ?? 0
     }
 
@@ -98,44 +158,51 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.RECIPE_CELL, for: indexPath) as? RecipeTableViewCell else {
            return UITableViewCell()
         }
-//        let food: Food
-//        if isSearching() {
-//            food = filteredData[indexPath.row]
-//        } else {
-//            food = Constants().food[indexPath.row]
-//        }
         
-        /// Find the page with the receipt for the cell
-        let pageToGet = indexPath.row / Constants.PAGE_SIZE
-            
-        /// To get the receipt number within a page of recipes, just need
-        /// the modulus of row to page size
-        let recipeToGet = indexPath.row % Constants.PAGE_SIZE
-        guard let recipe = DataManager.instance.allRecipes[pageToGet].recipes?[recipeToGet] else {
-            return UITableViewCell()
-        }
-        print("#######  CELL: pageToGet, RecipeToGet, recipe", pageToGet, recipeToGet, recipe)
-        cell.setupView(recipe: recipe)
+        let specificRecipe = getRecipe(index: indexPath.row)
+        cell.setupView(recipe: specificRecipe)
         return cell
     }
     
+    /// This displays the "end of data" footer view when the user has scolled to the end of the available data.
+    /// Because of the prefetching of data above, the user does not need to see a spinner when more data is loading.
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
+            // tableFooterView.isHidden = false
+            print("Here in willDisplay")
+        }
+    }
+    
+    func getRecipe(index: Int) -> Recipe {
+        let recipe: Recipe
+        if isSearching() {
+            recipe = filteredRecipe[index]
+        } else {
+            /// Find the page with the receipt for the cell
+            let pageToGet = index / Constants.PAGE_SIZE
+            
+            /// To get the receipt number within a page of recipes, just need
+            /// the modulus of row to page size
+            let recipeToGet = index % Constants.PAGE_SIZE
+            
+            recipe = viewModel.getRecipe(pageToGet: pageToGet, recipeToGet: recipeToGet)
+        }
+        return recipe
+    }
 }
+
 
 // MARK: - Navigation
 extension RecipeTableVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.TO_RECIPE_DETAIL {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let food: Food
-                if isSearching() {
-                    food = filteredData[indexPath.row]
-                } else {
-                    food = Constants().food[indexPath.row]
-                }
+                let detailRecipe = getRecipe(index: indexPath.row)
                 guard let destination = segue.destination as? RecipeDetailVC else { return }
-                print("food to segque: ", food)
-                destination.detailFood = food
-                // destination.navigationItem.leftItemsSupplementBackButton = true
+                print("recipe to segque: ", detailRecipe)
+                destination.detailRecipe = detailRecipe
             }
         }
     }
@@ -160,10 +227,17 @@ extension RecipeTableVC: UISearchResultsUpdating {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         print("searchText:", searchText)
-        filteredData = Constants().food.filter( {( food: Food) -> Bool in
-            return food.name.lowercased().contains(searchText.lowercased())
+        let recipes = viewModel.getAllRecipesWithoutPages()
+        print("recipes count", recipes.count)
+        let text = searchText.lowercased()
+        print("text...", text)
+        filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
+            guard let recipe = recipe.title else { return false}
+            print("recipe filter is: ", recipe)
+            print("recipe lowercased", recipe.lowercased())
+            print("contains:", recipe.lowercased().contains(text))
+            return recipe.lowercased().contains(searchText.lowercased())
         })
-        print("filteredData", filteredData)
         tableView.reloadData()
     }
 }

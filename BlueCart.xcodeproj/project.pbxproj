@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43E8978CCEB45EB7D7CE6286 /* Pods_BlueCartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7EEE5721A81F42A4F3603CB /* Pods_BlueCartUITests.framework */; };
 		559029651FB41A0E0055E9D9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559029641FB41A0E0055E9D9 /* DataManager.swift */; };
 		559029671FB41A490055E9D9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559029661FB41A490055E9D9 /* CoreDataStack.swift */; };
 		5590296B1FB41FC10055E9D9 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590296A1FB41FC10055E9D9 /* Box.swift */; };
@@ -33,6 +34,8 @@
 		55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB401FB1855D00CE4AB8 /* Recipe.swift */; };
 		55BDEB661FB2C0C800CE4AB8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */; };
 		55BDEB681FB2C0F500CE4AB8 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */; };
+		A8FE30BCE827352DDDAD25FE /* Pods_BlueCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */; };
+		D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D2A05528EA7A9939F80C036 /* Pods-BlueCartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartUITests/Pods-BlueCartUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1FB0D0D0DD2A62CC70A404B6 /* Pods-BlueCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCart/Pods-BlueCart.debug.xcconfig"; sourceTree = "<group>"; };
+		50351834EDB0CC0BFBF258A2 /* Pods-BlueCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCart/Pods-BlueCart.release.xcconfig"; sourceTree = "<group>"; };
 		559029641FB41A0E0055E9D9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		559029661FB41A490055E9D9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5590296A1FB41FC10055E9D9 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -85,6 +92,11 @@
 		55BDEB401FB1855D00CE4AB8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
+		80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
+		86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF278AD6C77EF781F90EAA00 /* Pods-BlueCartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartUITests/Pods-BlueCartUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7EEE5721A81F42A4F3603CB /* Pods_BlueCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8FE30BCE827352DDDAD25FE /* Pods_BlueCartTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E8978CCEB45EB7D7CE6286 /* Pods_BlueCartUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +145,8 @@
 				55BDEB0A1FB1357D00CE4AB8 /* BlueCartTests */,
 				55BDEB151FB1357D00CE4AB8 /* BlueCartUITests */,
 				55BDEAF11FB1357D00CE4AB8 /* Products */,
+				F6BBF416A0C3B098A1FA78E2 /* Pods */,
+				AD5A8696731471876C5CA045 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,6 +255,29 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		AD5A8696731471876C5CA045 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */,
+				0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */,
+				E7EEE5721A81F42A4F3603CB /* Pods_BlueCartUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6BBF416A0C3B098A1FA78E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FB0D0D0DD2A62CC70A404B6 /* Pods-BlueCart.debug.xcconfig */,
+				50351834EDB0CC0BFBF258A2 /* Pods-BlueCart.release.xcconfig */,
+				80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */,
+				63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */,
+				BF278AD6C77EF781F90EAA00 /* Pods-BlueCartUITests.debug.xcconfig */,
+				1D2A05528EA7A9939F80C036 /* Pods-BlueCartUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,9 +285,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55BDEB1B1FB1357D00CE4AB8 /* Build configuration list for PBXNativeTarget "BlueCart" */;
 			buildPhases = (
+				19245D7519751507904669BA /* [CP] Check Pods Manifest.lock */,
 				55BDEAEC1FB1357D00CE4AB8 /* Sources */,
 				55BDEAED1FB1357D00CE4AB8 /* Frameworks */,
 				55BDEAEE1FB1357D00CE4AB8 /* Resources */,
+				147082850AE2AEAB7EC14D3D /* [CP] Embed Pods Frameworks */,
+				2B4BF7B3D99C6E4EFF1A0CDC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,9 +305,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55BDEB1E1FB1357D00CE4AB8 /* Build configuration list for PBXNativeTarget "BlueCartTests" */;
 			buildPhases = (
+				72A037EF0D0AA1A8414DF062 /* [CP] Check Pods Manifest.lock */,
 				55BDEB031FB1357D00CE4AB8 /* Sources */,
 				55BDEB041FB1357D00CE4AB8 /* Frameworks */,
 				55BDEB051FB1357D00CE4AB8 /* Resources */,
+				8C205F5A86D0145545DBD601 /* [CP] Embed Pods Frameworks */,
+				1617BAF7856B3834753CEB8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,9 +326,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55BDEB211FB1357D00CE4AB8 /* Build configuration list for PBXNativeTarget "BlueCartUITests" */;
 			buildPhases = (
+				42C33A3154F55A37088F8032 /* [CP] Check Pods Manifest.lock */,
 				55BDEB0E1FB1357D00CE4AB8 /* Sources */,
 				55BDEB0F1FB1357D00CE4AB8 /* Frameworks */,
 				55BDEB101FB1357D00CE4AB8 /* Resources */,
+				384C6B8BA73F4982E10767A7 /* [CP] Embed Pods Frameworks */,
+				30BF1743377665DD64B5515B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,6 +417,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		147082850AE2AEAB7EC14D3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueCart/Pods-BlueCart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1617BAF7856B3834753CEB8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19245D7519751507904669BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2B4BF7B3D99C6E4EFF1A0CDC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueCart/Pods-BlueCart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30BF1743377665DD64B5515B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueCartUITests/Pods-BlueCartUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		384C6B8BA73F4982E10767A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueCartUITests/Pods-BlueCartUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42C33A3154F55A37088F8032 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		72A037EF0D0AA1A8414DF062 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C205F5A86D0145545DBD601 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55BDEAEC1FB1357D00CE4AB8 /* Sources */ = {
@@ -556,6 +743,7 @@
 		};
 		55BDEB1C1FB1357D00CE4AB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FB0D0D0DD2A62CC70A404B6 /* Pods-BlueCart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -572,6 +760,7 @@
 		};
 		55BDEB1D1FB1357D00CE4AB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50351834EDB0CC0BFBF258A2 /* Pods-BlueCart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -588,6 +777,7 @@
 		};
 		55BDEB1F1FB1357D00CE4AB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -605,6 +795,7 @@
 		};
 		55BDEB201FB1357D00CE4AB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -622,6 +813,7 @@
 		};
 		55BDEB221FB1357D00CE4AB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF278AD6C77EF781F90EAA00 /* Pods-BlueCartUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -638,6 +830,7 @@
 		};
 		55BDEB231FB1357D00CE4AB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D2A05528EA7A9939F80C036 /* Pods-BlueCartUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
