@@ -10,6 +10,7 @@ import Foundation
 
 // Typealias
 typealias CompletionHandler = (_ Success: Bool) -> ()
+typealias CompletionHandlerWithData = (_ recipeDetail: [String: RecipeDetail]?, _ error: Error?) -> ()
 
 struct Constants {
     
@@ -28,6 +29,7 @@ struct Constants {
     
     // Cell identifiers
     static let RECIPE_CELL = "RecipeCell"
+    static let INGREDIENTS = "Ingredients"
     
     // Segues
     static let TO_RECIPE_DETAIL = "toRecipeDetail"
@@ -35,24 +37,5 @@ struct Constants {
     // Other
     static let PAGE_SIZE = 30
     static let LOADING_IMAGE = "loadingImage.jpg"
-    
-    // Data
-    var food = [
-    Food(category:"Chocolate", name:"Chocolate Bar"),
-    Food(category:"Chocolate", name:"Chocolate Chip"),
-    Food(category:"Chocolate", name:"Dark Chocolate"),
-    Food(category:"Hard", name:"Lollipop"),
-    Food(category:"Hard", name:"Candy Cane"),
-    Food(category:"Hard", name:"Jaw Breaker"),
-    Food(category:"Other", name:"Caramel"),
-    Food(category:"Other", name:"Sour Chew"),
-    Food(category:"Other", name:"Gummi Bear"),
-    Food(category:"Other", name:"Candy Floss"),
-    Food(category:"Chocolate", name:"Chocolate Coin"),
-    Food(category:"Chocolate", name:"Chocolate Egg"),
-    Food(category:"Other", name:"Jelly Beans"),
-    Food(category:"Other", name:"Liquorice"),
-    Food(category:"Hard", name:"Toffee Apple")
-    ]
-    
+    static let RECIPE_TITLE = "Recipe"
 }

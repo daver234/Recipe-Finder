@@ -201,8 +201,8 @@ extension RecipeTableVC {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let detailRecipe = getRecipe(index: indexPath.row)
                 guard let destination = segue.destination as? RecipeDetailVC else { return }
-                print("recipe to segque: ", detailRecipe)
-                destination.detailRecipe = detailRecipe
+                //print("recipe to segque: ", detailRecipe)
+                destination.recipeIdToGet = detailRecipe.recipeID
             }
         }
     }

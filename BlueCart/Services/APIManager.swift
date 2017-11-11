@@ -41,14 +41,23 @@ class APIManager {
     /// Get recipe detail for RecipeDetailVC
     /// - Parameter recipeId: The ID of the recipe to retrieve
     /// - Parameter completion: The completion handler to execute on success or failure
-    func getDetailedRecipe(recipeId: String, completion: @escaping CompletionHandler) {
-        let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&\(Constants.RECIPE_ID)=\(recipeId)"
+    func getDetailedRecipe(recipeId: String, completion: @escaping CompletionHandlerWithData) {
+        let urlString = "\(Constants.RECIPE_URL)\(APIKeyService.API_KEY)&\(Constants.RECIPE_ID)=\(recipeId)"
         guard let url = URL(string: urlString) else { return }
-        getRecipesForPageWithURL(url: url, completion: completion)
+        getRecipeDetail(url: url, completion: completion)
     }
     
     /// This function signature can be used for testing since a URL can be passed in. Could pass in local JSON for XCTest
+    /// - Parameter url: The URL to call in the backend
+    /// - Parameter completion: The completion handler to execute on success or failure
     fileprivate func getRecipesForPageWithURL(url: URL, completion: @escaping CompletionHandler) {
-        request.callAPI(url: url, completion: completion)
+        request.callAPIForPage(url: url, completion: completion)
+    }
+    
+    /// Get the detail for the recipe
+    /// - Parameter url: The URL to call in the backend
+    /// - Parameter completion: The completion handler to execute on success or failure
+    fileprivate func getRecipeDetail(url: URL, completion: @escaping CompletionHandlerWithData) {
+        request.callAPIForDetail(url: url, completion: completion)
     }
 }

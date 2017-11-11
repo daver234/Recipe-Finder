@@ -9,16 +9,15 @@
 import Foundation
 
 protocol AbstractRequestClient {
-    func callAPI(url: URL, completion: @escaping CompletionHandler)
+    func callAPIForPage(url: URL, completion: @escaping CompletionHandler)
+    func callAPIForDetail(url: URL, completion: @escaping CompletionHandlerWithData)
 }
 
 /// Used to make the URL session request
 class Request: AbstractRequestClient {
     
-    // var url: URL?
-    
-    func callAPI(url: URL, completion: @escaping CompletionHandler) {
-        // guard let url = url else { return }
+    /// Get a page full of recipes
+    func callAPIForPage(url: URL, completion: @escaping CompletionHandler) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
                 print("URLSession error: \(String(describing: error?.localizedDescription))")
@@ -27,11 +26,30 @@ class Request: AbstractRequestClient {
             }
             
             guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("Data or Response error in URLSession of Request.callAPI")
+                print("Data or Response error in URLSession of Request.callAPIForPage")
                 completion(false)
                 return
             }
-            DataManager.instance.decodeData(data: data, completion: completion)
+            DataManager.instance.decodeDataForPage(data: data, completion: completion)
+        }
+        task.resume()
+    }
+    
+    /// Get a specific recipe
+    func callAPIForDetail(url: URL, completion: @escaping CompletionHandlerWithData) {
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                print("URLSession error: \(String(describing: error?.localizedDescription))")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("Data or Response error in URLSession of Request.CallAPIForDetail")
+                completion(nil, error)
+                return
+            }
+            DataManager.instance.decodeDataForDetail(data: data, completion: completion)
         }
         task.resume()
     }

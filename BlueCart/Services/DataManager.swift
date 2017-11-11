@@ -22,12 +22,11 @@ class DataManager {
     private init() {
     }
     
-    func decodeData(data: Data, completion: @escaping CompletionHandler) {
+    /// Decode full page of recipes
+    func decodeDataForPage(data: Data, completion: @escaping CompletionHandler) {
         do {
             let result = try JSONDecoder().decode(RecipePage.self, from: data)
             self.allRecipes.append(result)
-            
-            print("*** number in allRecipes; numberOfPagesRetrieved: 1st 1 greater than 2nd", self.allRecipes.count, self.numberOfPagesRetrieved)
             
             /// Update all variables
             self.numberOfPagesRetrieved += 1
@@ -44,10 +43,21 @@ class DataManager {
         }
     }
     
+    /// Update count of individual recipes retrieved
     func updateNewRecipesRetrieved(result: RecipePage) {
         guard let newRecipesRetrieved = result.recipes?.count else { return }
         self.totalRecipesRetrieved += newRecipesRetrieved
         print("^^^ totalRecipesRetrieved", self.totalRecipesRetrieved)
     }
    
+    /// Decode specific data like a recipe
+    func decodeDataForDetail(data: Data, completion: @escaping CompletionHandlerWithData) {
+        do {
+            let result = try JSONDecoder().decode([String: RecipeDetail].self, from: data)
+            completion(result, nil)
+        } catch let jsonError {
+            print("Error decoding JSON from server", jsonError)
+            completion(nil, jsonError)
+        }
+    }
 }

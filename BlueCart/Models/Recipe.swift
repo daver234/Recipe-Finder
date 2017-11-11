@@ -17,7 +17,7 @@ struct RecipePage: Decodable {
 struct Recipe {
     
     /// Enums to map all the Json keys to Swift data structure keys
-    enum RootKeys : String, CodingKey {
+    enum RootKeys: String, CodingKey {
         case publisher
         case url = "f2f_url"
         case title
@@ -48,6 +48,50 @@ extension Recipe: Decodable {
         imageUrl = try container.decode(String.self, forKey: .imageUrl)
         socialRank = try container.decode(Double?.self, forKey: .socialRank)
         publisherUrl = try container.decode(String.self, forKey: .publisherUrl)
+        
+    }
+}
+
+//struct RecipeJson: Decodable {
+//    var recipe: RecipeDetail?
+//}
+
+struct RecipeDetail {
+    enum RootKeys: String, CodingKey {
+        case publisher
+        case url = "f2f_url"
+        case ingredients
+        case sourceUrl = "source_url"
+        case recipeID = "recipe_id"
+        case imageUrl = "image_url"
+        case socialRank = "social_rank"
+        case publisherUrl = "publisher_url"
+        case title
+        
+    }
+    var publisher: String?
+    var url: String?
+    var ingredients: [String]?
+    var sourceUrl: String?
+    var recipeID: String?
+    var imageUrl: String?
+    var socialRank: Double?
+    var publisherUrl: String?
+    var title: String?
+}
+
+extension RecipeDetail: Decodable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: RootKeys.self)
+        publisher = try container.decode(String.self, forKey: .publisher)
+        url = try container.decode(String.self, forKey: .url)
+        ingredients = try container.decode([String].self, forKey: .ingredients)
+        sourceUrl = try container.decode(String.self, forKey: .sourceUrl)
+        recipeID = try container.decode(String.self, forKey: .recipeID)
+        imageUrl = try container.decode(String.self, forKey: .imageUrl)
+        socialRank = try container.decode(Double.self, forKey: .socialRank)
+        publisherUrl = try container.decode(String.self, forKey: .publisherUrl)
+        title = try container.decode(String.self, forKey: .title)
         
     }
 }
