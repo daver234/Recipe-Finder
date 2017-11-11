@@ -16,6 +16,7 @@ class RecipeTableViewModel {
     var didGetRecipes: Box<Bool> = Box(false)
     var recipePageNumber: Box<Int> = Box(0)
     fileprivate(set) var flatAllRecipes = [Recipe]()
+    fileprivate(set) var searchTerms: [NSManagedObject] = []
 }
 
 
@@ -49,6 +50,12 @@ extension RecipeTableViewModel {
         recipePageNumber.value += 1
     }
     
+    func getSearchTerms() -> [NSManagedObject] {
+        retrievedSavedSearchTerms()
+        print("viewModel search terms", searchTerms)
+        return searchTerms
+    }
+    
     /// Saving search terms to CoreData
     /// Handles iOS 10 and above one way and iOS 9 and below another
     /// - Parameter term: The search term to save
@@ -62,7 +69,35 @@ extension RecipeTableViewModel {
             let task = Search(entity: entityDesc!, insertInto: CoreDataStack.managedObjectContext)
             task.searchTerms = term
         }
+        print("Now saving in CoreData")
         CoreDataStack.saveContext()
+    }
+    
+    func retrievedSavedSearchTerms() {
+        if #available(iOS 10.0, *) {
+            let managedContext = CoreDataStack.managedObjectContext
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
+            do {
+                searchTerms = try managedContext.fetch(fetchRequest)
+                print("searchTerms", searchTerms)
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
+            
+        } else {
+            // Fallback on earlier versions of iOS
+            let managedContext = CoreDataStack.managedObjectContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.SEARCH_ENTITY) //<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
+            let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: CoreDataStack.managedObjectContext)
+            fetchRequest.entity = entityDesc
+            do {
+                 let result = try managedContext.fetch(fetchRequest)
+                print("here is result", result)
+            } catch {
+                print("Could not fetch. \(error)")
+            }
+            
+        }
     }
 }
 
@@ -80,7 +115,7 @@ extension RecipeTableViewModel {
         }
     }
     
-    func loadNewRecipesFromSearchText(searchTerm: String) {
-        print("Search term is:", searchTerm)
-    }
+//    func loadNewRecipesFromSearchText(searchTerm: String) {
+//        print("Search term is:", searchTerm)
+//    }
 }

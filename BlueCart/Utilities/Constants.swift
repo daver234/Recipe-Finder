@@ -41,4 +41,5 @@ struct Constants {
     
     // CoreData
     static let SEARCH_TERM = "Search"  // Entity name for store search terms
+    static let SEARCH_ENTITY = "Search" // Search entity
 }

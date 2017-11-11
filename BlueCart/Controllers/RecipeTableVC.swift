@@ -28,6 +28,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
         setupSearchBar()
         monitorProperties()
         tableView.dataSource = self
+        searchTerms = viewModel.getSearchTerms()
         searchController.searchBar.delegate = self
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
@@ -151,6 +152,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
+            print("count", searchTerms.count)
             return searchTerms.count
             // return filteredRecipe.count
         }
@@ -163,7 +165,11 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         }
         if isSearching() {
             // let term = searchTerms.value(forKeyPath: "searchTerms") as? String
-            cell.setupViewIfCoreData(searchTerm: "")
+            // let terms = viewModel.retrieveSearchTerms()
+            // print("terms in VC: ", terms)
+            let name = searchTerms[indexPath.row]
+            print("here is name: ")
+            // cell.setupViewIfCoreData(searchTerm: name)
         }
         let specificRecipe = getRecipe(index: indexPath.row)
         cell.setupView(recipe: specificRecipe)
@@ -184,7 +190,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
     func getRecipe(index: Int) -> Recipe {
         let recipe: Recipe
         if isSearching() {
-            recipe = filteredRecipe[index]
+            recipe = searchTerms[index]
         } else {
             /// Find the page with the receipt for the cell
             let pageToGet = index / Constants.PAGE_SIZE
@@ -224,20 +230,21 @@ extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
         if searchText.isEmpty {
             print("Search is empty")
         } else {
-            perform(#selector(getRecipesBasedOnSearchText), with: nil, afterDelay: 2.0)
+            // tableView.reloadData()
+            // perform(#selector(getRecipesBasedOnSearchText), with: nil, afterDelay: 2.0)
         }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchText = searchController.searchBar.text else { return }
-        viewModel.loadNewRecipesFromSearchText(searchTerm: searchText)
+        viewModel.saveSearchTerm(term: searchText)
     }
     
     @objc func getRecipesBasedOnSearchText() {
         guard let searchText = searchController.searchBar.text else { return }
         // viewModel.loadNewRecipesFromSearchText(searchTerm: searchText)
-        print("now in getRecipesBasedOnSearch")
+        print("now in getRecipesBasedOnSearch", searchText)
     }
     
     // MARK: - Functions to filter search text entry
@@ -263,9 +270,9 @@ extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
         print("text...", text)
         filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
             guard let recipe = recipe.title else { return false}
-            print("recipe filter is: ", recipe)
-            print("recipe lowercased", recipe.lowercased())
-            print("contains:", recipe.lowercased().contains(text))
+            //print("recipe filter is: ", recipe)
+            //print("recipe lowercased", recipe.lowercased())
+            //print("contains:", recipe.lowercased().contains(text))
             return recipe.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
