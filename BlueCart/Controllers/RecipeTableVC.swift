@@ -28,6 +28,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
         setupSearchBar()
         monitorProperties()
         tableView.dataSource = self
+        searchController.searchBar.delegate = self
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
         }
@@ -161,7 +162,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
            return UITableViewCell()
         }
         if isSearching() {
-            let term = searchTerms.value(forKeyPath: "searchTerms") as? String
+            // let term = searchTerms.value(forKeyPath: "searchTerms") as? String
             cell.setupViewIfCoreData(searchTerm: "")
         }
         let specificRecipe = getRecipe(index: indexPath.row)
@@ -215,7 +216,31 @@ extension RecipeTableVC {
 
 
 // MARK: - Search
-extension RecipeTableVC: UISearchResultsUpdating {
+extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self)  /// may delete this
+        guard let searchText = searchController.searchBar.text else { return }
+        
+        if searchText.isEmpty {
+            print("Search is empty")
+        } else {
+            perform(#selector(getRecipesBasedOnSearchText), with: nil, afterDelay: 2.0)
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let searchText = searchController.searchBar.text else { return }
+        viewModel.loadNewRecipesFromSearchText(searchTerm: searchText)
+    }
+    
+    @objc func getRecipesBasedOnSearchText() {
+        guard let searchText = searchController.searchBar.text else { return }
+        // viewModel.loadNewRecipesFromSearchText(searchTerm: searchText)
+        print("now in getRecipesBasedOnSearch")
+    }
+    
+    // MARK: - Functions to filter search text entry
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }

@@ -79,4 +79,8 @@ extension RecipeTableViewModel {
             }
         }
     }
+    
+    func loadNewRecipesFromSearchText(searchTerm: String) {
+        print("Search term is:", searchTerm)
+    }
 }
