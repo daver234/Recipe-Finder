@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 
 class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
     
@@ -15,6 +16,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
     var filteredRecipe = [Recipe]()
     let searchController = UISearchController(searchResultsController: nil)
     private var viewModel = RecipeTableViewModel()
+    var searchTerms: [NSManagedObject] = []
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -148,9 +150,9 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
-            return filteredRecipe.count
+            return searchTerms.count
+            // return filteredRecipe.count
         }
-        //print("### count is: ", viewModel.getRecipeCount() ?? 56)
         return viewModel.getRecipeCount() ?? 0
     }
 
@@ -158,7 +160,10 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.RECIPE_CELL, for: indexPath) as? RecipeTableViewCell else {
            return UITableViewCell()
         }
-        
+        if isSearching() {
+            let term = searchTerms.value(forKeyPath: "searchTerms") as? String
+            cell.setupViewIfCoreData(searchTerm: "")
+        }
         let specificRecipe = getRecipe(index: indexPath.row)
         cell.setupView(recipe: specificRecipe)
         return cell

@@ -41,11 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        // self.saveContext()
+        CoreDataStack.saveContext()
     }
 
     // MARK: - Core Data stack
-
+/*
     @available(iOS 10.0, *)
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -120,9 +121,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
-
+*/
     // MARK: - Core Data Saving support
-
+    /*
     func saveContext () {
         
         if #available(iOS 10.0, *) {
@@ -154,7 +155,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             }
         }
-    }
+    } */
 
 }
 

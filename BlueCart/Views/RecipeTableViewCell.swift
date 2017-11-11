@@ -35,4 +35,9 @@ class RecipeTableViewCell: UITableViewCell {
             self.recipeImage.kf.setImage(with: url, placeholder: image)
         }
     }
+    
+    func setupViewIfCoreData(searchTerm: String) {
+        recipeImage.isHidden = true
+        recipeTitleLabel.text = searchTerm
+    }
 }

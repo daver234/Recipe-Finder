@@ -6,7 +6,8 @@
 //  Copyright © 2017 Dave Rothschild. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 /// ViewModel to support RecipeTableVC
 class RecipeTableViewModel {
@@ -46,6 +47,22 @@ extension RecipeTableViewModel {
     
     func incrementPageNumber() {
         recipePageNumber.value += 1
+    }
+    
+    /// Saving search terms to CoreData
+    /// Handles iOS 10 and above one way and iOS 9 and below another
+    /// - Parameter term: The search term to save
+    func saveSearchTerm(term: String) {
+        if #available(iOS 10.0, *) {
+            let task = Search(context: CoreDataStack.managedObjectContext)
+            task.searchTerms = term
+        } else {
+            // Fallback on earlier versions of iOS
+            let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_TERM, in: CoreDataStack.managedObjectContext)
+            let task = Search(entity: entityDesc!, insertInto: CoreDataStack.managedObjectContext)
+            task.searchTerms = term
+        }
+        CoreDataStack.saveContext()
     }
 }
 

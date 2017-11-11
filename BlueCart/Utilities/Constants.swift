@@ -38,4 +38,7 @@ struct Constants {
     static let PAGE_SIZE = 30
     static let LOADING_IMAGE = "loadingImage.jpg"
     static let RECIPE_TITLE = "Recipe"
+    
+    // CoreData
+    static let SEARCH_TERM = "Search"  // Entity name for store search terms
 }
