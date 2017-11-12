@@ -46,24 +46,26 @@ extension RecipeTableViewModel {
         return recipes
     }
     
+    /// Increment page so that we get next page of recipes
     func incrementPageNumber() {
         recipePageNumber.value += 1
     }
     
+    /// Get search terms from core data
     func getSearchTerms() -> [NSManagedObject] {
-        retrievedSavedSearchTerms()
-        print("viewModel search terms", searchTerms)
-        return searchTerms
+        return retrievedSavedSearchTerms()
     }
-    
+}
+
+
+// MARK: - CoreData Functions
+extension RecipeTableViewModel {
     /// Saving search terms to CoreData
     /// Handles iOS 10 and above one way and iOS 9 and below another
     /// - Parameter term: The search term to save
     func saveSearchTerm(term: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         if #available(iOS 10.0, *) {
-            // let task = Search(context: CoreDataStack.managedObjectContext)
-            // task.searchTerms = term
             let managedContext = appDelegate.persistentContainer.viewContext
             guard let entity = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
             let searchTerm = NSManagedObject(entity: entity, insertInto: managedContext)
@@ -84,21 +86,15 @@ extension RecipeTableViewModel {
             } catch let error as NSError {
                 print("Could not save. \(error), \(error.userInfo)")
             }
-            //let task = Search(entity: entityDesc!, insertInto: CoreDataStack.managedObjectContext)
-            //task.searchTerms = term
         }
-        
-//        print("Now saving in CoreData")
-//        CoreDataStack.saveContext()
     }
     
-    func retrievedSavedSearchTerms() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    /// Retrieve saved search terms from CoreData model
+    fileprivate func retrievedSavedSearchTerms() -> [NSManagedObject] {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return searchTerms}
         if #available(iOS 10.0, *) {
             let managedContext = appDelegate.persistentContainer.viewContext
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
-//            let managedContext = CoreDataStack.managedObjectContext
-//            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
             do {
                 searchTerms = try managedContext.fetch(fetchRequest)
                 print("searchTerms", searchTerms)
@@ -109,18 +105,17 @@ extension RecipeTableViewModel {
         } else {
             // Fallback on earlier versions of iOS
             let managedContext = appDelegate.managedObjectContext
-//            let managedContext = CoreDataStack.managedObjectContext
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.SEARCH_ENTITY) //<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
             let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext)
             fetchRequest.entity = entityDesc
             do {
-                 let result = try managedContext.fetch(fetchRequest)
-                print("here is result", result)
+                guard let tempSearchTerms = try managedContext.fetch(fetchRequest) as? [NSManagedObject] else { return [NSManagedObject]() }
+                searchTerms = tempSearchTerms
             } catch {
                 print("Could not fetch. \(error)")
             }
-            
         }
+        return searchTerms
     }
 }
 
@@ -137,8 +132,4 @@ extension RecipeTableViewModel {
             }
         }
     }
-    
-//    func loadNewRecipesFromSearchText(searchTerm: String) {
-//        print("Search term is:", searchTerm)
-//    }
 }

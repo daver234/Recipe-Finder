@@ -25,6 +25,7 @@ class RecipeTableViewCell: UITableViewCell {
     }
 
     func setupView(recipe: Recipe) {
+        recipeImage.isHidden = false
         guard let title = recipe.title else { return }
         recipeTitleLabel.text = title
         print("recipe title", recipe.title ?? "")
@@ -39,9 +40,5 @@ class RecipeTableViewCell: UITableViewCell {
     func setupViewIfCoreData(searchTerm: String) {
         recipeImage.isHidden = true
         recipeTitleLabel.text = searchTerm
-    }
-    
-    func whileSearchHideImage() {
-        recipeImage.isHidden = true
     }
 }
