@@ -23,7 +23,6 @@ class APIManager {
     /// - Parameter pageNumber: The next page number filled with 30 recipes from the backend server
     /// - Parameter completion: The completion handler to execute on success or failure
     func getRecipesForPage(pageNumber: Int, completion: @escaping CompletionHandler) {
-        print("*** in APIManager: next pageNumber to get is:", pageNumber)
         let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&page=\(pageNumber)"
         guard let url = URL(string: urlString) else { return }
         getRecipesForPageWithURL(url: url, completion: completion)
@@ -33,8 +32,11 @@ class APIManager {
     /// - Parameter searchString: The type of recipe wanted, like: "chicken"
     /// - Parameter completion: The completion handler to execute on success or failure
     func getSpecificSearch(searchString: String, completion: @escaping CompletionHandler) {
-        guard let url = URLComponents(scheme: Constants.SCHEME, host: Constants.HOST, path: Constants.PATH, queryItems: [URLQueryItem(name: Constants.SEARCH_QUERY, value: searchString)]).url else { return }
-        print("here is URL",url)
+        print(searchString)
+        let partialURL = searchString.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&q=\(partialURL ?? "")"
+//        guard let url = URLComponents(scheme: Constants.SCHEME, host: Constants.HOST, path: Constants.PATH, queryItems: [URLQueryItem(name: Constants.SEARCH_QUERY, value: searchString)]).url else { return }
+        print("here is URL and searchTerm",urlString)
         
     }
     

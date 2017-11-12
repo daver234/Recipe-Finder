@@ -41,7 +41,6 @@ extension RecipeDetailViewModel {
             }
             self.newRecipe = recipe
             self.theRecipe = Box(self.newRecipe)
-            // print("%%%% theRecipe", self.theRecipe.value)
         }
     }
 }

@@ -242,12 +242,14 @@ extension RecipeTableVC {
         switch isSearching() {
         case true:
             print("did select row")
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let currentCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell,
+                let term = currentCell.recipeTitleLabel.text
+            else { return }
+            print("search term from table: ", term.lowercased())
+            viewModel.getRecipesBasedOnSearchTerm(searchTerm: term)
         case false:
-//            let destination = RecipeDetailVC()
-//            let detailRecipe = getRecipe(index: indexPath.row)
-//            destination.recipeIdToGet = detailRecipe.recipeID
             self.performSegue(withIdentifier: Constants.TO_RECIPE_DETAIL, sender: self)
-            // self.navigationController?.pushViewController(RecipeDetailVC(), animated: true)
         }
     }
 }

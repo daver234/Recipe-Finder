@@ -118,7 +118,6 @@ extension RecipeTableViewModel {
                 print("Could not fetch. \(error)")
             }
         }
-        
         return searchTerms
     }
 }
@@ -127,13 +126,28 @@ extension RecipeTableViewModel {
 /// Functions for accessing backend server
 extension RecipeTableViewModel {
     func loadRecipes(pageNumber: Int) {
-        let request = Request()
-        let apiManager = APIManager(request: request)
+        //let request = Request()
+        let apiManager = getAPIManagerInstance()
         apiManager.getRecipesForPage(pageNumber: pageNumber) { [weak self] success in
             if success {
                 self?.recipePageNumber.value += 1
                 self?.didGetRecipes.value = true
             }
+        }
+    }
+    
+    fileprivate func getAPIManagerInstance() -> APIManager {
+        let request = Request()
+        return APIManager(request: request)
+    }
+    
+    func getRecipesBasedOnSearchTerm(searchTerm: String) {
+        let apiManager = getAPIManagerInstance()
+        apiManager.getSpecificSearch(searchString: searchTerm) { [weak self] success in
+            if success {
+                print("success in specific search")
+            }
+            
         }
     }
 }
