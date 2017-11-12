@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 import CoreData
-
+import SwiftSpinner
 
 class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearchResultsUpdating {
     
@@ -168,7 +168,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         switch isSearching() {
         case true:
             if indexPath.row == 0 {
-                cell.setupViewIfCoreData(searchTerm: "Top Rated")
+                cell.setupViewIfCoreData(searchTerm: Constants.TOP_RATED)
             } else {
                 let term = searchTerms[indexPath.row - 1]
                 guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
@@ -244,12 +244,17 @@ extension RecipeTableVC {
             print("did select row")
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let currentCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell,
-                let term = currentCell.recipeTitleLabel.text
+                var term = currentCell.recipeTitleLabel.text
             else { return }
-            print("search term from table: ", term.lowercased())
+            if term == Constants.TOP_RATED {
+                term = ""
+            }
             viewModel.getRecipesBasedOnSearchTerm(searchTerm: term)
+            SwiftSpinner.setTitleFont(UIFont(name: "Avenir-Heavy", size: 22.0))
+            SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
+            SwiftSpinner.show(duration: 2.0, title: "Getting recipes\nfor \(term)...", animated: true)
+            searchController.isActive = false
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-                self?.searchController.isActive = false
                 self?.tableView.reloadData()
             }
         case false:

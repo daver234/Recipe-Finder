@@ -47,4 +47,7 @@ struct Constants {
     
     // Controllers
     static let SEARCH_VC = "SearchBarVC"
+    
+    // Search Terms
+    static let TOP_RATED = "Top Rated"
 }
