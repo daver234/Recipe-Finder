@@ -29,6 +29,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         setupNavBarTitle()
         setupSearchBar()
         monitorProperties()
+        tableView.delegate = self
         tableView.dataSource = self
         searchController.searchBar.delegate = self
         if #available(iOS 10.0, *) {
@@ -234,6 +235,19 @@ extension RecipeTableVC {
                     destination.recipeIdToGet = detailRecipe.recipeID
                 }
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch isSearching() {
+        case true:
+            print("did select row")
+        case false:
+//            let destination = RecipeDetailVC()
+//            let detailRecipe = getRecipe(index: indexPath.row)
+//            destination.recipeIdToGet = detailRecipe.recipeID
+            self.performSegue(withIdentifier: Constants.TO_RECIPE_DETAIL, sender: self)
+            // self.navigationController?.pushViewController(RecipeDetailVC(), animated: true)
         }
     }
 }

@@ -69,7 +69,6 @@
                                             <outlet property="recipeImage" destination="R37-ZM-XAw" id="jMz-H7-u9V"/>
                                             <outlet property="recipeImageHeight" destination="fVf-0w-xsb" id="l8W-u9-wEV"/>
                                             <outlet property="recipeTitleLabel" destination="ZRI-62-myN" id="A0a-4E-y6q"/>
-                                            <segue destination="63h-3A-Ql1" kind="show" identifier="toRecipeDetail" id="lNn-L0-MLL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,6 +86,7 @@
                     <navigationItem key="navigationItem" id="opy-pb-qAn"/>
                     <connections>
                         <outlet property="tableView" destination="jOC-n6-vmp" id="KKt-Rh-XVC"/>
+                        <segue destination="63h-3A-Ql1" kind="show" identifier="toRecipeDetail" id="0QP-T5-xvH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tj-TR-URp" userLabel="First Responder" sceneMemberID="firstResponder"/>
