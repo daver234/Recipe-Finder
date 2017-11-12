@@ -41,7 +41,8 @@ struct Constants {
     static let RECIPE_TITLE = "Recipe"
     
     // CoreData
-    static let SEARCH_TERMS = "searchTerms"  // Entity name for store search terms
+    static let SEARCH_TERMS = "searchTerms"  // attribute name for store search terms
+    static let SEARCH_DATE = "createdAt"  // attribute for date term was created
     static let SEARCH_ENTITY = "Search" // Search entity
     
     // Controllers

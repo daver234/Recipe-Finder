@@ -69,6 +69,7 @@ extension RecipeTableViewModel {
             let managedContext = appDelegate.persistentContainer.viewContext
             guard let entity = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
             let searchTerm = NSManagedObject(entity: entity, insertInto: managedContext)
+            searchTerm.setValue(Date(), forKey: Constants.SEARCH_DATE)
             searchTerm.setValue(term, forKey: Constants.SEARCH_TERMS)
             do {
                 try managedContext.save()
@@ -95,6 +96,8 @@ extension RecipeTableViewModel {
         if #available(iOS 10.0, *) {
             let managedContext = appDelegate.persistentContainer.viewContext
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
+            let sort = NSSortDescriptor(key: Constants.SEARCH_DATE, ascending: false)
+            fetchRequest.sortDescriptors = [sort]
             do {
                 searchTerms = try managedContext.fetch(fetchRequest)
                 print("searchTerms", searchTerms)
@@ -115,6 +118,7 @@ extension RecipeTableViewModel {
                 print("Could not fetch. \(error)")
             }
         }
+        
         return searchTerms
     }
 }

@@ -154,7 +154,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
             print("count isSearch numRows", searchTerms.count)
-            return searchTerms.count
+            return searchTerms.count + 1
         }
         return viewModel.getRecipeCount() ?? 0
     }
@@ -163,12 +163,17 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.RECIPE_CELL, for: indexPath) as? RecipeTableViewCell else {
            return UITableViewCell()
         }
-        if isSearching() {
-            let term = searchTerms[indexPath.row]
-            guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
-            print("here is name: ", searchTermString)
-            cell.setupViewIfCoreData(searchTerm: searchTermString)
-        } else {
+        
+        switch isSearching() {
+        case true:
+            if indexPath.row == 0 {
+                cell.setupViewIfCoreData(searchTerm: "Top Rated")
+            } else {
+                let term = searchTerms[indexPath.row - 1]
+                guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
+                cell.setupViewIfCoreData(searchTerm: searchTermString)
+            }
+        case false:
             let specificRecipe = getRecipe(index: indexPath.row)
             cell.setupView(recipe: specificRecipe)
         }
@@ -186,34 +191,21 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let height: CGFloat
-//        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.RECIPE_CELL, for: indexPath) as? RecipeTableViewCell else {
-//            return 150.0
-//        }
-//        if isSearching() {
-//            cell.whileSearchHideImage()
-//            height = 40.0
-//        } else {
-//            height = 150.0
-//        }
-//        return height
-//    }
-    
+    /// Get search string out of ManagedObject
+    /// - Parameter index: index of search string to retrieve from ManagedObject
     func searchStringFromManagedObject(index: Int) ->String {
         let term = searchTerms[index]
         guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return ""}
-        print("here is name: ", searchTermString)
         return searchTermString
     }
     
+    /// Get a specific recipe.  Used with setting up tableViewCell
     func getRecipe(index: Int) -> Recipe {
         let recipe: Recipe
-        if isSearching() {
-            // recipe = searchStringFromManagedObject(index: index)
-            recipe = Recipe()
-            print("isSearching in getRecipe")
-        } else {
+//        if isSearching() {
+//            recipe = Recipe()
+//            print("isSearching in getRecipe")
+//        } else {
             /// Find the page with the receipt for the cell
             let pageToGet = index / Constants.PAGE_SIZE
             
@@ -222,7 +214,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
             let recipeToGet = index % Constants.PAGE_SIZE
             
             recipe = viewModel.getRecipe(pageToGet: pageToGet, recipeToGet: recipeToGet)
-        }
+        //}
         return recipe
     }
 }
@@ -231,11 +223,16 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 // MARK: - Navigation
 extension RecipeTableVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.TO_RECIPE_DETAIL {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let detailRecipe = getRecipe(index: indexPath.row)
-                guard let destination = segue.destination as? RecipeDetailVC else { return }
-                destination.recipeIdToGet = detailRecipe.recipeID
+        switch isSearching() {
+        case true:
+            print("do something")
+        case false:
+            if segue.identifier == Constants.TO_RECIPE_DETAIL {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let detailRecipe = getRecipe(index: indexPath.row)
+                    guard let destination = segue.destination as? RecipeDetailVC else { return }
+                    destination.recipeIdToGet = detailRecipe.recipeID
+                }
             }
         }
     }
@@ -260,14 +257,14 @@ extension RecipeTableVC: UISearchBarDelegate {
         // tableView.reloadData()
     }
     
-    //*****
+    /// Function to get saved searched terms from CoreData
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchTerms = []
         searchTerms = viewModel.getSearchTerms()
         tableView.reloadData()
     }
     
-    /// Save search text to core data
+    /// Save search text to CoreData
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchText = searchController.searchBar.text else { return }
@@ -282,8 +279,8 @@ extension RecipeTableVC: UISearchBarDelegate {
     
     // MARK: - Functions to filter search text entry
     func updateSearchResults(for searchController: UISearchController) {
-        // searchController.searchResultsController?.view.isHidden = false
-        filterContentForSearchText(searchController.searchBar.text!)
+        tableView.reloadData()
+        // filterContentForSearchText(searchController.searchBar.text!)
     }
     
     /// Returns true if focus in searchbar
@@ -297,14 +294,14 @@ extension RecipeTableVC: UISearchBarDelegate {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        let recipes = viewModel.getAllRecipesWithoutPages()
-        filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
-            guard let recipe = recipe.title else { return false}
-            //print("recipe filter is: ", recipe)
-            //print("recipe lowercased", recipe.lowercased())
-            //print("contains:", recipe.lowercased().contains(text))
-            return recipe.lowercased().contains(searchText.lowercased())
-        })
+//        let recipes = viewModel.getAllRecipesWithoutPages()
+//        filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
+//            guard let recipe = recipe.title else { return false}
+//            //print("recipe filter is: ", recipe)
+//            //print("recipe lowercased", recipe.lowercased())
+//            //print("contains:", recipe.lowercased().contains(text))
+//            return recipe.lowercased().contains(searchText.lowercased())
+//        })
         tableView.reloadData()
     }
 }

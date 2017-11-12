@@ -31,7 +31,7 @@ class RecipeTableViewCell: UITableViewCell {
 
         guard let title = recipe.title else { return }
         recipeTitleLabel.text = title
-        print("recipe title", recipe.title ?? "")
+        
         /// First get image out of assets as a placeholder while downloading the image from a URL
         let image = UIImage(named: Constants.LOADING_IMAGE)
         guard let urlString = recipe.imageUrl, let url = URL(string: urlString) else { return }
@@ -40,6 +40,8 @@ class RecipeTableViewCell: UITableViewCell {
         }
     }
     
+    /// Function for when search occurs
+    /// Hides image and changes cell height for just saved search text string
     func setupViewIfCoreData(searchTerm: String) {
         recipeImage.isHidden = true
         recipeImageHeight.constant = 35
