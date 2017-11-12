@@ -11,11 +11,12 @@ import Kingfisher
 import CoreData
 
 
-class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
+class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearchResultsUpdating {
     
     // MARK: - Properties
     var filteredRecipe = [Recipe]()
     let searchController = UISearchController(searchResultsController: nil)
+    
     private var viewModel = RecipeTableViewModel()
     var searchTerms: [NSManagedObject] = []
     
@@ -29,7 +30,10 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
         setupSearchBar()
         monitorProperties()
         tableView.dataSource = self
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let resultsController = storyboard.instantiateViewController(withIdentifier: Constants.SEARCH_VC)
+        let searchController = UISearchController(searchResultsController: resultsController )
+        searchController.searchResultsUpdater = resultsController as! UISearchResultsUpdating
         searchController.searchBar.delegate = self
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
@@ -43,7 +47,6 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
         /// Allows user to see what cell they came from after returning from ReceiptDetailVC
         /// This uses the UITableView extension in Extensions.swift
         self.tableView.deselectSelectedRow(animated: true)
-        // searchTerms = viewModel.getSearchTerms()
         tableView.reloadData()
     }
     func setupSearchBar() {
@@ -244,7 +247,7 @@ extension RecipeTableVC {
 
 
 // MARK: - Search
-extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
+extension RecipeTableVC: UISearchBarDelegate {
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //        // stNSObject.cancelPreviousPerformRequests(withTarget: self)  /// may delete this
 //        guard let searchText = searchController.searchBar.text else { return }
@@ -258,7 +261,7 @@ extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
 //    }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        tableView.reloadData()
+        // tableView.reloadData()
     }
     
     //*****
@@ -283,7 +286,7 @@ extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     // MARK: - Functions to filter search text entry
     func updateSearchResults(for searchController: UISearchController) {
-        searchController.searchResultsController?.view.isHidden = false
+        // searchController.searchResultsController?.view.isHidden = false
         filterContentForSearchText(searchController.searchBar.text!)
     }
     
@@ -299,7 +302,6 @@ extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         let recipes = viewModel.getAllRecipesWithoutPages()
-        // let text = searchText.lowercased()
         filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
             guard let recipe = recipe.title else { return false}
             //print("recipe filter is: ", recipe)
