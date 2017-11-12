@@ -16,12 +16,15 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     // MARK: - Properties
     //var filteredRecipe = [Recipe]()
     let searchController = UISearchController(searchResultsController: nil)
+    let reachability = Reachability()!
+    
     
     private var viewModel = RecipeTableViewModel()
     var searchTerms: [NSManagedObject] = []
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noNetworkView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,13 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        /// Watch for connectivity being turned off
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("could not start reachability notifier")
+        }
         
         /// Allows user to see what cell they came from after returning from ReceiptDetailVC
         /// This uses the UITableView extension in Extensions.swift
@@ -94,6 +104,24 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         let results = DataManager.instance.totalRecipesRetrieved
         label.text = "Search For Recipes\nFound \(results) Results"
         self.navigationItem.titleView = label
+    }
+    
+    /// Check for what state changed for connectivity
+    @objc func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+        switch reachability.connection {
+        case .wifi:
+            print("Reachable via WiFi")
+            noNetworkView.isHidden = true
+        case .cellular:
+            print("Reachable via Cellular")
+            noNetworkView.isHidden = true
+        case .none:
+            noNetworkView.isHidden = false
+            //let noConnection = NoConnectivityVC(nibName: "NoConnectivityVC", bundle: nil)
+            // self.present(noConnection, animated: true, completion: nil)
+            print("Network not reachable")
+        }
     }
 }
 
