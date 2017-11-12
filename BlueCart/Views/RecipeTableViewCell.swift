@@ -40,4 +40,8 @@ class RecipeTableViewCell: UITableViewCell {
         recipeImage.isHidden = true
         recipeTitleLabel.text = searchTerm
     }
+    
+    func whileSearchHideImage() {
+        recipeImage.isHidden = true
+    }
 }

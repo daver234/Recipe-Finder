@@ -30,6 +30,7 @@ struct Constants {
     // Cell identifiers
     static let RECIPE_CELL = "RecipeCell"
     static let INGREDIENTS = "Ingredients"
+    static let SEARCH_CELL = "SearchBarVCCell"
     
     // Segues
     static let TO_RECIPE_DETAIL = "toRecipeDetail"
@@ -40,6 +41,9 @@ struct Constants {
     static let RECIPE_TITLE = "Recipe"
     
     // CoreData
-    static let SEARCH_TERM = "Search"  // Entity name for store search terms
+    static let SEARCH_TERMS = "searchTerms"  // Entity name for store search terms
     static let SEARCH_ENTITY = "Search" // Search entity
+    
+    // Controllers
+    static let SEARCH_VC = "SearchBarVC"
 }

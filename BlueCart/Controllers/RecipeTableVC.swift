@@ -42,7 +42,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching {
         /// Allows user to see what cell they came from after returning from ReceiptDetailVC
         /// This uses the UITableView extension in Extensions.swift
         self.tableView.deselectSelectedRow(animated: true)
-        
+        tableView.reloadData()
     }
     func setupSearchBar() {
         searchController.searchResultsUpdater = self
@@ -152,9 +152,8 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
-            print("count", searchTerms.count)
+            print("count isSearch numRows", searchTerms.count)
             return searchTerms.count
-            // return filteredRecipe.count
         }
         return viewModel.getRecipeCount() ?? 0
     }
@@ -164,15 +163,14 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
            return UITableViewCell()
         }
         if isSearching() {
-            // let term = searchTerms.value(forKeyPath: "searchTerms") as? String
-            // let terms = viewModel.retrieveSearchTerms()
-            // print("terms in VC: ", terms)
-            let name = searchTerms[indexPath.row]
-            print("here is name: ")
-            // cell.setupViewIfCoreData(searchTerm: name)
+            let term = searchTerms[indexPath.row]
+            guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
+            print("here is name: ", searchTermString)
+            cell.setupViewIfCoreData(searchTerm: searchTermString)
+        } else {
+            let specificRecipe = getRecipe(index: indexPath.row)
+            cell.setupView(recipe: specificRecipe)
         }
-        let specificRecipe = getRecipe(index: indexPath.row)
-        cell.setupView(recipe: specificRecipe)
         return cell
     }
     
@@ -187,10 +185,33 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let height: CGFloat
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.RECIPE_CELL, for: indexPath) as? RecipeTableViewCell else {
+            return 150.0
+        }
+        if isSearching() {
+            cell.whileSearchHideImage()
+            height = 40.0
+        } else {
+            height = 150.0
+        }
+        return height
+    }
+    
+    func searchStringFromManagedObject(index: Int) ->String {
+        let term = searchTerms[index]
+        guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return ""}
+        print("here is name: ", searchTermString)
+        return searchTermString
+    }
+    
     func getRecipe(index: Int) -> Recipe {
         let recipe: Recipe
         if isSearching() {
-            recipe = searchTerms[index]
+            // recipe = searchStringFromManagedObject(index: index)
+            recipe = Recipe()
+            print("isSearching in getRecipe")
         } else {
             /// Find the page with the receipt for the cell
             let pageToGet = index / Constants.PAGE_SIZE
@@ -213,7 +234,6 @@ extension RecipeTableVC {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let detailRecipe = getRecipe(index: indexPath.row)
                 guard let destination = segue.destination as? RecipeDetailVC else { return }
-                //print("recipe to segque: ", detailRecipe)
                 destination.recipeIdToGet = detailRecipe.recipeID
             }
         }
@@ -233,6 +253,14 @@ extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
             // tableView.reloadData()
             // perform(#selector(getRecipesBasedOnSearchText), with: nil, afterDelay: 2.0)
         }
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        tableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tableView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -263,11 +291,11 @@ extension RecipeTableVC: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        print("searchText:", searchText)
+        //print("searchText:", searchText)
         let recipes = viewModel.getAllRecipesWithoutPages()
-        print("recipes count", recipes.count)
+        //print("recipes count", recipes.count)
         let text = searchText.lowercased()
-        print("text...", text)
+        //print("text...", text)
         filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
             guard let recipe = recipe.title else { return false}
             //print("recipe filter is: ", recipe)

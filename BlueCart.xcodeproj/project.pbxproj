@@ -16,6 +16,8 @@
 		559029711FB4B0520055E9D9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559029701FB4B0520055E9D9 /* APIKey.swift */; };
 		55B35E231FB573DA00061C11 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B35E221FB573DA00061C11 /* RecipeDetailViewModel.swift */; };
 		55B35E261FB6B59900061C11 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B35E251FB6B59900061C11 /* IngredientsTableViewCell.swift */; };
+		55B35E2A1FB7C46400061C11 /* SearchBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B35E291FB7C46400061C11 /* SearchBarVC.swift */; };
+		55B35E2C1FB7C58900061C11 /* SearchBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B35E2B1FB7C58900061C11 /* SearchBarTableViewCell.swift */; };
 		55BDEAF41FB1357D00CE4AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEAF31FB1357D00CE4AB8 /* AppDelegate.swift */; };
 		55BDEAF91FB1357D00CE4AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BDEAF71FB1357D00CE4AB8 /* Main.storyboard */; };
 		55BDEAFC1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEAFA1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld */; };
@@ -69,6 +71,8 @@
 		559029701FB4B0520055E9D9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		55B35E221FB573DA00061C11 /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
 		55B35E251FB6B59900061C11 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		55B35E291FB7C46400061C11 /* SearchBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarVC.swift; sourceTree = "<group>"; };
+		55B35E2B1FB7C58900061C11 /* SearchBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewCell.swift; sourceTree = "<group>"; };
 		55BDEAF01FB1357D00CE4AB8 /* Recipe Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BDEAF31FB1357D00CE4AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55BDEAF81FB1357D00CE4AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			children = (
 				55BDEB2E1FB13D6700CE4AB8 /* RecipeTableVC.swift */,
 				55BDEB3B1FB17C7000CE4AB8 /* RecipeDetailVC.swift */,
+				55B35E291FB7C46400061C11 /* SearchBarVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			children = (
 				55B35E251FB6B59900061C11 /* IngredientsTableViewCell.swift */,
 				55BDEB301FB141AC00CE4AB8 /* RecipeTableViewCell.swift */,
+				55B35E2B1FB7C58900061C11 /* SearchBarTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 				55B35E261FB6B59900061C11 /* IngredientsTableViewCell.swift in Sources */,
 				55BDEB2B1FB1366100CE4AB8 /* APIManager.swift in Sources */,
 				559029711FB4B0520055E9D9 /* APIKey.swift in Sources */,
+				55B35E2C1FB7C58900061C11 /* SearchBarTableViewCell.swift in Sources */,
 				559029651FB41A0E0055E9D9 /* DataManager.swift in Sources */,
 				5590296D1FB41FFB0055E9D9 /* RecipeTableViewModel.swift in Sources */,
 				55BDEB381FB1649C00CE4AB8 /* Colors.swift in Sources */,
@@ -580,6 +587,7 @@
 				55BDEB341FB145DF00CE4AB8 /* Constants.swift in Sources */,
 				55B35E231FB573DA00061C11 /* RecipeDetailViewModel.swift in Sources */,
 				55BDEB2D1FB1368100CE4AB8 /* Request.swift in Sources */,
+				55B35E2A1FB7C46400061C11 /* SearchBarVC.swift in Sources */,
 				559029671FB41A490055E9D9 /* CoreDataStack.swift in Sources */,
 				55BDEB3F1FB183FB00CE4AB8 /* Extensions.swift in Sources */,
 				55BDEB661FB2C0C800CE4AB8 /* ImageCache.swift in Sources */,
