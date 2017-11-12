@@ -37,6 +37,7 @@
 		55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB401FB1855D00CE4AB8 /* Recipe.swift */; };
 		55BDEB661FB2C0C800CE4AB8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */; };
 		55BDEB681FB2C0F500CE4AB8 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */; };
+		55CE45781FB8E37B00E4ED1E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE45771FB8E37B00E4ED1E /* Reachability.swift */; };
 		A8FE30BCE827352DDDAD25FE /* Pods_BlueCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */; };
 		D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		55BDEB401FB1855D00CE4AB8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		55CE45771FB8E37B00E4ED1E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
 		80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 				55BDEB3E1FB183FB00CE4AB8 /* Extensions.swift */,
 				55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */,
 				559029701FB4B0520055E9D9 /* APIKey.swift */,
+				55CE45771FB8E37B00E4ED1E /* Reachability.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				55BDEB681FB2C0F500CE4AB8 /* ImageViewExtension.swift in Sources */,
 				5590296B1FB41FC10055E9D9 /* Box.swift in Sources */,
 				55BDEB341FB145DF00CE4AB8 /* Constants.swift in Sources */,
+				55CE45781FB8E37B00E4ED1E /* Reachability.swift in Sources */,
 				55B35E231FB573DA00061C11 /* RecipeDetailViewModel.swift in Sources */,
 				55BDEB2D1FB1368100CE4AB8 /* Request.swift in Sources */,
 				55B35E2A1FB7C46400061C11 /* SearchBarVC.swift in Sources */,
