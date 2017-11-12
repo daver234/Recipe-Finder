@@ -14,6 +14,7 @@ class RecipeTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
+    @IBOutlet weak var recipeImageHeight: NSLayoutConstraint!
     
     // MARK: - Functions
     override func awakeFromNib() {
@@ -26,6 +27,8 @@ class RecipeTableViewCell: UITableViewCell {
 
     func setupView(recipe: Recipe) {
         recipeImage.isHidden = false
+        recipeImageHeight.constant = 150
+
         guard let title = recipe.title else { return }
         recipeTitleLabel.text = title
         print("recipe title", recipe.title ?? "")
@@ -39,6 +42,7 @@ class RecipeTableViewCell: UITableViewCell {
     
     func setupViewIfCoreData(searchTerm: String) {
         recipeImage.isHidden = true
+        recipeImageHeight.constant = 35
         recipeTitleLabel.text = searchTerm
     }
 }

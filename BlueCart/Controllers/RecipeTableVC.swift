@@ -30,10 +30,6 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         setupSearchBar()
         monitorProperties()
         tableView.dataSource = self
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let resultsController = storyboard.instantiateViewController(withIdentifier: Constants.SEARCH_VC)
-        let searchController = UISearchController(searchResultsController: resultsController )
-        searchController.searchResultsUpdater = resultsController as! UISearchResultsUpdating
         searchController.searchBar.delegate = self
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
