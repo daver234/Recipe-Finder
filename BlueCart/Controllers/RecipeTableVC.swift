@@ -14,7 +14,7 @@ import SwiftSpinner
 class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearchResultsUpdating {
     
     // MARK: - Properties
-    var filteredRecipe = [Recipe]()
+    //var filteredRecipe = [Recipe]()
     let searchController = UISearchController(searchResultsController: nil)
     
     private var viewModel = RecipeTableViewModel()
@@ -286,7 +286,10 @@ extension RecipeTableVC: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchTerms = []
         searchTerms = viewModel.getSearchTerms()
-        tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in
+            self?.tableView.reloadData()
+        }
+        //tableView.reloadData()
     }
     
     /// Save search text to CoreData
@@ -296,11 +299,11 @@ extension RecipeTableVC: UISearchBarDelegate {
         viewModel.saveSearchTerm(term: searchText)
     }
     
-    @objc func getRecipesBasedOnSearchText() {
-        guard let searchText = searchController.searchBar.text else { return }
-        // viewModel.loadNewRecipesFromSearchText(searchTerm: searchText)
-        print("now in getRecipesBasedOnSearch", searchText)
-    }
+//    @objc func getRecipesBasedOnSearchText() {
+//        guard let searchText = searchController.searchBar.text else { return }
+//        // viewModel.loadNewRecipesFromSearchText(searchTerm: searchText)
+//        print("now in getRecipesBasedOnSearch", searchText)
+//    }
     
     // MARK: - Functions to filter search text entry
     func updateSearchResults(for searchController: UISearchController) {
@@ -310,13 +313,15 @@ extension RecipeTableVC: UISearchBarDelegate {
     
     /// Returns true if focus in searchbar
     func isSearching() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
+        return searchController.isActive ? true : false
     }
 
     /// Returns true if text is empty or nil
-    func searchBarIsEmpty() -> Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
+//    func searchBarIsEmpty() -> Bool {
+//        let test = searchController.searchBar.text?.isEmpty ?? true
+//        print("searchBarisEmpty: ", test)
+//        return searchController.searchBar.text?.isEmpty ?? true
+//    }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
 //        let recipes = viewModel.getAllRecipesWithoutPages()

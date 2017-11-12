@@ -100,7 +100,7 @@ extension RecipeTableViewModel {
             fetchRequest.sortDescriptors = [sort]
             do {
                 searchTerms = try managedContext.fetch(fetchRequest)
-                print("searchTerms", searchTerms)
+                //print("searchTerms", searchTerms)
             } catch let error as NSError {
                 print("Could not fetch. \(error), \(error.userInfo)")
             }
