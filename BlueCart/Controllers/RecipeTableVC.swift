@@ -10,13 +10,14 @@ import UIKit
 import Kingfisher
 import CoreData
 import SwiftSpinner
+import Reachability
 
 class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearchResultsUpdating {
     
     // MARK: - Properties
-    //var filteredRecipe = [Recipe]()
     let searchController = UISearchController(searchResultsController: nil)
     let reachability = Reachability()!
+    var didShowNoNetworkMessage = false
     
     
     private var viewModel = RecipeTableViewModel()
@@ -24,7 +25,6 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var noNetworkView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +99,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 240, height: 44))
         label.backgroundColor = UIColor.clear
         label.numberOfLines = 0
-        label.font = UIFont(name: "Avenir-Heavy", size: 15)
+        label.font = UIFont(name: Constants.AVENIR_HEAVY, size: 15)
         label.textAlignment = NSTextAlignment.center
         let results = DataManager.instance.totalRecipesRetrieved
         label.text = "Search For Recipes\nFound \(results) Results"
@@ -112,14 +112,10 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         switch reachability.connection {
         case .wifi:
             print("Reachable via WiFi")
-            noNetworkView.isHidden = true
         case .cellular:
             print("Reachable via Cellular")
-            noNetworkView.isHidden = true
         case .none:
-            noNetworkView.isHidden = false
-            //let noConnection = NoConnectivityVC(nibName: "NoConnectivityVC", bundle: nil)
-            // self.present(noConnection, animated: true, completion: nil)
+            TableViewHelper.EmptyMessage(message: Constants.NO_NET_MESSAGE, viewController: self, tableView: tableView)
             print("Network not reachable")
         }
     }
@@ -314,6 +310,7 @@ extension RecipeTableVC: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchTerms = []
         searchTerms = viewModel.getSearchTerms()
+        tableView.backgroundView = UIView(frame: .zero)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in
             self?.tableView.reloadData()
         }

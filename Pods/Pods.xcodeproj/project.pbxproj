@@ -7,219 +7,241 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		017CC654FA3E7438017FA61B631B4AE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E349B2E3B5EA6D235BA481F85E2D73A7 /* Foundation.framework */; };
-		037131B3374815D718C126CFB09787FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E349B2E3B5EA6D235BA481F85E2D73A7 /* Foundation.framework */; };
-		07432E8DEA8B25795C7C545AA67A0187 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FAEF0BC3D1C793DA94D7A1E726D45F /* ImageTransition.swift */; };
-		0744231B4276CDE27CB12C5C084A347E /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37C1A6B895C8CE5353402112FE89430 /* M13CheckboxBounceController.swift */; };
-		106B23C28453668A6CC696D5BA52FA45 /* SwiftSpinner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AFB25F116FC692237E2558C4EF9CF40 /* SwiftSpinner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		10AD5E70FDD53228153032C58FBF4D52 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA2286B651897905A134D4D63E53EC2 /* String+MD5.swift */; };
-		125DE5B46F7F58C237C9F9A9C19BC57B /* SwiftSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF882D0666F482E564D9555857BB836 /* SwiftSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		13FC128B4DD17CD90F02593EAAAE9A67 /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923A98363DB1ABDFEA97D136E1A2355 /* M13CheckboxStrokeController.swift */; };
-		1827E7D94F3A12CA0C58EF33AE4B026D /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D12C7E86CF1EE354392516B6532C3 /* KingfisherOptionsInfo.swift */; };
-		183F3E45381030F3C43E1398361387D3 /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 151C0450026A6F91B2259E9C1854BB70 /* M13Checkbox-dummy.m */; };
-		1DAF3BB88351664576507F774FEB051C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C54CB4F411E138095E123AE7BBE97 /* Filter.swift */; };
-		1EB79404C783C6997ADCC1DD5EC40BC2 /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1242B1AEB1F66AD021AC538373DB0C5 /* M13CheckboxExpandController.swift */; };
-		1F7E4311750D93EA54AD235756700379 /* SwiftSpinner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD55128ED8F24DB7B76A9FE5C692772 /* SwiftSpinner-dummy.m */; };
-		1FCC0970C8435F10768CA84C2025A177 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444B2CEA68EFCD052E9B78EAEB3647B /* Resource.swift */; };
-		2082EB4AA16440FFD5479FAFC0181066 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC44208155A1621C4D05D7184AA880 /* Indicator.swift */; };
-		2110386154BC3992FB1D69D0DA2DAF0A /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB624A3B866541F0B8A8B3B86BB5800 /* M13CheckboxGestureRecognizer.swift */; };
-		282E6F0E67F3799B0ABCB9ED96B666A9 /* RequestModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73DA7361A844C2F8B17270EF02866EB /* RequestModifier.swift */; };
-		2D7E1DE4DA6E8B3BB18A45DFD842D2A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E349B2E3B5EA6D235BA481F85E2D73A7 /* Foundation.framework */; };
-		2E903E65241641AFF0E46CBC57B26015 /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F6986982444D6520C27274FF1A3A4 /* M13CheckboxFadeController.swift */; };
-		2F288ED3641B2B4775884C462AE377E6 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99EB6993CB02C7B63D0F95C712D8CC1A /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		383C9A8DB84B83233633C3A00A2C1608 /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096AE891C90EF8CE03F9EB5AFDBC457 /* KingfisherManager.swift */; };
-		40765AAA791D6DFC0022639E348F0E6A /* FormatIndicatedCacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8D8244D207453F0F1FF6CAC1DA403 /* FormatIndicatedCacheSerializer.swift */; };
-		413C2A3759ABEC870AAE61F28C258C31 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4392FAEB742D067FE9B5ACD937FCB /* ImageDownloader.swift */; };
-		48EC78A50C61424D4DFDC33A325CAA72 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E152A358B091E16F8383642168D3 /* ThreadHelper.swift */; };
-		5B5D8AE167BD8E304CE474A9B8DBA2B4 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = 418C00997624456F99ACE2DC96E22CCE /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D83206A9A4656F11D511158EC8E0784 /* CacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9401EDD9333A3EEDDCF4657EF1744EC /* CacheSerializer.swift */; };
-		60A6C0A8E203FC501D4FDA08C4899AD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1563347B5A20E63B0E77066B928DD40 /* UIKit.framework */; };
-		6853FB4167701B2DF94D7CDFB38B8CAD /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E1DE5E79E1E55B5530E409164F0DE3D /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00E6744FC27896229EB6B3E3DDBF8104 /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D29D65F3C3B0B78860CF6249B3D921D /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		017CC654FA3E7438017FA61B631B4AE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
+		037131B3374815D718C126CFB09787FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
+		07432E8DEA8B25795C7C545AA67A0187 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B2ADA288A57DFBCAADE5183F22DB04 /* ImageTransition.swift */; };
+		0744231B4276CDE27CB12C5C084A347E /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBF346A30D867D11ED6CCF9882F016 /* M13CheckboxBounceController.swift */; };
+		10AD5E70FDD53228153032C58FBF4D52 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E63726BE04988E410E9966D01656DC /* String+MD5.swift */; };
+		1245A0F8118E1151C143F662C68EC280 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
+		13FC128B4DD17CD90F02593EAAAE9A67 /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06489071FB2268FD212E627B0EBC262C /* M13CheckboxStrokeController.swift */; };
+		141345425975C075D1E7619ED19E75F0 /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E025A8B9BC9671C27E32D5CC7B63618 /* ReachabilitySwift-dummy.m */; };
+		1827E7D94F3A12CA0C58EF33AE4B026D /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21320AD4289BE29ADA52FBAC9D28C6E5 /* KingfisherOptionsInfo.swift */; };
+		183F3E45381030F3C43E1398361387D3 /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECAA3C95ED33C715AE4DA6573D2D968B /* M13Checkbox-dummy.m */; };
+		18683BED76B81D3B48CD3DEDC0BD21D5 /* Pods-BlueCart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA999C49B411FF7809E995A31F71F16 /* Pods-BlueCart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D5109C39403D5CFA9C85FD4436BE318 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F8EE9728E08D2F6A2CA0CB0EEBFD0E /* UIKit.framework */; };
+		1DAF3BB88351664576507F774FEB051C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CA42C8AAECDBA266E04354E374E0F9 /* Filter.swift */; };
+		1EB79404C783C6997ADCC1DD5EC40BC2 /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F217638D73AAB814C296A74E82946E /* M13CheckboxExpandController.swift */; };
+		1FCC0970C8435F10768CA84C2025A177 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAED3CCD1F1501420EA47369F98C628 /* Resource.swift */; };
+		2082EB4AA16440FFD5479FAFC0181066 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8326D888A5C98F1137F4599608A4AA2 /* Indicator.swift */; };
+		2110386154BC3992FB1D69D0DA2DAF0A /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1064B7B261C62E05A8AD3E155107E8 /* M13CheckboxGestureRecognizer.swift */; };
+		282E6F0E67F3799B0ABCB9ED96B666A9 /* RequestModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C02F44780293D16C37FEBBE451EE6 /* RequestModifier.swift */; };
+		2E903E65241641AFF0E46CBC57B26015 /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6013ADA21623DC5654E18A8CBC69501A /* M13CheckboxFadeController.swift */; };
+		2F288ED3641B2B4775884C462AE377E6 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5F5D03299A8464FFEAB79EEEE359332 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3294A243500CE323F798A3C627DD838F /* Pods-BlueCart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 487285AD95E0D0DFB1D4DF84A36E2343 /* Pods-BlueCart-dummy.m */; };
+		383C9A8DB84B83233633C3A00A2C1608 /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD3B2DC0274447494AF3FD85F79F96 /* KingfisherManager.swift */; };
+		3F2DC33B95AB3B9C318EF7D232EBA2D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
+		40765AAA791D6DFC0022639E348F0E6A /* FormatIndicatedCacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87961C6692EF8F8EF6032BF4A00127CD /* FormatIndicatedCacheSerializer.swift */; };
+		413C2A3759ABEC870AAE61F28C258C31 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB90F5BC91130CCE254552CFF29220 /* ImageDownloader.swift */; };
+		48EC78A50C61424D4DFDC33A325CAA72 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E0CD942D23374606D5C5A00C5D0B0 /* ThreadHelper.swift */; };
+		4908FD2D862892ED9FA127832E38D043 /* SwiftSpinner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3EF46E174ECEECAE31BE5042B640A5 /* SwiftSpinner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D9B9B991B4E3C2ECEA87EE8E4943E22 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05DBFD009E348D9AC3536579EF3E3A4 /* SwiftSpinner.swift */; };
+		5B5D8AE167BD8E304CE474A9B8DBA2B4 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = 38138C46D40EF495660588E94BD736B2 /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D83206A9A4656F11D511158EC8E0784 /* CacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B3A578E876C3F6DC3A3D8AE46A01CC /* CacheSerializer.swift */; };
+		6853FB4167701B2DF94D7CDFB38B8CAD /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87020D3B055FF619440593AC74F0E3EF /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AEB4CC189A508AB51EE18DDC882068E /* SwiftSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = E1860C24232F4B88AC1DC41E39C069F9 /* SwiftSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7003284F0E7BD5ACB1320634256E9333 /* Pods-BlueCartTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6148F6821ECB46DAC9B11D1E865C6C7 /* Pods-BlueCartTests-dummy.m */; };
-		73908B934D4C840428B25CDD35987566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1563347B5A20E63B0E77066B928DD40 /* UIKit.framework */; };
-		73A3753C550F26AEE354F43D7AA98ACE /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0342B6B19EAB1C5BA53EFFFAFD9D91C /* M13CheckboxSpiralController.swift */; };
-		788B9DEF11E3A863059137CBA0C864FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E349B2E3B5EA6D235BA481F85E2D73A7 /* Foundation.framework */; };
-		7B33D4A87DC96F499E76D0721FB51371 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B67B2040145D38766E8C70A548983F5 /* CoreGraphics.framework */; };
-		7B926A94817CB437E734F8E0E0043C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E349B2E3B5EA6D235BA481F85E2D73A7 /* Foundation.framework */; };
-		7D5AB7A91E820D7EECD12A6EA221D479 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8254474A66E005A063F1EE9205A1D35F /* M13CheckboxRadioPathGenerator.swift */; };
-		7D94389D13C85695A7E5328202FF9CB0 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E54D629ACD3B71997012C77620CB04 /* M13CheckboxDotController.swift */; };
-		80DC15A0582068D6EDE31A6178375C89 /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0FCD00C15382DD53B865A4766AB5A /* M13CheckboxController.swift */; };
-		873BA68C2E24D634D38E4A8BCB74B08D /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC0745CE6E5309C232B25E30524D0B /* Kingfisher.swift */; };
-		8942922B30F9E19A21D2EB015F832D2F /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0598188EAF6951799904B152497D8E0 /* M13CheckboxPathGenerator.swift */; };
-		8B442B1067F78752A7F75ACFF4E10630 /* Pods-BlueCart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA999C49B411FF7809E995A31F71F16 /* Pods-BlueCart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C6EB311B0B897CD705D6F53BDDF0EFB /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E8B1C17D205B8EB94357276E27F4A /* M13CheckboxFlatController.swift */; };
-		8D7D42C25F9430F572E14200C399D57B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283546BEDDA29E813655462BB07CE80 /* ImageCache.swift */; };
-		93D444FC9D79520E14FB8EF178F0B76E /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BFBA75CAA43085C495FB320AF1E59 /* ImageProcessor.swift */; };
-		950D8E334E011B13CC5786595E6AE615 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA971004BC83F40C745FB5111B12557D /* Image.swift */; };
-		97713C0235F372715A3AD292C57C8FEC /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F9C43D9DB4F0C409E1E0AFB3F2C14 /* M13Checkbox+IB.swift */; };
-		A7EC09EC6EFAB3778E0A0341E7DC9CE3 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210568B07AEC139F5564CB7E7A5B184 /* AnimatedImageView.swift */; };
-		AB839F535003BA79950BDC9A0B50D923 /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA07213986A1E1E090B5B90E7D890560 /* M13CheckboxDisclosurePathGenerator.swift */; };
-		AD32A7002068B6EC4B17949FECA0E76F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B0D3268AF4C94630042C496AA0D955 /* CFNetwork.framework */; };
+		73908B934D4C840428B25CDD35987566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F8EE9728E08D2F6A2CA0CB0EEBFD0E /* UIKit.framework */; };
+		73A3753C550F26AEE354F43D7AA98ACE /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60F2BEB1A6EC9B2CE866534ADEA078 /* M13CheckboxSpiralController.swift */; };
+		788B9DEF11E3A863059137CBA0C864FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
+		7AA5CE5F5A8DF61B7F290211DE6C7572 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F220EC8F6DC136C482A0F71559D39 /* SystemConfiguration.framework */; };
+		7B33D4A87DC96F499E76D0721FB51371 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E4B8B8E6B221295AA5C41567795366 /* CoreGraphics.framework */; };
+		7B926A94817CB437E734F8E0E0043C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
+		7D5AB7A91E820D7EECD12A6EA221D479 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED4064D3859796B00BB9E6471435DD /* M13CheckboxRadioPathGenerator.swift */; };
+		7D94389D13C85695A7E5328202FF9CB0 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4ADD77AEB614287F604FA8DFF6ACA /* M13CheckboxDotController.swift */; };
+		80DC15A0582068D6EDE31A6178375C89 /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060092BDF7B109C432C54177CBAE6F21 /* M13CheckboxController.swift */; };
+		873BA68C2E24D634D38E4A8BCB74B08D /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565CC53AE935FCC97D3407FAE3622474 /* Kingfisher.swift */; };
+		8942922B30F9E19A21D2EB015F832D2F /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2ACF29B2C508A776C5E4F52973137F /* M13CheckboxPathGenerator.swift */; };
+		8C6EB311B0B897CD705D6F53BDDF0EFB /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B1F08A1C0BC5D35FB418750935EBF2 /* M13CheckboxFlatController.swift */; };
+		8D7D42C25F9430F572E14200C399D57B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18709DF970DA4878632C9CAFD1C91082 /* ImageCache.swift */; };
+		93D444FC9D79520E14FB8EF178F0B76E /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC226B4740E5525DBC2B5D9F2AB4FCC /* ImageProcessor.swift */; };
+		950D8E334E011B13CC5786595E6AE615 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56FEC094136E26C90DBCF4A3D6668F1 /* Image.swift */; };
+		97713C0235F372715A3AD292C57C8FEC /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58C9473073907C166D7E439AFE2211 /* M13Checkbox+IB.swift */; };
+		A7EC09EC6EFAB3778E0A0341E7DC9CE3 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA743B87FBB4D8F546ABC4EAF126C6F0 /* AnimatedImageView.swift */; };
+		AB839F535003BA79950BDC9A0B50D923 /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516BF1A3710292FF2C627C15390767AE /* M13CheckboxDisclosurePathGenerator.swift */; };
+		AD32A7002068B6EC4B17949FECA0E76F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C469BFD66CC9C6BDB58169318966E348 /* CFNetwork.framework */; };
 		AE200139C56E78577C44F955499EA691 /* Pods-BlueCartUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F5083C58A06DCEB579244FB6909ADD /* Pods-BlueCartUITests-dummy.m */; };
-		B0033530A0EAABBB31CD46CA2899F3BD /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610635737E9AA17EC9E3530DBC1280BB /* Box.swift */; };
-		B5DE980791D4DBD13DF2F0A44893E255 /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA24CA6B380003EF988C449AC324256 /* M13CheckboxAnimationGenerator.swift */; };
-		B7D8254786CE0AE3BF97982B7FAAD198 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C7DA4D37714B75630B530D1E2424DC /* M13CheckboxCheckPathGenerator.swift */; };
+		B0033530A0EAABBB31CD46CA2899F3BD /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91633D3D2EF24008A321ED0549EF9ACB /* Box.swift */; };
+		B5DE980791D4DBD13DF2F0A44893E255 /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266475C561066EBE4BD690F27D3E0D3 /* M13CheckboxAnimationGenerator.swift */; };
+		B7D8254786CE0AE3BF97982B7FAAD198 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AE9648752C35B511AFCF6A154071ED /* M13CheckboxCheckPathGenerator.swift */; };
 		B7FDDEACD34AD41575553A724DE133CE /* Pods-BlueCartTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3452BF3702936AC6C6A0ED8C006A19F2 /* Pods-BlueCartTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD78E8DDD27AF7518D2AE2456285730C /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2AC12083896757BBF5A33B277D98FE /* M13CheckboxAddRemovePathGenerator.swift */; };
+		BD78E8DDD27AF7518D2AE2456285730C /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E514E8D3235E6D120510346EEF890D09 /* M13CheckboxAddRemovePathGenerator.swift */; };
 		C651BE14A9516328999C03B06EBF5E54 /* Pods-BlueCartUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAF57590F2B91D1BD0F01E9271647A6A /* Pods-BlueCartUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C88F144420533BCDEE60E418C316FB8E /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF8929404C2BD66E4F036383B8AE2A /* M13Checkbox.swift */; };
-		CB4222BC34D92C2E06A5BCF730FEFE71 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D156CC461942BB586A1324DB206826 /* Kingfisher-dummy.m */; };
-		CB8DF027448816C623E9B02A3685A59F /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF19BDC4BD3DC1988DA18BE09707631 /* ImageView+Kingfisher.swift */; };
-		D3034363B5DA87E1578936C62206B7CF /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F086F7F50FD266E49E414C8E7902A5E /* SwiftSpinner.swift */; };
-		D4A92F994CF15644C4E95C0258B1DDD9 /* Pods-BlueCart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 487285AD95E0D0DFB1D4DF84A36E2343 /* Pods-BlueCart-dummy.m */; };
-		D5218FB15C76B99D57BDB9EB6B27D7BA /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8869EBFBA8D14F85E0392848B5331 /* M13CheckboxFillController.swift */; };
-		E710FF1F4EB4B125F9C5DBDFE3B9320F /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F17984C55EADD06D0B204AB32F2D6ED /* Placeholder.swift */; };
-		F1B2E25B460788C6EF96DDC49EE4230A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E349B2E3B5EA6D235BA481F85E2D73A7 /* Foundation.framework */; };
-		F99792883819ADBD16123F91F6A9F3F8 /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E3A6B20FD9292BB462C9CF36A83D8B /* ImagePrefetcher.swift */; };
-		FAC3C67720C7E6EF51CCAE58F62645BC /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C32AC94124BCE762597CAF1C9B7D3 /* UIButton+Kingfisher.swift */; };
-		FF4E2AB7D604B3D36AF26C8D7EECE416 /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26887BB6033F9D779D32066AD891707 /* DefaultValues.swift */; };
+		C68980EE70050DB01F8C99A98A107014 /* SwiftSpinner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD49FF093F1B00FE0FD092F6EB0FB8D /* SwiftSpinner-dummy.m */; };
+		C88F144420533BCDEE60E418C316FB8E /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC171EF3FFBE28D106278D3C747FF8D1 /* M13Checkbox.swift */; };
+		CB4222BC34D92C2E06A5BCF730FEFE71 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 647FC8FA77BDCE3C788939B558EE386E /* Kingfisher-dummy.m */; };
+		CB8DF027448816C623E9B02A3685A59F /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9959995767628857A03CBB42D6BF60 /* ImageView+Kingfisher.swift */; };
+		D020CD0D089EFCCE66DA3018F94B2D34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
+		D5218FB15C76B99D57BDB9EB6B27D7BA /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA683764D429FA466AB9FF912BB1761 /* M13CheckboxFillController.swift */; };
+		DDD07B49B1F0475BC77D90E17D48EEB5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5AB250EAB1E3AEDC4F56756214B33 /* Reachability.swift */; };
+		E710FF1F4EB4B125F9C5DBDFE3B9320F /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC822A6D8A8AEFCD39825C6811A29E03 /* Placeholder.swift */; };
+		F99792883819ADBD16123F91F6A9F3F8 /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD66F3CECEBD4507E8AA960DA3A436E /* ImagePrefetcher.swift */; };
+		FAC3C67720C7E6EF51CCAE58F62645BC /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0854608E9D030CE63B2595A88FFAFA /* UIButton+Kingfisher.swift */; };
+		FF4E2AB7D604B3D36AF26C8D7EECE416 /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A1EE6EE8AE228E8882A1DC5654449C /* DefaultValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		612B532FC260138BF3EB86F6CCBEE265 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6F712943B3C5592E82604940D11CE08A;
-			remoteInfo = Kingfisher;
-		};
-		A721A72CEC8B3E59AE33F852B4EEEE4A /* PBXContainerItemProxy */ = {
+		1DAD7ECDDD55080301A9228587D66331 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8CD9FC035D83AD9BA719108E6A9A694F;
 			remoteInfo = M13Checkbox;
 		};
-		BD6308BF56926DE39B3138435E6891A6 /* PBXContainerItemProxy */ = {
+		211B04528C848A3D5BB269B86D9F63CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F1C4F37EDA8CAED570E59134B3FF7787;
+			remoteGlobalIDString = 02B5EB0C0C1A3C82E71E5B5E6572306F;
+			remoteInfo = ReachabilitySwift;
+		};
+		2A9C273763F14BDA3C7ECE25F05C8318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3BCD583C01F8D7FFB9E1638B390A199;
 			remoteInfo = SwiftSpinner;
+		};
+		7A109AAA5CA4CBAF9647EA9DF57FCA1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F712943B3C5592E82604940D11CE08A;
+			remoteInfo = Kingfisher;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01D156CC461942BB586A1324DB206826 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
+		01B3A578E876C3F6DC3A3D8AE46A01CC /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/CacheSerializer.swift; sourceTree = "<group>"; };
 		05C27C4E8B36BB4A73357248B5AF0AEC /* Pods-BlueCartTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartTests-resources.sh"; sourceTree = "<group>"; };
+		060092BDF7B109C432C54177CBAE6F21 /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
+		06489071FB2268FD212E627B0EBC262C /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
 		07803CDCF223AC999243166546208AD7 /* Pods-BlueCart-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCart-resources.sh"; sourceTree = "<group>"; };
-		07E54D629ACD3B71997012C77620CB04 /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
-		0D96C94B3D4594B6BEDDBE51AC0A5ECD /* Pods_BlueCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCartTests.framework; path = "Pods-BlueCartTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F17984C55EADD06D0B204AB32F2D6ED /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Placeholder.swift; sourceTree = "<group>"; };
-		0FF623C468FA244EA4F28C438F75574B /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSpinner.framework; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		151C0450026A6F91B2259E9C1854BB70 /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
-		17B0D3268AF4C94630042C496AA0D955 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		1AA24CA6B380003EF988C449AC324256 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
+		07AD3B2DC0274447494AF3FD85F79F96 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
+		07ED4064D3859796B00BB9E6471435DD /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
+		18709DF970DA4878632C9CAFD1C91082 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/ImageCache.swift; sourceTree = "<group>"; };
 		1B6EDFF0BF667813344410820F10B3E6 /* Pods-BlueCartTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlueCartTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2210568B07AEC139F5564CB7E7A5B184 /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/AnimatedImageView.swift; sourceTree = "<group>"; };
+		1CBD704511366FFC375EC44C182DD131 /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox.framework; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20F217638D73AAB814C296A74E82946E /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
+		21320AD4289BE29ADA52FBAC9D28C6E5 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		23E6BACA5B9E97842E6E2A14D0C6B0F6 /* Pods-BlueCart-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlueCart-acknowledgements.plist"; sourceTree = "<group>"; };
-		2444B2CEA68EFCD052E9B78EAEB3647B /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
 		26FB05A3F5AC73403718ED8ED7E09C51 /* Pods-BlueCartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartUITests.release.xcconfig"; sourceTree = "<group>"; };
-		277985F02DA5B95B474F5BBD3103081E /* Pods_BlueCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCartUITests.framework; path = "Pods-BlueCartUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29466230B3FFDB992228367D25369AD6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DCDCA174A279EACEB84DFD1F38831AC /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
-		2F844FFA18C8D771F09536E4291FB81D /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
-		30176001C06F3EA643D9FDF2752273F0 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C3EF46E174ECEECAE31BE5042B640A5 /* SwiftSpinner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-umbrella.h"; sourceTree = "<group>"; };
+		2C58C9473073907C166D7E439AFE2211 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
+		308C02F44780293D16C37FEBBE451EE6 /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
 		3452BF3702936AC6C6A0ED8C006A19F2 /* Pods-BlueCartTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlueCartTests-umbrella.h"; sourceTree = "<group>"; };
-		3C49AF33424C08D1181856A02EE139D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E1DE5E79E1E55B5530E409164F0DE3D /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
-		418C00997624456F99ACE2DC96E22CCE /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Sources/Kingfisher.h; sourceTree = "<group>"; };
-		44FAEF0BC3D1C793DA94D7A1E726D45F /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/ImageTransition.swift; sourceTree = "<group>"; };
-		473E8B1C17D205B8EB94357276E27F4A /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
+		35A1EE6EE8AE228E8882A1DC5654449C /* DefaultValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValues.swift; path = Sources/DefaultValues.swift; sourceTree = "<group>"; };
+		38138C46D40EF495660588E94BD736B2 /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Sources/Kingfisher.h; sourceTree = "<group>"; };
+		392F166AF070F6FD229B1FDCCB6A1200 /* SwiftSpinner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-prefix.pch"; sourceTree = "<group>"; };
+		403F220EC8F6DC136C482A0F71559D39 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		44D699C6F554902C449EB75DB1A2A9AF /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
 		487285AD95E0D0DFB1D4DF84A36E2343 /* Pods-BlueCart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlueCart-dummy.m"; sourceTree = "<group>"; };
-		4CFC44208155A1621C4D05D7184AA880 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
-		4DF67696E8191F5331FE91A96F9908A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA683764D429FA466AB9FF912BB1761 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
+		4E0854608E9D030CE63B2595A88FFAFA /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
+		4FC07B2A8DD2A28AAE7C4154CD69CA07 /* SwiftSpinner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSpinner.xcconfig; sourceTree = "<group>"; };
 		507842CF4D7AF172FF3EADDEFB2C71E4 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
+		50E4B8B8E6B221295AA5C41567795366 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		516BF1A3710292FF2C627C15390767AE /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
+		5266475C561066EBE4BD690F27D3E0D3 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
+		565CC53AE935FCC97D3407FAE3622474 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
 		5A8D8162BFEDEE0F593A9F91697F4577 /* Pods-BlueCartUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartUITests-resources.sh"; sourceTree = "<group>"; };
-		5B67B2040145D38766E8C70A548983F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		5BBDC0ED552DFD7DA2DB0ABF72E6BDE7 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
-		5BD55128ED8F24DB7B76A9FE5C692772 /* SwiftSpinner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSpinner-dummy.m"; sourceTree = "<group>"; };
-		5DF19BDC4BD3DC1988DA18BE09707631 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
-		5EB624A3B866541F0B8A8B3B86BB5800 /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
-		610635737E9AA17EC9E3530DBC1280BB /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
-		63C7DA4D37714B75630B530D1E2424DC /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
-		65638934B9A90C0EDC1D7F0E1FED84A1 /* SwiftSpinner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftSpinner.modulemap; sourceTree = "<group>"; };
+		5D29D65F3C3B0B78860CF6249B3D921D /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
+		5EAED3CCD1F1501420EA47369F98C628 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
+		6013ADA21623DC5654E18A8CBC69501A /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
+		601EA3480810C860207A47EFCD3657AD /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
+		61E9E1A82059B833E781F407C4B25702 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		647FC8FA77BDCE3C788939B558EE386E /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
+		6649F0E773CB2AEA5F050438EBA5E254 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
+		66CA42C8AAECDBA266E04354E374E0F9 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		67BA4555AD8B0F5637ED7FA4F6601345 /* Pods-BlueCartTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartTests-frameworks.sh"; sourceTree = "<group>"; };
 		68F5083C58A06DCEB579244FB6909ADD /* Pods-BlueCartUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlueCartUITests-dummy.m"; sourceTree = "<group>"; };
-		6A2AC12083896757BBF5A33B277D98FE /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
-		6A2D12C7E86CF1EE354392516B6532C3 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
-		6D446F5C5001A0D1AA84693BEB8FE992 /* SwiftSpinner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-prefix.pch"; sourceTree = "<group>"; };
-		71F0FCD00C15382DD53B865A4766AB5A /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
+		6B1064B7B261C62E05A8AD3E155107E8 /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
+		6E025A8B9BC9671C27E32D5CC7B63618 /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
+		6ED5AB250EAB1E3AEDC4F56756214B33 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
+		71E63726BE04988E410E9966D01656DC /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/String+MD5.swift"; sourceTree = "<group>"; };
 		77C4C1B510830D4E2F5B95EDC0161D34 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A60F2BEB1A6EC9B2CE866534ADEA078 /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
 		7D694A1DA7710E0D9D2AEF0A8779B8C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8096AE891C90EF8CE03F9EB5AFDBC457 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
-		8254474A66E005A063F1EE9205A1D35F /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
+		81F3CD5900A98814E9AB199C8E503C62 /* Pods_BlueCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCartUITests.framework; path = "Pods-BlueCartUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F8EE9728E08D2F6A2CA0CB0EEBFD0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		86BC643B3F24D57170B167E0CA6E7F94 /* Pods-BlueCartTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCartTests.modulemap"; sourceTree = "<group>"; };
-		8ABE1196B3A5A52C6C24E20C34AFD79F /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCart.framework; path = "Pods-BlueCart.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AFB25F116FC692237E2558C4EF9CF40 /* SwiftSpinner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-umbrella.h"; sourceTree = "<group>"; };
+		87020D3B055FF619440593AC74F0E3EF /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
+		87961C6692EF8F8EF6032BF4A00127CD /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
+		8BD4ADD77AEB614287F604FA8DFF6ACA /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
 		8CC6B1C57270B971352BADE63390CE98 /* Pods-BlueCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCart.debug.xcconfig"; sourceTree = "<group>"; };
+		8DDB90F5BC91130CCE254552CFF29220 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/ImageDownloader.swift; sourceTree = "<group>"; };
+		8F7608C59C06EDE5017CF3293719736B /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91633D3D2EF24008A321ED0549EF9ACB /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
+		926D05C3086B957C18FDF60DCA2C3825 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96C8D8244D207453F0F1FF6CAC1DA403 /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
-		98E2484E6DE08D9235689C043D7C4CB8 /* SwiftSpinner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSpinner.xcconfig; sourceTree = "<group>"; };
-		98E8869EBFBA8D14F85E0392848B5331 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
-		99459AA8D518E28FE09B7FE3D97BA4F6 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
-		99EB6993CB02C7B63D0F95C712D8CC1A /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
-		9B6C54CB4F411E138095E123AE7BBE97 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
-		9F086F7F50FD266E49E414C8E7902A5E /* SwiftSpinner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSpinner.swift; path = SwiftSpinner/SwiftSpinner.swift; sourceTree = "<group>"; };
-		A1242B1AEB1F66AD021AC538373DB0C5 /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
+		942E0CD942D23374606D5C5A00C5D0B0 /* ThreadHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadHelper.swift; path = Sources/ThreadHelper.swift; sourceTree = "<group>"; };
+		986090672EBD2FCEA4506669AE2D29BD /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSpinner.framework; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC226B4740E5525DBC2B5D9F2AB4FCC /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; };
+		9E2ACF29B2C508A776C5E4F52973137F /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathGenerator.swift; path = Sources/Paths/M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
 		A1737B09651DEA666201E1A1A03C757F /* Pods-BlueCartTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlueCartTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A25F6986982444D6520C27274FF1A3A4 /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
-		A37C1A6B895C8CE5353402112FE89430 /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
 		A4DB4707249A9CAAA010286E097B0A50 /* Pods-BlueCart-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCart-frameworks.sh"; sourceTree = "<group>"; };
 		A6148F6821ECB46DAC9B11D1E865C6C7 /* Pods-BlueCartTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlueCartTests-dummy.m"; sourceTree = "<group>"; };
-		AA07213986A1E1E090B5B90E7D890560 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
-		ACAC0745CE6E5309C232B25E30524D0B /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
-		ADD4392FAEB742D067FE9B5ACD937FCB /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/ImageDownloader.swift; sourceTree = "<group>"; };
+		AEAE35B83571FCB4F62E301D3AB4DB5D /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
 		B1FC44ED9632FA458C3B5A4A25BE3089 /* Pods-BlueCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCart.release.xcconfig"; sourceTree = "<group>"; };
-		B283546BEDDA29E813655462BB07CE80 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/ImageCache.swift; sourceTree = "<group>"; };
-		B923A98363DB1ABDFEA97D136E1A2355 /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
-		B9401EDD9333A3EEDDCF4657EF1744EC /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/CacheSerializer.swift; sourceTree = "<group>"; };
-		B9BF8929404C2BD66E4F036383B8AE2A /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
-		BBA2286B651897905A134D4D63E53EC2 /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/String+MD5.swift"; sourceTree = "<group>"; };
-		BC3BFBA75CAA43085C495FB320AF1E59 /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; };
-		BE1C32AC94124BCE762597CAF1C9B7D3 /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
-		C4F1192D533868081C4B488B21B0A4F0 /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox.framework; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3AE9648752C35B511AFCF6A154071ED /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
+		C3B2ADA288A57DFBCAADE5183F22DB04 /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/ImageTransition.swift; sourceTree = "<group>"; };
+		C469BFD66CC9C6BDB58169318966E348 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		C4FDBFB6337F56874003610DBFAE7443 /* Pods-BlueCartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C9E3A6B20FD9292BB462C9CF36A83D8B /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
+		C56FEC094136E26C90DBCF4A3D6668F1 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image.swift; sourceTree = "<group>"; };
+		C6F487ADD10F6DE0597BA7C3FDCAF38D /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
+		CC171EF3FFBE28D106278D3C747FF8D1 /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
+		CC822A6D8A8AEFCD39825C6811A29E03 /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Placeholder.swift; sourceTree = "<group>"; };
 		CDA999C49B411FF7809E995A31F71F16 /* Pods-BlueCart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlueCart-umbrella.h"; sourceTree = "<group>"; };
-		CE434370D9371B52D9658F6A2328ADF0 /* M13Checkbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.xcconfig; sourceTree = "<group>"; };
+		CDD66F3CECEBD4507E8AA960DA3A436E /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		CF6922CA718763E9D9814AC05B86E732 /* Pods-BlueCartUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartUITests-frameworks.sh"; sourceTree = "<group>"; };
-		D0342B6B19EAB1C5BA53EFFFAFD9D91C /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
-		D0598188EAF6951799904B152497D8E0 /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathGenerator.swift; path = Sources/Paths/M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
-		D133E152A358B091E16F8383642168D3 /* ThreadHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadHelper.swift; path = Sources/ThreadHelper.swift; sourceTree = "<group>"; };
+		D05DBFD009E348D9AC3536579EF3E3A4 /* SwiftSpinner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSpinner.swift; path = SwiftSpinner/SwiftSpinner.swift; sourceTree = "<group>"; };
+		D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D1E231815C7B78C1C452461C1B7AB730 /* SwiftSpinner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftSpinner.modulemap; sourceTree = "<group>"; };
+		D5B1F08A1C0BC5D35FB418750935EBF2 /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
 		D6C99F528359A3A5B492D2D130B4E2BA /* Pods-BlueCartUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCartUITests.modulemap"; sourceTree = "<group>"; };
 		D85E188AE6A15A3ABBCA094D1ECC0299 /* Pods-BlueCartUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlueCartUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D88F81B78FF45221BCD6B62B9D018004 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Kingfisher.modulemap; sourceTree = "<group>"; };
-		DA971004BC83F40C745FB5111B12557D /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image.swift; sourceTree = "<group>"; };
-		E349B2E3B5EA6D235BA481F85E2D73A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DA743B87FBB4D8F546ABC4EAF126C6F0 /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/AnimatedImageView.swift; sourceTree = "<group>"; };
+		DB5E178E8CAC320F8F293D8DF61D4BF6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE9959995767628857A03CBB42D6BF60 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		DF94951B5E40FD19EA9F6A96E246DB3A /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Kingfisher.modulemap; sourceTree = "<group>"; };
+		DFD49FF093F1B00FE0FD092F6EB0FB8D /* SwiftSpinner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSpinner-dummy.m"; sourceTree = "<group>"; };
+		DFE7A092E9BF0134BC934E9AEC5BB727 /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
+		E13694F6DAC9F10B52651D1F08B101E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1860C24232F4B88AC1DC41E39C069F9 /* SwiftSpinner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftSpinner.h; path = SwiftSpinner/SwiftSpinner.h; sourceTree = "<group>"; };
+		E3D9A2240944A3D849533AAA74A98F79 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E514E8D3235E6D120510346EEF890D09 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
+		E81BE82561552FEA2B38C3FB24C6F13B /* Pods_BlueCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCartTests.framework; path = "Pods-BlueCartTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C7F51E49EC8C2BA4A60B5D4DD28455 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		EA9243B36E5EC39CF975D3904085B7DF /* Pods-BlueCartUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlueCartUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EAF57590F2B91D1BD0F01E9271647A6A /* Pods-BlueCartUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlueCartUITests-umbrella.h"; sourceTree = "<group>"; };
-		ECF882D0666F482E564D9555857BB836 /* SwiftSpinner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftSpinner.h; path = SwiftSpinner/SwiftSpinner.h; sourceTree = "<group>"; };
+		ECAA3C95ED33C715AE4DA6573D2D968B /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
 		EEC74088661E5230DB447F43391D8272 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F1563347B5A20E63B0E77066B928DD40 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		F26887BB6033F9D779D32066AD891707 /* DefaultValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValues.swift; path = Sources/DefaultValues.swift; sourceTree = "<group>"; };
+		F0DBF346A30D867D11ED6CCF9882F016 /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
+		F5F5D03299A8464FFEAB79EEEE359332 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
 		F640B793DAA975DCD9D514B6A080CC38 /* Pods-BlueCart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlueCart-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F73DA7361A844C2F8B17270EF02866EB /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
+		F8326D888A5C98F1137F4599608A4AA2 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
+		F964DA9C27068C94BAE16B2BDAF32B7F /* M13Checkbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.xcconfig; sourceTree = "<group>"; };
 		FA3C1523862359B027C501B1F458B2DE /* Pods-BlueCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCart.modulemap"; sourceTree = "<group>"; };
 		FA4EC590FBA3F4FA46AE04C738F08FD9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA6F9C43D9DB4F0C409E1E0AFB3F2C14 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
+		FC1345D0141CA1012A6AD73226D9CAB4 /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCart.framework; path = "Pods-BlueCart.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2654F46F5AE9AB65A2EEFBBA02FFF4C1 /* Frameworks */ = {
+		10679E1893A9C7397A5447EA64F6216E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B2E25B460788C6EF96DDC49EE4230A /* Foundation.framework in Frameworks */,
+				3F2DC33B95AB3B9C318EF7D232EBA2D8 /* Foundation.framework in Frameworks */,
+				1D5109C39403D5CFA9C85FD4436BE318 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A517BE4F48A2EEF27E991745D2D3D6D /* Frameworks */ = {
+		2054DEC9D8DD382B07F6B590587CF7D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D7E1DE4DA6E8B3BB18A45DFD842D2A0 /* Foundation.framework in Frameworks */,
-				60A6C0A8E203FC501D4FDA08C4899AD3 /* UIKit.framework in Frameworks */,
+				1245A0F8118E1151C143F662C68EC280 /* Foundation.framework in Frameworks */,
+				7AA5CE5F5A8DF61B7F290211DE6C7572 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +252,14 @@
 				7B33D4A87DC96F499E76D0721FB51371 /* CoreGraphics.framework in Frameworks */,
 				788B9DEF11E3A863059137CBA0C864FE /* Foundation.framework in Frameworks */,
 				73908B934D4C840428B25CDD35987566 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D49BCD7F8DCA5C0A793524EC7C6354B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D020CD0D089EFCCE66DA3018F94B2D34 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,40 +309,55 @@
 			path = "Target Support Files/Pods-BlueCart";
 			sourceTree = "<group>";
 		};
-		0CDDBA85E55F961A313A339C90C6862B /* Support Files */ = {
+		1ED0F3C5B0EB361C5A44465AFA0EA62B /* Kingfisher */ = {
 			isa = PBXGroup;
 			children = (
-				29466230B3FFDB992228367D25369AD6 /* Info.plist */,
-				65638934B9A90C0EDC1D7F0E1FED84A1 /* SwiftSpinner.modulemap */,
-				98E2484E6DE08D9235689C043D7C4CB8 /* SwiftSpinner.xcconfig */,
-				5BD55128ED8F24DB7B76A9FE5C692772 /* SwiftSpinner-dummy.m */,
-				6D446F5C5001A0D1AA84693BEB8FE992 /* SwiftSpinner-prefix.pch */,
-				8AFB25F116FC692237E2558C4EF9CF40 /* SwiftSpinner-umbrella.h */,
+				DA743B87FBB4D8F546ABC4EAF126C6F0 /* AnimatedImageView.swift */,
+				91633D3D2EF24008A321ED0549EF9ACB /* Box.swift */,
+				01B3A578E876C3F6DC3A3D8AE46A01CC /* CacheSerializer.swift */,
+				66CA42C8AAECDBA266E04354E374E0F9 /* Filter.swift */,
+				87961C6692EF8F8EF6032BF4A00127CD /* FormatIndicatedCacheSerializer.swift */,
+				C56FEC094136E26C90DBCF4A3D6668F1 /* Image.swift */,
+				18709DF970DA4878632C9CAFD1C91082 /* ImageCache.swift */,
+				8DDB90F5BC91130CCE254552CFF29220 /* ImageDownloader.swift */,
+				CDD66F3CECEBD4507E8AA960DA3A436E /* ImagePrefetcher.swift */,
+				9AC226B4740E5525DBC2B5D9F2AB4FCC /* ImageProcessor.swift */,
+				C3B2ADA288A57DFBCAADE5183F22DB04 /* ImageTransition.swift */,
+				DE9959995767628857A03CBB42D6BF60 /* ImageView+Kingfisher.swift */,
+				F8326D888A5C98F1137F4599608A4AA2 /* Indicator.swift */,
+				38138C46D40EF495660588E94BD736B2 /* Kingfisher.h */,
+				565CC53AE935FCC97D3407FAE3622474 /* Kingfisher.swift */,
+				07AD3B2DC0274447494AF3FD85F79F96 /* KingfisherManager.swift */,
+				21320AD4289BE29ADA52FBAC9D28C6E5 /* KingfisherOptionsInfo.swift */,
+				CC822A6D8A8AEFCD39825C6811A29E03 /* Placeholder.swift */,
+				308C02F44780293D16C37FEBBE451EE6 /* RequestModifier.swift */,
+				5EAED3CCD1F1501420EA47369F98C628 /* Resource.swift */,
+				71E63726BE04988E410E9966D01656DC /* String+MD5.swift */,
+				942E0CD942D23374606D5C5A00C5D0B0 /* ThreadHelper.swift */,
+				4E0854608E9D030CE63B2595A88FFAFA /* UIButton+Kingfisher.swift */,
+				A93F91D7D9A5E730579C9863FBDC233A /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftSpinner";
+			name = Kingfisher;
+			path = Kingfisher;
 			sourceTree = "<group>";
 		};
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+		1FE268D0652BDC45FB5A82F4ADBE225C /* SwiftSpinner */ = {
 			isa = PBXGroup;
 			children = (
-				633BB4514F2E544DA9762719E9D5318A /* iOS */,
+				E1860C24232F4B88AC1DC41E39C069F9 /* SwiftSpinner.h */,
+				D05DBFD009E348D9AC3536579EF3E3A4 /* SwiftSpinner.swift */,
+				95F0BAFF35AD227A36B5875ED092D216 /* Support Files */,
+			);
+			name = SwiftSpinner;
+			path = SwiftSpinner;
+			sourceTree = "<group>";
+		};
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4B2505D77B4A64C9B734692AFBB7FC4 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		161F3B6CBBF479494399550C43AA25F5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3C49AF33424C08D1181856A02EE139D5 /* Info.plist */,
-				2DCDCA174A279EACEB84DFD1F38831AC /* M13Checkbox.modulemap */,
-				CE434370D9371B52D9658F6A2328ADF0 /* M13Checkbox.xcconfig */,
-				151C0450026A6F91B2259E9C1854BB70 /* M13Checkbox-dummy.m */,
-				2F844FFA18C8D771F09536E4291FB81D /* M13Checkbox-prefix.pch */,
-				3E1DE5E79E1E55B5530E409164F0DE3D /* M13Checkbox-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/M13Checkbox";
 			sourceTree = "<group>";
 		};
 		25FD62B3703F193D59A2065D65B54878 /* Targets Support Files */ = {
@@ -323,6 +368,48 @@
 				48052AB8E32D7670EA348DA6D4C84489 /* Pods-BlueCartUITests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		26798D3542D994CEDACDA645C0E7408E /* M13Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				35A1EE6EE8AE228E8882A1DC5654449C /* DefaultValues.swift */,
+				CC171EF3FFBE28D106278D3C747FF8D1 /* M13Checkbox.swift */,
+				2C58C9473073907C166D7E439AFE2211 /* M13Checkbox+IB.swift */,
+				E514E8D3235E6D120510346EEF890D09 /* M13CheckboxAddRemovePathGenerator.swift */,
+				5266475C561066EBE4BD690F27D3E0D3 /* M13CheckboxAnimationGenerator.swift */,
+				F0DBF346A30D867D11ED6CCF9882F016 /* M13CheckboxBounceController.swift */,
+				B3AE9648752C35B511AFCF6A154071ED /* M13CheckboxCheckPathGenerator.swift */,
+				060092BDF7B109C432C54177CBAE6F21 /* M13CheckboxController.swift */,
+				516BF1A3710292FF2C627C15390767AE /* M13CheckboxDisclosurePathGenerator.swift */,
+				8BD4ADD77AEB614287F604FA8DFF6ACA /* M13CheckboxDotController.swift */,
+				20F217638D73AAB814C296A74E82946E /* M13CheckboxExpandController.swift */,
+				6013ADA21623DC5654E18A8CBC69501A /* M13CheckboxFadeController.swift */,
+				4AA683764D429FA466AB9FF912BB1761 /* M13CheckboxFillController.swift */,
+				D5B1F08A1C0BC5D35FB418750935EBF2 /* M13CheckboxFlatController.swift */,
+				6B1064B7B261C62E05A8AD3E155107E8 /* M13CheckboxGestureRecognizer.swift */,
+				9E2ACF29B2C508A776C5E4F52973137F /* M13CheckboxPathGenerator.swift */,
+				07ED4064D3859796B00BB9E6471435DD /* M13CheckboxRadioPathGenerator.swift */,
+				7A60F2BEB1A6EC9B2CE866534ADEA078 /* M13CheckboxSpiralController.swift */,
+				06489071FB2268FD212E627B0EBC262C /* M13CheckboxStrokeController.swift */,
+				E5AFE3024207B88EE32319C1C87BD371 /* Support Files */,
+			);
+			name = M13Checkbox;
+			path = M13Checkbox;
+			sourceTree = "<group>";
+		};
+		2BFD5DA652774B252F3A5F1DEA310CD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3D9A2240944A3D849533AAA74A98F79 /* Kingfisher.framework */,
+				1CBD704511366FFC375EC44C182DD131 /* M13Checkbox.framework */,
+				FC1345D0141CA1012A6AD73226D9CAB4 /* Pods_BlueCart.framework */,
+				E81BE82561552FEA2B38C3FB24C6F13B /* Pods_BlueCartTests.framework */,
+				81F3CD5900A98814E9AB199C8E503C62 /* Pods_BlueCartUITests.framework */,
+				8F7608C59C06EDE5017CF3293719736B /* Reachability.framework */,
+				986090672EBD2FCEA4506669AE2D29BD /* SwiftSpinner.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		48052AB8E32D7670EA348DA6D4C84489 /* Pods-BlueCartUITests */ = {
@@ -343,102 +430,54 @@
 			path = "Target Support Files/Pods-BlueCartUITests";
 			sourceTree = "<group>";
 		};
-		55A3FB0C79D28A354D0451AF2203DEEC /* Products */ = {
+		4D4F3111C23B48B719B4AE25BD6430B8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				30176001C06F3EA643D9FDF2752273F0 /* Kingfisher.framework */,
-				C4F1192D533868081C4B488B21B0A4F0 /* M13Checkbox.framework */,
-				8ABE1196B3A5A52C6C24E20C34AFD79F /* Pods_BlueCart.framework */,
-				0D96C94B3D4594B6BEDDBE51AC0A5ECD /* Pods_BlueCartTests.framework */,
-				277985F02DA5B95B474F5BBD3103081E /* Pods_BlueCartUITests.framework */,
-				0FF623C468FA244EA4F28C438F75574B /* SwiftSpinner.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		579FB321B6BF03D34B7191B728DFE51C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4DF67696E8191F5331FE91A96F9908A1 /* Info.plist */,
-				D88F81B78FF45221BCD6B62B9D018004 /* Kingfisher.modulemap */,
-				99459AA8D518E28FE09B7FE3D97BA4F6 /* Kingfisher.xcconfig */,
-				01D156CC461942BB586A1324DB206826 /* Kingfisher-dummy.m */,
-				5BBDC0ED552DFD7DA2DB0ABF72E6BDE7 /* Kingfisher-prefix.pch */,
-				99EB6993CB02C7B63D0F95C712D8CC1A /* Kingfisher-umbrella.h */,
+				DB5E178E8CAC320F8F293D8DF61D4BF6 /* Info.plist */,
+				AEAE35B83571FCB4F62E301D3AB4DB5D /* ReachabilitySwift.modulemap */,
+				6649F0E773CB2AEA5F050438EBA5E254 /* ReachabilitySwift.xcconfig */,
+				6E025A8B9BC9671C27E32D5CC7B63618 /* ReachabilitySwift-dummy.m */,
+				E9C7F51E49EC8C2BA4A60B5D4DD28455 /* ReachabilitySwift-prefix.pch */,
+				5D29D65F3C3B0B78860CF6249B3D921D /* ReachabilitySwift-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Kingfisher";
+			path = "../Target Support Files/ReachabilitySwift";
 			sourceTree = "<group>";
 		};
-		633BB4514F2E544DA9762719E9D5318A /* iOS */ = {
+		4E0D084F301630000016B413B2CD35C2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				17B0D3268AF4C94630042C496AA0D955 /* CFNetwork.framework */,
-				5B67B2040145D38766E8C70A548983F5 /* CoreGraphics.framework */,
-				E349B2E3B5EA6D235BA481F85E2D73A7 /* Foundation.framework */,
-				F1563347B5A20E63B0E77066B928DD40 /* UIKit.framework */,
+				1ED0F3C5B0EB361C5A44465AFA0EA62B /* Kingfisher */,
+				26798D3542D994CEDACDA645C0E7408E /* M13Checkbox */,
+				E66AF9B1C2E05B9F303C8C752E24DACC /* ReachabilitySwift */,
+				1FE268D0652BDC45FB5A82F4ADBE225C /* SwiftSpinner */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		6964D392914078F71E3E5CC990252774 /* SwiftSpinner */ = {
-			isa = PBXGroup;
-			children = (
-				ECF882D0666F482E564D9555857BB836 /* SwiftSpinner.h */,
-				9F086F7F50FD266E49E414C8E7902A5E /* SwiftSpinner.swift */,
-				0CDDBA85E55F961A313A339C90C6862B /* Support Files */,
-			);
-			name = SwiftSpinner;
-			path = SwiftSpinner;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				96240A8809B6FE049172DBF4CD0613D4 /* Pods */,
-				55A3FB0C79D28A354D0451AF2203DEEC /* Products */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				4E0D084F301630000016B413B2CD35C2 /* Pods */,
+				2BFD5DA652774B252F3A5F1DEA310CD2 /* Products */,
 				25FD62B3703F193D59A2065D65B54878 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		96240A8809B6FE049172DBF4CD0613D4 /* Pods */ = {
+		95F0BAFF35AD227A36B5875ED092D216 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F483462D0B7B8F9E4C0D46D10FA99806 /* Kingfisher */,
-				9D39AFE6D3DC5D218D57A7E0CF4D7B4E /* M13Checkbox */,
-				6964D392914078F71E3E5CC990252774 /* SwiftSpinner */,
+				E13694F6DAC9F10B52651D1F08B101E1 /* Info.plist */,
+				D1E231815C7B78C1C452461C1B7AB730 /* SwiftSpinner.modulemap */,
+				4FC07B2A8DD2A28AAE7C4154CD69CA07 /* SwiftSpinner.xcconfig */,
+				DFD49FF093F1B00FE0FD092F6EB0FB8D /* SwiftSpinner-dummy.m */,
+				392F166AF070F6FD229B1FDCCB6A1200 /* SwiftSpinner-prefix.pch */,
+				2C3EF46E174ECEECAE31BE5042B640A5 /* SwiftSpinner-umbrella.h */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		9D39AFE6D3DC5D218D57A7E0CF4D7B4E /* M13Checkbox */ = {
-			isa = PBXGroup;
-			children = (
-				F26887BB6033F9D779D32066AD891707 /* DefaultValues.swift */,
-				B9BF8929404C2BD66E4F036383B8AE2A /* M13Checkbox.swift */,
-				FA6F9C43D9DB4F0C409E1E0AFB3F2C14 /* M13Checkbox+IB.swift */,
-				6A2AC12083896757BBF5A33B277D98FE /* M13CheckboxAddRemovePathGenerator.swift */,
-				1AA24CA6B380003EF988C449AC324256 /* M13CheckboxAnimationGenerator.swift */,
-				A37C1A6B895C8CE5353402112FE89430 /* M13CheckboxBounceController.swift */,
-				63C7DA4D37714B75630B530D1E2424DC /* M13CheckboxCheckPathGenerator.swift */,
-				71F0FCD00C15382DD53B865A4766AB5A /* M13CheckboxController.swift */,
-				AA07213986A1E1E090B5B90E7D890560 /* M13CheckboxDisclosurePathGenerator.swift */,
-				07E54D629ACD3B71997012C77620CB04 /* M13CheckboxDotController.swift */,
-				A1242B1AEB1F66AD021AC538373DB0C5 /* M13CheckboxExpandController.swift */,
-				A25F6986982444D6520C27274FF1A3A4 /* M13CheckboxFadeController.swift */,
-				98E8869EBFBA8D14F85E0392848B5331 /* M13CheckboxFillController.swift */,
-				473E8B1C17D205B8EB94357276E27F4A /* M13CheckboxFlatController.swift */,
-				5EB624A3B866541F0B8A8B3B86BB5800 /* M13CheckboxGestureRecognizer.swift */,
-				D0598188EAF6951799904B152497D8E0 /* M13CheckboxPathGenerator.swift */,
-				8254474A66E005A063F1EE9205A1D35F /* M13CheckboxRadioPathGenerator.swift */,
-				D0342B6B19EAB1C5BA53EFFFAFD9D91C /* M13CheckboxSpiralController.swift */,
-				B923A98363DB1ABDFEA97D136E1A2355 /* M13CheckboxStrokeController.swift */,
-				161F3B6CBBF479494399550C43AA25F5 /* Support Files */,
-			);
-			name = M13Checkbox;
-			path = M13Checkbox;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftSpinner";
 			sourceTree = "<group>";
 		};
 		A020124BC92A8CD10D14E1DA404259B6 /* Pods-BlueCartTests */ = {
@@ -459,46 +498,64 @@
 			path = "Target Support Files/Pods-BlueCartTests";
 			sourceTree = "<group>";
 		};
-		F483462D0B7B8F9E4C0D46D10FA99806 /* Kingfisher */ = {
+		A93F91D7D9A5E730579C9863FBDC233A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2210568B07AEC139F5564CB7E7A5B184 /* AnimatedImageView.swift */,
-				610635737E9AA17EC9E3530DBC1280BB /* Box.swift */,
-				B9401EDD9333A3EEDDCF4657EF1744EC /* CacheSerializer.swift */,
-				9B6C54CB4F411E138095E123AE7BBE97 /* Filter.swift */,
-				96C8D8244D207453F0F1FF6CAC1DA403 /* FormatIndicatedCacheSerializer.swift */,
-				DA971004BC83F40C745FB5111B12557D /* Image.swift */,
-				B283546BEDDA29E813655462BB07CE80 /* ImageCache.swift */,
-				ADD4392FAEB742D067FE9B5ACD937FCB /* ImageDownloader.swift */,
-				C9E3A6B20FD9292BB462C9CF36A83D8B /* ImagePrefetcher.swift */,
-				BC3BFBA75CAA43085C495FB320AF1E59 /* ImageProcessor.swift */,
-				44FAEF0BC3D1C793DA94D7A1E726D45F /* ImageTransition.swift */,
-				5DF19BDC4BD3DC1988DA18BE09707631 /* ImageView+Kingfisher.swift */,
-				4CFC44208155A1621C4D05D7184AA880 /* Indicator.swift */,
-				418C00997624456F99ACE2DC96E22CCE /* Kingfisher.h */,
-				ACAC0745CE6E5309C232B25E30524D0B /* Kingfisher.swift */,
-				8096AE891C90EF8CE03F9EB5AFDBC457 /* KingfisherManager.swift */,
-				6A2D12C7E86CF1EE354392516B6532C3 /* KingfisherOptionsInfo.swift */,
-				0F17984C55EADD06D0B204AB32F2D6ED /* Placeholder.swift */,
-				F73DA7361A844C2F8B17270EF02866EB /* RequestModifier.swift */,
-				2444B2CEA68EFCD052E9B78EAEB3647B /* Resource.swift */,
-				BBA2286B651897905A134D4D63E53EC2 /* String+MD5.swift */,
-				D133E152A358B091E16F8383642168D3 /* ThreadHelper.swift */,
-				BE1C32AC94124BCE762597CAF1C9B7D3 /* UIButton+Kingfisher.swift */,
-				579FB321B6BF03D34B7191B728DFE51C /* Support Files */,
+				61E9E1A82059B833E781F407C4B25702 /* Info.plist */,
+				DF94951B5E40FD19EA9F6A96E246DB3A /* Kingfisher.modulemap */,
+				44D699C6F554902C449EB75DB1A2A9AF /* Kingfisher.xcconfig */,
+				647FC8FA77BDCE3C788939B558EE386E /* Kingfisher-dummy.m */,
+				C6F487ADD10F6DE0597BA7C3FDCAF38D /* Kingfisher-prefix.pch */,
+				F5F5D03299A8464FFEAB79EEEE359332 /* Kingfisher-umbrella.h */,
 			);
-			name = Kingfisher;
-			path = Kingfisher;
+			name = "Support Files";
+			path = "../Target Support Files/Kingfisher";
+			sourceTree = "<group>";
+		};
+		E4B2505D77B4A64C9B734692AFBB7FC4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C469BFD66CC9C6BDB58169318966E348 /* CFNetwork.framework */,
+				50E4B8B8E6B221295AA5C41567795366 /* CoreGraphics.framework */,
+				D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */,
+				403F220EC8F6DC136C482A0F71559D39 /* SystemConfiguration.framework */,
+				85F8EE9728E08D2F6A2CA0CB0EEBFD0E /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E5AFE3024207B88EE32319C1C87BD371 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				926D05C3086B957C18FDF60DCA2C3825 /* Info.plist */,
+				DFE7A092E9BF0134BC934E9AEC5BB727 /* M13Checkbox.modulemap */,
+				F964DA9C27068C94BAE16B2BDAF32B7F /* M13Checkbox.xcconfig */,
+				ECAA3C95ED33C715AE4DA6573D2D968B /* M13Checkbox-dummy.m */,
+				601EA3480810C860207A47EFCD3657AD /* M13Checkbox-prefix.pch */,
+				87020D3B055FF619440593AC74F0E3EF /* M13Checkbox-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/M13Checkbox";
+			sourceTree = "<group>";
+		};
+		E66AF9B1C2E05B9F303C8C752E24DACC /* ReachabilitySwift */ = {
+			isa = PBXGroup;
+			children = (
+				6ED5AB250EAB1E3AEDC4F56756214B33 /* Reachability.swift */,
+				4D4F3111C23B48B719B4AE25BD6430B8 /* Support Files */,
+			);
+			name = ReachabilitySwift;
+			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		16DC12BF0EECAD1B896DC2F52AAD9B5E /* Headers */ = {
+		13DBAE34E4FA8AF9C5BE4F17EE33AE57 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B442B1067F78752A7F75ACFF4E10630 /* Pods-BlueCart-umbrella.h in Headers */,
+				18683BED76B81D3B48CD3DEDC0BD21D5 /* Pods-BlueCart-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,12 +567,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79D604D82D05E507FE61A609439C9682 /* Headers */ = {
+		56510C44CDC91A2B1D249AB94E66F86C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				106B23C28453668A6CC696D5BA52FA45 /* SwiftSpinner-umbrella.h in Headers */,
-				125DE5B46F7F58C237C9F9A9C19BC57B /* SwiftSpinner.h in Headers */,
+				00E6744FC27896229EB6B3E3DDBF8104 /* ReachabilitySwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,9 +600,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC39A05BC013205A95E1521D831B4907 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4908FD2D862892ED9FA127832E38D043 /* SwiftSpinner-umbrella.h in Headers */,
+				6AEB4CC189A508AB51EE18DDC882068E /* SwiftSpinner.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		02B5EB0C0C1A3C82E71E5B5E6572306F /* ReachabilitySwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B11ECA36F6C34F6DF0423F001093F14F /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */;
+			buildPhases = (
+				3B23E2D1325D2AD07272FF354122CC36 /* Sources */,
+				2054DEC9D8DD382B07F6B590587CF7D2 /* Frameworks */,
+				56510C44CDC91A2B1D249AB94E66F86C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReachabilitySwift;
+			productName = ReachabilitySwift;
+			productReference = 8F7608C59C06EDE5017CF3293719736B /* Reachability.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		18FBE01BE15E4489EBAA1753F3AC36D1 /* Pods-BlueCartUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0837DDBA71083F48EA18F19820CCF4F2 /* Build configuration list for PBXNativeTarget "Pods-BlueCartUITests" */;
@@ -561,7 +643,28 @@
 			);
 			name = "Pods-BlueCartUITests";
 			productName = "Pods-BlueCartUITests";
-			productReference = 277985F02DA5B95B474F5BBD3103081E /* Pods_BlueCartUITests.framework */;
+			productReference = 81F3CD5900A98814E9AB199C8E503C62 /* Pods_BlueCartUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4FADC90F763D789F864817B90963D3C4 /* Pods-BlueCart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BC661D150E023144B62F311EADD0038 /* Build configuration list for PBXNativeTarget "Pods-BlueCart" */;
+			buildPhases = (
+				23ED7FCFC4C6CDF1BF35E75D47A067E2 /* Sources */,
+				8D49BCD7F8DCA5C0A793524EC7C6354B /* Frameworks */,
+				13DBAE34E4FA8AF9C5BE4F17EE33AE57 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A113D2895D5DD660C7D79F13C177F7B8 /* PBXTargetDependency */,
+				6555D359BE5C679860DCBB953ABA3CA0 /* PBXTargetDependency */,
+				069A1730CBEEFDEC58C8ADA622F32722 /* PBXTargetDependency */,
+				692F9797359930770E24604DFF8B24F7 /* PBXTargetDependency */,
+			);
+			name = "Pods-BlueCart";
+			productName = "Pods-BlueCart";
+			productReference = FC1345D0141CA1012A6AD73226D9CAB4 /* Pods_BlueCart.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6F712943B3C5592E82604940D11CE08A /* Kingfisher */ = {
@@ -578,27 +681,7 @@
 			);
 			name = Kingfisher;
 			productName = Kingfisher;
-			productReference = 30176001C06F3EA643D9FDF2752273F0 /* Kingfisher.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7A69A5BE830A21316DAA76D2BABC3F2E /* Pods-BlueCart */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6FE4C5A38B52B127BAF47C58159DCF03 /* Build configuration list for PBXNativeTarget "Pods-BlueCart" */;
-			buildPhases = (
-				8F1D7EF7EA3DE1B62D4089D1E15D9071 /* Sources */,
-				2654F46F5AE9AB65A2EEFBBA02FFF4C1 /* Frameworks */,
-				16DC12BF0EECAD1B896DC2F52AAD9B5E /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				150D85E0E0306C5B85CAA9B6107C73BE /* PBXTargetDependency */,
-				F99888055110E0E80F7B703E4E1762CA /* PBXTargetDependency */,
-				814578B8BFE6CD68D4A4B84B9F31F314 /* PBXTargetDependency */,
-			);
-			name = "Pods-BlueCart";
-			productName = "Pods-BlueCart";
-			productReference = 8ABE1196B3A5A52C6C24E20C34AFD79F /* Pods_BlueCart.framework */;
+			productReference = E3D9A2240944A3D849533AAA74A98F79 /* Kingfisher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8CD9FC035D83AD9BA719108E6A9A694F /* M13Checkbox */ = {
@@ -615,7 +698,7 @@
 			);
 			name = M13Checkbox;
 			productName = M13Checkbox;
-			productReference = C4F1192D533868081C4B488B21B0A4F0 /* M13Checkbox.framework */;
+			productReference = 1CBD704511366FFC375EC44C182DD131 /* M13Checkbox.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9F90B86704067C2A120680093626817A /* Pods-BlueCartTests */ = {
@@ -632,16 +715,16 @@
 			);
 			name = "Pods-BlueCartTests";
 			productName = "Pods-BlueCartTests";
-			productReference = 0D96C94B3D4594B6BEDDBE51AC0A5ECD /* Pods_BlueCartTests.framework */;
+			productReference = E81BE82561552FEA2B38C3FB24C6F13B /* Pods_BlueCartTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F1C4F37EDA8CAED570E59134B3FF7787 /* SwiftSpinner */ = {
+		A3BCD583C01F8D7FFB9E1638B390A199 /* SwiftSpinner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5EA8B4A2240F75407B42E23E75AB4232 /* Build configuration list for PBXNativeTarget "SwiftSpinner" */;
+			buildConfigurationList = 774BEE690EF8AA0FC10BCB73ACA993DA /* Build configuration list for PBXNativeTarget "SwiftSpinner" */;
 			buildPhases = (
-				D303698941F5EB246E565AB13A6856EE /* Sources */,
-				2A517BE4F48A2EEF27E991745D2D3D6D /* Frameworks */,
-				79D604D82D05E507FE61A609439C9682 /* Headers */,
+				C1F37EEC5A3698B77D1156955E7BD4EB /* Sources */,
+				10679E1893A9C7397A5447EA64F6216E /* Frameworks */,
+				EC39A05BC013205A95E1521D831B4907 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -649,7 +732,7 @@
 			);
 			name = SwiftSpinner;
 			productName = SwiftSpinner;
-			productReference = 0FF623C468FA244EA4F28C438F75574B /* SwiftSpinner.framework */;
+			productReference = 986090672EBD2FCEA4506669AE2D29BD /* SwiftSpinner.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -669,26 +752,36 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 55A3FB0C79D28A354D0451AF2203DEEC /* Products */;
+			productRefGroup = 2BFD5DA652774B252F3A5F1DEA310CD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				6F712943B3C5592E82604940D11CE08A /* Kingfisher */,
 				8CD9FC035D83AD9BA719108E6A9A694F /* M13Checkbox */,
-				7A69A5BE830A21316DAA76D2BABC3F2E /* Pods-BlueCart */,
+				4FADC90F763D789F864817B90963D3C4 /* Pods-BlueCart */,
 				9F90B86704067C2A120680093626817A /* Pods-BlueCartTests */,
 				18FBE01BE15E4489EBAA1753F3AC36D1 /* Pods-BlueCartUITests */,
-				F1C4F37EDA8CAED570E59134B3FF7787 /* SwiftSpinner */,
+				02B5EB0C0C1A3C82E71E5B5E6572306F /* ReachabilitySwift */,
+				A3BCD583C01F8D7FFB9E1638B390A199 /* SwiftSpinner */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8F1D7EF7EA3DE1B62D4089D1E15D9071 /* Sources */ = {
+		23ED7FCFC4C6CDF1BF35E75D47A067E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A92F994CF15644C4E95C0258B1DDD9 /* Pods-BlueCart-dummy.m in Sources */,
+				3294A243500CE323F798A3C627DD838F /* Pods-BlueCart-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B23E2D1325D2AD07272FF354122CC36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD07B49B1F0475BC77D90E17D48EEB5 /* Reachability.swift in Sources */,
+				141345425975C075D1E7619ED19E75F0 /* ReachabilitySwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,12 +793,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D303698941F5EB246E565AB13A6856EE /* Sources */ = {
+		C1F37EEC5A3698B77D1156955E7BD4EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F7E4311750D93EA54AD235756700379 /* SwiftSpinner-dummy.m in Sources */,
-				D3034363B5DA87E1578936C62206B7CF /* SwiftSpinner.swift in Sources */,
+				C68980EE70050DB01F8C99A98A107014 /* SwiftSpinner-dummy.m in Sources */,
+				4D9B9B991B4E3C2ECEA87EE8E4943E22 /* SwiftSpinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,63 +870,33 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		150D85E0E0306C5B85CAA9B6107C73BE /* PBXTargetDependency */ = {
+		069A1730CBEEFDEC58C8ADA622F32722 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kingfisher;
-			target = 6F712943B3C5592E82604940D11CE08A /* Kingfisher */;
-			targetProxy = 612B532FC260138BF3EB86F6CCBEE265 /* PBXContainerItemProxy */;
+			name = ReachabilitySwift;
+			target = 02B5EB0C0C1A3C82E71E5B5E6572306F /* ReachabilitySwift */;
+			targetProxy = 211B04528C848A3D5BB269B86D9F63CF /* PBXContainerItemProxy */;
 		};
-		814578B8BFE6CD68D4A4B84B9F31F314 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftSpinner;
-			target = F1C4F37EDA8CAED570E59134B3FF7787 /* SwiftSpinner */;
-			targetProxy = BD6308BF56926DE39B3138435E6891A6 /* PBXContainerItemProxy */;
-		};
-		F99888055110E0E80F7B703E4E1762CA /* PBXTargetDependency */ = {
+		6555D359BE5C679860DCBB953ABA3CA0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = M13Checkbox;
 			target = 8CD9FC035D83AD9BA719108E6A9A694F /* M13Checkbox */;
-			targetProxy = A721A72CEC8B3E59AE33F852B4EEEE4A /* PBXContainerItemProxy */;
+			targetProxy = 1DAD7ECDDD55080301A9228587D66331 /* PBXContainerItemProxy */;
+		};
+		692F9797359930770E24604DFF8B24F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftSpinner;
+			target = A3BCD583C01F8D7FFB9E1638B390A199 /* SwiftSpinner */;
+			targetProxy = 2A9C273763F14BDA3C7ECE25F05C8318 /* PBXContainerItemProxy */;
+		};
+		A113D2895D5DD660C7D79F13C177F7B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kingfisher;
+			target = 6F712943B3C5592E82604940D11CE08A /* Kingfisher */;
+			targetProxy = 7A109AAA5CA4CBAF9647EA9DF57FCA1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		12641BA95D42B969E6F2B6AD3322A769 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CC6B1C57270B971352BADE63390CE98 /* Pods-BlueCart.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BlueCart/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BlueCart/Pods-BlueCart.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_BlueCart;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		1F6209EF3DF83F2FF0ABFF38481E0EFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26FB05A3F5AC73403718ED8ED7E09C51 /* Pods-BlueCartUITests.release.xcconfig */;
@@ -871,7 +934,7 @@
 		};
 		200E9E2D6018CFFB451D424879E57CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99459AA8D518E28FE09B7FE3D97BA4F6 /* Kingfisher.xcconfig */;
+			baseConfigurationReference = 44D699C6F554902C449EB75DB1A2A9AF /* Kingfisher.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -937,6 +1000,39 @@
 			};
 			name = Release;
 		};
+		2EE03CB7CAB94E46484817E41EA7F2C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6649F0E773CB2AEA5F050438EBA5E254 /* ReachabilitySwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Reachability;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		31F6B593CA106BED9AD1FE4249554567 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EEC74088661E5230DB447F43391D8272 /* Pods-BlueCartTests.debug.xcconfig */;
@@ -972,9 +1068,41 @@
 			};
 			name = Debug;
 		};
+		3373C044C2BE26A9CAF90DCFE48CC20C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FC07B2A8DD2A28AAE7C4154CD69CA07 /* SwiftSpinner.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftSpinner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		344E701C98356CAE3EE89E7C7851443C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE434370D9371B52D9658F6A2328ADF0 /* M13Checkbox.xcconfig */;
+			baseConfigurationReference = F964DA9C27068C94BAE16B2BDAF32B7F /* M13Checkbox.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1050,7 +1178,7 @@
 		};
 		5E1C42478591D0234766275E7FBE474F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE434370D9371B52D9658F6A2328ADF0 /* M13Checkbox.xcconfig */;
+			baseConfigurationReference = F964DA9C27068C94BAE16B2BDAF32B7F /* M13Checkbox.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1116,9 +1244,109 @@
 			};
 			name = Debug;
 		};
+		7C20455D7B5948E585BCC18EFCFB43E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6649F0E773CB2AEA5F050438EBA5E254 /* ReachabilitySwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Reachability;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		920B5ED291CD54CC034F6CD8BAFC1542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1FC44ED9632FA458C3B5A4A25BE3089 /* Pods-BlueCart.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BlueCart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BlueCart/Pods-BlueCart.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BlueCart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AA163D549A145C68CA86DB1FF4399392 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FC07B2A8DD2A28AAE7C4154CD69CA07 /* SwiftSpinner.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftSpinner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		B2C25115E33D786F0B77F0367C61818B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99459AA8D518E28FE09B7FE3D97BA4F6 /* Kingfisher.xcconfig */;
+			baseConfigurationReference = 44D699C6F554902C449EB75DB1A2A9AF /* Kingfisher.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1188,41 +1416,9 @@
 			};
 			name = Release;
 		};
-		C2381F585E6D174ABED8BB30461A7166 /* Release */ = {
+		FABC1A319CAEBF3C51026CCF9254284D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98E2484E6DE08D9235689C043D7C4CB8 /* SwiftSpinner.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftSpinner;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C2C2E8A39D6E63C36B41805BF121BD0C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98E2484E6DE08D9235689C043D7C4CB8 /* SwiftSpinner.xcconfig */;
+			baseConfigurationReference = 8CC6B1C57270B971352BADE63390CE98 /* Pods-BlueCart.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1235,46 +1431,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftSpinner;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F7B87A0062F2B4B49FF2942959AA0695 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1FC44ED9632FA458C3B5A4A25BE3089 /* Pods-BlueCart.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-BlueCart/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlueCart/Pods-BlueCart.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1282,11 +1445,12 @@
 				PRODUCT_NAME = Pods_BlueCart;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1309,20 +1473,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5EA8B4A2240F75407B42E23E75AB4232 /* Build configuration list for PBXNativeTarget "SwiftSpinner" */ = {
+		5BC661D150E023144B62F311EADD0038 /* Build configuration list for PBXNativeTarget "Pods-BlueCart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2C2E8A39D6E63C36B41805BF121BD0C /* Debug */,
-				C2381F585E6D174ABED8BB30461A7166 /* Release */,
+				FABC1A319CAEBF3C51026CCF9254284D /* Debug */,
+				920B5ED291CD54CC034F6CD8BAFC1542 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FE4C5A38B52B127BAF47C58159DCF03 /* Build configuration list for PBXNativeTarget "Pods-BlueCart" */ = {
+		774BEE690EF8AA0FC10BCB73ACA993DA /* Build configuration list for PBXNativeTarget "SwiftSpinner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				12641BA95D42B969E6F2B6AD3322A769 /* Debug */,
-				F7B87A0062F2B4B49FF2942959AA0695 /* Release */,
+				AA163D549A145C68CA86DB1FF4399392 /* Debug */,
+				3373C044C2BE26A9CAF90DCFE48CC20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1332,6 +1496,15 @@
 			buildConfigurations = (
 				200E9E2D6018CFFB451D424879E57CC5 /* Debug */,
 				B2C25115E33D786F0B77F0367C61818B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B11ECA36F6C34F6DF0423F001093F14F /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EE03CB7CAB94E46484817E41EA7F2C4 /* Debug */,
+				7C20455D7B5948E585BCC18EFCFB43E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

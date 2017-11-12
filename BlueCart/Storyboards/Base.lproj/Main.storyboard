@@ -25,19 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgh-sa-SC2">
-                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="It appears that there is no network connection.  Tap in the search bar to select and view results from previous searches." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbE-4f-X9F">
-                                        <rect key="frame" x="76" y="47" width="217" height="264"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.41945424679999999" green="0.58069151640000005" blue="0.25099626180000001" alpha="0.67136665240000004" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jOC-n6-vmp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,19 +77,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jOC-n6-vmp" firstAttribute="bottom" secondItem="rcb-j4-viJ" secondAttribute="bottom" id="12y-Ee-NK0"/>
-                            <constraint firstItem="Lgh-sa-SC2" firstAttribute="leading" secondItem="jOC-n6-vmp" secondAttribute="leading" id="1MZ-CZ-DOD"/>
                             <constraint firstItem="jOC-n6-vmp" firstAttribute="trailing" secondItem="rcb-j4-viJ" secondAttribute="trailing" id="1si-Ig-ZVl"/>
-                            <constraint firstItem="Lgh-sa-SC2" firstAttribute="bottom" secondItem="rcb-j4-viJ" secondAttribute="bottom" id="6bQ-DX-oXT"/>
                             <constraint firstItem="jOC-n6-vmp" firstAttribute="leading" secondItem="rcb-j4-viJ" secondAttribute="leading" id="BB4-Ga-CpZ"/>
                             <constraint firstItem="jOC-n6-vmp" firstAttribute="top" secondItem="lpu-9f-Nwo" secondAttribute="top" id="Ij7-I1-xot"/>
-                            <constraint firstItem="Lgh-sa-SC2" firstAttribute="top" secondItem="rcb-j4-viJ" secondAttribute="top" constant="40" id="Zir-VT-1P8"/>
-                            <constraint firstItem="Lgh-sa-SC2" firstAttribute="trailing" secondItem="jOC-n6-vmp" secondAttribute="trailing" id="vnb-JV-GEL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rcb-j4-viJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="opy-pb-qAn"/>
                     <connections>
-                        <outlet property="noNetworkView" destination="Lgh-sa-SC2" id="wPS-VU-AHC"/>
                         <outlet property="tableView" destination="jOC-n6-vmp" id="KKt-Rh-XVC"/>
                         <segue destination="63h-3A-Ql1" kind="show" identifier="toRecipeDetail" id="0QP-T5-xvH"/>
                     </connections>

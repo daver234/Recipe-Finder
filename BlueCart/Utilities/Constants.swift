@@ -50,4 +50,11 @@ struct Constants {
     
     // Search Terms
     static let TOP_RATED = "Top Rated"
+    
+    // Fonts
+    static let AVENIR_HEAVY = "Avenir-Heavy"
+    static let AVENIR = "Avenir"
+    
+    // Messages
+    static let NO_NET_MESSAGE = "It appears you do not have a network connection. Tap in the Search Bar to select and view a previous search offline."
 }

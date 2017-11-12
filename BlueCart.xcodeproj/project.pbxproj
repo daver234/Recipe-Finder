@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		43E8978CCEB45EB7D7CE6286 /* Pods_BlueCartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7EEE5721A81F42A4F3603CB /* Pods_BlueCartUITests.framework */; };
 		559029651FB41A0E0055E9D9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559029641FB41A0E0055E9D9 /* DataManager.swift */; };
-		559029671FB41A490055E9D9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559029661FB41A490055E9D9 /* CoreDataStack.swift */; };
 		5590296B1FB41FC10055E9D9 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590296A1FB41FC10055E9D9 /* Box.swift */; };
 		5590296D1FB41FFB0055E9D9 /* RecipeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590296C1FB41FFB0055E9D9 /* RecipeTableViewModel.swift */; };
 		5590296F1FB4AC320055E9D9 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5590296E1FB4AC320055E9D9 /* recipes.json */; };
@@ -37,7 +36,7 @@
 		55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB401FB1855D00CE4AB8 /* Recipe.swift */; };
 		55BDEB661FB2C0C800CE4AB8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */; };
 		55BDEB681FB2C0F500CE4AB8 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */; };
-		55CE45781FB8E37B00E4ED1E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE45771FB8E37B00E4ED1E /* Reachability.swift */; };
+		55CE457A1FB8F31500E4ED1E /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */; };
 		A8FE30BCE827352DDDAD25FE /* Pods_BlueCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */; };
 		D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */; };
 /* End PBXBuildFile section */
@@ -65,7 +64,6 @@
 		1FB0D0D0DD2A62CC70A404B6 /* Pods-BlueCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCart/Pods-BlueCart.debug.xcconfig"; sourceTree = "<group>"; };
 		50351834EDB0CC0BFBF258A2 /* Pods-BlueCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCart/Pods-BlueCart.release.xcconfig"; sourceTree = "<group>"; };
 		559029641FB41A0E0055E9D9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		559029661FB41A490055E9D9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5590296A1FB41FC10055E9D9 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		5590296C1FB41FFB0055E9D9 /* RecipeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewModel.swift; sourceTree = "<group>"; };
 		5590296E1FB4AC320055E9D9 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
@@ -99,7 +97,7 @@
 		55BDEB401FB1855D00CE4AB8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		55BDEB651FB2C0C800CE4AB8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
-		55CE45771FB8E37B00E4ED1E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 		63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
 		80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				55BDEB401FB1855D00CE4AB8 /* Recipe.swift */,
-				559029661FB41A490055E9D9 /* CoreDataStack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,12 +254,12 @@
 		55BDEB321FB145CA00CE4AB8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				559029701FB4B0520055E9D9 /* APIKey.swift */,
 				55BDEB371FB1649C00CE4AB8 /* Colors.swift */,
 				55BDEB331FB145DF00CE4AB8 /* Constants.swift */,
 				55BDEB3E1FB183FB00CE4AB8 /* Extensions.swift */,
 				55BDEB671FB2C0F500CE4AB8 /* ImageViewExtension.swift */,
-				559029701FB4B0520055E9D9 /* APIKey.swift */,
-				55CE45771FB8E37B00E4ED1E /* Reachability.swift */,
+				55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -581,6 +578,7 @@
 				5590296D1FB41FFB0055E9D9 /* RecipeTableViewModel.swift in Sources */,
 				55BDEB381FB1649C00CE4AB8 /* Colors.swift in Sources */,
 				55BDEAFC1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld in Sources */,
+				55CE457A1FB8F31500E4ED1E /* NoNetworkView.swift in Sources */,
 				55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */,
 				55BDEB3C1FB17C7000CE4AB8 /* RecipeDetailVC.swift in Sources */,
 				55BDEB2F1FB13D6700CE4AB8 /* RecipeTableVC.swift in Sources */,
@@ -588,11 +586,9 @@
 				55BDEB681FB2C0F500CE4AB8 /* ImageViewExtension.swift in Sources */,
 				5590296B1FB41FC10055E9D9 /* Box.swift in Sources */,
 				55BDEB341FB145DF00CE4AB8 /* Constants.swift in Sources */,
-				55CE45781FB8E37B00E4ED1E /* Reachability.swift in Sources */,
 				55B35E231FB573DA00061C11 /* RecipeDetailViewModel.swift in Sources */,
 				55BDEB2D1FB1368100CE4AB8 /* Request.swift in Sources */,
 				55B35E2A1FB7C46400061C11 /* SearchBarVC.swift in Sources */,
-				559029671FB41A490055E9D9 /* CoreDataStack.swift in Sources */,
 				55BDEB3F1FB183FB00CE4AB8 /* Extensions.swift in Sources */,
 				55BDEB661FB2C0C800CE4AB8 /* ImageCache.swift in Sources */,
 				55BDEAF41FB1357D00CE4AB8 /* AppDelegate.swift in Sources */,
