@@ -26,15 +26,17 @@ class DataManager {
     func decodeDataForPage(data: Data, completion: @escaping CompletionHandler) {
         do {
             let result = try JSONDecoder().decode(RecipePage.self, from: data)
-            self.allRecipes.append(result)
+            
+            //self.allRecipes.append(result)
             
             /// Update all variables
-            self.numberOfPagesRetrieved += 1
-            self.updateNewRecipesRetrieved(result: result)
-            guard let recipeResult = result.recipes else { return }
-            for item in recipeResult {
-                allRecipesWithoutPages.append(item)
-            }
+//            self.numberOfPagesRetrieved += 1
+//            self.updateNewRecipesRetrieved(result: result)
+//            guard let recipeResult = result.recipes else { return }
+//            for item in recipeResult {
+//                allRecipesWithoutPages.append(item)
+//            }
+            updateAllVariables(result: result)
             
             completion(true)
         } catch let jsonError {
@@ -43,13 +45,6 @@ class DataManager {
         }
     }
     
-    /// Update count of individual recipes retrieved
-    func updateNewRecipesRetrieved(result: RecipePage) {
-        guard let newRecipesRetrieved = result.recipes?.count else { return }
-        self.totalRecipesRetrieved += newRecipesRetrieved
-        print("^^^ totalRecipesRetrieved", self.totalRecipesRetrieved)
-    }
-   
     /// Decode specific data like a recipe
     func decodeDataForDetail(data: Data, completion: @escaping CompletionHandlerWithData) {
         do {
@@ -59,5 +54,50 @@ class DataManager {
             print("Error decoding JSON from server", jsonError)
             completion(nil, jsonError)
         }
+    }
+    
+    /// Decode data for specific search terms
+    func decodeDataForSpecificSearchTerm(data: Data, completion: @escaping CompletionHandler) {
+        do {
+            resetDataManagerVariables()
+            let result = try JSONDecoder().decode(RecipePage.self, from: data)
+            updateAllVariables(result: result)
+            completion(true)
+        } catch let jsonError {
+            print("Error decoding JSON from server", jsonError)
+            completion(false)
+        }
+    }
+}
+
+
+/// MARK: - Supporting Functions
+extension DataManager {
+    
+    /// Update count of individual recipes retrieved
+    func updateNewRecipesRetrieved(result: RecipePage) {
+        guard let newRecipesRetrieved = result.recipes?.count else { return }
+        self.totalRecipesRetrieved += newRecipesRetrieved
+        print("^^^ totalRecipesRetrieved", self.totalRecipesRetrieved)
+    }
+    
+    /// Update all variables after decode
+    func updateAllVariables(result: RecipePage) {
+        self.numberOfPagesRetrieved += 1
+        self.updateNewRecipesRetrieved(result: result)
+        guard let recipeResult = result.recipes else { return }
+        self.allRecipes.append(result)
+        for item in recipeResult {
+            allRecipesWithoutPages.append(item)
+        }
+    }
+    
+    /// Used when a specific search term has been entered
+    /// Allows re-use of RecipeTableVC
+    func resetDataManagerVariables() {
+        allRecipes.removeAll()
+        numberOfPagesRetrieved = 0
+        totalRecipesRetrieved = 0
+        allRecipesWithoutPages.removeAll()
     }
 }

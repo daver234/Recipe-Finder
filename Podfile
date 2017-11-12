@@ -8,6 +8,7 @@ target 'BlueCart' do
   use_frameworks!
   pod 'Kingfisher', '~> 4.0'
   pod 'M13Checkbox'
+  pod 'SwiftSpinner'
  
  
 

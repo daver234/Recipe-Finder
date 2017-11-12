@@ -79,7 +79,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
             if isNewRecipe {
                 DispatchQueue.main.async {
                     self.setupNavBarTitle()
-                    self.filteredRecipe = self.viewModel.getAllRecipesWithoutPages()
+                    // self.filteredRecipe = self.viewModel.getAllRecipesWithoutPages()
                 }
             }
         }
@@ -248,6 +248,10 @@ extension RecipeTableVC {
             else { return }
             print("search term from table: ", term.lowercased())
             viewModel.getRecipesBasedOnSearchTerm(searchTerm: term)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
+                self?.searchController.isActive = false
+                self?.tableView.reloadData()
+            }
         case false:
             self.performSegue(withIdentifier: Constants.TO_RECIPE_DETAIL, sender: self)
         }

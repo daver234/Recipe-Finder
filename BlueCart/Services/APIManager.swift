@@ -35,9 +35,9 @@ class APIManager {
         print(searchString)
         let partialURL = searchString.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&q=\(partialURL ?? "")"
-//        guard let url = URLComponents(scheme: Constants.SCHEME, host: Constants.HOST, path: Constants.PATH, queryItems: [URLQueryItem(name: Constants.SEARCH_QUERY, value: searchString)]).url else { return }
-        print("here is URL and searchTerm",urlString)
-        
+        guard let url = URL(string: urlString) else { return }
+        print("here is URL and searchTerm", urlString)
+        request.callAPIForSpecificSearchTerm(url: url, completion: completion)
     }
     
     /// Get recipe detail for RecipeDetailVC

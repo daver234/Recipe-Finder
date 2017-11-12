@@ -146,6 +146,7 @@ extension RecipeTableViewModel {
         apiManager.getSpecificSearch(searchString: searchTerm) { [weak self] success in
             if success {
                 print("success in specific search")
+                self?.didGetRecipes.value = true
             }
             
         }

@@ -11,6 +11,7 @@ import Foundation
 protocol AbstractRequestClient {
     func callAPIForPage(url: URL, completion: @escaping CompletionHandler)
     func callAPIForDetail(url: URL, completion: @escaping CompletionHandlerWithData)
+    func callAPIForSpecificSearchTerm(url: URL, completion: @escaping CompletionHandler)
 }
 
 /// Used to make the URL session request
@@ -53,4 +54,25 @@ class Request: AbstractRequestClient {
         }
         task.resume()
     }
+    
+    
+    /// Get a page full of recipes for a specific search term
+    func callAPIForSpecificSearchTerm(url: URL, completion: @escaping CompletionHandler) {
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                print("URLSession error: \(String(describing: error?.localizedDescription))")
+                completion(false)
+                return
+            }
+            
+            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("Data or Response error in URLSession of Request.callAPIForPage")
+                completion(false)
+                return
+            }
+            DataManager.instance.decodeDataForSpecificSearchTerm(data: data, completion: completion)
+        }
+        task.resume()
+    }
+    
 }

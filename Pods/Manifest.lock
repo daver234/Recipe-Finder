@@ -1,15 +1,18 @@
 PODS:
   - Kingfisher (4.2.0)
   - M13Checkbox (3.2.1)
+  - SwiftSpinner (1.5.0)
 
 DEPENDENCIES:
   - Kingfisher (~> 4.0)
   - M13Checkbox
+  - SwiftSpinner
 
 SPEC CHECKSUMS:
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   M13Checkbox: 12376f5b128189432508c240e4a36dc945ab7e4e
+  SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
 
-PODFILE CHECKSUM: 1ecf36a97f665544d99c09bf928c676d29a559ad
+PODFILE CHECKSUM: e83d7268a21fae25dbec4903464986b784247581
 
 COCOAPODS: 1.1.1
