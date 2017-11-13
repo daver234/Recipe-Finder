@@ -162,16 +162,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-8k-mZz">
-                                                    <rect key="frame" x="8" y="3" width="45" height="45"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-8k-mZz" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                    <rect key="frame" x="8" y="2" width="40" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="6o8-3p-eQT"/>
-                                                        <constraint firstAttribute="width" constant="45" id="WLR-1Z-E6G"/>
+                                                        <constraint firstAttribute="height" constant="40" id="6o8-3p-eQT"/>
+                                                        <constraint firstAttribute="width" constant="40" id="WLR-1Z-E6G"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
-                                                            <real key="value" value="0.0"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -179,11 +179,11 @@
                                             <constraints>
                                                 <constraint firstItem="4gw-8k-mZz" firstAttribute="leading" secondItem="DHa-BR-x4Y" secondAttribute="leading" constant="8" id="0Pr-4q-fVV"/>
                                                 <constraint firstItem="tMN-Xe-r8i" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="topMargin" constant="2" id="8YP-3Q-EYa"/>
-                                                <constraint firstAttribute="bottom" secondItem="4gw-8k-mZz" secondAttribute="bottom" constant="-0.5" id="Dv7-aY-Hlc"/>
-                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="3" id="XXy-Ue-7Lj"/>
+                                                <constraint firstAttribute="bottom" secondItem="4gw-8k-mZz" secondAttribute="bottom" constant="5.5" id="Dv7-aY-Hlc"/>
+                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="8" id="XXy-Ue-7Lj"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="tMN-Xe-r8i" secondAttribute="bottom" constant="3" id="vVp-9k-NYL"/>
-                                                <constraint firstItem="4gw-8k-mZz" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="top" constant="3" id="wgS-2v-odO"/>
-                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="3" id="xnY-cR-WU3"/>
+                                                <constraint firstItem="4gw-8k-mZz" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="top" constant="2" id="wgS-2v-odO"/>
+                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="8" id="xnY-cR-WU3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tMN-Xe-r8i" secondAttribute="trailing" constant="8" id="yI1-GF-V3w"/>
                                             </constraints>
                                         </tableViewCellContentView>
