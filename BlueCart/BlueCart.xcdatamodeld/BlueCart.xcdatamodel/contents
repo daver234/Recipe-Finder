@@ -5,6 +5,6 @@
         <attribute name="searchTerms" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Search" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Search" positionX="-200" positionY="-162" width="128" height="75"/>
     </elements>
 </model>
