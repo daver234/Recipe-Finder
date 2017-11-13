@@ -55,6 +55,19 @@ extension RecipeTableViewModel {
     func getSearchTerms() -> [NSManagedObject] {
         return retrievedSavedSearchTerms()
     }
+    
+    /// Function to get all recipes based on search term
+    func getRecipesBasedOnSearchTerm(term: String) {
+        getRecipesBasedOnSearchTermFromServer(searchTerm: term)
+    }
+    
+    /// Function for RecipeTableVC to save a new search term
+    /// Then go get those recipes to display in table view
+    /// - Parameter term:  The search term to save and find recipes
+    func saveSearchTerm(term: String) {
+        saveSearchTermToCoreData(term: term)
+        getRecipesBasedOnSearchTerm(term: term)
+    }
 }
 
 
@@ -63,7 +76,7 @@ extension RecipeTableViewModel {
     /// Saving search terms to CoreData
     /// Handles iOS 10 and above one way and iOS 9 and below another
     /// - Parameter term: The search term to save
-    func saveSearchTerm(term: String) {
+    fileprivate func saveSearchTermToCoreData(term: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         if #available(iOS 10.0, *) {
             let managedContext = appDelegate.persistentContainer.viewContext
@@ -141,7 +154,7 @@ extension RecipeTableViewModel {
         return APIManager(request: request)
     }
     
-    func getRecipesBasedOnSearchTerm(searchTerm: String) {
+    fileprivate func getRecipesBasedOnSearchTermFromServer(searchTerm: String) {
         let apiManager = getAPIManagerInstance()
         apiManager.getSpecificSearch(searchString: searchTerm) { [weak self] success in
             if success {

@@ -273,16 +273,21 @@ extension RecipeTableVC {
             if term == Constants.TOP_RATED {
                 term = ""
             }
-            viewModel.getRecipesBasedOnSearchTerm(searchTerm: term)
-            SwiftSpinner.setTitleFont(UIFont(name: "Avenir-Heavy", size: 22.0))
-            SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
-            SwiftSpinner.show(duration: 2.0, title: "Getting recipes\nfor \(term)...", animated: true)
-            searchController.isActive = false
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-                self?.tableView.reloadData()
-            }
+            viewModel.getRecipesBasedOnSearchTerm(term: term)
+            startSpinner(term: term)
         case false:
             self.performSegue(withIdentifier: Constants.TO_RECIPE_DETAIL, sender: self)
+        }
+    }
+    
+    /// Start spinner to cover for time to make network requests
+    func startSpinner(term: String) {
+        SwiftSpinner.setTitleFont(UIFont(name: "Avenir-Heavy", size: 22.0))
+        SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
+        SwiftSpinner.show(duration: 2.0, title: "Getting recipes\nfor \(term)...", animated: true)
+        searchController.isActive = false
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
+            self?.tableView.reloadData()
         }
     }
 }
@@ -322,6 +327,7 @@ extension RecipeTableVC: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         guard let searchText = searchController.searchBar.text else { return }
         viewModel.saveSearchTerm(term: searchText)
+        startSpinner(term: searchText)
     }
     
 //    @objc func getRecipesBasedOnSearchText() {
@@ -347,16 +353,16 @@ extension RecipeTableVC: UISearchBarDelegate {
 //        print("searchBarisEmpty: ", test)
 //        return searchController.searchBar.text?.isEmpty ?? true
 //    }
-    
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-//        let recipes = viewModel.getAllRecipesWithoutPages()
-//        filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
-//            guard let recipe = recipe.title else { return false}
-//            //print("recipe filter is: ", recipe)
-//            //print("recipe lowercased", recipe.lowercased())
-//            //print("contains:", recipe.lowercased().contains(text))
-//            return recipe.lowercased().contains(searchText.lowercased())
-//        })
-        tableView.reloadData()
-    }
+//    
+//    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+////        let recipes = viewModel.getAllRecipesWithoutPages()
+////        filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
+////            guard let recipe = recipe.title else { return false}
+////            //print("recipe filter is: ", recipe)
+////            //print("recipe lowercased", recipe.lowercased())
+////            //print("contains:", recipe.lowercased().contains(text))
+////            return recipe.lowercased().contains(searchText.lowercased())
+////        })
+//        tableView.reloadData()
+//    }
 }
