@@ -32,7 +32,7 @@ class Request: AbstractRequestClient {
                 completion(false)
                 return
             }
-            self.saveRecipePageForOffline(searchString: Constants.TOP_RATED_FILE, data: data)
+            //self.saveRecipePageForOffline(searchString: Constants.TOP_RATED_FILE, data: data)
             DataManager.instance.decodeDataForPage(data: data, completion: completion)
         }
         task.resume()
@@ -52,7 +52,7 @@ class Request: AbstractRequestClient {
                 completion(nil, error)
                 return
             }
-            // self.saveRecipeDetailForOffline(data: data)
+            // self.saveDetailForOffline(data: data)
             DataManager.instance.decodeDataForDetail(data: data, completion: completion)
         }
         task.resume()
@@ -79,18 +79,7 @@ class Request: AbstractRequestClient {
             
             /// Save data to disk for offline access
             self.saveRecipePageForOffline(searchString: searchString, data: data)
-//            let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
-//            do {
-//                try Disk.save(data, to: .caches, as: "\(termTrimmed).json")
-//            } catch let error as NSError  {
-//                fatalError("""
-//                    Domain: \(error.domain)
-//                    Code: \(error.code)
-//                    Description: \(error.localizedDescription)
-//                    Failure Reason: \(error.localizedFailureReason ?? "")
-//                    Suggestions: \(error.localizedRecoverySuggestion ?? "")
-//                    """)
-//            }
+            
             DataManager.instance.decodeDataForSpecificSearchTerm(data: data, completion: completion)
         }
         task.resume()
@@ -115,16 +104,15 @@ class Request: AbstractRequestClient {
     /// Save RecipeDetail for use in offline.
     /// First create the file if it doesn't exist.  Then append new detailed recipes,
     /// the one with the ingredient list, to the existing file.
-    fileprivate func saveRecipeDetailForOffline(data: Data) {
+    fileprivate func saveDetailForOffline(data: Data) {
         let searchString = Constants.RECIPE_DETAIL_FILE
         let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
         do {
             if Disk.exists("\(termTrimmed).json", in: .caches) {
-                try Disk.save(data, to: .caches, as: "\(termTrimmed).json")
-            } else {
                 try Disk.append(data, to: "\(termTrimmed).json", in: .caches)
+            } else {
+                try Disk.save(data, to: .caches, as: "\(termTrimmed).json")
             }
-            
         } catch let error as NSError  {
             fatalError("""
                 Domain: \(error.domain)

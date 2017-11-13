@@ -28,7 +28,6 @@ class DataManager {
         do {
             let result = try JSONDecoder().decode(RecipePage.self, from: data)
             updateAllVariables(result: result)
-            
             completion(true)
         } catch let jsonError {
             print("Error decoding JSON from server", jsonError)

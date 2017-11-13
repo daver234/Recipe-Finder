@@ -173,11 +173,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
-            if reachability.connection == .none {
-                return searchTerms.count
-            } else {
-                 return searchTerms.count + 1
-            }
+            return searchTerms.count
         }
         return viewModel.getRecipeCount() ?? 0
     }
@@ -188,21 +184,11 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         switch isSearching() {
+            
         case true:
-            switch reachability.connection {
-            case .none:
-                let term = searchTerms[indexPath.row]
-                guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
-                cell.setupViewIfCoreData(searchTerm: searchTermString)
-            case .cellular, .wifi:
-                if indexPath.row == 0 {
-                    cell.setupViewIfCoreData(searchTerm: Constants.TOP_RATED)
-                } else {
-                    let term = searchTerms[indexPath.row - 1]
-                    guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
-                    cell.setupViewIfCoreData(searchTerm: searchTermString)
-                }
-            }
+            let term = searchTerms[indexPath.row]
+            guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
+            cell.setupViewIfCoreData(searchTerm: searchTermString)
             
         case false:
             let specificRecipe = getRecipe(index: indexPath.row)
@@ -257,11 +243,8 @@ extension RecipeTableVC {
         case true:
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let currentCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell,
-                var term = currentCell.recipeTitleLabel.text
+                let term = currentCell.recipeTitleLabel.text
             else { return }
-            if term == Constants.TOP_RATED {
-                term = ""
-            }
             viewModel.getRecipesBasedOnSearchTerm(term: term)
             startSpinner(term: term)
         case false:
