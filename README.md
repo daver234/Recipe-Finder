@@ -49,7 +49,7 @@ The search terms are store and retrieved in CoreData.  Support is there for Core
 ## Requriements for Building and Using
 
 * You need iOS 9 or above.  
-* The pods are checked into to the master repo.  This is because of a pending bug in the M13Checkbox Pod.  So do not run:  Pod Install. 
+* The pods are checked into to the master repo.  This is because of a pending bug in the M13Checkbox Pod.  So do not run:  Pod Install.
 * You need a API Key from Food2Fork.com.  Implement a struct similar to this:
 ```
   struct APIKeyService {
