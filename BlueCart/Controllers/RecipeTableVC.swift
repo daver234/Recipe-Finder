@@ -38,11 +38,11 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         /// Watch for connectivity being turned off
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
@@ -56,25 +56,21 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         self.tableView.deselectSelectedRow(animated: true)
         tableView.reloadData()
     }
+    
     func setupSearchBar() {
         searchController.searchResultsUpdater = self
         searchController.searchBar.returnKeyType = .search
-        // searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.autocapitalizationType = .none
+        searchController.searchBar.autocorrectionType = .yes
         if #available(iOS 9.1, *) {
             searchController.obscuresBackgroundDuringPresentation = false
         } else {
             searchController.dimsBackgroundDuringPresentation = false
         }
         searchController.searchBar.placeholder = "Search for recipes..."
-        
-        //if #available(iOS 11.0, *) {
-        //    navigationItem.searchController = searchController
-        //} else {
         searchController.searchBar.sizeToFit()
         self.tableView.tableHeaderView = searchController.searchBar
-        //}
         definesPresentationContext = true
-        // searchBar.returnKeyType = UIReturnKeyType.search
     }
     
     func monitorProperties() {
@@ -89,7 +85,6 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
             if isNewRecipe {
                 DispatchQueue.main.async {
                     self.setupNavBarTitle()
-                    // self.filteredRecipe = self.viewModel.getAllRecipesWithoutPages()
                 }
             }
         }
@@ -112,11 +107,14 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         switch reachability.connection {
         case .wifi:
             print("Reachable via WiFi")
+            viewModel.isNetworkReachable(reachable: true)
         case .cellular:
             print("Reachable via Cellular")
+            viewModel.isNetworkReachable(reachable: true)
         case .none:
             TableViewHelper.EmptyMessage(message: Constants.NO_NET_MESSAGE, viewController: self, tableView: tableView)
             print("Network not reachable")
+            viewModel.isNetworkReachable(reachable: false)
         }
     }
 }
@@ -124,9 +122,11 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
 
 // MARK: - Prefetch data for tablevView
 extension RecipeTableVC {
+    
     /// Here we prefetch the images for the tableview using Kingfisher.
     /// And, prefetch more data if the user is getting to the end of the tableview.
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
         /// First get the images
         let currentPage = viewModel.getPagesRetrieved() - 1
         let recipes = viewModel.getRecipes(pageNumber: currentPage)
@@ -135,14 +135,12 @@ extension RecipeTableVC {
             guard let stringUrl = item.imageUrl, let url = URL(string: stringUrl) else { return }
             stringToUrl.append(url)
         }
-        // let stringToUrl = recipes { URL(string: $0) }
         let urls = stringToUrl.flatMap { $0 }
         ImagePrefetcher(urls: urls).start()
         
         /// This section is for prefetching more data before the user gets to the end of the tableview with the current data
         /// First, build an array of all the upcoming rows.
         let upcomingRows = indexPaths.map { $0.row }
-        print("&&& here is upcoming rows", upcomingRows)
         
         /// Check to see what the max upcoming row number is
         if let maxIndex = upcomingRows.max() {
@@ -161,9 +159,6 @@ extension RecipeTableVC {
         /// This will then trigger a API call to get more data from the server and return, ideally, before
         /// the user gets to the end of the table.
         if nextPage > currentPage {
-            print("&&& in nextPage >", nextPage)
-            print("&&& Here is current page", currentPage)
-            print("&&& here is maxIndex", maxIndex)
             viewModel.loadRecipes(pageNumber: nextPage)
         }
     }
@@ -178,8 +173,11 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
-            print("count isSearch numRows", searchTerms.count)
-            return searchTerms.count + 1
+            if reachability.connection == .none {
+                return searchTerms.count
+            } else {
+                 return searchTerms.count + 1
+            }
         }
         return viewModel.getRecipeCount() ?? 0
     }
@@ -191,29 +189,26 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         
         switch isSearching() {
         case true:
-            if indexPath.row == 0 {
-                cell.setupViewIfCoreData(searchTerm: Constants.TOP_RATED)
-            } else {
-                let term = searchTerms[indexPath.row - 1]
+            switch reachability.connection {
+            case .none:
+                let term = searchTerms[indexPath.row]
                 guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
                 cell.setupViewIfCoreData(searchTerm: searchTermString)
+            case .cellular, .wifi:
+                if indexPath.row == 0 {
+                    cell.setupViewIfCoreData(searchTerm: Constants.TOP_RATED)
+                } else {
+                    let term = searchTerms[indexPath.row - 1]
+                    guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
+                    cell.setupViewIfCoreData(searchTerm: searchTermString)
+                }
             }
+            
         case false:
             let specificRecipe = getRecipe(index: indexPath.row)
             cell.setupView(recipe: specificRecipe)
         }
         return cell
-    }
-    
-    /// This displays the "end of data" footer view when the user has scolled to the end of the available data.
-    /// Because of the prefetching of data above, the user does not need to see a spinner when more data is loading.
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastSectionIndex = tableView.numberOfSections - 1
-        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
-        if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
-            // tableFooterView.isHidden = false
-            print("Here in willDisplay")
-        }
     }
     
     /// Get search string out of ManagedObject
@@ -227,19 +222,14 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
     /// Get a specific recipe.  Used with setting up tableViewCell
     func getRecipe(index: Int) -> Recipe {
         let recipe: Recipe
-//        if isSearching() {
-//            recipe = Recipe()
-//            print("isSearching in getRecipe")
-//        } else {
-            /// Find the page with the receipt for the cell
-            let pageToGet = index / Constants.PAGE_SIZE
-            
-            /// To get the receipt number within a page of recipes, just need
-            /// the modulus of row to page size
-            let recipeToGet = index % Constants.PAGE_SIZE
-            
-            recipe = viewModel.getRecipe(pageToGet: pageToGet, recipeToGet: recipeToGet)
-        //}
+        /// Find the page with the receipt for the cell
+        let pageToGet = index / Constants.PAGE_SIZE
+        
+        /// To get the receipt number within a page of recipes, just need
+        /// the modulus of row to page size
+        let recipeToGet = index % Constants.PAGE_SIZE
+        
+        recipe = viewModel.getRecipe(pageToGet: pageToGet, recipeToGet: recipeToGet)
         return recipe
     }
 }
@@ -265,7 +255,6 @@ extension RecipeTableVC {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch isSearching() {
         case true:
-            print("did select row")
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let currentCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell,
                 var term = currentCell.recipeTitleLabel.text
@@ -295,31 +284,18 @@ extension RecipeTableVC {
 
 // MARK: - Search
 extension RecipeTableVC: UISearchBarDelegate {
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        // stNSObject.cancelPreviousPerformRequests(withTarget: self)  /// may delete this
-//        guard let searchText = searchController.searchBar.text else { return }
-//        
-//        if searchText.isEmpty {
-//            print("Search is empty")
-//        } else {
-//            // tableView.reloadData()
-//            // perform(#selector(getRecipesBasedOnSearchText), with: nil, afterDelay: 2.0)
-//        }
-//    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        // tableView.reloadData()
-    }
-    
+
     /// Function to get saved searched terms from CoreData
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchTerms = []
         searchTerms = viewModel.getSearchTerms()
         tableView.backgroundView = UIView(frame: .zero)
+        if reachability.connection == .none {
+            searchBar.resignFirstResponder()
+        }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in
             self?.tableView.reloadData()
         }
-        //tableView.reloadData()
     }
     
     /// Save search text to CoreData
@@ -330,39 +306,13 @@ extension RecipeTableVC: UISearchBarDelegate {
         startSpinner(term: searchText)
     }
     
-//    @objc func getRecipesBasedOnSearchText() {
-//        guard let searchText = searchController.searchBar.text else { return }
-//        // viewModel.loadNewRecipesFromSearchText(searchTerm: searchText)
-//        print("now in getRecipesBasedOnSearch", searchText)
-//    }
-    
     // MARK: - Functions to filter search text entry
     func updateSearchResults(for searchController: UISearchController) {
         tableView.reloadData()
-        // filterContentForSearchText(searchController.searchBar.text!)
     }
     
     /// Returns true if focus in searchbar
     func isSearching() -> Bool {
         return searchController.isActive ? true : false
     }
-
-    /// Returns true if text is empty or nil
-//    func searchBarIsEmpty() -> Bool {
-//        let test = searchController.searchBar.text?.isEmpty ?? true
-//        print("searchBarisEmpty: ", test)
-//        return searchController.searchBar.text?.isEmpty ?? true
-//    }
-//    
-//    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-////        let recipes = viewModel.getAllRecipesWithoutPages()
-////        filteredRecipe = recipes.filter( { (recipe: Recipe) -> Bool in
-////            guard let recipe = recipe.title else { return false}
-////            //print("recipe filter is: ", recipe)
-////            //print("recipe lowercased", recipe.lowercased())
-////            //print("contains:", recipe.lowercased().contains(text))
-////            return recipe.lowercased().contains(searchText.lowercased())
-////        })
-//        tableView.reloadData()
-//    }
 }

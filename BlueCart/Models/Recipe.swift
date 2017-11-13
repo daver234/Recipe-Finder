@@ -9,12 +9,12 @@
 import Foundation
 
 /// The data structure for receipes retrieved from the server
-struct RecipePage: Decodable {
+struct RecipePage: Codable {
     var count: Int?
     var recipes: [Recipe]?
 }
 
-struct Recipe {
+struct Recipe: Codable {
     
     /// Enums to map all the Json keys to Swift data structure keys
     enum RootKeys: String, CodingKey {
@@ -37,7 +37,7 @@ struct Recipe {
     var publisherUrl: String?
 }
 
-extension Recipe: Decodable {
+extension Recipe {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: RootKeys.self)
         publisher = try container.decode(String.self, forKey: .publisher)
@@ -56,7 +56,7 @@ extension Recipe: Decodable {
 //    var recipe: RecipeDetail?
 //}
 
-struct RecipeDetail {
+struct RecipeDetail: Codable {
     enum RootKeys: String, CodingKey {
         case publisher
         case url = "f2f_url"
@@ -80,7 +80,7 @@ struct RecipeDetail {
     var title: String?
 }
 
-extension RecipeDetail: Decodable {
+extension RecipeDetail {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: RootKeys.self)
         publisher = try container.decode(String.self, forKey: .publisher)

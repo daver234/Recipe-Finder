@@ -1,21 +1,24 @@
 PODS:
+  - Disk (0.3.2)
   - Kingfisher (4.2.0)
   - M13Checkbox (3.2.1)
   - ReachabilitySwift (4.1.0)
   - SwiftSpinner (1.5.0)
 
 DEPENDENCIES:
+  - Disk (~> 0.3.2)
   - Kingfisher (~> 4.0)
   - M13Checkbox
   - ReachabilitySwift
   - SwiftSpinner
 
 SPEC CHECKSUMS:
+  Disk: 52ebc1656944971c73a661458713b3b7497c1b4c
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   M13Checkbox: 12376f5b128189432508c240e4a36dc945ab7e4e
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
 
-PODFILE CHECKSUM: 3382932aed4bc9ceafd9840a636d43ed34ce939c
+PODFILE CHECKSUM: '08fa20cae774766d3ccd276da01f3a00bad1354f'
 
 COCOAPODS: 1.1.1

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Disk
 
 /// A singleton class to manage data received from the backend
 class DataManager {
@@ -26,16 +27,6 @@ class DataManager {
     func decodeDataForPage(data: Data, completion: @escaping CompletionHandler) {
         do {
             let result = try JSONDecoder().decode(RecipePage.self, from: data)
-            
-            //self.allRecipes.append(result)
-            
-            /// Update all variables
-//            self.numberOfPagesRetrieved += 1
-//            self.updateNewRecipesRetrieved(result: result)
-//            guard let recipeResult = result.recipes else { return }
-//            for item in recipeResult {
-//                allRecipesWithoutPages.append(item)
-//            }
             updateAllVariables(result: result)
             
             completion(true)
@@ -99,5 +90,30 @@ extension DataManager {
         numberOfPagesRetrieved = 0
         totalRecipesRetrieved = 0
         allRecipesWithoutPages.removeAll()
+    }
+}
+
+/// Retrive recent searches to disk for use in offline situations.
+extension DataManager {
+    func retrieveSavedSearchTermResults(term: String) {
+        resetDataManagerVariables()
+        let termTrimmed = term.lowercased().replacingOccurrences(of: " ", with: "")
+        if Disk.exists("\(termTrimmed).json", in: .caches) {
+            print("file exists")
+        }
+        print("termTrimmed \(termTrimmed).json")
+        do {
+            let retrieveSearch = try Disk.retrieve("\(termTrimmed).json", from: .caches, as: RecipePage.self)
+            print("here is retrived: ", retrieveSearch)
+            updateAllVariables(result: retrieveSearch)
+        } catch let error as NSError {
+            fatalError("""
+                Domain: \(error.domain)
+                Code: \(error.code)
+                Description: \(error.localizedDescription)
+                Failure Reason: \(error.localizedFailureReason ?? "")
+                Suggestions: \(error.localizedRecoverySuggestion ?? "")
+                """)
+        }
     }
 }

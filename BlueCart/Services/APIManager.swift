@@ -37,7 +37,7 @@ class APIManager {
         let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&q=\(partialURL ?? "")"
         guard let url = URL(string: urlString) else { return }
         print("here is URL and searchTerm", urlString)
-        request.callAPIForSpecificSearchTerm(url: url, completion: completion)
+        request.callAPIForSpecificSearchTerm(searchString: searchString, url: url, completion: completion)
     }
     
     /// Get recipe detail for RecipeDetailVC
