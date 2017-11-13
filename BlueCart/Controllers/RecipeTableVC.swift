@@ -17,9 +17,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     // MARK: - Properties
     let searchController = UISearchController(searchResultsController: nil)
     let reachability = Reachability()!
-    var didShowNoNetworkMessage = false
-    
-    
+
     private var viewModel = RecipeTableViewModel()
     var searchTerms: [NSManagedObject] = []
     

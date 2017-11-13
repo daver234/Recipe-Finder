@@ -37,6 +37,7 @@
 		55CE45861FB97EDA00E4ED1E /* Recipes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45831FB97ED900E4ED1E /* Recipes.jpg */; };
 		55CE45881FB97EDA00E4ED1E /* recipeDetail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */; };
 		55CE458A1FBA5BF400E4ED1E /* searchTerms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */; };
+		55CE458C1FBA64C000E4ED1E /* Design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE458B1FBA64C000E4ED1E /* Design.jpg */; };
 		A8FE30BCE827352DDDAD25FE /* Pods_BlueCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */; };
 		D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		55CE45831FB97ED900E4ED1E /* Recipes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Recipes.jpg; sourceTree = "<group>"; };
 		55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recipeDetail.jpg; sourceTree = "<group>"; };
 		55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = searchTerms.jpg; sourceTree = "<group>"; };
+		55CE458B1FBA64C000E4ED1E /* Design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Design.jpg; sourceTree = "<group>"; };
 		63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
 		80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 		55BDEAE71FB1357D00CE4AB8 = {
 			isa = PBXGroup;
 			children = (
+				55CE458B1FBA64C000E4ED1E /* Design.jpg */,
 				55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */,
 				55CE457B1FB918B200E4ED1E /* README.md */,
 				55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */,
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CE457C1FB918B200E4ED1E /* README.md in Resources */,
+				55CE458C1FBA64C000E4ED1E /* Design.jpg in Resources */,
 				55CE458A1FBA5BF400E4ED1E /* searchTerms.jpg in Resources */,
 				55CE45861FB97EDA00E4ED1E /* Recipes.jpg in Resources */,
 				5590296F1FB4AC320055E9D9 /* recipes.json in Resources */,

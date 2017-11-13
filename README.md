@@ -27,7 +27,6 @@ Key Features:
 * **Recipe Detail**  Here is the detail of the recipe.  It also loads the ingredients and adds a checkbox next to each ingredient so the user can check the ingredient after it has been used in the recipe.  The check mark does not persist. If you load the recipe again, the check marks will be empty.  Perhaps persistence could be added.
 * **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search  by tapping on the search term. The search terms are sorted for the most recent search first.   
 
-
 ## Architecture
 This app uses the MVVM design pattern.  There is a separate view model for each view controller. A bind and box approach is used for view controllers to monitor view model properties for changes.
 
@@ -37,7 +36,9 @@ The app is written in Swift 4.
 
 CoreData is used to store the search terms. The Disk framework is used to store recipe searches for retrieval when the device is offline.  More work is needed to support offline viewing of individual recipes.
 
-...add design diagram
+Overall Design
+![alt text](Design.jpg "Search term history")
+
 ....more to come
 
 ## Offline
