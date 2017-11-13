@@ -97,6 +97,10 @@ Additional Work To Do
 * Additional inline code documentation
 * More work on error handling
 * Better logging of debug and error messages
+* Checks for odd search strings for searching and file saving
+* Fix warnings in debugger regarding layout constrain issues
+* Fix issues with loading recipe detail 
+* Review offline storage limits and add checks for hitting limits
 * ...
 
 

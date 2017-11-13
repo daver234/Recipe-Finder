@@ -210,8 +210,8 @@
 		55BDEB241FB1358A00CE4AB8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				55BDEB2E1FB13D6700CE4AB8 /* RecipeTableVC.swift */,
 				55BDEB3B1FB17C7000CE4AB8 /* RecipeDetailVC.swift */,
+				55BDEB2E1FB13D6700CE4AB8 /* RecipeTableVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -246,8 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				55BDEB2A1FB1366100CE4AB8 /* APIManager.swift */,
-				55BDEB2C1FB1368100CE4AB8 /* Request.swift */,
 				559029641FB41A0E0055E9D9 /* DataManager.swift */,
+				55BDEB2C1FB1368100CE4AB8 /* Request.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

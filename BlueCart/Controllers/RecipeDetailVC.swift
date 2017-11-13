@@ -81,6 +81,7 @@ extension RecipeDetailVC:  UITableViewDataSource {
             return UITableViewCell()
         }
         cell.setupView(ingredient: ingredientsForCell[indexPath.row])
+        cell.setNeedsLayout()
         return cell
     }
 }

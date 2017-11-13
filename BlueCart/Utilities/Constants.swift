@@ -50,6 +50,7 @@ struct Constants {
     
     // Search Terms
     static let TOP_RATED = "Top Rated"
+    static let RECIPE_DETAIL = "recipeDetail"
     
     // Fonts
     static let AVENIR_HEAVY = "Avenir-Heavy"
@@ -57,4 +58,8 @@ struct Constants {
     
     // Messages
     static let NO_NET_MESSAGE = "It appears you do not have a network connection. Tap in the Search Bar to select and view a previous search offline."
+    
+    // File names
+    static let TOP_RATED_FILE = "toprated"
+    static let RECIPE_DETAIL_FILE = "recipedetail"
 }
