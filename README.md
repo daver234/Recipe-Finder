@@ -1,7 +1,7 @@
 # Recipe Finder
-![alt text](Recipes.png "Choose recipe")
-![alt text](recipeDetail.png "Detail of the recipe")
-![alt text](searchTerms.png "Search term history")
+![alt text](Recipes.jpg "Choose recipe")
+![alt text](recipeDetail.jpg "Detail of the recipe")
+![alt text](searchTerms.jpg "Search term history")
 
 ## Overview
 

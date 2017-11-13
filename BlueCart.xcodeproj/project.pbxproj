@@ -34,9 +34,9 @@
 		55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB401FB1855D00CE4AB8 /* Recipe.swift */; };
 		55CE457A1FB8F31500E4ED1E /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */; };
 		55CE457C1FB918B200E4ED1E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55CE457B1FB918B200E4ED1E /* README.md */; };
-		55CE45801FB91A0300E4ED1E /* searchTerms.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55CE457D1FB91A0200E4ED1E /* searchTerms.PNG */; };
-		55CE45811FB91A0300E4ED1E /* recipeDetail.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55CE457E1FB91A0200E4ED1E /* recipeDetail.PNG */; };
-		55CE45821FB91A0300E4ED1E /* Recipes.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55CE457F1FB91A0200E4ED1E /* Recipes.PNG */; };
+		55CE45861FB97EDA00E4ED1E /* Recipes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45831FB97ED900E4ED1E /* Recipes.jpg */; };
+		55CE45871FB97EDA00E4ED1E /* searchTerms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45841FB97ED900E4ED1E /* searchTerms.jpg */; };
+		55CE45881FB97EDA00E4ED1E /* recipeDetail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */; };
 		A8FE30BCE827352DDDAD25FE /* Pods_BlueCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */; };
 		D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */; };
 /* End PBXBuildFile section */
@@ -95,9 +95,9 @@
 		55BDEB401FB1855D00CE4AB8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 		55CE457B1FB918B200E4ED1E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		55CE457D1FB91A0200E4ED1E /* searchTerms.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchTerms.PNG; sourceTree = "<group>"; };
-		55CE457E1FB91A0200E4ED1E /* recipeDetail.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recipeDetail.PNG; sourceTree = "<group>"; };
-		55CE457F1FB91A0200E4ED1E /* Recipes.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Recipes.PNG; sourceTree = "<group>"; };
+		55CE45831FB97ED900E4ED1E /* Recipes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Recipes.jpg; sourceTree = "<group>"; };
+		55CE45841FB97ED900E4ED1E /* searchTerms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = searchTerms.jpg; sourceTree = "<group>"; };
+		55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recipeDetail.jpg; sourceTree = "<group>"; };
 		63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
 		80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,9 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				55CE457B1FB918B200E4ED1E /* README.md */,
-				55CE457E1FB91A0200E4ED1E /* recipeDetail.PNG */,
-				55CE457F1FB91A0200E4ED1E /* Recipes.PNG */,
-				55CE457D1FB91A0200E4ED1E /* searchTerms.PNG */,
+				55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */,
+				55CE45831FB97ED900E4ED1E /* Recipes.jpg */,
+				55CE45841FB97ED900E4ED1E /* searchTerms.jpg */,
 				5590296E1FB4AC320055E9D9 /* recipes.json */,
 				55BDEB391FB169E300CE4AB8 /* .gitignore */,
 				55BDEAF21FB1357D00CE4AB8 /* BlueCart */,
@@ -404,13 +404,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CE457C1FB918B200E4ED1E /* README.md in Resources */,
-				55CE45801FB91A0300E4ED1E /* searchTerms.PNG in Resources */,
+				55CE45861FB97EDA00E4ED1E /* Recipes.jpg in Resources */,
 				5590296F1FB4AC320055E9D9 /* recipes.json in Resources */,
 				55BDEB3A1FB169E300CE4AB8 /* .gitignore in Resources */,
+				55CE45871FB97EDA00E4ED1E /* searchTerms.jpg in Resources */,
+				55CE45881FB97EDA00E4ED1E /* recipeDetail.jpg in Resources */,
 				55BDEB011FB1357D00CE4AB8 /* LaunchScreen.storyboard in Resources */,
 				55BDEAFE1FB1357D00CE4AB8 /* Assets.xcassets in Resources */,
-				55CE45821FB91A0300E4ED1E /* Recipes.PNG in Resources */,
-				55CE45811FB91A0300E4ED1E /* recipeDetail.PNG in Resources */,
 				55BDEAF91FB1357D00CE4AB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
