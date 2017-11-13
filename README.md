@@ -16,6 +16,7 @@ Key Features:
 - Find new recipes based on search terms.
 - View history of previous search terms, tap to reload.
 - Check for network connection.  If no network, display message.
+- Automatically stores previous search terms and shows in searchbar controller when active
 - View previous recipe search results offline. (but not individual recipes).
 - View count of total number of loaded recipes in navigation bar.  Updated as more recipes load while scrolling.
 - Support for iOS 9 and above.
@@ -24,25 +25,31 @@ Key Features:
 ## Each Screen
 * **Top Rated**  When you first launch, the top rated recipes are shown.  Scroll to load more.
 * **Recipe Detail**  Here is the detail of the recipe.  It also loads the ingredients and adds a checkbox next to each ingredient so the user can check the ingredient after it has been used in the recipe.  The check mark does not persist. If you load the recipe again, the check marks will be empty.  Perhaps persistence could be added.
-* **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search by tapping on the search term. The search terms are sorted for the most recent search first. But Top Rated is always listed on the top when you are are online.  
+* **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search  by tapping on the search term. The search terms are sorted for the most recent search first.   
 
 
 ## Architecture
-MVC and MVVM
-Swift 4
-CoreData for iOS 9 and above
+This app uses the MVVM design pattern.  There is a separate view model for each view controller. A bind and box approach is used for view controllers to monitor view model properties for changes.
+
+The Services classes separate out the different networking tasks: The API calls, the actual request, and the decoding of the JSON to local struct data model.
+
+The app is written in Swift 4.
+
+CoreData is used to store the search terms. The Disk framework is used to store recipe searches for retrieval when the device is offline.  More work is needed to support offline viewing of individual recipes.
+
 ...add design diagram
 ....more to come
 
 ## Offline
 If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of 30 recipes from that search term will appear.  It is limited to 30 right now.  Tap the search bar again and load one of the other search terms, all offline.  The images are stored offline as well using Kingfisher.
 
-## CoreData
-The search terms are store and retrieved in CoreData.  Support is there for CoreData in iOS9 and above.  Apple changed how CoreData works in iOS 10 (maybe iOS 9.1?).  The offline list of 30 recipes is stored using the Disk framework into the local cache storage.  With further work, perhaps this could be stored in CoreData.  Right now, the CoreData stack code is in the AppDelegate but probably should be moved out into a separate class.
+## Use Of CoreData
+The search terms are store and retrieved in CoreData.  Support is there for CoreData in iOS9 and above.  Apple changed how CoreData works in iOS 10 (maybe iOS 9.1?).  The offline list of 30 recipes is stored using the Disk framework into the local cache storage.  With further work, perhaps this could be stored in CoreData.  Right now, the CoreData stack code is in the AppDelegate but probably should be moved out into a separate class. Migrations are not supported at this time.
 
-## Requriements
+## Requriements for Building and Using
 
 * You need iOS 9 or above.  
+* The pods are checked into to the master repo.  This is because of a pending bug in the M13Checkbox Pod.  So do not run:  Pod Install. 
 * You need a API Key from Food2Fork.com.  Implement a struct similar to this:
 ```
   struct APIKeyService {
@@ -99,7 +106,7 @@ Additional Work To Do
 * Better logging of debug and error messages
 * Checks for odd search strings for searching and file saving
 * Fix warnings in debugger regarding layout constrain issues
-* Fix issues with loading recipe detail 
+* Fix issues with loading recipe detail
 * Review offline storage limits and add checks for hitting limits
 * ...
 
