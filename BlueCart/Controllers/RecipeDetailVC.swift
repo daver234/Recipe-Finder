@@ -41,14 +41,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
         configureView()
     }
     
-//    func monitorProperties() {
-//        viewModel.theRecipe.bind { [unowned self] (value) in
-//            // print("@@@@ here is the ingredients", value)
-//            self.ingredientRecipe = value
-//            self.configureView()
-//        }
-    // }
-    
     func configureView() {
         let recipe = viewModel.getRecipe()
         guard let socialRank = recipe["recipe"]?.socialRank,

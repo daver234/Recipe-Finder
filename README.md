@@ -95,6 +95,8 @@ Additional Work To Do
 * Test and adjust for iPad, landscape and different screen sizes. Development was done primarily on a iPhone 7 Plus device and simulator and a iPhone 6 device. All other variants need testing.
 * Look for refactoring and code clean up opportunities
 * Additional inline code documentation
+* More work on error handling
+* Better logging of debug and error messages
 * ...
 
 

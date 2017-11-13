@@ -32,11 +32,9 @@ class APIManager {
     /// - Parameter searchString: The type of recipe wanted, like: "chicken"
     /// - Parameter completion: The completion handler to execute on success or failure
     func getSpecificSearch(searchString: String, completion: @escaping CompletionHandler) {
-        print(searchString)
         let partialURL = searchString.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&q=\(partialURL ?? "")"
         guard let url = URL(string: urlString) else { return }
-        print("here is URL and searchTerm", urlString)
         request.callAPIForSpecificSearchTerm(searchString: searchString, url: url, completion: completion)
     }
     

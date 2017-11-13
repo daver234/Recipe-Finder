@@ -74,7 +74,6 @@ class Request: AbstractRequestClient {
             
             /// Save data to disk for offline access
             let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
-            print("file name to save: \(termTrimmed).json")
             do {
                 try Disk.save(data, to: .caches, as: "\(termTrimmed).json")
             } catch let error as NSError  {
@@ -90,5 +89,4 @@ class Request: AbstractRequestClient {
         }
         task.resume()
     }
-    
 }

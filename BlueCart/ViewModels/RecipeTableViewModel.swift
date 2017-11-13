@@ -65,7 +65,6 @@ extension RecipeTableViewModel {
     
     /// Function to get all recipes based on search term
     func getRecipesBasedOnSearchTerm(term: String) {
-        print("network reachable", networkReachable)
         networkReachable ? getRecipesBasedOnSearchTermFromServer(searchTerm: term) : DataManager.instance.retrieveSavedSearchTermResults(term: term)
         didGetRecipes.value = true
     }
@@ -124,7 +123,6 @@ extension RecipeTableViewModel {
             fetchRequest.sortDescriptors = [sort]
             do {
                 searchTerms = try managedContext.fetch(fetchRequest)
-                //print("searchTerms", searchTerms)
             } catch let error as NSError {
                 print("Could not fetch. \(error), \(error.userInfo)")
             }
@@ -169,7 +167,6 @@ extension RecipeTableViewModel {
         let apiManager = getAPIManagerInstance()
         apiManager.getSpecificSearch(searchString: searchTerm) { [weak self] success in
             if success {
-                print("success in specific search")
                 self?.didGetRecipes.value = true
             }
         }

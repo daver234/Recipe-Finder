@@ -101,10 +101,8 @@ extension DataManager {
         if Disk.exists("\(termTrimmed).json", in: .caches) {
             print("file exists")
         }
-        print("termTrimmed \(termTrimmed).json")
         do {
             let retrieveSearch = try Disk.retrieve("\(termTrimmed).json", from: .caches, as: RecipePage.self)
-            print("here is retrived: ", retrieveSearch)
             updateAllVariables(result: retrieveSearch)
         } catch let error as NSError {
             fatalError("""

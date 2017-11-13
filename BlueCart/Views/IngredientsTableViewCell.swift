@@ -12,14 +12,8 @@ import M13Checkbox
 class IngredientsTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
-    // @IBOutlet weak var checkBoxView: M13Checkbox!
     @IBOutlet weak var ingredientLabel: UILabel!
     @IBOutlet weak var checkedBoxView: UIView!
-    
-    // MARK: - Functions
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
 
     func setupView(ingredient: String) {
         ingredientLabel.text = ingredient
