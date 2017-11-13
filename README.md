@@ -10,20 +10,21 @@ The purpose of this app is to help someone find a recipe.
 Upon starting the app, you are presented with a table of top rated recipes in descending order.  As you scroll, the table loads more recipes.  Tapping on a recipe cell segues to the detail of the recipe.  Tapping on the search bar, allows searching for new recipes based on the search terms entered.
 
 Key Features:
-- Show top rated recipes
-- Show details of recipe including ingredients
-- Check mark next to each ingredient to check off after use when making recipe
-- Find new recipes based on search terms
-- View history of previous search terms, tap to reload
+- Show top rated recipes.
+- Show details of recipe including ingredients.
+- Check mark next to each ingredient to check off after use when making recipe.
+- Find new recipes based on search terms.
+- View history of previous search terms, tap to reload.
 - Check for network connection.  If no network, display message.
-- View previous recipe search results offline. (but not individual recipes)
+- View previous recipe search results offline. (but not individual recipes).
+- View count of total number of loaded recipes in navigation bar.  Updated as more recipes load while scrolling.
 - Support for iOS 9 and above.
 
 
-## Comments on Each Screen
+## Each Screen
 * **Top Rated**  When you first launch, the top rated recipes are shown.  Scroll to load more.
 * **Recipe Detail**  Here is the detail of the recipe.  It also loads the ingredients and adds a checkbox next to each ingredient so the user can check the ingredient after it has been used in the recipe.  The check mark does not persist. If you load the recipe again, the check marks will be empty.  Perhaps persistence could be added.
-* **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search by tapping on the search term. The search terms are sorted for the most recent search first. But Top Rated is always listed on the top when you are are online.  The keyboard does not display while in the searchbar controller and while the phone is offline.  We don't want the user to enter new search terms offline.
+* **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search by tapping on the search term. The search terms are sorted for the most recent search first. But Top Rated is always listed on the top when you are are online.  
 
 
 ## Architecture
