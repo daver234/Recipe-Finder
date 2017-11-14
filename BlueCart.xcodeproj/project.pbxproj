@@ -135,16 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		552DBC4F1FBB6B13003394D3 /* ReadMe */ = {
+		552DBC4F1FBB6B13003394D3 /* ReadMeImages */ = {
 			isa = PBXGroup;
 			children = (
-				55CE457B1FB918B200E4ED1E /* README.md */,
 				55CE458B1FBA64C000E4ED1E /* Design.jpg */,
 				55CE45831FB97ED900E4ED1E /* Recipes.jpg */,
 				55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */,
 				55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */,
 			);
-			path = ReadMe;
+			path = ReadMeImages;
 			sourceTree = "<group>";
 		};
 		559029691FB41FAC0055E9D9 /* ViewModels */ = {
@@ -160,7 +159,8 @@
 		55BDEAE71FB1357D00CE4AB8 = {
 			isa = PBXGroup;
 			children = (
-				552DBC4F1FBB6B13003394D3 /* ReadMe */,
+				55CE457B1FB918B200E4ED1E /* README.md */,
+				552DBC4F1FBB6B13003394D3 /* ReadMeImages */,
 				5590296E1FB4AC320055E9D9 /* recipes.json */,
 				55BDEB391FB169E300CE4AB8 /* .gitignore */,
 				55BDEAF21FB1357D00CE4AB8 /* BlueCart */,
