@@ -26,6 +26,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = Constants.RECIPE_TVC_UITEST
         viewModel.loadRecipes(pageNumber: 0)
         setupNavBarTitle()
         setupSearchBar()

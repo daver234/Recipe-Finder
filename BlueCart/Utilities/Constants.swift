@@ -62,4 +62,7 @@ struct Constants {
     // File names
     static let TOP_RATED_FILE = "toprated"
     static let RECIPE_DETAIL_FILE = "recipedetail"
+    
+    // Accessability Identifiers for UI Testing
+    static let RECIPE_TVC_UITEST = "recipeTableVC"
 }
