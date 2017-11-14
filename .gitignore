@@ -29,6 +29,7 @@ xcuserdata/
 *.dSYM
 APIKey.swift
 icons
+Design.umd3
 
 ## Playgrounds
 timeline.xctimeline
