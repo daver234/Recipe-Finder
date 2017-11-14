@@ -36,7 +36,7 @@ extension RecipeDetailViewModel {
                 return
             }
             self.newRecipe = recipe
-            self.theRecipe = Box(self.newRecipe)
+            self.theRecipe.value = recipe
         }
     }
 }

@@ -23,9 +23,18 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     // MARK: - Properties
     var recipeIdToGet: String?
     var viewModel = RecipeDetailViewModel()
-    var ingredientsCount = 0
-    var ingredientsForCell = [String]()
+    //var ingredientsCount = 0
+    //var ingredientsForCell = [String]()
+    var recipe = Recipe()
     
+//    init(recipe: Recipe) {
+//        super.init(nibName: nil, bundle: nil)
+//        self.recipe = recipe
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +42,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
         guard let recipeId = recipeIdToGet else { return }
         viewModel.loadDetailRecipe(recipeId: recipeId)
-        // monitorProperties()
+        monitorProperties()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,15 +51,16 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     }
     
     func configureView() {
-        let recipe = viewModel.getRecipe()
-        guard let socialRank = recipe["recipe"]?.socialRank,
-            let recipeID = recipe["recipe"]?.recipeID,
-            let imageUrl = recipe["recipe"]?.imageUrl,
-            let title = recipe["recipe"]?.title,
-            let ingredients = recipe["recipe"]?.ingredients
-            else { return }
-        recipeTitleLabel.text = title
-        let socialRankString = String(format: "%.2f", socialRank)
+//        let recipe = viewModel.getRecipe()
+//        guard let socialRank = recipe["recipe"]?.socialRank,
+//            let recipeID = recipe["recipe"]?.recipeID,
+//            let imageUrl = recipe["recipe"]?.imageUrl,
+//            let title = recipe["recipe"]?.title,
+//            let ingredients = recipe["recipe"]?.ingredients
+//            else { return }
+        guard let rank = recipe.socialRank, let recipeID = recipe.recipeID, let imageUrl = recipe.imageUrl else { return }
+        recipeTitleLabel.text = recipe.title
+        let socialRankString = String(format: "%.2f", rank)
         socialRankLabel.text = socialRankString
         recipeIdLabel.text = recipeID
         let image = UIImage(named: Constants.LOADING_IMAGE)
@@ -58,10 +68,20 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
         DispatchQueue.main.async {
             self.recipeImage.kf.setImage(with: url, placeholder: image)
         }
-        ingredientsCount = ingredients.count
-        ingredientsForCell = ingredients
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+//        ingredientsCount = ingredients.count
+//        ingredientsForCell = ingredients
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+    }
+    
+    func monitorProperties() {
+        viewModel.theRecipe.bind { [unowned self] (value) in
+            DispatchQueue.main.async {
+//                self.newRecipe = value
+//                print("value is: ", value)
+                self.tableView.reloadData()
+            }
         }
     }
 }
@@ -73,14 +93,16 @@ extension RecipeDetailVC:  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredientsCount
+        guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else { return 0 }
+        return  ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.INGREDIENTS, for: indexPath) as? IngredientsTableViewCell else {
             return UITableViewCell()
         }
-        cell.setupView(ingredient: ingredientsForCell[indexPath.row])
+        guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else { return UITableViewCell() }
+        cell.setupView(ingredient: ingredients[indexPath.row])
         cell.setNeedsLayout()
         return cell
     }

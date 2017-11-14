@@ -225,13 +225,14 @@ extension RecipeTableVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch isSearching() {
         case true:
-            print("do something")
+            print("Don't segue since the search terms are displaying.")
         case false:
             if segue.identifier == Constants.TO_RECIPE_DETAIL {
                 if let indexPath = tableView.indexPathForSelectedRow {
-                    let detailRecipe = getRecipe(index: indexPath.row)
+                    let sendRecipe = getRecipe(index: indexPath.row)
                     guard let destination = segue.destination as? RecipeDetailVC else { return }
-                    destination.recipeIdToGet = detailRecipe.recipeID
+                    destination.recipeIdToGet = sendRecipe.recipeID
+                    destination.recipe = sendRecipe
                 }
             }
         }

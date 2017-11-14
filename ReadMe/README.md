@@ -28,7 +28,9 @@ Key Features:
 * **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search  by tapping on the search term. The search terms are sorted for the most recent search first.   
 
 ## Architecture
-This app uses the MVVM design pattern.  There is a separate view model for each view controller. A bind and box approach is used for view controllers to monitor view model properties for changes.
+This app uses the MVVM design pattern.  There is a separate view model for each view controller.
+
+A bind and box approach is used for view controllers to monitor view model properties for changes. With this approach, the view controllers can observe changes to the data and then update the views. The Bind class is a wrapper that uses generics to be compatible with any type. This binding mechanism allows things like text fields to update when the data changes.
 
 The Services classes separate out the different networking tasks: The API calls, the actual request, and the decoding of the JSON to local struct data model.
 
