@@ -90,7 +90,7 @@ fileprivate var controller: M13CheckboxController = M13CheckboxStrokeController(
 ---
 
 Additional Work To Do
-* Unit and UI tests
+* Add more unit and UI tests - a few included now.
 * Continue working on documentation
 * Improve offline. Perhaps store more than 30
 * Perhaps add Top Rated recipes to offline
