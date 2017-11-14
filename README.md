@@ -1,7 +1,7 @@
 # Recipe Finder
-![alt text](\ReadMeImages\Recipes.jpg "Choose recipe")
-![alt text](\ReadMeImages\recipeDetail.jpg "Detail of the recipe")
-![alt text](\ReadMeImages\searchTerms.jpg "Search term history")
+![alt text](ReadMeImages/Recipes.jpg "Choose recipe")
+![alt text](ReadMeImages/recipeDetail.jpg "Detail of the recipe")
+![alt text](ReadMeImages/searchTerms.jpg "Search term history")
 
 ## Overview
 
