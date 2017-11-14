@@ -21,30 +21,32 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    var recipeIdToGet: String?
+    // var recipeIdToGet: String?
+    var recipeFromTable: Recipe?
     var viewModel = RecipeDetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = Constants.RECIPE_TITLE
         tableView.dataSource = self
-        guard let recipeId = recipeIdToGet else { return }
+        guard let recipe = recipeFromTable, let recipeId = recipe.recipeID else { return }
         viewModel.loadDetailRecipe(recipeId: recipeId)
+        configureView()
         monitorProperties()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        configureView()
     }
     
     func configureView() {
-        guard let newRecipe = viewModel.newRecipe["recipe"] else { return }
+        guard let newRecipe = recipeFromTable else { return }
+        print("newRecipe", newRecipe)
         guard let rank = newRecipe.socialRank, let recipeID = newRecipe.recipeID, let imageUrl = newRecipe.imageUrl, let title = newRecipe.title else { return }
-        recipeTitleLabel.text = title
+        self.recipeTitleLabel.text = title
         let socialRankString = String(format: "%.2f", rank)
-        socialRankLabel.text = socialRankString
-        recipeIdLabel.text = recipeID
+        self.socialRankLabel.text = socialRankString
+        self.recipeIdLabel.text = recipeID
         let image = UIImage(named: Constants.LOADING_IMAGE)
         let url = URL(string: imageUrl)
         DispatchQueue.main.async {

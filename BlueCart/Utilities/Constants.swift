@@ -39,6 +39,7 @@ struct Constants {
     static let PAGE_SIZE = 30
     static let LOADING_IMAGE = "loadingImage.jpg"
     static let RECIPE_TITLE = "Recipe"
+    static let SEARCHBAR_PLACEHOLDER = "Search for recipes..."
     
     // CoreData
     static let SEARCH_TERMS = "searchTerms"  // attribute name for store search terms

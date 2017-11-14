@@ -34,6 +34,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         tableView.delegate = self
         tableView.dataSource = self
         searchController.searchBar.delegate = self
+        startSpinner(term: "you")
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
         }
@@ -66,7 +67,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         } else {
             searchController.dimsBackgroundDuringPresentation = false
         }
-        searchController.searchBar.placeholder = "Search for recipes..."
+        searchController.searchBar.placeholder = Constants.SEARCHBAR_PLACEHOLDER
         searchController.searchBar.sizeToFit()
         self.tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
@@ -230,9 +231,10 @@ extension RecipeTableVC {
             if segue.identifier == Constants.TO_RECIPE_DETAIL {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let sendRecipe = getRecipe(index: indexPath.row)
-                    guard let destination = segue.destination as? RecipeDetailVC else { return }
-                    destination.recipeIdToGet = sendRecipe.recipeID
-                    //destination.recipe = sendRecipe
+                
+                    // Send selected recipe to the RecipeDetailVC
+                     guard let destination = segue.destination as? RecipeDetailVC else { return }
+                     destination.recipeFromTable = sendRecipe
                 }
             }
         }
