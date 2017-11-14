@@ -232,7 +232,7 @@ extension RecipeTableVC {
                     let sendRecipe = getRecipe(index: indexPath.row)
                     guard let destination = segue.destination as? RecipeDetailVC else { return }
                     destination.recipeIdToGet = sendRecipe.recipeID
-                    destination.recipe = sendRecipe
+                    //destination.recipe = sendRecipe
                 }
             }
         }

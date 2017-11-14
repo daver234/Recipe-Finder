@@ -23,18 +23,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     // MARK: - Properties
     var recipeIdToGet: String?
     var viewModel = RecipeDetailViewModel()
-    //var ingredientsCount = 0
-    //var ingredientsForCell = [String]()
-    var recipe = Recipe()
-    
-//    init(recipe: Recipe) {
-//        super.init(nibName: nil, bundle: nil)
-//        self.recipe = recipe
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,15 +39,9 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     }
     
     func configureView() {
-//        let recipe = viewModel.getRecipe()
-//        guard let socialRank = recipe["recipe"]?.socialRank,
-//            let recipeID = recipe["recipe"]?.recipeID,
-//            let imageUrl = recipe["recipe"]?.imageUrl,
-//            let title = recipe["recipe"]?.title,
-//            let ingredients = recipe["recipe"]?.ingredients
-//            else { return }
-        guard let rank = recipe.socialRank, let recipeID = recipe.recipeID, let imageUrl = recipe.imageUrl else { return }
-        recipeTitleLabel.text = recipe.title
+        guard let newRecipe = viewModel.newRecipe["recipe"] else { return }
+        guard let rank = newRecipe.socialRank, let recipeID = newRecipe.recipeID, let imageUrl = newRecipe.imageUrl, let title = newRecipe.title else { return }
+        recipeTitleLabel.text = title
         let socialRankString = String(format: "%.2f", rank)
         socialRankLabel.text = socialRankString
         recipeIdLabel.text = recipeID
@@ -68,23 +50,17 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
         DispatchQueue.main.async {
             self.recipeImage.kf.setImage(with: url, placeholder: image)
         }
-//        ingredientsCount = ingredients.count
-//        ingredientsForCell = ingredients
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
     }
     
     func monitorProperties() {
         viewModel.theRecipe.bind { [unowned self] (value) in
             DispatchQueue.main.async {
-//                self.newRecipe = value
-//                print("value is: ", value)
                 self.tableView.reloadData()
             }
         }
     }
 }
+
 
 
 extension RecipeDetailVC:  UITableViewDataSource {
