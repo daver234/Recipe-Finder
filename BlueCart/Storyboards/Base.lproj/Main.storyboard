@@ -146,7 +146,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cYY-Mh-ZeB">
-                                <rect key="frame" x="0.0" y="382.5" width="375" height="284.5"/>
+                                <rect key="frame" x="0.0" y="388" width="375" height="279"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ingredients" rowHeight="48" id="VxC-r5-4Mt" customClass="IngredientsTableViewCell" customModule="Recipe_Finder" customModuleProvider="target">
@@ -157,13 +157,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green eggs and ham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMN-Xe-r8i">
-                                                    <rect key="frame" x="56" y="13" width="296" height="21"/>
+                                                    <rect key="frame" x="68" y="13" width="284" height="21"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-8k-mZz" customClass="M13Checkbox" customModule="M13Checkbox">
-                                                    <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                                    <rect key="frame" x="20" y="2" width="40" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="6o8-3p-eQT"/>
@@ -177,7 +177,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4gw-8k-mZz" firstAttribute="leading" secondItem="DHa-BR-x4Y" secondAttribute="leading" constant="8" id="0Pr-4q-fVV"/>
+                                                <constraint firstItem="4gw-8k-mZz" firstAttribute="leading" secondItem="DHa-BR-x4Y" secondAttribute="leading" constant="20" id="0Pr-4q-fVV"/>
                                                 <constraint firstItem="tMN-Xe-r8i" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="topMargin" constant="2" id="8YP-3Q-EYa"/>
                                                 <constraint firstAttribute="bottom" secondItem="4gw-8k-mZz" secondAttribute="bottom" constant="5.5" id="Dv7-aY-Hlc"/>
                                                 <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="8" id="XXy-Ue-7Lj"/>
@@ -212,7 +212,7 @@
                             <constraint firstItem="QdE-Bw-jQC" firstAttribute="leading" secondItem="Nf1-kB-rQx" secondAttribute="leading" id="O2l-rL-UHu"/>
                             <constraint firstItem="pKp-Pt-G2t" firstAttribute="leading" secondItem="Nf1-kB-rQx" secondAttribute="leading" constant="8" id="RlD-69-mvT"/>
                             <constraint firstAttribute="bottom" secondItem="cYY-Mh-ZeB" secondAttribute="bottom" id="UWs-nE-5x3"/>
-                            <constraint firstItem="cYY-Mh-ZeB" firstAttribute="top" secondItem="7qH-oT-c3K" secondAttribute="bottom" constant="-0.5" id="YFR-qV-wSz"/>
+                            <constraint firstItem="cYY-Mh-ZeB" firstAttribute="top" secondItem="7qH-oT-c3K" secondAttribute="bottom" constant="5" id="YFR-qV-wSz"/>
                             <constraint firstItem="2lG-iw-d3b" firstAttribute="leading" secondItem="7qH-oT-c3K" secondAttribute="leading" id="a75-cv-Wut"/>
                             <constraint firstItem="7qH-oT-c3K" firstAttribute="top" secondItem="2lG-iw-d3b" secondAttribute="bottom" constant="5" id="cft-EJ-aLk"/>
                             <constraint firstItem="PzP-Lm-IWo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HP8-9r-twz" secondAttribute="leading" constant="20" symbolic="YES" id="cwr-65-Hhd"/>

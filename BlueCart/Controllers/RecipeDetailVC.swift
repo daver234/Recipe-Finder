@@ -17,11 +17,9 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     @IBOutlet weak var socialRankLabel: UILabel!
     @IBOutlet weak var recipeIdLabel: UILabel!
     @IBOutlet weak var recipeTitleLabel: UILabel!
-    @IBOutlet weak var ingredientView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    // var recipeIdToGet: String?
     var recipeFromTable: Recipe?
     var viewModel = RecipeDetailViewModel()
     
@@ -41,7 +39,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     
     func configureView() {
         guard let newRecipe = recipeFromTable else { return }
-        print("newRecipe", newRecipe)
         guard let rank = newRecipe.socialRank, let recipeID = newRecipe.recipeID, let imageUrl = newRecipe.imageUrl, let title = newRecipe.title else { return }
         self.recipeTitleLabel.text = title
         let socialRankString = String(format: "%.2f", rank)
