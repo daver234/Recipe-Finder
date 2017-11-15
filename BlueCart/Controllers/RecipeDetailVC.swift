@@ -71,7 +71,12 @@ extension RecipeDetailVC:  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else { return 0 }
+        guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else {
+            /// If the recipe was not viewed while online then ingredients are not available.
+            /// Put up a message in the table view explaining this case.
+            TableViewHelper.EmptyMessage(message: Constants.NO_INGREDIENTS, viewController: self, tableView: tableView)
+            return 0
+        }
         return  ingredients.count
     }
     

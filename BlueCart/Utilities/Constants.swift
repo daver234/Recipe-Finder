@@ -59,6 +59,7 @@ struct Constants {
     
     // Messages
     static let NO_NET_MESSAGE = "It appears you do not have a network connection. Tap in the Search Bar to select and view a previous search offline."
+    static let NO_INGREDIENTS = "You have to first view this recipe while online before ingredients are available offline."
     
     // File names
     static let TOP_RATED_FILE = "toprated"
