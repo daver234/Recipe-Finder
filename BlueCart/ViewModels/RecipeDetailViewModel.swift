@@ -12,6 +12,7 @@ class RecipeDetailViewModel {
     fileprivate(set) var newRecipe = [String: RecipeDetail]()
     fileprivate(set) var theRecipe: Box<[String: RecipeDetail]>  = Box([String: RecipeDetail]())
     fileprivate(set) var viewRecipe: Box<Recipe> = Box(Recipe())
+    var networkReachable = true
 }
 
 
@@ -26,6 +27,11 @@ extension RecipeDetailViewModel {
         viewRecipe.value = recievedRecipe
         print("viewRecipe", viewRecipe.value)
     }
+    
+    /// Change network reachable status
+    func isNetworkReachable(reachable: Bool) {
+        networkReachable = reachable
+    }
 }
 
 /// Functions to access DataManager Singleton
@@ -33,7 +39,7 @@ extension RecipeDetailViewModel {
     func loadDetailRecipe(recipeId: String) {
         let request = Request()
         let apiManager = APIManager(request: request)
-        apiManager.getDetailedRecipe(recipeId: recipeId) { (response, error) in
+        apiManager.getDetailedRecipe(reachable: networkReachable, recipeId: recipeId) { (response, error) in
             guard error == nil else {
                 print("Error in getDetailedRecipe", error.debugDescription)
                 return

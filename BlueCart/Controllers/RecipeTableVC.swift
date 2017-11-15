@@ -17,7 +17,6 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     // MARK: - Properties
     let searchController = UISearchController(searchResultsController: nil)
     let reachability = Reachability()!
-
     private var viewModel = RecipeTableViewModel()
     var searchTerms: [NSManagedObject] = []
     
@@ -184,12 +183,10 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         switch isSearching() {
-            
         case true:
             let term = searchTerms[indexPath.row]
             guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
             cell.setupViewIfCoreData(searchTerm: searchTermString)
-            
         case false:
             let specificRecipe = getRecipe(index: indexPath.row)
             cell.setupView(recipe: specificRecipe)
@@ -233,8 +230,9 @@ extension RecipeTableVC {
                     let sendRecipe = getRecipe(index: indexPath.row)
                 
                     // Send selected recipe to the RecipeDetailVC
-                     guard let destination = segue.destination as? RecipeDetailVC else { return }
-                     destination.recipeFromTable = sendRecipe
+                    guard let destination = segue.destination as? RecipeDetailVC else { return }
+                    destination.recipeFromTable = sendRecipe
+                    destination.isReachable = viewModel.networkReachable
                 }
             }
         }

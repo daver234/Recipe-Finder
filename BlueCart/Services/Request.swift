@@ -11,7 +11,7 @@ import Disk
 
 protocol AbstractRequestClient {
     func callAPIForPage(url: URL, completion: @escaping CompletionHandler)
-    func callAPIForDetail(url: URL, completion: @escaping CompletionHandlerWithData)
+    func callAPIForDetail(reachable: Bool, recipeId: String, url: URL, completion: @escaping CompletionHandlerWithData)
     func callAPIForSpecificSearchTerm(searchString: String, url: URL, completion: @escaping CompletionHandler)
 }
 
@@ -39,23 +39,28 @@ class Request: AbstractRequestClient {
     }
     
     /// Get a specific recipe
-    func callAPIForDetail(url: URL, completion: @escaping CompletionHandlerWithData) {
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                print("URLSession error: \(String(describing: error?.localizedDescription))")
-                completion(nil, error)
-                return
+    func callAPIForDetail(reachable: Bool, recipeId: String, url: URL, completion: @escaping CompletionHandlerWithData) {
+        switch reachable {
+        case true:
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                guard error == nil else {
+                    print("URLSession error: \(String(describing: error?.localizedDescription))")
+                    completion(nil, error)
+                    return
+                }
+                
+                guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    print("Data or Response error in URLSession of Request.CallAPIForDetail")
+                    completion(nil, error)
+                    return
+                }
+                self.saveDetailForOffline(recipeId: recipeId, data: data)
+                DataManager.instance.decodeDataForDetail(data: data, completion: completion)
             }
-            
-            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("Data or Response error in URLSession of Request.CallAPIForDetail")
-                completion(nil, error)
-                return
-            }
-            // self.saveDetailForOffline(data: data)
-            DataManager.instance.decodeDataForDetail(data: data, completion: completion)
+            task.resume()
+        case false:
+            DataManager.instance.retrieveSavedDetailedRecipeWithIngredients(recipeId: recipeId, completion: completion)
         }
-        task.resume()
     }
     
     
@@ -101,18 +106,12 @@ class Request: AbstractRequestClient {
         }
     }
     
-    /// Save RecipeDetail for use in offline.
-    /// First create the file if it doesn't exist.  Then append new detailed recipes,
-    /// the one with the ingredient list, to the existing file.
-    fileprivate func saveDetailForOffline(data: Data) {
-        let searchString = Constants.RECIPE_DETAIL_FILE
-        let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
+    /// Save RecipeDetail for use in offline. This contains the ingredients.
+    /// - Parameter recipeId: This id becomes the file name to retrive later.
+    /// - Parameter completion: The completion handler to execute with the data.
+    fileprivate func saveDetailForOffline(recipeId: String, data: Data) {
         do {
-            if Disk.exists("\(Constants.RECIPE_DETAIL_FILE).json", in: .caches) {
-                try Disk.append(data, to: "\(termTrimmed).json", in: .caches)
-            } else {
-                try Disk.save(data, to: .caches, as: "\(termTrimmed).json")
-            }
+            try Disk.save(data, to: .caches, as: "\(recipeId)")
         } catch let error as NSError  {
             fatalError("""
                 Domain: \(error.domain)

@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import M13Checkbox
 
+
 class RecipeDetailVC: UIViewController, UITableViewDelegate {
     
     // MARK: - IBOutlets
@@ -22,19 +23,22 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     // MARK: - Properties
     var recipeFromTable: Recipe?
     var viewModel = RecipeDetailViewModel()
+    var isReachable : Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = Constants.RECIPE_TITLE
         tableView.dataSource = self
+        guard let reach = isReachable else { return }
+        viewModel.networkReachable = reach
         guard let recipe = recipeFromTable, let recipeId = recipe.recipeID else { return }
         viewModel.loadDetailRecipe(recipeId: recipeId)
         configureView()
         monitorProperties()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     func configureView() {
@@ -59,7 +63,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
         }
     }
 }
-
 
 
 extension RecipeDetailVC:  UITableViewDataSource {

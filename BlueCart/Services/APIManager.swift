@@ -39,12 +39,13 @@ class APIManager {
     }
     
     /// Get recipe detail for RecipeDetailVC
+    /// - Parameter reachable: Bool to indicate if network is reachable
     /// - Parameter recipeId: The ID of the recipe to retrieve
     /// - Parameter completion: The completion handler to execute on success or failure
-    func getDetailedRecipe(recipeId: String, completion: @escaping CompletionHandlerWithData) {
+    func getDetailedRecipe(reachable: Bool, recipeId: String, completion: @escaping CompletionHandlerWithData) {
         let urlString = "\(Constants.RECIPE_URL)\(APIKeyService.API_KEY)&\(Constants.RECIPE_ID)=\(recipeId)"
         guard let url = URL(string: urlString) else { return }
-        getRecipeDetail(url: url, completion: completion)
+        getRecipeDetail(reachable: reachable, recipeId: recipeId, url: url, completion: completion)
     }
     
     /// This function signature can be used for testing since a URL can be passed in. Could pass in local JSON for XCTest
@@ -54,10 +55,10 @@ class APIManager {
         request.callAPIForPage(url: url, completion: completion)
     }
     
-    /// Get the detail for the recipe
+    /// Get the detail for the recipe. The detail includes the ingredients.  Other calls do not get the ingredients.
     /// - Parameter url: The URL to call in the backend
     /// - Parameter completion: The completion handler to execute on success or failure
-    fileprivate func getRecipeDetail(url: URL, completion: @escaping CompletionHandlerWithData) {
-        request.callAPIForDetail(url: url, completion: completion)
+    fileprivate func getRecipeDetail(reachable: Bool, recipeId: String, url: URL, completion: @escaping CompletionHandlerWithData) {
+        request.callAPIForDetail(reachable: reachable, recipeId: recipeId, url: url, completion: completion)
     }
 }

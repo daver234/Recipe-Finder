@@ -44,7 +44,7 @@ Overall Design
 ....more to come
 
 ## Offline
-If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of 30 recipes from that search term will appear.  It is limited to 30 right now.  Tap the search bar again and load one of the other search terms, all offline.  The images are stored offline as well using Kingfisher. Individual receipe details (for the saved search terms) are available offline except for the ingredients. 
+If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of 30 recipes from that search term will appear.  It is limited to 30 right now.  Tap the search bar again and load one of the other search terms and those 30 recipes will all appear offline.  Images are stored offline as well using Kingfisher. Individual receipe details that have been viewed from search terms are available offline.  If a individual recipe from a search term was not viewed when the device was online, then only the image, recipe social rank and recipe id will display (e.g. no ingredients). Top rated recipes (the ones shown at launch) are not available offline.
 
 ## Use Of CoreData
 The search terms are store and retrieved in CoreData.  Support is there for CoreData in iOS9 and above.  Apple changed how CoreData works in iOS 10 (maybe iOS 9.1?).  The offline list of 30 recipes is stored using the Disk framework into the local cache storage.  With further work, perhaps this could be stored in CoreData.  Right now, the CoreData stack code is in the AppDelegate but probably should be moved out into a separate class. Migrations are not supported at this time.
@@ -95,9 +95,9 @@ Additional Work To Do
 * Add more unit and UI tests - a few included now.
 * Continue working on documentation
 * Improve offline. Perhaps store more than 30
-* Add offline for support for ingredients to individual recipes
 * Delete search terms from table view
 * Further testing
+* Add offline support for top rated recipes views at app launch
 * Testing on iOS 9 and iOS 10
 * CoreData testing on iOS 9
 * Separate the CoreData stack from the AppDelegate

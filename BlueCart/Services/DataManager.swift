@@ -68,7 +68,6 @@ extension DataManager {
     func updateNewRecipesRetrieved(result: RecipePage) {
         guard let newRecipesRetrieved = result.recipes?.count else { return }
         self.totalRecipesRetrieved += newRecipesRetrieved
-        print("^^^ totalRecipesRetrieved", self.totalRecipesRetrieved)
     }
     
     /// Update all variables after decode
@@ -111,6 +110,26 @@ extension DataManager {
                 Failure Reason: \(error.localizedFailureReason ?? "")
                 Suggestions: \(error.localizedRecoverySuggestion ?? "")
                 """)
+        }
+    }
+    
+    func retrieveSavedDetailedRecipeWithIngredients(recipeId: String, completion: @escaping CompletionHandlerWithData) {
+        if Disk.exists("\(recipeId)", in: .caches) {
+            do {
+                let retrieveSearch = try Disk.retrieve("\(recipeId)", from: .caches, as: Data.self)
+                DataManager.instance.decodeDataForDetail(data: retrieveSearch, completion: completion)
+            } catch let error as NSError {
+                completion(nil, error)
+                fatalError("""
+                    Domain: \(error.domain)
+                    Code: \(error.code)
+                    Description: \(error.localizedDescription)
+                    Failure Reason: \(error.localizedFailureReason ?? "")
+                    Suggestions: \(error.localizedRecoverySuggestion ?? "")
+                    """)
+            }
+        } else {
+            completion(nil, nil)
         }
     }
 }
