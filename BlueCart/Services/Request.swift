@@ -108,7 +108,7 @@ class Request: AbstractRequestClient {
         let searchString = Constants.RECIPE_DETAIL_FILE
         let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
         do {
-            if Disk.exists("\(termTrimmed).json", in: .caches) {
+            if Disk.exists("\(Constants.RECIPE_DETAIL_FILE).json", in: .caches) {
                 try Disk.append(data, to: "\(termTrimmed).json", in: .caches)
             } else {
                 try Disk.save(data, to: .caches, as: "\(termTrimmed).json")
