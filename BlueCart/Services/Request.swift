@@ -32,7 +32,7 @@ class Request: AbstractRequestClient {
                 completion(false)
                 return
             }
-            //self.saveRecipePageForOffline(searchString: Constants.TOP_RATED_FILE, data: data)
+            self.saveRecipePageForOffline(searchString: Constants.TOP_RATED_FILE, data: data)
             DataManager.instance.decodeDataForPage(data: data, completion: completion)
         }
         task.resume()

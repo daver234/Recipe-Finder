@@ -10,7 +10,7 @@ The purpose of this app is to help someone find a recipe.
 Upon starting the app, you are presented with a table of top rated recipes in descending order.  As you scroll, the table loads more recipes.  Tapping on a recipe cell segues to the detail of the recipe.  Tapping on the search bar, allows searching for new recipes based on the search terms entered.
 
 Key Features:
-- Show top rated recipes.
+- Show top rated recipes both online and offline.
 - Show details of recipe including ingredients.
 - Check mark next to each ingredient to check off after use when making recipe.
 - Find new recipes based on search terms.
@@ -23,9 +23,9 @@ Key Features:
 
 
 ## Each Screen
-* **Top Rated**  When you first launch, the top rated recipes are shown.  Scroll to load more.
+* **Start Screen**  When you first launch, the top rated recipes are shown.  Scroll to load more. This list is available offline as well.
 * **Recipe Detail**  Here is the detail of the recipe.  It also loads the ingredients and adds a checkbox next to each ingredient so the user can check the ingredient after it has been used in the recipe.  The check mark does not persist. If you load the recipe again, the check marks will be empty.  Perhaps persistence could be added.
-* **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search  by tapping on the search term. The search terms are sorted for the most recent search first.   
+* **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search  by tapping on the search term. The search terms are sorted for the most recent search first. Top Rated is inserted by default at the top at all times.  This is the same list of recipes shown when the app is first launched but the user may not know this.  Plus, it allows the search list to have a default value for first time users.  And, the Top Rated list is available offline.
 
 ## Architecture
 This app uses the MVVM design pattern.  There is a separate view model for each view controller.
@@ -44,7 +44,7 @@ Overall Design
 ....more to come
 
 ## Offline
-If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of 30 recipes from that search term will appear.  It is limited to 30 right now.  Tap the search bar again and load one of the other search terms and those 30 recipes will all appear offline.  Images are stored offline as well using Kingfisher. Individual receipe details that have been viewed from search terms are available offline.  If a individual recipe from a search term was not viewed when the device was online, then only the image, recipe social rank and recipe id will display (e.g. no ingredients). Top rated recipes (the ones shown at launch) are not available offline.
+If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of 30 recipes from that search term will appear.  It is limited to 30 right now.  Tap the search bar again and load one of the other search terms and those 30 recipes will all appear offline.  Images are stored offline as well using Kingfisher. Individual receipe details that have been viewed from search terms are available offline.  If a individual recipe from a search term was not viewed when the device was online, then only the image, recipe social rank and recipe id will display (e.g. no ingredients). Top rated recipes are  available offline.
 
 ## Use Of CoreData
 The search terms are store and retrieved in CoreData.  Support is there for CoreData in iOS9 and above.  Apple changed how CoreData works in iOS 10 (maybe iOS 9.1?).  The offline list of 30 recipes is stored using the Disk framework into the local cache storage.  With further work, perhaps this could be stored in CoreData.  Right now, the CoreData stack code is in the AppDelegate but probably should be moved out into a separate class. Migrations are not supported at this time.
@@ -97,7 +97,7 @@ Additional Work To Do
 * Improve offline. Perhaps store more than 30
 * Delete search terms from table view
 * Further testing
-* Add offline support for top rated recipes views at app launch
+* Consider converting struct Recipe data model to all core data
 * Testing on iOS 9 and iOS 10
 * CoreData testing on iOS 9
 * Separate the CoreData stack from the AppDelegate

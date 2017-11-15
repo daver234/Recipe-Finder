@@ -172,7 +172,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
-            return searchTerms.count
+            return searchTerms.count + 1
         }
         return viewModel.getRecipeCount() ?? 0
     }
@@ -184,9 +184,16 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         
         switch isSearching() {
         case true:
-            let term = searchTerms[indexPath.row]
-            guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
-            cell.setupViewIfCoreData(searchTerm: searchTermString)
+            let termString : String
+            // First add Top Rated to search term list
+            if indexPath.row == 0 {
+                termString = Constants.TOP_RATED
+            } else {
+                let term = searchTerms[indexPath.row - 1]
+                guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
+                termString = searchTermString
+            }
+            cell.setupViewIfCoreData(searchTerm: termString)
         case false:
             let specificRecipe = getRecipe(index: indexPath.row)
             cell.setupView(recipe: specificRecipe)
@@ -243,9 +250,14 @@ extension RecipeTableVC {
         case true:
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let currentCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell,
-                let term = currentCell.recipeTitleLabel.text
+                var term = currentCell.recipeTitleLabel.text
             else { return }
-            viewModel.getRecipesBasedOnSearchTerm(term: term)
+            if term == Constants.TOP_RATED {
+                term = Constants.TOP_RATED_FILE
+                viewModel.getRecipesBasedOnSearchTerm(term: term)
+            } else {
+                viewModel.getRecipesBasedOnSearchTerm(term: term)
+            }
             startSpinner(term: term)
         case false:
             self.performSegue(withIdentifier: Constants.TO_RECIPE_DETAIL, sender: self)

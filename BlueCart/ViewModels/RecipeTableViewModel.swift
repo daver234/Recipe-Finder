@@ -65,7 +65,12 @@ extension RecipeTableViewModel {
     
     /// Function to get all recipes based on search term
     func getRecipesBasedOnSearchTerm(term: String) {
-        networkReachable ? getRecipesBasedOnSearchTermFromServer(searchTerm: term) : DataManager.instance.retrieveSavedSearchTermResults(term: term)
+        var termToSend = term
+        // For API to get Top Rated recipes, search term needs to be empty.
+        if networkReachable && termToSend == Constants.TOP_RATED_FILE {
+            termToSend = ""
+        }
+        networkReachable ? getRecipesBasedOnSearchTermFromServer(searchTerm: termToSend) : DataManager.instance.retrieveSavedSearchTermResults(term: termToSend)
         didGetRecipes.value = true
     }
     
