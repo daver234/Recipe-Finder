@@ -17,7 +17,7 @@ Key Features:
 - View history of previous search terms, tap to reload.
 - Check for network connection.  If no network, display message.
 - Automatically stores previous search terms and shows in searchbar controller when active
-- View previous recipe search results offline. Recipe details, except for ingredients, are available offline also.
+- View previous recipe search results offline. Recipe details, including ingredients for viewed recipes from search terms, are available offline.
 - View count of total number of loaded recipes in navigation bar.  Updated as more recipes load while scrolling.
 - Support for iOS 9 and above.
 
