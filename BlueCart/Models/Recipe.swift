@@ -52,10 +52,6 @@ extension Recipe {
     }
 }
 
-//struct RecipeJson: Decodable {
-//    var recipe: RecipeDetail?
-//}
-
 struct RecipeDetail: Codable {
     enum RootKeys: String, CodingKey {
         case publisher
