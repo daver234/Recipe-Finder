@@ -156,8 +156,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green eggs and ham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMN-Xe-r8i">
-                                                    <rect key="frame" x="68" y="13" width="284" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green eggs and ham" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMN-Xe-r8i">
+                                                    <rect key="frame" x="68" y="2" width="284" height="40"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -178,10 +178,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4gw-8k-mZz" firstAttribute="leading" secondItem="DHa-BR-x4Y" secondAttribute="leading" constant="20" id="0Pr-4q-fVV"/>
-                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="topMargin" constant="2" id="8YP-3Q-EYa"/>
+                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="topMargin" constant="-9" id="8YP-3Q-EYa"/>
                                                 <constraint firstAttribute="bottom" secondItem="4gw-8k-mZz" secondAttribute="bottom" constant="5.5" id="Dv7-aY-Hlc"/>
                                                 <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="8" id="XXy-Ue-7Lj"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tMN-Xe-r8i" secondAttribute="bottom" constant="3" id="vVp-9k-NYL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tMN-Xe-r8i" secondAttribute="bottom" constant="-5" id="vVp-9k-NYL"/>
                                                 <constraint firstItem="4gw-8k-mZz" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="top" constant="2" id="wgS-2v-odO"/>
                                                 <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="8" id="xnY-cR-WU3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tMN-Xe-r8i" secondAttribute="trailing" constant="8" id="yI1-GF-V3w"/>

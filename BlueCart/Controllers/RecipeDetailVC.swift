@@ -74,9 +74,13 @@ extension RecipeDetailVC:  UITableViewDataSource {
         guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else {
             /// If the recipe was not viewed while online then ingredients are not available.
             /// Put up a message in the table view explaining this case.
-            TableViewHelper.EmptyMessage(message: Constants.NO_INGREDIENTS, viewController: self, tableView: tableView)
+            guard let reachable = isReachable  else { return 0 }
+            if !reachable {
+                TableViewHelper.EmptyMessage(message: Constants.NO_INGREDIENTS, viewController: self, tableView: tableView)
+            }
             return 0
         }
+        tableView.backgroundView = UIView(frame: .zero)
         return  ingredients.count
     }
     

@@ -17,12 +17,13 @@ class RecipeTableViewModel {
     // MARK: - Properties
     var didGetRecipes: Box<Bool> = Box(false)
     var recipePageNumber: Box<Int> = Box(0)
-    fileprivate(set) var searchTerms: [NSManagedObject] = []
+    var searchString: Box<String> = Box("")
+    fileprivate(set) var searchTerms: Box<[NSManagedObject]> = Box([])
     var networkReachable = true
 }
 
 
-/// Functions to access the DataManager singleton
+// MARK: - Functions to access the DataManager singleton
 extension RecipeTableViewModel {
     func getRecipeCount() -> Int? {
         return DataManager.instance.totalRecipesRetrieved
@@ -44,7 +45,7 @@ extension RecipeTableViewModel {
     }
     
     func getRecipes(pageNumber: Int) -> [Recipe] {
-        guard let recipes = DataManager.instance.allRecipes[pageNumber].recipes else { return [Recipe]() }
+        guard let recipes = DataManager.instance.allRecipes[pageNumber - 1].recipes else { return [Recipe]() }
         return recipes
     }
     
@@ -58,19 +59,19 @@ extension RecipeTableViewModel {
         networkReachable = reachable
     }
     
-    /// Get search terms from core data
-    func getSearchTerms() -> [NSManagedObject] {
-        return retrievedSavedSearchTerms()
+    /// Load search terms for accessing recipe pages
+    /// RecipeTableVC then gets individual search terms from view model
+    func loadSearchTerms() {
+        retrievedSavedSearchTerms()
     }
     
-    /// Function to get all recipes based on search term
-    func getRecipesBasedOnSearchTerm(term: String) {
-        var termToSend = term
-        // For API to get Top Rated recipes, search term needs to be empty.
-        if networkReachable && termToSend == Constants.TOP_RATED_FILE {
-            termToSend = ""
-        }
-        networkReachable ? getRecipesBasedOnSearchTermFromServer(searchTerm: termToSend) : DataManager.instance.retrieveSavedSearchTermResults(term: termToSend)
+    /// This is the search term the user is actively viewing
+    func updateActiveSearchString(searchTerm: String) {
+        searchString.value = searchTerm
+    }
+    
+    func loadRecipesBasedOnSearchTerm(searchString: String) {
+        networkReachable ? loadRecipes(pageNumber: recipePageNumber.value, searchString: searchString) : DataManager.instance.retrieveSavedSearchTermResults(term: searchString)
         didGetRecipes.value = true
     }
     
@@ -79,7 +80,7 @@ extension RecipeTableViewModel {
     /// - Parameter term:  The search term to save and find recipes
     func saveSearchTerm(term: String) {
         saveSearchTermToCoreData(term: term)
-        getRecipesBasedOnSearchTerm(term: term)
+        loadRecipesBasedOnSearchTerm(searchString: term)
     }
 }
 
@@ -119,15 +120,16 @@ extension RecipeTableViewModel {
     }
     
     /// Retrieve saved search terms from CoreData model
-    fileprivate func retrievedSavedSearchTerms() -> [NSManagedObject] {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return searchTerms}
+    fileprivate func retrievedSavedSearchTerms() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         if #available(iOS 10.0, *) {
             let managedContext = appDelegate.persistentContainer.viewContext
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
             let sort = NSSortDescriptor(key: Constants.SEARCH_DATE, ascending: false)
             fetchRequest.sortDescriptors = [sort]
             do {
-                searchTerms = try managedContext.fetch(fetchRequest)
+                searchTerms.value = []
+                searchTerms.value = try managedContext.fetch(fetchRequest)
             } catch let error as NSError {
                 print("Could not fetch. \(error), \(error.userInfo)")
             }
@@ -139,22 +141,21 @@ extension RecipeTableViewModel {
             let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext)
             fetchRequest.entity = entityDesc
             do {
-                guard let tempSearchTerms = try managedContext.fetch(fetchRequest) as? [NSManagedObject] else { return [NSManagedObject]() }
-                searchTerms = tempSearchTerms
+                guard let tempSearchTerms = try managedContext.fetch(fetchRequest) as? [NSManagedObject] else { return  }
+                searchTerms.value = tempSearchTerms
             } catch {
                 print("Could not fetch. \(error)")
             }
         }
-        return searchTerms
     }
 }
 
 
-/// Functions for accessing backend server
+// MARK: - Functions for accessing backend server
 extension RecipeTableViewModel {
-    func loadRecipes(pageNumber: Int) {
+    func loadRecipes(pageNumber: Int, searchString: String) {
         let apiManager = getAPIManagerInstance()
-        apiManager.getRecipesForPage(pageNumber: pageNumber) { [weak self] success in
+        apiManager.getRecipesForPage(pageNumber: pageNumber, searchString: searchString) { [weak self] success in
             if success {
                 self?.recipePageNumber.value += 1
                 self?.didGetRecipes.value = true
@@ -165,15 +166,5 @@ extension RecipeTableViewModel {
     fileprivate func getAPIManagerInstance() -> APIManager {
         let request = Request()
         return APIManager(request: request)
-    }
-    
-    /// Get recipes from server based on search term.  Then save the result for use in offline.
-    fileprivate func getRecipesBasedOnSearchTermFromServer(searchTerm: String) {
-        let apiManager = getAPIManagerInstance()
-        apiManager.getSpecificSearch(searchString: searchTerm) { [weak self] success in
-            if success {
-                self?.didGetRecipes.value = true
-            }
-        }
     }
 }

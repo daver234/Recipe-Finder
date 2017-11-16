@@ -19,12 +19,17 @@ class DataManager {
     fileprivate(set) var numberOfPagesRetrieved = 0
     fileprivate(set) var totalRecipesRetrieved = 0
     fileprivate(set) var allRecipesWithoutPages = [Recipe]()
+    var lastSearchTerm = ""
     
     private init() {
     }
     
     /// Decode full page of recipes
-    func decodeDataForPage(data: Data, completion: @escaping CompletionHandler) {
+    func decodeDataForPage(searchString: String, data: Data, completion: @escaping CompletionHandler) {
+        if searchString != lastSearchTerm {
+            resetDataManagerVariables()
+             lastSearchTerm = searchString
+        }
         do {
             let result = try JSONDecoder().decode(RecipePage.self, from: data)
             updateAllVariables(result: result)
@@ -43,19 +48,6 @@ class DataManager {
         } catch let jsonError {
             print("Error decoding JSON from server", jsonError)
             completion(nil, jsonError)
-        }
-    }
-    
-    /// Decode data for specific search terms
-    func decodeDataForSpecificSearchTerm(data: Data, completion: @escaping CompletionHandler) {
-        do {
-            resetDataManagerVariables()
-            let result = try JSONDecoder().decode(RecipePage.self, from: data)
-            updateAllVariables(result: result)
-            completion(true)
-        } catch let jsonError {
-            print("Error decoding JSON from server", jsonError)
-            completion(false)
         }
     }
 }
@@ -95,12 +87,13 @@ extension DataManager {
 extension DataManager {
     func retrieveSavedSearchTermResults(term: String) {
         resetDataManagerVariables()
-        let termTrimmed = term.lowercased().replacingOccurrences(of: " ", with: "")
-        if Disk.exists("\(termTrimmed).json", in: .caches) {
-            print("file exists")
+        var termTrimmed = term.lowercased().replacingOccurrences(of: " ", with: "")
+        termTrimmed == "" ? (termTrimmed = Constants.TOP_RATED_FILE) : (termTrimmed = termTrimmed)
+        if Disk.exists("Recipe/\(termTrimmed)", in: .caches) {
+            print("file exists", termTrimmed)
         }
         do {
-            let retrieveSearch = try Disk.retrieve("\(termTrimmed).json", from: .caches, as: RecipePage.self)
+            let retrieveSearch = try Disk.retrieve("Recipe/\(termTrimmed)", from: .caches, as: RecipePage.self)
             updateAllVariables(result: retrieveSearch)
         } catch let error as NSError {
             fatalError("""

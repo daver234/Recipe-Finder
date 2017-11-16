@@ -18,15 +18,17 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     let searchController = UISearchController(searchResultsController: nil)
     let reachability = Reachability()!
     private var viewModel = RecipeTableViewModel()
-    var searchTerms: [NSManagedObject] = []
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /// Identifier used for unit testing
         view.accessibilityIdentifier = Constants.RECIPE_TVC_UITEST
-        viewModel.loadRecipes(pageNumber: 0)
+        
+        loadInitialRecipePage()
         setupNavBarTitle()
         setupSearchBar()
         monitorProperties()
@@ -56,6 +58,18 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         tableView.reloadData()
     }
     
+    func loadInitialRecipePage() {
+        /// On app launch, the searchString should be empty, meaning "", to cause
+        /// the API to load Top Rated recipes....per API docs.
+        /// And we always start by loading page 1.  When scrolling (iOS 10 and above) more pages load
+        /// via the prefetching API
+        viewModel.searchString.value = ""
+        viewModel.loadRecipes(pageNumber: 1, searchString: viewModel.searchString.value)
+        
+        /// Load search terms from Core Data for use when user is searching terms
+        viewModel.loadSearchTerms()
+    }
+    
     func setupSearchBar() {
         searchController.searchResultsUpdater = self
         searchController.searchBar.returnKeyType = .search
@@ -80,6 +94,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
             }
         }
         
+        /// Bool to indicate if new recipes were retrieved.  If so, reload data.
         viewModel.didGetRecipes.bind { [unowned self] (isNewRecipe) in
             if isNewRecipe {
                 DispatchQueue.main.async {
@@ -127,7 +142,7 @@ extension RecipeTableVC {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         
         /// First get the images
-        let currentPage = viewModel.getPagesRetrieved() - 1
+        let currentPage = viewModel.getPagesRetrieved()
         let recipes = viewModel.getRecipes(pageNumber: currentPage)
         var stringToUrl = [URL]()
         for item in recipes {
@@ -152,13 +167,14 @@ extension RecipeTableVC {
         /// Here take maxIndex and add 5 to give some buffer for how soon we should get more data from the server.
         /// This will improve the user experience so no delay is perceived when scrolling the table.
         /// All of this determines the nextPage to get
-        let nextPage: Int = ( (maxIndex + 5) / Constants.PAGE_SIZE)
+        let nextPage: Int = ((maxIndex + 5) / Constants.PAGE_SIZE) + 1
 
         /// If the user is getting to the end of the table, nextPage will be greater than current page.
         /// This will then trigger a API call to get more data from the server and return, ideally, before
-        /// the user gets to the end of the table.
+        /// the user gets to the end of the table. The active search string is also included so that
+        /// the right set of recipes load.
         if nextPage > currentPage {
-            viewModel.loadRecipes(pageNumber: nextPage)
+            viewModel.loadRecipes(pageNumber: nextPage, searchString: viewModel.searchString.value)
         }
     }
 }
@@ -172,7 +188,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
-            return searchTerms.count + 1
+            return viewModel.searchTerms.value.count + 1 //searchTerms.count + 1
         }
         return viewModel.getRecipeCount() ?? 0
     }
@@ -189,7 +205,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
             if indexPath.row == 0 {
                 termString = Constants.TOP_RATED
             } else {
-                let term = searchTerms[indexPath.row - 1]
+                let term = viewModel.searchTerms.value[indexPath.row - 1]
                 guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
                 termString = searchTermString
             }
@@ -199,14 +215,6 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
             cell.setupView(recipe: specificRecipe)
         }
         return cell
-    }
-    
-    /// Get search string out of ManagedObject
-    /// - Parameter index: index of search string to retrieve from ManagedObject
-    func searchStringFromManagedObject(index: Int) ->String {
-        let term = searchTerms[index]
-        guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return ""}
-        return searchTermString
     }
     
     /// Get a specific recipe.  Used with setting up tableViewCell
@@ -250,13 +258,15 @@ extension RecipeTableVC {
         case true:
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let currentCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell,
-                var term = currentCell.recipeTitleLabel.text
+                let term = currentCell.recipeTitleLabel.text
             else { return }
+            /// Set the active search term in the view model
+            viewModel.searchString.value = term
+            viewModel.recipePageNumber.value = 0
             if term == Constants.TOP_RATED {
-                term = Constants.TOP_RATED_FILE
-                viewModel.getRecipesBasedOnSearchTerm(term: term)
+                viewModel.loadRecipesBasedOnSearchTerm(searchString: "")
             } else {
-                viewModel.getRecipesBasedOnSearchTerm(term: term)
+                viewModel.loadRecipesBasedOnSearchTerm(searchString: term)
             }
             startSpinner(term: term)
         case false:
@@ -279,11 +289,10 @@ extension RecipeTableVC {
 
 // MARK: - Search
 extension RecipeTableVC: UISearchBarDelegate {
-
+    
     /// Function to get saved searched terms from CoreData
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchTerms = []
-        searchTerms = viewModel.getSearchTerms()
+        viewModel.loadSearchTerms()
         tableView.backgroundView = UIView(frame: .zero)
         if reachability.connection == .none {
             searchBar.resignFirstResponder()

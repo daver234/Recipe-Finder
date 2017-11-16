@@ -10,16 +10,25 @@ import Foundation
 import Disk
 
 protocol AbstractRequestClient {
-    func callAPIForPage(url: URL, completion: @escaping CompletionHandler)
+    func callAPIForPage(searchString: String, url: URL, completion: @escaping CompletionHandler)
     func callAPIForDetail(reachable: Bool, recipeId: String, url: URL, completion: @escaping CompletionHandlerWithData)
-    func callAPIForSpecificSearchTerm(searchString: String, url: URL, completion: @escaping CompletionHandler)
+    // func callAPIForSpecificSearchTerm(searchString: String, url: URL, completion: @escaping CompletionHandler)
+}
+
+enum Parameter {
+    case searchString(String)
+    case reachable(Bool)
+    case url(URL)
+    case completionShort(CompletionHandler)
+    case completionData(CompletionHandlerWithData)
+    case pageNumber(Int)
 }
 
 /// Used to make the URL session request
 class Request: AbstractRequestClient {
     
     /// Get a page full of recipes
-    func callAPIForPage(url: URL, completion: @escaping CompletionHandler) {
+    func callAPIForPage(searchString: String, url: URL, completion: @escaping CompletionHandler) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
                 print("URLSession error: \(String(describing: error?.localizedDescription))")
@@ -32,8 +41,12 @@ class Request: AbstractRequestClient {
                 completion(false)
                 return
             }
-            self.saveRecipePageForOffline(searchString: Constants.TOP_RATED_FILE, data: data)
-            DataManager.instance.decodeDataForPage(data: data, completion: completion)
+            /// To get Top Rated recipes, the search term is empty.  Hence we have to add back a name in order
+            /// to create a file name to save
+            var searchStringForFileName = ""
+            searchString == "" ? (searchStringForFileName = Constants.TOP_RATED_FILE) : (searchStringForFileName = searchString)
+            self.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
+            DataManager.instance.decodeDataForPage(searchString: searchStringForFileName, data: data, completion: completion)
         }
         task.resume()
     }
@@ -63,38 +76,16 @@ class Request: AbstractRequestClient {
         }
     }
     
-    
-    /// Get a page full of recipes for a specific search term
-    /// - Parameter searchString: The text being search. Use to create file name to save
-    /// - Parameter url: The url for accessing the backend
-    /// - Parameter completion: The completion hanlder to call when dome.
-    func callAPIForSpecificSearchTerm(searchString: String, url: URL, completion: @escaping CompletionHandler) {
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                print("URLSession error: \(String(describing: error?.localizedDescription))")
-                completion(false)
-                return
-            }
-            
-            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("Data or Response error in URLSession of Request.callAPIForPage")
-                completion(false)
-                return
-            }
-            
-            /// Save data to disk for offline access
-            self.saveRecipePageForOffline(searchString: searchString, data: data)
-            
-            DataManager.instance.decodeDataForSpecificSearchTerm(data: data, completion: completion)
-        }
-        task.resume()
-    }
-    
     /// Save RecipePage for use in offline
     fileprivate func saveRecipePageForOffline(searchString: String, data: Data) {
         let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
         do {
-            try Disk.save(data, to: .caches, as: "\(termTrimmed).json")
+            if Disk.exists("\(termTrimmed)", in: .caches) {
+                try Disk.append(data, to: "Recipe/", in: .caches)
+            } else {
+                 try Disk.save(data, to: .caches, as: "Recipe/\(termTrimmed)")
+            }
+           
         } catch let error as NSError  {
             fatalError("""
                 Domain: \(error.domain)

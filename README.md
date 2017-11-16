@@ -14,11 +14,11 @@ Key Features:
 - Show details of recipe including ingredients.
 - Check mark next to each ingredient to check off after use when making recipe.
 - Find new recipes based on search terms.
-- View history of previous search terms, tap to reload.
-- Check for network connection.  If no network, display message.
-- Automatically stores previous search terms and shows in searchbar controller when active
+- View history of previous search terms, tap to view them.
+- Check for network connection (WiFi or cellular).  If no network, displays message and suggests tapping search bar to see search terms get view offline data.
+- Automatically stores previous search terms and shows in searchbar controller when active.
 - View previous recipe search results offline. Recipe details, including ingredients for viewed recipes from search terms, are available offline.
-- View count of total number of loaded recipes in navigation bar.  Updated as more recipes load while scrolling.
+- View count of total number of loaded recipes in navigation bar.  Updated as more recipes load while scrolling (iOS 10 and above).
 - Support for iOS 9 and above.
 
 
@@ -98,8 +98,10 @@ Additional Work To Do
 * Delete search terms from table view
 * Further testing
 * Consider converting struct Recipe data model to all core data
+* Consider dropping RecipeDetail and update Recipe for ingredients
 * Testing on iOS 9 and iOS 10
 * CoreData testing on iOS 9
+* Fetch more recipe pages for iOS 9.  Now only iOS 10 and above
 * Separate the CoreData stack from the AppDelegate
 * Test and adjust for iPad, landscape and different screen sizes. Development was done primarily on a iPhone 7 Plus device and simulator and a iPhone 6 device. All other variants need testing.
 * Look for refactoring and code clean up opportunities
