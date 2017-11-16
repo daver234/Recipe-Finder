@@ -41,7 +41,6 @@ CoreData is used to store the search terms. The Disk framework is used to store 
 Overall Design
 ![alt text](ReadMeImages/Design.jpg "Search term history")
 
-....more to come
 
 ## Offline
 If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of 30 recipes from that search term will appear.  It is limited to 30 right now.  Tap the search bar again and load one of the other search terms and those 30 recipes will all appear offline.  Images are stored offline as well using Kingfisher. Individual receipe details that have been viewed from search terms are available offline.  If a individual recipe from a search term was not viewed when the device was online, then only the image, recipe social rank and recipe id will display (e.g. no ingredients). Top rated recipes are  available offline.
@@ -101,6 +100,7 @@ Additional Work To Do
 * Consider dropping RecipeDetail and update Recipe for ingredients
 * Testing on iOS 9 and iOS 10
 * CoreData testing on iOS 9
+* More testing on offline , recipe detail loading and scrolling
 * Fetch more recipe pages for iOS 9.  Now only iOS 10 and above
 * Separate the CoreData stack from the AppDelegate
 * Test and adjust for iPad, landscape and different screen sizes. Development was done primarily on a iPhone 7 Plus device and simulator and a iPhone 6 device. All other variants need testing.
@@ -109,8 +109,7 @@ Additional Work To Do
 * More work on error handling
 * Better logging of debug and error messages
 * Checks for odd search strings for searching and file saving
-* Fix warnings in debugger regarding layout constrain issues
-* Fix issues with loading recipe detail
+* Fix warnings in debugger regarding layout constraint issues
 * Review offline storage limits and add checks for hitting limits
 * ...
 
