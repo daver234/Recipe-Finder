@@ -29,10 +29,6 @@ extension RecipeTableViewModel {
         return DataManager.instance.totalRecipesRetrieved
     }
     
-    func getAllRecipesWithoutPages() -> [Recipe] {
-        return DataManager.instance.allRecipesWithoutPages
-    }
-    
     func getRecipe(pageToGet: Int, recipeToGet: Int) -> Recipe {
         guard let recipe = DataManager.instance.allRecipes[pageToGet].recipes?[recipeToGet] else {
             return Recipe()
@@ -49,11 +45,6 @@ extension RecipeTableViewModel {
         return recipes
     }
     
-    /// Increment page so that we get next page of recipes
-    func incrementPageNumber() {
-        recipePageNumber.value += 1
-    }
-    
     /// Change network reachable status
     func isNetworkReachable(reachable: Bool) {
         networkReachable = reachable
@@ -65,11 +56,8 @@ extension RecipeTableViewModel {
         retrievedSavedSearchTerms()
     }
     
-    /// This is the search term the user is actively viewing
-    func updateActiveSearchString(searchTerm: String) {
-        searchString.value = searchTerm
-    }
-    
+    /// This function loads different recipes based on whether or not the device is online or offline.
+    /// If offline, then retrieve saved recipes.  If online, do search.
     func loadRecipesBasedOnSearchTerm(searchString: String) {
         networkReachable ? loadRecipes(pageNumber: recipePageNumber.value, searchString: searchString) : DataManager.instance.retrieveSavedSearchTermResults(term: searchString)
         didGetRecipes.value = true
@@ -153,6 +141,8 @@ extension RecipeTableViewModel {
 
 // MARK: - Functions for accessing backend server
 extension RecipeTableViewModel {
+    /// Primary function to get RecipePage from backend
+    /// Used on app launch, search terms, and prefetching more table rows
     func loadRecipes(pageNumber: Int, searchString: String) {
         let apiManager = getAPIManagerInstance()
         apiManager.getRecipesForPage(pageNumber: pageNumber, searchString: searchString) { [weak self] success in
