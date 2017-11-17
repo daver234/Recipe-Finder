@@ -26,7 +26,7 @@ class APIManager {
         guard let encodedSearchTerm = searchString.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&q=\(encodedSearchTerm)&page=\(pageNumber)&sort=r"
         guard let url = URL(string: urlString) else { return }
-        getRecipesForPageWithURL(searchString: encodedSearchTerm, url: url, completion: completion)
+        request.callAPIForPage(searchString: searchString, url: url, completion: completion)
     }
     
     /// Get recipe detail with ingredients for RecipeDetailVC
@@ -36,20 +36,6 @@ class APIManager {
     func getDetailedRecipe(reachable: Bool, recipeId: String, completion: @escaping CompletionHandlerWithData) {
         let urlString = "\(Constants.RECIPE_URL)\(APIKeyService.API_KEY)&\(Constants.RECIPE_ID)=\(recipeId)"
         guard let url = URL(string: urlString) else { return }
-        getRecipeDetail(reachable: reachable, recipeId: recipeId, url: url, completion: completion)
-    }
-    
-    /// This function signature can be used for testing since a URL can be passed in. Could pass in local JSON for XCTest
-    /// - Parameter url: The URL to call in the backend
-    /// - Parameter completion: The completion handler to execute on success or failure
-    fileprivate func getRecipesForPageWithURL(searchString: String, url: URL, completion: @escaping CompletionHandler) {
-        request.callAPIForPage(searchString: searchString, url: url, completion: completion)
-    }
-    
-    /// Get the detail for the recipe. The detail includes the ingredients.  Other calls do not get the ingredients.
-    /// - Parameter url: The URL to call in the backend
-    /// - Parameter completion: The completion handler to execute on success or failure
-    fileprivate func getRecipeDetail(reachable: Bool, recipeId: String, url: URL, completion: @escaping CompletionHandlerWithData) {
         request.callAPIForDetail(reachable: reachable, recipeId: recipeId, url: url, completion: completion)
     }
 }

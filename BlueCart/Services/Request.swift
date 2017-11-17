@@ -12,20 +12,12 @@ import Disk
 protocol AbstractRequestClient {
     func callAPIForPage(searchString: String, url: URL, completion: @escaping CompletionHandler)
     func callAPIForDetail(reachable: Bool, recipeId: String, url: URL, completion: @escaping CompletionHandlerWithData)
-    // func callAPIForSpecificSearchTerm(searchString: String, url: URL, completion: @escaping CompletionHandler)
-}
-
-enum Parameter {
-    case searchString(String)
-    case reachable(Bool)
-    case url(URL)
-    case completionShort(CompletionHandler)
-    case completionData(CompletionHandlerWithData)
-    case pageNumber(Int)
 }
 
 /// Used to make the URL session request
 class Request: AbstractRequestClient {
+    
+    var saveRecipes = SaveRecipes()
     
     /// Get a page full of recipes
     func callAPIForPage(searchString: String, url: URL, completion: @escaping CompletionHandler) {
@@ -45,7 +37,8 @@ class Request: AbstractRequestClient {
             /// to create a file name to save
             var searchStringForFileName = ""
             searchString == "" ? (searchStringForFileName = Constants.TOP_RATED_FILE) : (searchStringForFileName = searchString)
-            self.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
+            // self.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
+            self.saveRecipes.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
             DataManager.instance.decodeDataForPage(searchString: searchStringForFileName, data: data, completion: completion)
         }
         task.resume()
@@ -67,50 +60,13 @@ class Request: AbstractRequestClient {
                     completion(nil, error)
                     return
                 }
-                self.saveDetailForOffline(recipeId: recipeId, data: data)
+                // self.saveDetailForOffline(recipeId: recipeId, data: data)
+                self.saveRecipes.saveDetailForOffline(recipeId: recipeId, data: data)
                 DataManager.instance.decodeDataForDetail(data: data, completion: completion)
             }
             task.resume()
         case false:
             DataManager.instance.retrieveSavedDetailedRecipeWithIngredients(recipeId: recipeId, completion: completion)
-        }
-    }
-    
-    /// Save RecipePage for use in offline
-    fileprivate func saveRecipePageForOffline(searchString: String, data: Data) {
-        let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
-        do {
-            if Disk.exists("\(termTrimmed)", in: .caches) {
-                try Disk.append(data, to: "Recipe/", in: .caches)
-            } else {
-                 try Disk.save(data, to: .caches, as: "Recipe/\(termTrimmed)")
-            }
-           
-        } catch let error as NSError  {
-            fatalError("""
-                Domain: \(error.domain)
-                Code: \(error.code)
-                Description: \(error.localizedDescription)
-                Failure Reason: \(error.localizedFailureReason ?? "")
-                Suggestions: \(error.localizedRecoverySuggestion ?? "")
-                """)
-        }
-    }
-    
-    /// Save RecipeDetail for use in offline. This contains the ingredients.
-    /// - Parameter recipeId: This id becomes the file name to retrive later.
-    /// - Parameter completion: The completion handler to execute with the data.
-    fileprivate func saveDetailForOffline(recipeId: String, data: Data) {
-        do {
-            try Disk.save(data, to: .caches, as: "\(recipeId)")
-        } catch let error as NSError  {
-            fatalError("""
-                Domain: \(error.domain)
-                Code: \(error.code)
-                Description: \(error.localizedDescription)
-                Failure Reason: \(error.localizedFailureReason ?? "")
-                Suggestions: \(error.localizedRecoverySuggestion ?? "")
-                """)
         }
     }
 }
