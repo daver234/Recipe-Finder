@@ -25,7 +25,7 @@ Key Features:
 ## Each Screen
 * **Start Screen**  When you first launch, the top rated recipes are shown.  Scroll to load more. This list is available offline as well.
 * **Recipe Detail**  Here is the detail of the recipe.  It also loads the ingredients and adds a checkbox next to each ingredient so the user can check the ingredient after it has been used in the recipe.  The check mark does not persist. If you load the recipe again, the check marks will be empty.  Perhaps persistence could be added.
-* **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search  by tapping on the search term. The search terms are sorted for the most recent search first. Top Rated is inserted by default at the top at all times.  This is the same list of recipes shown when the app is first launched but the user may not know this.  Plus, it allows the search list to have a default value for first time users.  And, the Top Rated list is available offline.
+* **Search Terms**  Tap on the search bar to enter a new search term. Or select from a previous search  by tapping on the search term. The search terms are sorted for the most recent search first. Top Rated is inserted by default at the top at all times.  Top Rated is the same list of recipes shown when the app is first launched but the user may not know this.  Plus, it allows the search list to have a default value for first time users.  And, the Top Rated list is available offline.  Type in the search bar and it will filter the search terms for the characters typed.  This helps for long search term lists so a user can find a previously saved search term and not re-enter it. 
 
 ## Architecture
 This app uses the MVVM design pattern.  There is a separate view model for each view controller.
@@ -102,14 +102,12 @@ Additional Work To Do
 * CoreData testing on iOS 9
 * More testing on offline , recipe detail loading and scrolling
 * Fetch more recipe pages for iOS 9.  Now only iOS 10 and above
-* Separate the CoreData stack from the AppDelegate
 * Test and adjust for iPad, landscape and different screen sizes. Development was done primarily on a iPhone 7 Plus device and simulator and a iPhone 6 device. All other variants need testing.
 * Look for refactoring and code clean up opportunities
 * Additional inline code documentation
 * More work on error handling
 * Better logging of debug and error messages
 * Checks for odd search strings for searching and file saving
-* Fix warnings in debugger regarding layout constraint issues
 * Review offline storage limits and add checks for hitting limits
 * ...
 

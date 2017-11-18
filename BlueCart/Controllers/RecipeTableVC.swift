@@ -315,9 +315,6 @@ extension RecipeTableVC {
         SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
         SwiftSpinner.show("Getting recipes\nfor \(term)...")
         searchController.isActive = false
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-//            self?.tableView.reloadData()
-//        }
     }
 }
 
