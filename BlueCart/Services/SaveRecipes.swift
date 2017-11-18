@@ -8,6 +8,7 @@
 
 import Foundation
 import Disk
+import CoreData
 
 /// Saving recipe lists and recipe detail for retrieval when device is offline
 /// Using Disk 3rd party framework.
@@ -49,6 +50,40 @@ class SaveRecipes {
                 Failure Reason: \(error.localizedFailureReason ?? "")
                 Suggestions: \(error.localizedRecoverySuggestion ?? "")
                 """)
+        }
+    }
+    
+    /// Saving RecipePage to Core Data
+    /// Handles iOS 10 and above one way and iOS 9 and below another
+    /// - Parameter pageNumber: The page number, from the server, that is being saved.  Starts at 1.
+    func saveRecipePageCoreData(pageNumber: Int, recipePage: RecipePage) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        if #available(iOS 10.0, *) {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            guard let entity = NSEntityDescription.entity(forEntityName: Constants.MRECIPE_PAGE, in: managedContext) else { return }
+            let recipePageToSave = NSManagedObject(entity: entity, insertInto: managedContext)
+            recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
+            recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
+            recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
+            // recipePageToSave.setValue(recipePage.recipes, forKey: )
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+        } else {
+            // Fallback on earlier versions of iOS
+            let managedContext = appDelegate.managedObjectContext
+            guard let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
+            let recipePageToSave = NSManagedObject(entity: entityDesc, insertInto: managedContext)
+            recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
+            recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
+            recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
         }
     }
 }

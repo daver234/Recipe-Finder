@@ -34,6 +34,8 @@ struct ColorPalette {
     struct Grey {
         static let Medium = UIColor(netHex: 0xC6C6C6)
         let example = #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7764705882, alpha: 1)
+        static let Light = UIColor(netHex: 0xEBEBEB)
+        let exampleLight = #colorLiteral(red: 0.9215686275, green: 0.9215686275, blue: 0.9215686275, alpha: 1)
     }
     
     struct White {
@@ -49,6 +51,8 @@ struct ColorPalette {
     struct Black {
         static let Medium = UIColor(netHex: 0x000000)
         let example = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        static let Light = UIColor(netHex: 0x000000)
+        let exampleLight = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
     }
 }
 

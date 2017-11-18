@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,19 +35,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R37-ZM-XAw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R37-ZM-XAw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="Dpt-6y-CN1"/>
-                                                        <constraint firstAttribute="height" constant="150" id="fVf-0w-xsb"/>
+                                                        <constraint firstAttribute="height" constant="149.5" id="gAE-vn-yp8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRI-62-myN">
-                                                    <rect key="frame" x="0.0" y="115" width="375" height="35"/>
+                                                    <rect key="frame" x="0.0" y="120" width="375" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="0.65065817636986301" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="35P-DN-eds"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="UCJ-sC-uYd"/>
+                                                        <constraint firstAttribute="height" constant="30" id="JnK-R0-pw3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,18 +53,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ZRI-62-myN" firstAttribute="leading" secondItem="jeX-ZY-xyG" secondAttribute="leading" id="8Iw-Pf-95F"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZRI-62-myN" secondAttribute="trailing" id="9Ib-91-Mn8"/>
-                                                <constraint firstItem="R37-ZM-XAw" firstAttribute="top" secondItem="jeX-ZY-xyG" secondAttribute="top" id="P7D-Vc-m1o"/>
-                                                <constraint firstAttribute="trailing" secondItem="R37-ZM-XAw" secondAttribute="trailing" id="WNX-Cc-1t4"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZRI-62-myN" secondAttribute="bottom" id="cZv-dD-dIf"/>
-                                                <constraint firstItem="R37-ZM-XAw" firstAttribute="leading" secondItem="jeX-ZY-xyG" secondAttribute="leading" id="eKF-uz-uEo"/>
-                                                <constraint firstAttribute="bottom" secondItem="R37-ZM-XAw" secondAttribute="bottom" id="rb7-zA-IhA"/>
+                                                <constraint firstAttribute="trailing" secondItem="R37-ZM-XAw" secondAttribute="trailing" id="47O-Hj-wny"/>
+                                                <constraint firstItem="R37-ZM-XAw" firstAttribute="top" secondItem="jeX-ZY-xyG" secondAttribute="top" id="NjV-Dy-vFf"/>
+                                                <constraint firstItem="ZRI-62-myN" firstAttribute="leading" secondItem="jeX-ZY-xyG" secondAttribute="leading" id="aQW-6q-3ys"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZRI-62-myN" secondAttribute="bottom" id="eJG-7j-0Ds"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZRI-62-myN" secondAttribute="trailing" id="uRG-iF-9hg"/>
+                                                <constraint firstItem="R37-ZM-XAw" firstAttribute="leading" secondItem="jeX-ZY-xyG" secondAttribute="leading" id="wPF-hl-fjg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="recipeImage" destination="R37-ZM-XAw" id="jMz-H7-u9V"/>
-                                            <outlet property="recipeImageHeight" destination="fVf-0w-xsb" id="l8W-u9-wEV"/>
                                             <outlet property="recipeTitleLabel" destination="ZRI-62-myN" id="A0a-4E-y6q"/>
                                         </connections>
                                     </tableViewCell>
@@ -102,9 +97,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QdE-Bw-jQC">
-                                <rect key="frame" x="0.0" y="107" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="113" width="375" height="210"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="Qj2-21-zUN"/>
+                                    <constraint firstAttribute="height" constant="210" id="Qj2-21-zUN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKp-Pt-G2t">
@@ -156,35 +151,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green eggs and ham" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMN-Xe-r8i">
-                                                    <rect key="frame" x="68" y="2" width="284" height="40"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-8k-mZz" customClass="M13Checkbox" customModule="M13Checkbox">
-                                                    <rect key="frame" x="20" y="2" width="40" height="40"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="6o8-3p-eQT"/>
-                                                        <constraint firstAttribute="width" constant="40" id="WLR-1Z-E6G"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="6Li-PM-de9">
+                                                    <rect key="frame" x="15" y="2" width="360" height="43.5"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-8k-mZz" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="43.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="4n9-49-gxH"/>
+                                                                <constraint firstAttribute="height" constant="43.5" id="Hpq-v4-cPa"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green eggs and ham" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMN-Xe-r8i">
+                                                            <rect key="frame" x="49" y="13" width="311" height="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4gw-8k-mZz" firstAttribute="leading" secondItem="DHa-BR-x4Y" secondAttribute="leading" constant="20" id="0Pr-4q-fVV"/>
-                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="topMargin" constant="-9" id="8YP-3Q-EYa"/>
-                                                <constraint firstAttribute="bottom" secondItem="4gw-8k-mZz" secondAttribute="bottom" constant="5.5" id="Dv7-aY-Hlc"/>
-                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="8" id="XXy-Ue-7Lj"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tMN-Xe-r8i" secondAttribute="bottom" constant="-5" id="vVp-9k-NYL"/>
-                                                <constraint firstItem="4gw-8k-mZz" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="top" constant="2" id="wgS-2v-odO"/>
-                                                <constraint firstItem="tMN-Xe-r8i" firstAttribute="leading" secondItem="4gw-8k-mZz" secondAttribute="trailing" constant="8" id="xnY-cR-WU3"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tMN-Xe-r8i" secondAttribute="trailing" constant="8" id="yI1-GF-V3w"/>
+                                                <constraint firstItem="6Li-PM-de9" firstAttribute="top" secondItem="DHa-BR-x4Y" secondAttribute="top" constant="2" id="Dvk-au-W7g"/>
+                                                <constraint firstItem="6Li-PM-de9" firstAttribute="leading" secondItem="DHa-BR-x4Y" secondAttribute="leading" constant="15" id="aHg-dN-fh1"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Li-PM-de9" secondAttribute="trailing" id="vEH-c7-CjK"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Li-PM-de9" secondAttribute="bottom" constant="2" id="x56-N6-WVm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -200,6 +196,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUe-rn-oqZ">
+                                <rect key="frame" x="193" y="327" width="93" height="32"/>
+                                <color key="backgroundColor" red="0.41945424679999999" green="0.58069151640000005" blue="0.25099626180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="Recipe Details">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recipeDetailBtnPressed:" destination="63h-3A-Ql1" eventType="touchUpInside" id="4vh-zR-Aja"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -208,23 +220,27 @@
                             <constraint firstItem="pKp-Pt-G2t" firstAttribute="top" secondItem="Nf1-kB-rQx" secondAttribute="top" constant="10" id="9w5-cb-pIZ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7qH-oT-c3K" secondAttribute="trailing" constant="20" symbolic="YES" id="A16-xX-6iV"/>
                             <constraint firstItem="2lG-iw-d3b" firstAttribute="top" secondItem="QdE-Bw-jQC" secondAttribute="bottom" constant="4" id="EQM-n1-IoY"/>
+                            <constraint firstItem="PUe-rn-oqZ" firstAttribute="top" secondItem="QdE-Bw-jQC" secondAttribute="bottom" constant="4" id="JUL-AG-5J9"/>
                             <constraint firstItem="Nf1-kB-rQx" firstAttribute="trailing" secondItem="PzP-Lm-IWo" secondAttribute="trailing" constant="16" id="NwB-mN-aZp"/>
                             <constraint firstItem="QdE-Bw-jQC" firstAttribute="leading" secondItem="Nf1-kB-rQx" secondAttribute="leading" id="O2l-rL-UHu"/>
                             <constraint firstItem="pKp-Pt-G2t" firstAttribute="leading" secondItem="Nf1-kB-rQx" secondAttribute="leading" constant="8" id="RlD-69-mvT"/>
                             <constraint firstAttribute="bottom" secondItem="cYY-Mh-ZeB" secondAttribute="bottom" id="UWs-nE-5x3"/>
                             <constraint firstItem="cYY-Mh-ZeB" firstAttribute="top" secondItem="7qH-oT-c3K" secondAttribute="bottom" constant="5" id="YFR-qV-wSz"/>
+                            <constraint firstItem="PUe-rn-oqZ" firstAttribute="leading" secondItem="ZWt-QF-vX7" secondAttribute="trailing" constant="33.5" id="ZuJ-LR-chN"/>
                             <constraint firstItem="2lG-iw-d3b" firstAttribute="leading" secondItem="7qH-oT-c3K" secondAttribute="leading" id="a75-cv-Wut"/>
                             <constraint firstItem="7qH-oT-c3K" firstAttribute="top" secondItem="2lG-iw-d3b" secondAttribute="bottom" constant="5" id="cft-EJ-aLk"/>
                             <constraint firstItem="PzP-Lm-IWo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HP8-9r-twz" secondAttribute="leading" constant="20" symbolic="YES" id="cwr-65-Hhd"/>
                             <constraint firstItem="Nf1-kB-rQx" firstAttribute="trailing" secondItem="pKp-Pt-G2t" secondAttribute="trailing" constant="8" id="g5M-hh-bBg"/>
                             <constraint firstItem="cYY-Mh-ZeB" firstAttribute="leading" secondItem="Nf1-kB-rQx" secondAttribute="leading" id="mN4-KI-EUS"/>
-                            <constraint firstItem="QdE-Bw-jQC" firstAttribute="top" secondItem="pKp-Pt-G2t" secondAttribute="bottom" constant="8" id="ov5-C1-Nkk"/>
+                            <constraint firstItem="QdE-Bw-jQC" firstAttribute="top" secondItem="pKp-Pt-G2t" secondAttribute="bottom" constant="14" id="ov5-C1-Nkk"/>
+                            <constraint firstItem="PzP-Lm-IWo" firstAttribute="leading" secondItem="PUe-rn-oqZ" secondAttribute="trailing" constant="31" id="r3h-xe-AAO"/>
                             <constraint firstItem="PzP-Lm-IWo" firstAttribute="top" secondItem="QdE-Bw-jQC" secondAttribute="bottom" constant="4" id="rhb-zb-YpE"/>
                             <constraint firstItem="2lG-iw-d3b" firstAttribute="leading" secondItem="Nf1-kB-rQx" secondAttribute="leading" constant="16" id="taJ-t0-lvz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nf1-kB-rQx"/>
                     </view>
                     <connections>
+                        <outlet property="recipeDetails" destination="PUe-rn-oqZ" id="ZP1-ib-nLm"/>
                         <outlet property="recipeIdLabel" destination="PzP-Lm-IWo" id="Ptf-TU-7Ah"/>
                         <outlet property="recipeImage" destination="QdE-Bw-jQC" id="2qS-bN-Xzg"/>
                         <outlet property="recipeTitleLabel" destination="pKp-Pt-G2t" id="Jzn-zR-ZrB"/>

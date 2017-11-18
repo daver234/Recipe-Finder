@@ -18,6 +18,8 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     let searchController = UISearchController(searchResultsController: nil)
     let reachability = Reachability()!
     private var viewModel = RecipeTableViewModel()
+    var filteredSearchTerms = [String]()
+    var searchTerms = [String]()
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -38,6 +40,16 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         startSpinner(term: "you")
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.setNeedsLayout()
+            self.tableView.layoutIfNeeded()
+            self.tableView.reloadData()
         }
     }
     
@@ -99,6 +111,8 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
             if isNewRecipe {
                 DispatchQueue.main.async {
                     self.setupNavBarTitle()
+                    SwiftSpinner.hide()
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -186,28 +200,41 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
 
+    /// Load different data sets depending on status of search bar and if text has been entered
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching() {
-            return viewModel.searchTerms.value.count + 1 //searchTerms.count + 1
+        switch isSearchBarActive() {
+        case true:
+            switch searchBarIsEmpty() {
+            case true:
+                return searchTerms.count + 1
+            case false:
+                return filteredSearchTerms.count + 1
+            }
+        case false:
+            searchController.searchBar.isHidden = false
+            return viewModel.getRecipeCount() ?? 0
         }
-        return viewModel.getRecipeCount() ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.RECIPE_CELL, for: indexPath) as? RecipeTableViewCell else {
            return UITableViewCell()
         }
-        
-        switch isSearching() {
+        switch isSearchBarActive() {
         case true:
-            let termString : String
+            var termString : String
             // First add Top Rated to search term list
             if indexPath.row == 0 {
                 termString = Constants.TOP_RATED
+                cell.setupViewForIndexZero(searchTerm: termString)
+                return cell
             } else {
-                let term = viewModel.searchTerms.value[indexPath.row - 1]
-                guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return UITableViewCell() }
-                termString = searchTermString
+                switch searchBarIsEmpty() {
+                case true:
+                    termString = searchTerms[indexPath.row - 1]
+                case false:
+                    termString = filteredSearchTerms[indexPath.row - 1]
+                }
             }
             cell.setupViewIfCoreData(searchTerm: termString)
         case false:
@@ -215,6 +242,14 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
             cell.setupView(recipe: specificRecipe)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if searchController.isActive {
+            return 35
+        } else {
+            return 150
+        }
     }
     
     /// Get a specific recipe.  Used with setting up tableViewCell
@@ -278,11 +313,11 @@ extension RecipeTableVC {
     func startSpinner(term: String) {
         SwiftSpinner.setTitleFont(UIFont(name: "Avenir-Heavy", size: 22.0))
         SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
-        SwiftSpinner.show(duration: 2.0, title: "Getting recipes\nfor \(term)...", animated: true)
+        SwiftSpinner.show("Getting recipes\nfor \(term)...")
         searchController.isActive = false
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-            self?.tableView.reloadData()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
+//            self?.tableView.reloadData()
+//        }
     }
 }
 
@@ -293,13 +328,26 @@ extension RecipeTableVC: UISearchBarDelegate {
     /// Function to get saved searched terms from CoreData
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         viewModel.loadSearchTerms()
+        searchTerms = []
+        convertManagedSearchTermsToArray()
         tableView.backgroundView = UIView(frame: .zero)
         if reachability.connection == .none {
-            searchBar.resignFirstResponder()
+            searchBar.enablesReturnKeyAutomatically = false
         }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+    
+    /// Convert search terms from managed objects to a string array.
+    /// This is used for filtering while the user is typing in the search bar
+    func convertManagedSearchTermsToArray() {
+        for term in viewModel.searchTerms.value {
+            guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return }
+            searchTerms.append(searchTermString)
+        }
+        // filteredSearchTerms = searchTerms
+        print("filteredSearchTerms: ", filteredSearchTerms)
     }
     
     /// Save search text to CoreData
@@ -310,13 +358,32 @@ extension RecipeTableVC: UISearchBarDelegate {
         startSpinner(term: searchText)
     }
     
-    // MARK: - Functions to filter search text entry
+    // Filter search text entry
     func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
         tableView.reloadData()
+    }
+    
+    /// If search bar is active means user has clicked on it
+    func isSearchBarActive() -> Bool {
+        return searchController.isActive ? true : false
+    }
+    
+    /// Returns true if the text is empty or nil
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
     /// Returns true if focus in searchbar
     func isSearching() -> Bool {
         return searchController.isActive ? true : false
+    }
+    
+    /// As the user types adjust the data source to match what reamins
+    /// in the searchTerms array
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredSearchTerms = searchTerms.filter( { (text: String) -> Bool in
+            return text.contains(searchText.lowercased())
+        })
     }
 }

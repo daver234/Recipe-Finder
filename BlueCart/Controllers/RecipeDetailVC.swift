@@ -9,9 +9,10 @@
 import UIKit
 import Kingfisher
 import M13Checkbox
+import SafariServices
 
 
-class RecipeDetailVC: UIViewController, UITableViewDelegate {
+class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControllerDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var recipeImage: UIImageView!
@@ -19,6 +20,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     @IBOutlet weak var recipeIdLabel: UILabel!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var recipeDetails: UIButton!
     
     // MARK: - Properties
     var recipeFromTable: Recipe?
@@ -41,13 +43,26 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
         super.viewWillAppear(animated)
     }
     
+    @IBAction func recipeDetailBtnPressed(_ sender: Any) {
+        guard let detailUrl = recipeFromTable?.sourceUrl else { return }
+        guard let url = URL(string: detailUrl) else { return }
+        let safariVC = SFSafariViewController(url: url)
+        safariVC.delegate = self
+        self.present(safariVC, animated: true, completion: nil)
+    }
+    
     func configureView() {
         guard let newRecipe = recipeFromTable else { return }
-        guard let rank = newRecipe.socialRank, let recipeID = newRecipe.recipeID, let imageUrl = newRecipe.imageUrl, let title = newRecipe.title else { return }
+        guard let rank = newRecipe.socialRank,
+            let recipeID = newRecipe.recipeID,
+            let imageUrl = newRecipe.imageUrl,
+            let title = newRecipe.title else { return }
         self.recipeTitleLabel.text = title
         let socialRankString = String(format: "%.2f", rank)
         self.socialRankLabel.text = socialRankString
         self.recipeIdLabel.text = recipeID
+        
+        // Load image
         let image = UIImage(named: Constants.LOADING_IMAGE)
         let url = URL(string: imageUrl)
         DispatchQueue.main.async {
@@ -58,6 +73,9 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate {
     func monitorProperties() {
         viewModel.theRecipe.bind { [unowned self] (value) in
             DispatchQueue.main.async {
+                //self.tableView.reloadData()
+                self.tableView.setNeedsLayout()
+                self.tableView.layoutIfNeeded()
                 self.tableView.reloadData()
             }
         }
@@ -90,7 +108,12 @@ extension RecipeDetailVC:  UITableViewDataSource {
         }
         guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else { return UITableViewCell() }
         cell.setupView(ingredient: ingredients[indexPath.row])
-        cell.setNeedsLayout()
+//        cell.setNeedsLayout()
+//        cell.layoutIfNeeded()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }

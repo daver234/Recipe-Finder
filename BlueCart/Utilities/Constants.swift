@@ -41,10 +41,29 @@ struct Constants {
     static let RECIPE_TITLE = "Recipe"
     static let SEARCHBAR_PLACEHOLDER = "Search for recipes..."
     
-    // CoreData
+    // CoreData for Search
     static let SEARCH_TERMS = "searchTerms"  // attribute name for store search terms
     static let SEARCH_DATE = "createdAt"  // attribute for date term was created
     static let SEARCH_ENTITY = "Search" // Search entity
+    
+    // CoreData attributes RecipePage
+    static let MRECIPE_PAGE = "MRecipePage" // RecipePage entity
+    static let MPAGE_NUMBER = "mPageNumber"
+    static let MCREATED_AT_PAGE = "mCreatedAt"
+    static let MCOUNT = "mCount"
+    
+    // CoreData attributes Recipe
+    static let MRECIPE = "MRecipe"  // Recipe entity
+    static let MCREATED_AT_RECIPE = "mCreatedAt"
+    static let MIMAGE_URL = "mImageUrl"
+    static let MINGREDIENTS = "mIngredients"
+    static let MPUBLISHER = "mPublisher"
+    static let MPUBLISER_URL = "mPublisherUrl"
+    static let MRECIPE_ID = "mRecipeID"
+    static let MSOCIAL_RANK = "mSocialRank"
+    static let MSOURCE_URL = "mSourceUrl"
+    static let MTITLE = "mTitle"
+    static let MURL = "mUrl"
     
     // Controllers
     static let SEARCH_VC = "SearchBarVC"

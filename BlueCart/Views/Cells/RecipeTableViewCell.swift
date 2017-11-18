@@ -27,7 +27,7 @@ class RecipeTableViewCell: UITableViewCell {
 
     func setupView(recipe: Recipe) {
         recipeImage.isHidden = false
-        recipeImageHeight.constant = 150
+        //recipeImageHeight.constant = 150
 
         guard let title = recipe.title else { return }
         recipeTitleLabel.text = title
@@ -44,7 +44,18 @@ class RecipeTableViewCell: UITableViewCell {
     /// Hides image and changes cell height for just saved search text string
     func setupViewIfCoreData(searchTerm: String) {
         recipeImage.isHidden = true
-        recipeImageHeight.constant = 35
+        //recipeImageHeight.constant = 35
+        recipeTitleLabel.font = UIFont(name: Constants.AVENIR_HEAVY, size: 18)
+        recipeTitleLabel.textColor = ColorPalette.Black.Light
         recipeTitleLabel.text = searchTerm
+    }
+    
+    func setupViewForIndexZero(searchTerm: String) {
+        recipeImage.isHidden = true
+        // recipeImageHeight.constant = 35
+        recipeTitleLabel.font = UIFont(name: Constants.AVENIR_HEAVY, size: 20)
+        recipeTitleLabel.text = searchTerm
+        recipeTitleLabel.textColor = ColorPalette.Black.Medium
+       
     }
 }

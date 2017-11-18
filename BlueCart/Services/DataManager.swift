@@ -20,6 +20,7 @@ class DataManager {
     fileprivate(set) var totalRecipesRetrieved = 0
     fileprivate(set) var allRecipesWithoutPages = [Recipe]()
     var lastSearchTerm = ""
+    var saveRecipes = SaveRecipes()
     
     private init() {
     }
@@ -33,6 +34,7 @@ class DataManager {
         do {
             let result = try JSONDecoder().decode(RecipePage.self, from: data)
             updateAllVariables(result: result)
+            // saveRecipes.saveRecipePageCoreData(pageNumber: numberOfPagesRetrieved, recipePage: result)
             completion(true)
         } catch let jsonError {
             print("Error decoding JSON from server", jsonError)
