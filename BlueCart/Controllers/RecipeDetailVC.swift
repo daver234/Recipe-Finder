@@ -108,8 +108,6 @@ extension RecipeDetailVC:  UITableViewDataSource {
         }
         guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else { return UITableViewCell() }
         cell.setupView(ingredient: ingredients[indexPath.row])
-//        cell.setNeedsLayout()
-//        cell.layoutIfNeeded()
         return cell
     }
     

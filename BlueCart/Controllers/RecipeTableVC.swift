@@ -271,7 +271,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
 // MARK: - Navigation
 extension RecipeTableVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch isSearching() {
+        switch isSearchBarActive() {
         case true:
             print("Don't segue since the search terms are displaying.")
         case false:
@@ -289,7 +289,7 @@ extension RecipeTableVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch isSearching() {
+        switch isSearchBarActive() {
         case true:
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let currentCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell,
@@ -304,6 +304,7 @@ extension RecipeTableVC {
                 viewModel.loadRecipesBasedOnSearchTerm(searchString: term)
             }
             startSpinner(term: term)
+            searchController.isActive = false
         case false:
             self.performSegue(withIdentifier: Constants.TO_RECIPE_DETAIL, sender: self)
         }
@@ -314,7 +315,6 @@ extension RecipeTableVC {
         SwiftSpinner.setTitleFont(UIFont(name: "Avenir-Heavy", size: 22.0))
         SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
         SwiftSpinner.show("Getting recipes\nfor \(term)...")
-        searchController.isActive = false
     }
 }
 
@@ -369,11 +369,6 @@ extension RecipeTableVC: UISearchBarDelegate {
     /// Returns true if the text is empty or nil
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
-    }
-    
-    /// Returns true if focus in searchbar
-    func isSearching() -> Bool {
-        return searchController.isActive ? true : false
     }
     
     /// As the user types adjust the data source to match what reamins
