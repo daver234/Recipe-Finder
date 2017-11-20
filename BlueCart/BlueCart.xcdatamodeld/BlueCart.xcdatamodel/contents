@@ -7,8 +7,11 @@
                 <entry key="mImageUrl" value="image_url"/>
             </userInfo>
         </attribute>
-        <attribute name="mIngredients" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
-        <attribute name="mPublisher" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mPublisher" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mPublisher" value="publisher"/>
+            </userInfo>
+        </attribute>
         <attribute name="mPublisherUrl" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mPublisherUrl" value="publisher_url"/>
@@ -29,27 +32,34 @@
                 <entry key="mSourceUrl" value="source_url"/>
             </userInfo>
         </attribute>
-        <attribute name="mTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mTitle" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mTitle" value="title"/>
+            </userInfo>
+        </attribute>
         <attribute name="mUrl" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mUrl" value="f2f_url"/>
             </userInfo>
         </attribute>
-        <relationship name="m_RecipePage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MRecipePage" inverseName="m_Recipes" inverseEntity="MRecipePage" syncable="YES"/>
+        <relationship name="mPage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MRecipePage" inverseName="mRecipes" inverseEntity="MRecipePage" syncable="YES"/>
+        <userInfo>
+            <entry key="mPublsiher" value="publisher"/>
+        </userInfo>
     </entity>
     <entity name="MRecipePage" representedClassName="MRecipePage" syncable="YES" codeGenerationType="class">
         <attribute name="mCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mCreatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mPageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mSearchTerm" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="m_Recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MRecipeDetail" inverseName="m_RecipePage" inverseEntity="MRecipeDetail" syncable="YES"/>
+        <relationship name="mRecipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MRecipeDetail" inverseName="mPage" inverseEntity="MRecipeDetail" syncable="YES"/>
     </entity>
     <entity name="Search" representedClassName="Search" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="searchTerms" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MRecipeDetail" positionX="-272" positionY="-126" width="128" height="208"/>
+        <element name="MRecipeDetail" positionX="-272" positionY="-126" width="128" height="193"/>
         <element name="MRecipePage" positionX="-549" positionY="-144" width="128" height="118"/>
         <element name="Search" positionX="-423" positionY="-300" width="128" height="75"/>
     </elements>

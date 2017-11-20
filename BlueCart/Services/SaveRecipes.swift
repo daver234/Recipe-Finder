@@ -60,7 +60,7 @@ class SaveRecipes {
     /// Saving RecipePage to Core Data
     /// Handles iOS 10 and above one way and iOS 9 and below another
     /// - Parameter pageNumber: The page number, from the server, that is being saved.  Starts at 1.
-    func saveRecipePageCoreData(pageNumber: Int, recipePage: RecipePage) {
+    func saveRecipePageCoreData(searchTerm: String, pageNumber: Int, recipePage: RecipePage) {
         DispatchQueue.main.async {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             if #available(iOS 10.0, *) {
@@ -71,12 +71,12 @@ class SaveRecipes {
                 recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
                 recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
                 recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
+                recipePageToSave.setValue(searchTerm, forKey: Constants.MSEARCH_TERM)
                 // let recipes = recipePageToSave.mutableSetValue(forKey: "recipes")
                 // if let recipe = createRecordForEntity
                 // recipePageToSave.setValue(recipePage.recipes, forKey: )
                 for item in recipePage.recipes! {
                     let recipe = NSEntityDescription.insertNewObject(forEntityName: Constants.MRECIPE_DETAIL, into: managedContext)
-                    // recipe.setValue(item, forKey: <#T##String#>)
                     recipe.setValue(Date(), forKey: Constants.MCREATED_AT_RECIPE)
                     recipe.setValue(item.imageUrl, forKey: Constants.MIMAGE_URL)
                     // recipe.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)  /// need to change this
@@ -87,9 +87,10 @@ class SaveRecipes {
                     recipe.setValue(item.sourceUrl , forKey: Constants.MSOURCE_URL)
                     recipe.setValue(item.title , forKey: Constants.MTITLE)
                     recipe.setValue(item.url , forKey: Constants.MURL)
-                    recipePageToSave.setValue(recipe, forKey: Constants.MRECIPES)
-                    let itemToAdd = recipePageToSave.mutableSetValue(forKey: Constants.MRECIPES)
-                    itemToAdd.add(recipe)
+                    // recipePageToSave.setValue(recipe, forKey: Constants.MRECIPES)
+                    recipePageToSave.setValue((NSSet(object: recipe)), forKey: Constants.MRECIPES)
+//                    let itemToAdd = recipePageToSave.mutableSetValue(forKey: Constants.MRECIPES)
+//                    itemToAdd.add(recipe)
                 }
                 do {
                     try managedContext.save()
