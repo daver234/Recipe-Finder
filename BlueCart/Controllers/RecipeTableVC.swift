@@ -296,7 +296,9 @@ extension RecipeTableVC {
                 let term = currentCell.recipeTitleLabel.text
             else { return }
             /// Set the active search term in the view model
-            viewModel.searchString.value = term
+            let newString : String
+            term == Constants.TOP_RATED ? (newString = "") : (newString = term)
+            viewModel.searchString.value = newString
             viewModel.recipePageNumber.value = 0
             if term == Constants.TOP_RATED {
                 viewModel.loadRecipesBasedOnSearchTerm(searchString: "")
@@ -304,7 +306,7 @@ extension RecipeTableVC {
                 viewModel.loadRecipesBasedOnSearchTerm(searchString: term)
             }
             startSpinner(term: term)
-            searchController.isActive = false
+           
         case false:
             self.performSegue(withIdentifier: Constants.TO_RECIPE_DETAIL, sender: self)
         }
@@ -315,6 +317,7 @@ extension RecipeTableVC {
         SwiftSpinner.setTitleFont(UIFont(name: "Avenir-Heavy", size: 22.0))
         SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
         SwiftSpinner.show("Getting recipes\nfor \(term)...")
+        searchController.isActive = false
     }
 }
 

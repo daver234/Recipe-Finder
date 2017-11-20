@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="17B48" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="MRecipe" representedClassName="MRecipe" syncable="YES" codeGenerationType="class">
+    <entity name="MRecipeDetail" representedClassName="MRecipeDetail" syncable="YES" codeGenerationType="class">
         <attribute name="mCreatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mImageUrl" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
@@ -35,21 +35,22 @@
                 <entry key="mUrl" value="f2f_url"/>
             </userInfo>
         </attribute>
-        <relationship name="m_RecipePage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MRecipePage" inverseName="m_Recipeis" inverseEntity="MRecipePage" syncable="YES"/>
+        <relationship name="m_RecipePage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MRecipePage" inverseName="m_Recipes" inverseEntity="MRecipePage" syncable="YES"/>
     </entity>
     <entity name="MRecipePage" representedClassName="MRecipePage" syncable="YES" codeGenerationType="class">
         <attribute name="mCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mCreatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mPageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="m_Recipeis" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MRecipe" inverseName="m_RecipePage" inverseEntity="MRecipe" syncable="YES"/>
+        <attribute name="mSearchTerm" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="m_Recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MRecipeDetail" inverseName="m_RecipePage" inverseEntity="MRecipeDetail" syncable="YES"/>
     </entity>
     <entity name="Search" representedClassName="Search" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="searchTerms" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="MRecipeDetail" positionX="-272" positionY="-126" width="128" height="208"/>
+        <element name="MRecipePage" positionX="-549" positionY="-144" width="128" height="118"/>
         <element name="Search" positionX="-423" positionY="-300" width="128" height="75"/>
-        <element name="MRecipePage" positionX="-549" positionY="-144" width="128" height="103"/>
-        <element name="MRecipe" positionX="-272" positionY="-126" width="128" height="208"/>
     </elements>
 </model>

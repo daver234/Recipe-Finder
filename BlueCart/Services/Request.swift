@@ -36,7 +36,7 @@ class Request: AbstractRequestClient {
             /// To get Top Rated recipes, the search term is empty.  Hence we have to add back a name in order
             /// to create a file name to save
             var searchStringForFileName = ""
-            searchString == "" ? (searchStringForFileName = Constants.TOP_RATED_FILE) : (searchStringForFileName = searchString)
+            searchString == "" ? (searchStringForFileName = Constants.TOP_RATED) : (searchStringForFileName = searchString)
             // self.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
             self.saveRecipes.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
             DataManager.instance.decodeDataForPage(searchString: searchStringForFileName, data: data, completion: completion)

@@ -51,9 +51,11 @@ struct Constants {
     static let MPAGE_NUMBER = "mPageNumber"
     static let MCREATED_AT_PAGE = "mCreatedAt"
     static let MCOUNT = "mCount"
+    static let MSEARCH_TERM = "mSearchTerm"
+    static let MRECIPES = "mRecipes"
     
-    // CoreData attributes Recipe
-    static let MRECIPE = "MRecipe"  // Recipe entity
+    // CoreData attributes RecipeDetail
+    static let MRECIPE_DETAIL = "MRecipeDetail"  // Recipe entity
     static let MCREATED_AT_RECIPE = "mCreatedAt"
     static let MIMAGE_URL = "mImageUrl"
     static let MINGREDIENTS = "mIngredients"
@@ -70,6 +72,7 @@ struct Constants {
     
     // Search Terms
     static let TOP_RATED = "Top Rated"
+    static let TOP_RATED_LOWER = "toprated"
     static let RECIPE_DETAIL = "recipeDetail"
     
     // Fonts

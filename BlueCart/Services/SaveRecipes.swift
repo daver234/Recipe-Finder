@@ -52,20 +52,85 @@ class SaveRecipes {
                 """)
         }
     }
+    // transformable
+    //let colorDict = btDict["tintColor"] as! [String: AnyObject]
+    //bowtie.tintColor = UIColor.color(dict: colorDict)
+    
     
     /// Saving RecipePage to Core Data
     /// Handles iOS 10 and above one way and iOS 9 and below another
     /// - Parameter pageNumber: The page number, from the server, that is being saved.  Starts at 1.
     func saveRecipePageCoreData(pageNumber: Int, recipePage: RecipePage) {
+        DispatchQueue.main.async {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            if #available(iOS 10.0, *) {
+                let managedContext = appDelegate.persistentContainer.viewContext
+                guard let entity = NSEntityDescription.entity(forEntityName: Constants.MRECIPE_PAGE, in: managedContext) else { return }
+                let recipePageToSave = NSManagedObject(entity: entity, insertInto: managedContext)
+                
+                recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
+                recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
+                recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
+                // let recipes = recipePageToSave.mutableSetValue(forKey: "recipes")
+                // if let recipe = createRecordForEntity
+                // recipePageToSave.setValue(recipePage.recipes, forKey: )
+                for item in recipePage.recipes! {
+                    let recipe = NSEntityDescription.insertNewObject(forEntityName: Constants.MRECIPE_DETAIL, into: managedContext)
+                    // recipe.setValue(item, forKey: <#T##String#>)
+                    recipe.setValue(Date(), forKey: Constants.MCREATED_AT_RECIPE)
+                    recipe.setValue(item.imageUrl, forKey: Constants.MIMAGE_URL)
+                    // recipe.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)  /// need to change this
+                    recipe.setValue(item.publisher , forKey: Constants.MPUBLISHER)
+                    recipe.setValue(item.publisherUrl , forKey: Constants.MPUBLISER_URL)
+                    recipe.setValue(item.recipeID , forKey: Constants.MRECIPE_ID)
+                    recipe.setValue(item.socialRank , forKey: Constants.MSOCIAL_RANK)
+                    recipe.setValue(item.sourceUrl , forKey: Constants.MSOURCE_URL)
+                    recipe.setValue(item.title , forKey: Constants.MTITLE)
+                    recipe.setValue(item.url , forKey: Constants.MURL)
+                    recipePageToSave.setValue(recipe, forKey: Constants.MRECIPES)
+                    let itemToAdd = recipePageToSave.mutableSetValue(forKey: Constants.MRECIPES)
+                    itemToAdd.add(recipe)
+                }
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            } else {
+                // Fallback on earlier versions of iOS
+                let managedContext = appDelegate.managedObjectContext
+                guard let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
+                let recipePageToSave = NSManagedObject(entity: entityDesc, insertInto: managedContext)
+                recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
+                recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
+                recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+        }
+    }
+    
+    func saveRecipeDetailCoreData(recipeDetail: RecipeDetail) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         if #available(iOS 10.0, *) {
             let managedContext = appDelegate.persistentContainer.viewContext
-            guard let entity = NSEntityDescription.entity(forEntityName: Constants.MRECIPE_PAGE, in: managedContext) else { return }
+            guard let entity = NSEntityDescription.entity(forEntityName: Constants.MRECIPE_DETAIL, in: managedContext) else { return }
             let recipePageToSave = NSManagedObject(entity: entity, insertInto: managedContext)
-            recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
-            recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
-            recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
-            // recipePageToSave.setValue(recipePage.recipes, forKey: )
+            recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_RECIPE)
+            recipePageToSave.setValue(recipeDetail.imageUrl, forKey: Constants.MIMAGE_URL)
+            recipePageToSave.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)  /// need to change this
+            recipePageToSave.setValue(recipeDetail.publisher , forKey: Constants.MPUBLISHER)
+            recipePageToSave.setValue(recipeDetail.publisherUrl , forKey: Constants.MPUBLISER_URL)
+            recipePageToSave.setValue(recipeDetail.recipeID , forKey: Constants.MRECIPE_ID)
+            recipePageToSave.setValue(recipeDetail.socialRank , forKey: Constants.MSOCIAL_RANK)
+            recipePageToSave.setValue(recipeDetail.sourceUrl , forKey: Constants.MSOURCE_URL)
+            recipePageToSave.setValue(recipeDetail.title , forKey: Constants.MTITLE)
+            recipePageToSave.setValue(recipeDetail.url , forKey: Constants.MURL)
+            
+            
             do {
                 try managedContext.save()
             } catch let error as NSError {
@@ -74,11 +139,19 @@ class SaveRecipes {
         } else {
             // Fallback on earlier versions of iOS
             let managedContext = appDelegate.managedObjectContext
+            // let test = NSEntityDescription.insertNewObject
             guard let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
             let recipePageToSave = NSManagedObject(entity: entityDesc, insertInto: managedContext)
-            recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
-            recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
-            recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
+            recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_RECIPE)
+            recipePageToSave.setValue(recipeDetail.imageUrl, forKey: Constants.MIMAGE_URL)
+            recipePageToSave.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)
+            recipePageToSave.setValue(recipeDetail.publisher , forKey: Constants.MPUBLISHER)
+            recipePageToSave.setValue(recipeDetail.publisherUrl , forKey: Constants.MPUBLISER_URL)
+            recipePageToSave.setValue(recipeDetail.recipeID , forKey: Constants.MRECIPE_ID)
+            recipePageToSave.setValue(recipeDetail.socialRank , forKey: Constants.MSOCIAL_RANK)
+            recipePageToSave.setValue(recipeDetail.sourceUrl , forKey: Constants.MSOURCE_URL)
+            recipePageToSave.setValue(recipeDetail.title , forKey: Constants.MTITLE)
+            recipePageToSave.setValue(recipeDetail.url , forKey: Constants.MURL)
             do {
                 try managedContext.save()
             } catch let error as NSError {
@@ -86,4 +159,5 @@ class SaveRecipes {
             }
         }
     }
+    
 }

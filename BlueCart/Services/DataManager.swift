@@ -24,7 +24,7 @@ class DataManager {
     
     private init() {
     }
-    
+
     /// Decode full page of recipes
     func decodeDataForPage(searchString: String, data: Data, completion: @escaping CompletionHandler) {
         if searchString != lastSearchTerm {
