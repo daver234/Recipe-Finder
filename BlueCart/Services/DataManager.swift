@@ -87,7 +87,7 @@ extension DataManager {
 
 /// Retrive recent searches to disk for use in offline situations.
 extension DataManager {
-    func retrieveSavedSearchTermResults(term: String) {
+    func retrieveSavedSearchTermResults(term: String, completion: @escaping CompletionHandler) {
         resetDataManagerVariables()
         var termTrimmed = term.lowercased().replacingOccurrences(of: " ", with: "")
         termTrimmed == "" ? (termTrimmed = Constants.TOP_RATED_FILE) : (termTrimmed = termTrimmed)
@@ -97,7 +97,9 @@ extension DataManager {
         do {
             let retrieveSearch = try Disk.retrieve("Recipe/\(termTrimmed)", from: .caches, as: RecipePage.self)
             updateAllVariables(result: retrieveSearch)
+            completion(true)
         } catch let error as NSError {
+            completion(false)
             fatalError("""
                 Domain: \(error.domain)
                 Code: \(error.code)

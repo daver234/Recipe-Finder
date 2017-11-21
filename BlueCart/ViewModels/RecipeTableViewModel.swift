@@ -56,11 +56,24 @@ extension RecipeTableViewModel {
         retrievedSavedSearchTerms()
     }
     
+    /// This function loads more recipes for the existing search term as the user scrolls the table view
+    func loadRecipesForExistingSearchTerm(pageNumber: Int) {
+        loadRecipes(pageNumber: pageNumber, searchString: searchString.value)
+    }
+    
     /// This function loads different recipes based on whether or not the device is online or offline.
     /// If offline, then retrieve saved recipes.  If online, do search.
     func loadRecipesBasedOnSearchTerm(searchString: String) {
-        networkReachable ? loadRecipes(pageNumber: recipePageNumber.value, searchString: searchString) : DataManager.instance.retrieveSavedSearchTermResults(term: searchString)
-        didGetRecipes.value = true
+        if networkReachable {
+            loadRecipes(pageNumber: recipePageNumber.value, searchString: searchString) 
+        } else {
+            DataManager.instance.retrieveSavedSearchTermResults(term: searchString) { [weak self] success in
+                if success {
+                    self?.didGetRecipes.value = true
+                }
+            }
+        }
+        
     }
     
     /// Function for RecipeTableVC to save a new search term

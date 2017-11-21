@@ -192,7 +192,8 @@ extension RecipeTableVC {
         /// the user gets to the end of the table. The active search string is also included so that
         /// the right set of recipes load.
         if nextPage > currentPage {
-            viewModel.loadRecipes(pageNumber: nextPage, searchString: viewModel.searchString.value)
+            // viewModel.loadRecipes(pageNumber: nextPage, searchString: viewModel.searchString.value)
+            viewModel.loadRecipesForExistingSearchTerm(pageNumber: nextPage)
         }
     }
 }
