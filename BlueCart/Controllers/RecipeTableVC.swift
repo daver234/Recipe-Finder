@@ -78,6 +78,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         
         /// Load search terms from Core Data for use when user is searching terms
         viewModel.loadSearchTerms()
+        startSpinner(term: "you")
     }
     
     func setupSearchBar() {
@@ -135,18 +136,15 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
             print("Reachable via WiFi")
             viewModel.isNetworkReachable(reachable: true)
             loadInitialRecipePage()
-            startSpinner(term: "you")
         case .cellular:
             print("Reachable via Cellular")
             viewModel.isNetworkReachable(reachable: true)
             loadInitialRecipePage()
-            startSpinner(term: "you")
         case .none:
             TableViewHelper.EmptyMessage(message: Constants.NO_NET_MESSAGE, viewController: self, tableView: tableView)
             print("Network not reachable")
             viewModel.isNetworkReachable(reachable: false)
             loadInitialRecipePage()
-            startSpinner(term: "you")
         }
     }
 }

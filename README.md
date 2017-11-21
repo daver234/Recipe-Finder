@@ -11,7 +11,7 @@ Upon starting the app, you are presented with a table of top rated recipes in de
 
 Key Features:
 - Show top rated recipes both online and offline.
-- Show details of recipe including ingredients.
+- Show details of recipe including ingredients and button to view details on how to make the recipe.
 - Check mark next to each ingredient to check off after use when making recipe.
 - Find new recipes based on search terms.
 - View history of previous search terms, tap to view them.
