@@ -79,6 +79,13 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         /// Load search terms from Core Data for use when user is searching terms
         viewModel.loadSearchTerms()
         startSpinner(term: "you")
+        let recipes = RetrieveRecipes()
+        recipes.retrievedSavedRecipePages()
+//        for item in result {
+//            if let createdAt = item.value(forKey: Constants.MCREATED_AT_PAGE), let searchTerm = item.value(forKey: Constants.MSEARCH_TERM) {
+//                print("here is createdAt:\(createdAt) and then searchTerm \(searchTerm)")
+//            }
+//        }
     }
     
     func setupSearchBar() {

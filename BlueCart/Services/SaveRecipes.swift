@@ -62,6 +62,8 @@ class SaveRecipes {
     /// - Parameter pageNumber: The page number, from the server, that is being saved.  Starts at 1.
     func saveRecipePageCoreData(searchTerm: String, pageNumber: Int, recipePage: RecipePage) {
         DispatchQueue.main.async {
+            guard let alreadySaved = RetrieveRecipes().retrievePageNumberAndSearchTerm(pageNumber: pageNumber, searchTerm: searchTerm) else { return }
+            guard !alreadySaved else { return }
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             if #available(iOS 10.0, *) {
                 let managedContext = appDelegate.persistentContainer.viewContext

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -141,8 +141,8 @@
 		070A6ABD2C161FF8E781762298C0AA2F /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
 		07803CDCF223AC999243166546208AD7 /* Pods-BlueCart-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCart-resources.sh"; sourceTree = "<group>"; };
 		09CAED878673148C95AB484BF1D0D90A /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
-		0A092E1A5E74B5D4CECED0667B444A80 /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
-		0A2850893C238F8E22BCD07A6DAF32C2 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Kingfisher.modulemap; sourceTree = "<group>"; };
+		0A092E1A5E74B5D4CECED0667B444A80 /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
+		0A2850893C238F8E22BCD07A6DAF32C2 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		0D9B01733C973A79DAEFF7B98E89633F /* SwiftSpinner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSpinner.xcconfig; sourceTree = "<group>"; };
 		1464509FAAC0D1468A2A3BC0E9838651 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
 		1557753241129C9FB4DF958ACD13EA58 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		232D3FF25B3C1A635E6AC00397008E88 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
 		23E6BACA5B9E97842E6E2A14D0C6B0F6 /* Pods-BlueCart-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlueCart-acknowledgements.plist"; sourceTree = "<group>"; };
 		26FB05A3F5AC73403718ED8ED7E09C51 /* Pods-BlueCartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartUITests.release.xcconfig"; sourceTree = "<group>"; };
-		29E877A84099E01ECE6F77D8D8D916D7 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E877A84099E01ECE6F77D8D8D916D7 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A91A6D217EF04CAB343A4A7D31BF8BC /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
 		2C6E6E9704226A54B680343605502699 /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
 		2C8E5BD1140E21964AD31D0BB4528462 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		3A6F03163FFC875F32D9BA8E32B03152 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
 		3D1FC66E980295740DDA9FD977B9BE5B /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
 		3E121D3D67E0048861B0D777B0DFCB9B /* Disk+Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Errors.swift"; path = "Sources/Disk+Errors.swift"; sourceTree = "<group>"; };
-		3E9851B475B4E45DFD176533C3E243F0 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
+		3E9851B475B4E45DFD176533C3E243F0 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
 		44FCC80019842A4A9F993F4063F65708 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		4518488E063F91BB659286159ADF08D2 /* Disk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Disk-prefix.pch"; sourceTree = "<group>"; };
 		487285AD95E0D0DFB1D4DF84A36E2343 /* Pods-BlueCart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlueCart-dummy.m"; sourceTree = "<group>"; };
@@ -177,8 +177,8 @@
 		5A8D8162BFEDEE0F593A9F91697F4577 /* Pods-BlueCartUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartUITests-resources.sh"; sourceTree = "<group>"; };
 		5E4CF870BC708976123F2237FED74397 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
 		603D845C2C954913055E624A5A3F64D5 /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
-		62C1ACB6AECA7945C3107B7BFF48C704 /* Pods_BlueCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCartTests.framework; path = "Pods-BlueCartTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6420B71377C329F1F0EB8B54EF1E7116 /* Disk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Disk.framework; path = Disk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C1ACB6AECA7945C3107B7BFF48C704 /* Pods_BlueCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6420B71377C329F1F0EB8B54EF1E7116 /* Disk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Disk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F03D2D8B3CB855E32397F7ED299297 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		67BA4555AD8B0F5637ED7FA4F6601345 /* Pods-BlueCartTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartTests-frameworks.sh"; sourceTree = "<group>"; };
 		68F5083C58A06DCEB579244FB6909ADD /* Pods-BlueCartUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlueCartUITests-dummy.m"; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		77C4C1B510830D4E2F5B95EDC0161D34 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D694A1DA7710E0D9D2AEF0A8779B8C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839A6821549CE0A70C7996079ECA9149 /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
-		86BC643B3F24D57170B167E0CA6E7F94 /* Pods-BlueCartTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCartTests.modulemap"; sourceTree = "<group>"; };
+		86BC643B3F24D57170B167E0CA6E7F94 /* Pods-BlueCartTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlueCartTests.modulemap"; sourceTree = "<group>"; };
 		8876D671B99B962F80437F016B7995B5 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
 		8B43227A912680CC4ADF483E77910DA2 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
 		8B665B56225E99B050EDED92577BFFBB /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		9207498508281F84CD6B8368D23A5470 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/ImageCache.swift; sourceTree = "<group>"; };
 		92FC080491A0593B12CF007579BCE089 /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
 		9354BA7CF3B82476FB755795041D9365 /* SwiftSpinner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftSpinner.h; path = SwiftSpinner/SwiftSpinner.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94198A55254526B30419FFA33DF08032 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
 		96DADE23D02565ED5AC2666AFA575CFA /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; };
 		9F2F960C7C6E257DA9084D517AF36EAD /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
@@ -214,13 +214,13 @@
 		A8F2E2DCA86D51004CF075E9B507D3B6 /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
 		B0AEA51BECC499B3C27034FB8A1EEDEB /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/ImageTransition.swift; sourceTree = "<group>"; };
 		B12A1515EC8E8F3CE2899C2270B74A5B /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
-		B131459A251A5EA8BF5262CA7A6CBDBA /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCart.framework; path = "Pods-BlueCart.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B131459A251A5EA8BF5262CA7A6CBDBA /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FC44ED9632FA458C3B5A4A25BE3089 /* Pods-BlueCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCart.release.xcconfig"; sourceTree = "<group>"; };
 		B470E28DFFE5E6DCFD14AB1050F12D71 /* Disk+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Helpers.swift"; path = "Sources/Disk+Helpers.swift"; sourceTree = "<group>"; };
 		B707BEDB59A2FC6FE36ECE801DF86A52 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
 		BAF45938C0714B51E19C19B9617DA560 /* Disk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Disk-dummy.m"; sourceTree = "<group>"; };
 		BD03310EC649EADE3BF70378B0B494A3 /* Disk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disk.swift; path = Sources/Disk.swift; sourceTree = "<group>"; };
-		BE3BABF05BFFF98A8308F936BC5BB4FA /* SwiftSpinner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftSpinner.modulemap; sourceTree = "<group>"; };
+		BE3BABF05BFFF98A8308F936BC5BB4FA /* SwiftSpinner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftSpinner.modulemap; sourceTree = "<group>"; };
 		BFD727998B2B3BF0B3B2E8C7A83C69A2 /* Disk+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+UIImage.swift"; path = "Sources/Disk+UIImage.swift"; sourceTree = "<group>"; };
 		C191EC1180047211C87DD44D07B00E69 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/CacheSerializer.swift; sourceTree = "<group>"; };
 		C314642823082EE81835DAFF70548D71 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
@@ -238,28 +238,28 @@
 		CEF6617FA90B526C78EEB9E7592EAAC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF6922CA718763E9D9814AC05B86E732 /* Pods-BlueCartUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartUITests-frameworks.sh"; sourceTree = "<group>"; };
 		D00BE80012A84F49A359E73615EE52C1 /* DefaultValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValues.swift; path = Sources/DefaultValues.swift; sourceTree = "<group>"; };
-		D078CD41876171DE647F11127978FA9D /* Pods_BlueCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCartUITests.framework; path = "Pods-BlueCartUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D078CD41876171DE647F11127978FA9D /* Pods_BlueCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D160F4C213579FDD70CD4C8EE5B56F7F /* Disk+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Codable.swift"; path = "Sources/Disk+Codable.swift"; sourceTree = "<group>"; };
 		D1E0C4EBFC2DD280582B4C568749D3CD /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
-		D309E611944247D294A0C5332A95C281 /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSpinner.framework; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D30F379CAADDD01F5AD0B4BB547B1A47 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D309E611944247D294A0C5332A95C281 /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D30F379CAADDD01F5AD0B4BB547B1A47 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3494195E11451AFAF3361EEE634E7B6 /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/AnimatedImageView.swift; sourceTree = "<group>"; };
-		D6C99F528359A3A5B492D2D130B4E2BA /* Pods-BlueCartUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCartUITests.modulemap"; sourceTree = "<group>"; };
+		D6C99F528359A3A5B492D2D130B4E2BA /* Pods-BlueCartUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlueCartUITests.modulemap"; sourceTree = "<group>"; };
 		D85E188AE6A15A3ABBCA094D1ECC0299 /* Pods-BlueCartUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlueCartUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D8AD8C633B4D5F5E93F3B0D58709175C /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
-		DF0190C7C554E3D7B9980BACE418FAA1 /* Disk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Disk.modulemap; sourceTree = "<group>"; };
+		DF0190C7C554E3D7B9980BACE418FAA1 /* Disk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Disk.modulemap; sourceTree = "<group>"; };
 		E45D26FD6453DE71C5F10E722209B5A4 /* Disk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Disk-umbrella.h"; sourceTree = "<group>"; };
 		EA1DB3472F05984D390C041417131628 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		EA9243B36E5EC39CF975D3904085B7DF /* Pods-BlueCartUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlueCartUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EAF57590F2B91D1BD0F01E9271647A6A /* Pods-BlueCartUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlueCartUITests-umbrella.h"; sourceTree = "<group>"; };
-		ECF6B1DD1F94606CD18A2A1BEF0D656E /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox.framework; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF6B1DD1F94606CD18A2A1BEF0D656E /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC74088661E5230DB447F43391D8272 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3F1FBC6B9E18C9AE86FD44286A56F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C197F994BE20948EC9338FE4E95AC7 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		F640B793DAA975DCD9D514B6A080CC38 /* Pods-BlueCart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlueCart-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F78DF0D22E40D6D8116604A65B2F545C /* Disk+[UIImage].swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+[UIImage].swift"; path = "Sources/Disk+[UIImage].swift"; sourceTree = "<group>"; };
 		F7A9BA4ACBBE4FA1BDB27D95137685E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		FA3C1523862359B027C501B1F458B2DE /* Pods-BlueCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCart.modulemap"; sourceTree = "<group>"; };
+		FA3C1523862359B027C501B1F458B2DE /* Pods-BlueCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlueCart.modulemap"; sourceTree = "<group>"; };
 		FA4EC590FBA3F4FA46AE04C738F08FD9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAF020458A37AAB9773DCD55E7AC10FA /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
 		FCFE3C36A95839F95CA419ECEA999CB8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -384,7 +384,6 @@
 				09CAED878673148C95AB484BF1D0D90A /* UIButton+Kingfisher.swift */,
 				C6617C033DF6AFFB53DAC1D31E01371A /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -440,7 +439,6 @@
 				8B43227A912680CC4ADF483E77910DA2 /* Reachability.swift */,
 				160488156282B1476E62EE831144C0E7 /* Support Files */,
 			);
-			name = ReachabilitySwift;
 			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
@@ -507,7 +505,6 @@
 				A07F18E399132D3382A4A0D106ACFE8B /* Disk+VolumeInformation.swift */,
 				402FA46DC910FCF4E9DDD5611D95D5E7 /* Support Files */,
 			);
-			name = Disk;
 			path = Disk;
 			sourceTree = "<group>";
 		};
@@ -564,7 +561,6 @@
 				8B665B56225E99B050EDED92577BFFBB /* M13CheckboxStrokeController.swift */,
 				B8200401723082CA0C0479F0CC8C2D4F /* Support Files */,
 			);
-			name = M13Checkbox;
 			path = M13Checkbox;
 			sourceTree = "<group>";
 		};
@@ -603,7 +599,6 @@
 				6CE8488B78FF2D0C068BA86ED61DF1E8 /* SwiftSpinner.swift */,
 				2292D136E06066D59103D66734F955C7 /* Support Files */,
 			);
-			name = SwiftSpinner;
 			path = SwiftSpinner;
 			sourceTree = "<group>";
 		};
@@ -852,7 +847,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0910;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1304,6 +1299,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
