@@ -29,15 +29,12 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         
         /// Identifier used for unit testing
         view.accessibilityIdentifier = Constants.RECIPE_TVC_UITEST
-        
-        loadInitialRecipePage()
         setupNavBarTitle()
         setupSearchBar()
         monitorProperties()
         tableView.delegate = self
         tableView.dataSource = self
         searchController.searchBar.delegate = self
-        startSpinner(term: "you")
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
         }
@@ -55,7 +52,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         /// Watch for connectivity being turned off
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
@@ -76,7 +73,8 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         /// And we always start by loading page 1.  When scrolling (iOS 10 and above) more pages load
         /// via the prefetching API
         viewModel.searchString.value = ""
-        viewModel.loadRecipes(pageNumber: 1, searchString: viewModel.searchString.value)
+        viewModel.recipePageNumber.value = 1
+        viewModel.loadRecipesBasedOnSearchTerm(searchString: viewModel.searchString.value)
         
         /// Load search terms from Core Data for use when user is searching terms
         viewModel.loadSearchTerms()
@@ -136,13 +134,19 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         case .wifi:
             print("Reachable via WiFi")
             viewModel.isNetworkReachable(reachable: true)
+            loadInitialRecipePage()
+            startSpinner(term: "you")
         case .cellular:
             print("Reachable via Cellular")
             viewModel.isNetworkReachable(reachable: true)
+            loadInitialRecipePage()
+            startSpinner(term: "you")
         case .none:
             TableViewHelper.EmptyMessage(message: Constants.NO_NET_MESSAGE, viewController: self, tableView: tableView)
             print("Network not reachable")
             viewModel.isNetworkReachable(reachable: false)
+            loadInitialRecipePage()
+            startSpinner(term: "you")
         }
     }
 }

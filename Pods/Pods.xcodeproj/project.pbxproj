@@ -3,21 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		017CC654FA3E7438017FA61B631B4AE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
-		037131B3374815D718C126CFB09787FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
 		07432E8DEA8B25795C7C545AA67A0187 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AEA51BECC499B3C27034FB8A1EEDEB /* ImageTransition.swift */; };
 		0744231B4276CDE27CB12C5C084A347E /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A6ABD2C161FF8E781762298C0AA2F /* M13CheckboxBounceController.swift */; };
 		08A987F6151EB98210B72FD7BC798466 /* Pods-BlueCart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA999C49B411FF7809E995A31F71F16 /* Pods-BlueCart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CA6357476373C221D44C498AA1D65FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */; };
 		10AD5E70FDD53228153032C58FBF4D52 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4422E68C2B29C17C659DA476DA17A0 /* String+MD5.swift */; };
 		13FC128B4DD17CD90F02593EAAAE9A67 /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B665B56225E99B050EDED92577BFFBB /* M13CheckboxStrokeController.swift */; };
 		155278697DE95FE85991CE469BE2935B /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D160F4C213579FDD70CD4C8EE5B56F7F /* Disk+Codable.swift */; };
 		1827E7D94F3A12CA0C58EF33AE4B026D /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821E14C227E49021E531A06CDAA1C82 /* KingfisherOptionsInfo.swift */; };
 		183F3E45381030F3C43E1398361387D3 /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2E2DCA86D51004CF075E9B507D3B6 /* M13Checkbox-dummy.m */; };
+		1C204A80F467B972C53BF77516765BAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */; };
 		1DAF3BB88351664576507F774FEB051C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F03D2D8B3CB855E32397F7ED299297 /* Filter.swift */; };
+		1DD8F19D428D34BEEC81923210CC7466 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C6751F09ED0C09D014927DB82D339D /* SystemConfiguration.framework */; };
 		1EB79404C783C6997ADCC1DD5EC40BC2 /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A6821549CE0A70C7996079ECA9149 /* M13CheckboxExpandController.swift */; };
 		1FCC0970C8435F10768CA84C2025A177 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020FC438650357851F0B6CBB7D72AA6 /* Resource.swift */; };
 		2082EB4AA16440FFD5479FAFC0181066 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D3FF25B3C1A635E6AC00397008E88 /* Indicator.swift */; };
@@ -26,32 +27,28 @@
 		2D09335B55AC1200281D05F07B31A9F8 /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AFC983207A29E16F691CD097667083 /* ReachabilitySwift-dummy.m */; };
 		2E903E65241641AFF0E46CBC57B26015 /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF020458A37AAB9773DCD55E7AC10FA /* M13CheckboxFadeController.swift */; };
 		2F288ED3641B2B4775884C462AE377E6 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1557753241129C9FB4DF958ACD13EA58 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3435C77F5017AF4E5035107386080A73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */; };
 		36AD3B61D5C11A118B8252E0FF980379 /* Pods-BlueCart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 487285AD95E0D0DFB1D4DF84A36E2343 /* Pods-BlueCart-dummy.m */; };
 		383C9A8DB84B83233633C3A00A2C1608 /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B707BEDB59A2FC6FE36ECE801DF86A52 /* KingfisherManager.swift */; };
 		40765AAA791D6DFC0022639E348F0E6A /* FormatIndicatedCacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D845C2C954913055E624A5A3F64D5 /* FormatIndicatedCacheSerializer.swift */; };
 		413C2A3759ABEC870AAE61F28C258C31 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BB39182B0C61845FAF4B15E4FEF28 /* ImageDownloader.swift */; };
 		48EC78A50C61424D4DFDC33A325CAA72 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C67F0BE2F891B2EE426FB94A08B4DB /* ThreadHelper.swift */; };
-		4EE2396FC95F52215C5677D29F8FFA9F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F220EC8F6DC136C482A0F71559D39 /* SystemConfiguration.framework */; };
+		4D80C10C72BED8A4CA18F76DD0FCC593 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17685DD06A9F18973F5133BC1AF6A7E4 /* UIKit.framework */; };
+		52416A6AC7387ECACCC45596498D96AD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8781BB8A385CE75676E011F9DC5BFB6 /* CFNetwork.framework */; };
 		54B4D9D1D7107638B4E79C329028CC10 /* Disk+[UIImage].swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DF0D22E40D6D8116604A65B2F545C /* Disk+[UIImage].swift */; };
 		57F5F0E4502788A2CA95F2B30D4AFCE3 /* Disk+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B470E28DFFE5E6DCFD14AB1050F12D71 /* Disk+Helpers.swift */; };
-		58E3A2252F96F130E62B60216A78D38F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F8EE9728E08D2F6A2CA0CB0EEBFD0E /* UIKit.framework */; };
 		5B5D8AE167BD8E304CE474A9B8DBA2B4 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = A0AE4B1844D1BEA689EF3EDE661A4122 /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D83206A9A4656F11D511158EC8E0784 /* CacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191EC1180047211C87DD44D07B00E69 /* CacheSerializer.swift */; };
 		6853FB4167701B2DF94D7CDFB38B8CAD /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F3C6D70B7008A7734D37186A271BC95 /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A2805E3E11832AAA8885DDA9553001F /* SwiftSpinner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3C7D69DB653D4F47992AAAB757665E4 /* SwiftSpinner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F0B2BE8EB0273B15DD59ADA5CE3912B /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD03310EC649EADE3BF70378B0B494A3 /* Disk.swift */; };
 		7003284F0E7BD5ACB1320634256E9333 /* Pods-BlueCartTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6148F6821ECB46DAC9B11D1E865C6C7 /* Pods-BlueCartTests-dummy.m */; };
-		73908B934D4C840428B25CDD35987566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F8EE9728E08D2F6A2CA0CB0EEBFD0E /* UIKit.framework */; };
 		73A3753C550F26AEE354F43D7AA98ACE /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1FC66E980295740DDA9FD977B9BE5B /* M13CheckboxSpiralController.swift */; };
-		7435126795F92B7AB028616D0F68A736 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
 		7442CD160C73A3DC8C198AFC9B21EF65 /* SwiftSpinner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE25C37FA17D8FD466C543198F352E8A /* SwiftSpinner-dummy.m */; };
-		780356065931A707BBE75F5A7A32105A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
 		782D29BC83C0699F7A89B84C3AA418D4 /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1E0C4EBFC2DD280582B4C568749D3CD /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		788B9DEF11E3A863059137CBA0C864FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
-		7B33D4A87DC96F499E76D0721FB51371 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E4B8B8E6B221295AA5C41567795366 /* CoreGraphics.framework */; };
-		7B926A94817CB437E734F8E0E0043C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
 		7D5AB7A91E820D7EECD12A6EA221D479 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2F960C7C6E257DA9084D517AF36EAD /* M13CheckboxRadioPathGenerator.swift */; };
 		7D94389D13C85695A7E5328202FF9CB0 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E89C81861155F600A2BB8BF05F6193 /* M13CheckboxDotController.swift */; };
+		7FC815D58329BCB48AA8E8199B9D142A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A9BA4ACBBE4FA1BDB27D95137685E8 /* CoreGraphics.framework */; };
 		80DC15A0582068D6EDE31A6178375C89 /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC080491A0593B12CF007579BCE089 /* M13CheckboxController.swift */; };
 		873BA68C2E24D634D38E4A8BCB74B08D /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94198A55254526B30419FFA33DF08032 /* Kingfisher.swift */; };
 		87CF22D207D6D38A8FEA9F8C12975BCA /* Disk+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD727998B2B3BF0B3B2E8C7A83C69A2 /* Disk+UIImage.swift */; };
@@ -60,13 +57,14 @@
 		8D7D42C25F9430F572E14200C399D57B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207498508281F84CD6B8368D23A5470 /* ImageCache.swift */; };
 		93D444FC9D79520E14FB8EF178F0B76E /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DADE23D02565ED5AC2666AFA575CFA /* ImageProcessor.swift */; };
 		950D8E334E011B13CC5786595E6AE615 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499504D9AD17AE5374C20F8876E9315 /* Image.swift */; };
-		9548512F8BDE6BBE52771B6B3E16C5CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
 		97713C0235F372715A3AD292C57C8FEC /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E26D789755BF6099E45E2E6C016DE7 /* M13Checkbox+IB.swift */; };
+		97B8C9A7411FAD098A79FC196993D1F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */; };
+		97F70BDB0249E485C08C18EEEBBCE251 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */; };
+		996FC5C6DC31D26EDF56F1B747BC3879 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17685DD06A9F18973F5133BC1AF6A7E4 /* UIKit.framework */; };
 		A22DC00558E719A75F5CCC551EDA4BFA /* SwiftSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = 9354BA7CF3B82476FB755795041D9365 /* SwiftSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7EC09EC6EFAB3778E0A0341E7DC9CE3 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3494195E11451AFAF3361EEE634E7B6 /* AnimatedImageView.swift */; };
 		A8F909B39333B28D10A25EFC8F6206AF /* Disk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E45D26FD6453DE71C5F10E722209B5A4 /* Disk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB839F535003BA79950BDC9A0B50D923 /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E5BD1140E21964AD31D0BB4528462 /* M13CheckboxDisclosurePathGenerator.swift */; };
-		AD32A7002068B6EC4B17949FECA0E76F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C469BFD66CC9C6BDB58169318966E348 /* CFNetwork.framework */; };
 		AE200139C56E78577C44F955499EA691 /* Pods-BlueCartUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F5083C58A06DCEB579244FB6909ADD /* Pods-BlueCartUITests-dummy.m */; };
 		AFB5DF952786BEE60F3F6FE3EFD2CF32 /* Disk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF45938C0714B51E19C19B9617DA560 /* Disk-dummy.m */; };
 		B0033530A0EAABBB31CD46CA2899F3BD /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464509FAAC0D1468A2A3BC0E9838651 /* Box.swift */; };
@@ -75,14 +73,16 @@
 		B7D8254786CE0AE3BF97982B7FAAD198 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F88D9BB9DBA22D6EB94D196EB5EC1AF /* M13CheckboxCheckPathGenerator.swift */; };
 		B7FDDEACD34AD41575553A724DE133CE /* Pods-BlueCartTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3452BF3702936AC6C6A0ED8C006A19F2 /* Pods-BlueCartTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD78E8DDD27AF7518D2AE2456285730C /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876D671B99B962F80437F016B7995B5 /* M13CheckboxAddRemovePathGenerator.swift */; };
-		C2A1E269EBF0A38264097DD2F094D903 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */; };
 		C651BE14A9516328999C03B06EBF5E54 /* Pods-BlueCartUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAF57590F2B91D1BD0F01E9271647A6A /* Pods-BlueCartUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C88F144420533BCDEE60E418C316FB8E /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E6E9704226A54B680343605502699 /* M13Checkbox.swift */; };
 		C90319AD1CBE6A1562D75FCDBEBBA5E0 /* Disk+InternalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E06F9E003F662F7CFBE4CD72A5D732 /* Disk+InternalHelpers.swift */; };
 		CB4222BC34D92C2E06A5BCF730FEFE71 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3890FE13A7A681E006312A8ED96A53B /* Kingfisher-dummy.m */; };
 		CB8DF027448816C623E9B02A3685A59F /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC80019842A4A9F993F4063F65708 /* ImageView+Kingfisher.swift */; };
+		CCBEB069121F35E4E665EE1552863064 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */; };
+		D2CC2D6DAD0F3D1426794BFA9DF3318B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */; };
 		D5218FB15C76B99D57BDB9EB6B27D7BA /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314642823082EE81835DAFF70548D71 /* M13CheckboxFillController.swift */; };
 		D5426D24FACD6E34D5B83FC867EF7EAD /* Disk+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B77FC28381873F3348EE2DE421796F3 /* Disk+Data.swift */; };
+		E2917C44B502EB6B7F4C8E0F7A989085 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */; };
 		E710FF1F4EB4B125F9C5DBDFE3B9320F /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5971CCFE5FE50BE4231B48696C4DC /* Placeholder.swift */; };
 		EEC58E9F92789CE9F44909BFA6592BF4 /* Disk+[Data].swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74DD28C8A8F23E825B0FDB7B69EC9A /* Disk+[Data].swift */; };
 		EEF0930DC9A866CA97209104C3BDE95D /* Disk.h in Headers */ = {isa = PBXBuildFile; fileRef = 06F89557EDC41AB635F3A939C00EDE98 /* Disk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -133,6 +133,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		02E06F9E003F662F7CFBE4CD72A5D732 /* Disk+InternalHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+InternalHelpers.swift"; path = "Sources/Disk+InternalHelpers.swift"; sourceTree = "<group>"; };
 		0514D67B078F5E067842B09050C39A47 /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
 		05C27C4E8B36BB4A73357248B5AF0AEC /* Pods-BlueCartTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartTests-resources.sh"; sourceTree = "<group>"; };
@@ -140,44 +141,44 @@
 		070A6ABD2C161FF8E781762298C0AA2F /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
 		07803CDCF223AC999243166546208AD7 /* Pods-BlueCart-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCart-resources.sh"; sourceTree = "<group>"; };
 		09CAED878673148C95AB484BF1D0D90A /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
-		0A092E1A5E74B5D4CECED0667B444A80 /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
-		0A2850893C238F8E22BCD07A6DAF32C2 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Kingfisher.modulemap; sourceTree = "<group>"; };
+		0A092E1A5E74B5D4CECED0667B444A80 /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
+		0A2850893C238F8E22BCD07A6DAF32C2 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		0D9B01733C973A79DAEFF7B98E89633F /* SwiftSpinner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSpinner.xcconfig; sourceTree = "<group>"; };
 		1464509FAAC0D1468A2A3BC0E9838651 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
 		1557753241129C9FB4DF958ACD13EA58 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
 		1614E7B8403CD81F2C851E08438BE702 /* Disk.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Disk.xcconfig; sourceTree = "<group>"; };
 		172E0B49E0920FBBB7D7066BF0DAAE64 /* SwiftSpinner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-prefix.pch"; sourceTree = "<group>"; };
+		17685DD06A9F18973F5133BC1AF6A7E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		1B6EDFF0BF667813344410820F10B3E6 /* Pods-BlueCartTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlueCartTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2020FC438650357851F0B6CBB7D72AA6 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
 		232D3FF25B3C1A635E6AC00397008E88 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
 		23E6BACA5B9E97842E6E2A14D0C6B0F6 /* Pods-BlueCart-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlueCart-acknowledgements.plist"; sourceTree = "<group>"; };
 		26FB05A3F5AC73403718ED8ED7E09C51 /* Pods-BlueCartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartUITests.release.xcconfig"; sourceTree = "<group>"; };
-		29E877A84099E01ECE6F77D8D8D916D7 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E877A84099E01ECE6F77D8D8D916D7 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A91A6D217EF04CAB343A4A7D31BF8BC /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
 		2C6E6E9704226A54B680343605502699 /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
 		2C8E5BD1140E21964AD31D0BB4528462 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
 		2F3C6D70B7008A7734D37186A271BC95 /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
 		3452BF3702936AC6C6A0ED8C006A19F2 /* Pods-BlueCartTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlueCartTests-umbrella.h"; sourceTree = "<group>"; };
+		35C6751F09ED0C09D014927DB82D339D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		3821E14C227E49021E531A06CDAA1C82 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		3A6F03163FFC875F32D9BA8E32B03152 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
 		3D1FC66E980295740DDA9FD977B9BE5B /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
 		3E121D3D67E0048861B0D777B0DFCB9B /* Disk+Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Errors.swift"; path = "Sources/Disk+Errors.swift"; sourceTree = "<group>"; };
-		3E9851B475B4E45DFD176533C3E243F0 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
-		403F220EC8F6DC136C482A0F71559D39 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		3E9851B475B4E45DFD176533C3E243F0 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
 		44FCC80019842A4A9F993F4063F65708 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		4518488E063F91BB659286159ADF08D2 /* Disk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Disk-prefix.pch"; sourceTree = "<group>"; };
 		487285AD95E0D0DFB1D4DF84A36E2343 /* Pods-BlueCart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlueCart-dummy.m"; sourceTree = "<group>"; };
 		4B77FC28381873F3348EE2DE421796F3 /* Disk+Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Data.swift"; path = "Sources/Disk+Data.swift"; sourceTree = "<group>"; };
 		4F88D9BB9DBA22D6EB94D196EB5EC1AF /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
 		507842CF4D7AF172FF3EADDEFB2C71E4 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
-		50E4B8B8E6B221295AA5C41567795366 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		55FF5322614C3471172556FEA101813D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57C67F0BE2F891B2EE426FB94A08B4DB /* ThreadHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadHelper.swift; path = Sources/ThreadHelper.swift; sourceTree = "<group>"; };
 		5A8D8162BFEDEE0F593A9F91697F4577 /* Pods-BlueCartUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartUITests-resources.sh"; sourceTree = "<group>"; };
 		5E4CF870BC708976123F2237FED74397 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
 		603D845C2C954913055E624A5A3F64D5 /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
-		62C1ACB6AECA7945C3107B7BFF48C704 /* Pods_BlueCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6420B71377C329F1F0EB8B54EF1E7116 /* Disk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Disk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C1ACB6AECA7945C3107B7BFF48C704 /* Pods_BlueCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCartTests.framework; path = "Pods-BlueCartTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6420B71377C329F1F0EB8B54EF1E7116 /* Disk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Disk.framework; path = Disk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F03D2D8B3CB855E32397F7ED299297 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		67BA4555AD8B0F5637ED7FA4F6601345 /* Pods-BlueCartTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartTests-frameworks.sh"; sourceTree = "<group>"; };
 		68F5083C58A06DCEB579244FB6909ADD /* Pods-BlueCartUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlueCartUITests-dummy.m"; sourceTree = "<group>"; };
@@ -188,8 +189,7 @@
 		77C4C1B510830D4E2F5B95EDC0161D34 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D694A1DA7710E0D9D2AEF0A8779B8C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839A6821549CE0A70C7996079ECA9149 /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
-		85F8EE9728E08D2F6A2CA0CB0EEBFD0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		86BC643B3F24D57170B167E0CA6E7F94 /* Pods-BlueCartTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlueCartTests.modulemap"; sourceTree = "<group>"; };
+		86BC643B3F24D57170B167E0CA6E7F94 /* Pods-BlueCartTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCartTests.modulemap"; sourceTree = "<group>"; };
 		8876D671B99B962F80437F016B7995B5 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
 		8B43227A912680CC4ADF483E77910DA2 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
 		8B665B56225E99B050EDED92577BFFBB /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		9207498508281F84CD6B8368D23A5470 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/ImageCache.swift; sourceTree = "<group>"; };
 		92FC080491A0593B12CF007579BCE089 /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
 		9354BA7CF3B82476FB755795041D9365 /* SwiftSpinner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftSpinner.h; path = SwiftSpinner/SwiftSpinner.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94198A55254526B30419FFA33DF08032 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
 		96DADE23D02565ED5AC2666AFA575CFA /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; };
 		9F2F960C7C6E257DA9084D517AF36EAD /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
@@ -210,22 +210,22 @@
 		A4DB4707249A9CAAA010286E097B0A50 /* Pods-BlueCart-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCart-frameworks.sh"; sourceTree = "<group>"; };
 		A4E89C81861155F600A2BB8BF05F6193 /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
 		A6148F6821ECB46DAC9B11D1E865C6C7 /* Pods-BlueCartTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlueCartTests-dummy.m"; sourceTree = "<group>"; };
+		A8781BB8A385CE75676E011F9DC5BFB6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		A8F2E2DCA86D51004CF075E9B507D3B6 /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
 		B0AEA51BECC499B3C27034FB8A1EEDEB /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/ImageTransition.swift; sourceTree = "<group>"; };
 		B12A1515EC8E8F3CE2899C2270B74A5B /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
-		B131459A251A5EA8BF5262CA7A6CBDBA /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B131459A251A5EA8BF5262CA7A6CBDBA /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCart.framework; path = "Pods-BlueCart.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FC44ED9632FA458C3B5A4A25BE3089 /* Pods-BlueCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCart.release.xcconfig"; sourceTree = "<group>"; };
 		B470E28DFFE5E6DCFD14AB1050F12D71 /* Disk+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Helpers.swift"; path = "Sources/Disk+Helpers.swift"; sourceTree = "<group>"; };
 		B707BEDB59A2FC6FE36ECE801DF86A52 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
 		BAF45938C0714B51E19C19B9617DA560 /* Disk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Disk-dummy.m"; sourceTree = "<group>"; };
 		BD03310EC649EADE3BF70378B0B494A3 /* Disk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disk.swift; path = Sources/Disk.swift; sourceTree = "<group>"; };
-		BE3BABF05BFFF98A8308F936BC5BB4FA /* SwiftSpinner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftSpinner.modulemap; sourceTree = "<group>"; };
+		BE3BABF05BFFF98A8308F936BC5BB4FA /* SwiftSpinner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftSpinner.modulemap; sourceTree = "<group>"; };
 		BFD727998B2B3BF0B3B2E8C7A83C69A2 /* Disk+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+UIImage.swift"; path = "Sources/Disk+UIImage.swift"; sourceTree = "<group>"; };
 		C191EC1180047211C87DD44D07B00E69 /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/CacheSerializer.swift; sourceTree = "<group>"; };
 		C314642823082EE81835DAFF70548D71 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
 		C3890FE13A7A681E006312A8ED96A53B /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		C3C7D69DB653D4F47992AAAB757665E4 /* SwiftSpinner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-umbrella.h"; sourceTree = "<group>"; };
-		C469BFD66CC9C6BDB58169318966E348 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		C499504D9AD17AE5374C20F8876E9315 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image.swift; sourceTree = "<group>"; };
 		C4FDBFB6337F56874003610DBFAE7443 /* Pods-BlueCartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5E26D789755BF6099E45E2E6C016DE7 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
@@ -238,28 +238,28 @@
 		CEF6617FA90B526C78EEB9E7592EAAC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF6922CA718763E9D9814AC05B86E732 /* Pods-BlueCartUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BlueCartUITests-frameworks.sh"; sourceTree = "<group>"; };
 		D00BE80012A84F49A359E73615EE52C1 /* DefaultValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValues.swift; path = Sources/DefaultValues.swift; sourceTree = "<group>"; };
-		D078CD41876171DE647F11127978FA9D /* Pods_BlueCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D078CD41876171DE647F11127978FA9D /* Pods_BlueCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BlueCartUITests.framework; path = "Pods-BlueCartUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D160F4C213579FDD70CD4C8EE5B56F7F /* Disk+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Codable.swift"; path = "Sources/Disk+Codable.swift"; sourceTree = "<group>"; };
-		D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D1E0C4EBFC2DD280582B4C568749D3CD /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
-		D309E611944247D294A0C5332A95C281 /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D30F379CAADDD01F5AD0B4BB547B1A47 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D309E611944247D294A0C5332A95C281 /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSpinner.framework; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D30F379CAADDD01F5AD0B4BB547B1A47 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3494195E11451AFAF3361EEE634E7B6 /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/AnimatedImageView.swift; sourceTree = "<group>"; };
-		D6C99F528359A3A5B492D2D130B4E2BA /* Pods-BlueCartUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlueCartUITests.modulemap"; sourceTree = "<group>"; };
+		D6C99F528359A3A5B492D2D130B4E2BA /* Pods-BlueCartUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCartUITests.modulemap"; sourceTree = "<group>"; };
 		D85E188AE6A15A3ABBCA094D1ECC0299 /* Pods-BlueCartUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlueCartUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D8AD8C633B4D5F5E93F3B0D58709175C /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
-		DF0190C7C554E3D7B9980BACE418FAA1 /* Disk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Disk.modulemap; sourceTree = "<group>"; };
+		DF0190C7C554E3D7B9980BACE418FAA1 /* Disk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Disk.modulemap; sourceTree = "<group>"; };
 		E45D26FD6453DE71C5F10E722209B5A4 /* Disk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Disk-umbrella.h"; sourceTree = "<group>"; };
 		EA1DB3472F05984D390C041417131628 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		EA9243B36E5EC39CF975D3904085B7DF /* Pods-BlueCartUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BlueCartUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EAF57590F2B91D1BD0F01E9271647A6A /* Pods-BlueCartUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BlueCartUITests-umbrella.h"; sourceTree = "<group>"; };
-		ECF6B1DD1F94606CD18A2A1BEF0D656E /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF6B1DD1F94606CD18A2A1BEF0D656E /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox.framework; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC74088661E5230DB447F43391D8272 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3F1FBC6B9E18C9AE86FD44286A56F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C197F994BE20948EC9338FE4E95AC7 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		F640B793DAA975DCD9D514B6A080CC38 /* Pods-BlueCart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BlueCart-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F78DF0D22E40D6D8116604A65B2F545C /* Disk+[UIImage].swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+[UIImage].swift"; path = "Sources/Disk+[UIImage].swift"; sourceTree = "<group>"; };
-		FA3C1523862359B027C501B1F458B2DE /* Pods-BlueCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BlueCart.modulemap"; sourceTree = "<group>"; };
+		F7A9BA4ACBBE4FA1BDB27D95137685E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		FA3C1523862359B027C501B1F458B2DE /* Pods-BlueCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BlueCart.modulemap"; sourceTree = "<group>"; };
 		FA4EC590FBA3F4FA46AE04C738F08FD9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAF020458A37AAB9773DCD55E7AC10FA /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
 		FCFE3C36A95839F95CA419ECEA999CB8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7435126795F92B7AB028616D0F68A736 /* Foundation.framework in Frameworks */,
+				D2CC2D6DAD0F3D1426794BFA9DF3318B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +278,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2A1E269EBF0A38264097DD2F094D903 /* Foundation.framework in Frameworks */,
-				58E3A2252F96F130E62B60216A78D38F /* UIKit.framework in Frameworks */,
+				1C204A80F467B972C53BF77516765BAC /* Foundation.framework in Frameworks */,
+				4D80C10C72BED8A4CA18F76DD0FCC593 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,9 +287,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B33D4A87DC96F499E76D0721FB51371 /* CoreGraphics.framework in Frameworks */,
-				788B9DEF11E3A863059137CBA0C864FE /* Foundation.framework in Frameworks */,
-				73908B934D4C840428B25CDD35987566 /* UIKit.framework in Frameworks */,
+				7FC815D58329BCB48AA8E8199B9D142A /* CoreGraphics.framework in Frameworks */,
+				E2917C44B502EB6B7F4C8E0F7A989085 /* Foundation.framework in Frameworks */,
+				996FC5C6DC31D26EDF56F1B747BC3879 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +297,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				780356065931A707BBE75F5A7A32105A /* Foundation.framework in Frameworks */,
+				97B8C9A7411FAD098A79FC196993D1F0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,8 +305,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9548512F8BDE6BBE52771B6B3E16C5CE /* Foundation.framework in Frameworks */,
-				4EE2396FC95F52215C5677D29F8FFA9F /* SystemConfiguration.framework in Frameworks */,
+				97F70BDB0249E485C08C18EEEBBCE251 /* Foundation.framework in Frameworks */,
+				1DD8F19D428D34BEEC81923210CC7466 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +314,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				017CC654FA3E7438017FA61B631B4AE3 /* Foundation.framework in Frameworks */,
+				3435C77F5017AF4E5035107386080A73 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,8 +322,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD32A7002068B6EC4B17949FECA0E76F /* CFNetwork.framework in Frameworks */,
-				037131B3374815D718C126CFB09787FD /* Foundation.framework in Frameworks */,
+				52416A6AC7387ECACCC45596498D96AD /* CFNetwork.framework in Frameworks */,
+				0CA6357476373C221D44C498AA1D65FE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +331,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B926A94817CB437E734F8E0E0043C97 /* Foundation.framework in Frameworks */,
+				CCBEB069121F35E4E665EE1552863064 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +384,7 @@
 				09CAED878673148C95AB484BF1D0D90A /* UIButton+Kingfisher.swift */,
 				C6617C033DF6AFFB53DAC1D31E01371A /* Support Files */,
 			);
+			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -404,7 +405,7 @@
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E4B2505D77B4A64C9B734692AFBB7FC4 /* iOS */,
+				DBF9F61FCCF746FAF5E39A32CF2CCCF8 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -439,6 +440,7 @@
 				8B43227A912680CC4ADF483E77910DA2 /* Reachability.swift */,
 				160488156282B1476E62EE831144C0E7 /* Support Files */,
 			);
+			name = ReachabilitySwift;
 			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
@@ -505,6 +507,7 @@
 				A07F18E399132D3382A4A0D106ACFE8B /* Disk+VolumeInformation.swift */,
 				402FA46DC910FCF4E9DDD5611D95D5E7 /* Support Files */,
 			);
+			name = Disk;
 			path = Disk;
 			sourceTree = "<group>";
 		};
@@ -561,6 +564,7 @@
 				8B665B56225E99B050EDED92577BFFBB /* M13CheckboxStrokeController.swift */,
 				B8200401723082CA0C0479F0CC8C2D4F /* Support Files */,
 			);
+			name = M13Checkbox;
 			path = M13Checkbox;
 			sourceTree = "<group>";
 		};
@@ -599,17 +603,18 @@
 				6CE8488B78FF2D0C068BA86ED61DF1E8 /* SwiftSpinner.swift */,
 				2292D136E06066D59103D66734F955C7 /* Support Files */,
 			);
+			name = SwiftSpinner;
 			path = SwiftSpinner;
 			sourceTree = "<group>";
 		};
-		E4B2505D77B4A64C9B734692AFBB7FC4 /* iOS */ = {
+		DBF9F61FCCF746FAF5E39A32CF2CCCF8 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C469BFD66CC9C6BDB58169318966E348 /* CFNetwork.framework */,
-				50E4B8B8E6B221295AA5C41567795366 /* CoreGraphics.framework */,
-				D1D0C317800C1E045DD44F953AD82CF3 /* Foundation.framework */,
-				403F220EC8F6DC136C482A0F71559D39 /* SystemConfiguration.framework */,
-				85F8EE9728E08D2F6A2CA0CB0EEBFD0E /* UIKit.framework */,
+				A8781BB8A385CE75676E011F9DC5BFB6 /* CFNetwork.framework */,
+				F7A9BA4ACBBE4FA1BDB27D95137685E8 /* CoreGraphics.framework */,
+				018C1736C08E47BB7CA815977ED51C6A /* Foundation.framework */,
+				35C6751F09ED0C09D014927DB82D339D /* SystemConfiguration.framework */,
+				17685DD06A9F18973F5133BC1AF6A7E4 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -846,8 +851,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0910;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1027,28 +1032,214 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1F6209EF3DF83F2FF0ABFF38481E0EFF /* Release */ = {
+		009605908AF5196F03B87D234495DDDD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26FB05A3F5AC73403718ED8ED7E09C51 /* Pods-BlueCartUITests.release.xcconfig */;
+			baseConfigurationReference = A1335CA9A790BF48748E0375FF25E743 /* ReachabilitySwift.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				PRODUCT_NAME = Reachability;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1F741F2DA0BA1CAD665B3081E1A3697A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C0DBA475DBE9C5426D4D756168FE754 /* M13Checkbox.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/M13Checkbox/M13Checkbox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/M13Checkbox/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/M13Checkbox/M13Checkbox.modulemap";
+				PRODUCT_NAME = M13Checkbox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3861FEBEBF60498C10372FF00270F0F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D9B01733C973A79DAEFF7B98E89633F /* SwiftSpinner.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
+				PRODUCT_NAME = SwiftSpinner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4AD496BCFD2F25EB3A14F7D943EE5AD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEC74088661E5230DB447F43391D8272 /* Pods-BlueCartTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BlueCartTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BlueCartTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5531F049A5BB8791CC83250C9EAFE8AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D9B01733C973A79DAEFF7B98E89633F /* SwiftSpinner.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
+				PRODUCT_NAME = SwiftSpinner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		576C583E88A92DC2279EB3BFC2CA8A6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AD8C633B4D5F5E93F3B0D58709175C /* Kingfisher.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
+				PRODUCT_NAME = Kingfisher;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		689822E4C19D3F88E7FDCDCC960C88C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4FDBFB6337F56874003610DBFAE7443 /* Pods-BlueCartUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-BlueCartUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlueCartUITests/Pods-BlueCartUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1060,214 +1251,15 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		200E9E2D6018CFFB451D424879E57CC5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AD8C633B4D5F5E93F3B0D58709175C /* Kingfisher.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Kingfisher;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
 			name = Debug;
 		};
-		248A3BA12A2F67E182F0C7A115D1C34C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1335CA9A790BF48748E0375FF25E743 /* ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Reachability;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2DB8697C81A97714CE5F0C1EE20A8421 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 507842CF4D7AF172FF3EADDEFB2C71E4 /* Pods-BlueCartTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BlueCartTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_BlueCartTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		31F6B593CA106BED9AD1FE4249554567 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEC74088661E5230DB447F43391D8272 /* Pods-BlueCartTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BlueCartTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_BlueCartTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		344E701C98356CAE3EE89E7C7851443C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C0DBA475DBE9C5426D4D756168FE754 /* M13Checkbox.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/M13Checkbox/M13Checkbox-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/M13Checkbox/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/M13Checkbox/M13Checkbox.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = M13Checkbox;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3831FE5ABB53E3C4EBBA8DEC4388821C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1335CA9A790BF48748E0375FF25E743 /* ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Reachability;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+		6F9224530522DD3C735EC96CF142642E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1275,24 +1267,181 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		942A29D430223B94800EB067D9B2D328 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC6B1C57270B971352BADE63390CE98 /* Pods-BlueCart.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BlueCart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BlueCart/Pods-BlueCart.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BlueCart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A21183A9752886D3DDECA4B182B1780C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1FC44ED9632FA458C3B5A4A25BE3089 /* Pods-BlueCart.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BlueCart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BlueCart/Pods-BlueCart.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BlueCart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B4DFD151AC0472657EAF5F6B0D73E9A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1614E7B8403CD81F2C851E08438BE702 /* Disk.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Disk/Disk-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Disk/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Disk/Disk.modulemap";
+				PRODUCT_NAME = Disk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B57951D085A1B98A97F8A1062A5E5C5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1301,76 +1450,42 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		5E1C42478591D0234766275E7FBE474F /* Debug */ = {
+		B5FEEC0217331674109844D8B487C2DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C0DBA475DBE9C5426D4D756168FE754 /* M13Checkbox.xcconfig */;
+			baseConfigurationReference = 26FB05A3F5AC73403718ED8ED7E09C51 /* Pods-BlueCartUITests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/M13Checkbox/M13Checkbox-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/M13Checkbox/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/M13Checkbox/M13Checkbox.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = M13Checkbox;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		67109D5E96B7BA751A7C9FDC42CFC4F9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4FDBFB6337F56874003610DBFAE7443 /* Pods-BlueCartUITests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-BlueCartUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlueCartUITests/Pods-BlueCartUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1379,72 +1494,35 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7F87B755C82E10E05D4263DCD4A7ACC4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1FC44ED9632FA458C3B5A4A25BE3089 /* Pods-BlueCart.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BlueCart/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BlueCart/Pods-BlueCart.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_BlueCart;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		88C269BF217A625E95CD3C1DE52589F6 /* Debug */ = {
+		DC07975AFC7FCB79B3677231C3EB9480 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D9B01733C973A79DAEFF7B98E89633F /* SwiftSpinner.xcconfig */;
+			baseConfigurationReference = A1335CA9A790BF48748E0375FF25E743 /* ReachabilitySwift.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftSpinner;
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				PRODUCT_NAME = Reachability;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1453,222 +1531,134 @@
 			};
 			name = Debug;
 		};
-		A2B5E07F439801E6140F76EB8FFF74E8 /* Debug */ = {
+		E2F374C51FEC55C2894874161F71EB6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1614E7B8403CD81F2C851E08438BE702 /* Disk.xcconfig */;
+			baseConfigurationReference = 507842CF4D7AF172FF3EADDEFB2C71E4 /* Pods-BlueCartTests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Disk/Disk-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Disk/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-BlueCartTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Disk/Disk.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Disk;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BlueCartTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		B2C25115E33D786F0B77F0367C61818B /* Release */ = {
+		E8652F35BF322A3957D0F62338910B79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8AD8C633B4D5F5E93F3B0D58709175C /* Kingfisher.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Kingfisher/Kingfisher-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Kingfisher/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Kingfisher/Kingfisher.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Kingfisher;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C78F1C3034D5B355FC358DA6573B9E5C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D9B01733C973A79DAEFF7B98E89633F /* SwiftSpinner.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftSpinner;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		D20A9D6881A1DE6860FB39A822145AE2 /* Release */ = {
+		ED964B7463A146758B68801D25A7409D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1614E7B8403CD81F2C851E08438BE702 /* Disk.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Disk/Disk-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Disk/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Disk/Disk.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Disk;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		EA02C189E3D2C4F23C8473D67597BC8F /* Debug */ = {
+		FF4E6B4139DAB85807B7F3F7081E7A7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CC6B1C57270B971352BADE63390CE98 /* Pods-BlueCart.debug.xcconfig */;
+			baseConfigurationReference = 6C0DBA475DBE9C5426D4D756168FE754 /* M13Checkbox.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BlueCart/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/M13Checkbox/M13Checkbox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/M13Checkbox/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BlueCart/Pods-BlueCart.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_BlueCart;
+				MODULEMAP_FILE = "Target Support Files/M13Checkbox/M13Checkbox.modulemap";
+				PRODUCT_NAME = M13Checkbox;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1676,8 +1666,8 @@
 		0837DDBA71083F48EA18F19820CCF4F2 /* Build configuration list for PBXNativeTarget "Pods-BlueCartUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67109D5E96B7BA751A7C9FDC42CFC4F9 /* Debug */,
-				1F6209EF3DF83F2FF0ABFF38481E0EFF /* Release */,
+				689822E4C19D3F88E7FDCDCC960C88C3 /* Debug */,
+				B5FEEC0217331674109844D8B487C2DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1685,8 +1675,8 @@
 		139E5E3043D3BFA0E39CF097F8109FA1 /* Build configuration list for PBXNativeTarget "Pods-BlueCart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EA02C189E3D2C4F23C8473D67597BC8F /* Debug */,
-				7F87B755C82E10E05D4263DCD4A7ACC4 /* Release */,
+				942A29D430223B94800EB067D9B2D328 /* Debug */,
+				A21183A9752886D3DDECA4B182B1780C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1694,8 +1684,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
-				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+				B57951D085A1B98A97F8A1062A5E5C5B /* Debug */,
+				6F9224530522DD3C735EC96CF142642E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1703,8 +1693,8 @@
 		32FD335C615D4CC883664830C177AE58 /* Build configuration list for PBXNativeTarget "SwiftSpinner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88C269BF217A625E95CD3C1DE52589F6 /* Debug */,
-				C78F1C3034D5B355FC358DA6573B9E5C /* Release */,
+				5531F049A5BB8791CC83250C9EAFE8AB /* Debug */,
+				3861FEBEBF60498C10372FF00270F0F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1712,8 +1702,8 @@
 		3C455455A2E6C8B442F187B9CCD91E23 /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				248A3BA12A2F67E182F0C7A115D1C34C /* Debug */,
-				3831FE5ABB53E3C4EBBA8DEC4388821C /* Release */,
+				DC07975AFC7FCB79B3677231C3EB9480 /* Debug */,
+				009605908AF5196F03B87D234495DDDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1721,8 +1711,8 @@
 		8C1E4CEFB2390CBE75E70BAC20F44BBF /* Build configuration list for PBXNativeTarget "Kingfisher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				200E9E2D6018CFFB451D424879E57CC5 /* Debug */,
-				B2C25115E33D786F0B77F0367C61818B /* Release */,
+				576C583E88A92DC2279EB3BFC2CA8A6C /* Debug */,
+				E8652F35BF322A3957D0F62338910B79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1730,8 +1720,8 @@
 		CBD9A2E3065E5BD8E663E08B81AE10F3 /* Build configuration list for PBXNativeTarget "Disk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2B5E07F439801E6140F76EB8FFF74E8 /* Debug */,
-				D20A9D6881A1DE6860FB39A822145AE2 /* Release */,
+				B4DFD151AC0472657EAF5F6B0D73E9A1 /* Debug */,
+				ED964B7463A146758B68801D25A7409D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1739,8 +1729,8 @@
 		DCA65140C99027129B2FA1577D9A9790 /* Build configuration list for PBXNativeTarget "Pods-BlueCartTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31F6B593CA106BED9AD1FE4249554567 /* Debug */,
-				2DB8697C81A97714CE5F0C1EE20A8421 /* Release */,
+				4AD496BCFD2F25EB3A14F7D943EE5AD1 /* Debug */,
+				E2F374C51FEC55C2894874161F71EB6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1748,8 +1738,8 @@
 		FD8541BF5774BA6A1CEA3B6D3D8D3860 /* Build configuration list for PBXNativeTarget "M13Checkbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E1C42478591D0234766275E7FBE474F /* Debug */,
-				344E701C98356CAE3EE89E7C7851443C /* Release */,
+				1F741F2DA0BA1CAD665B3081E1A3697A /* Debug */,
+				FF4E6B4139DAB85807B7F3F7081E7A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

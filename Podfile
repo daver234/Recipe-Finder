@@ -9,7 +9,7 @@ target 'BlueCart' do
   pod 'Kingfisher', '~> 4.0'
   pod 'M13Checkbox'
   pod 'SwiftSpinner'
-  pod 'Reachability'
+  pod 'ReachabilitySwift'
   pod 'Disk', '~> 0.3.2'
  
 

@@ -60,6 +60,7 @@ extension RecipeTableViewModel {
     /// If offline, then retrieve saved recipes.  If online, do search.
     func loadRecipesBasedOnSearchTerm(searchString: String) {
         networkReachable ? loadRecipes(pageNumber: recipePageNumber.value, searchString: searchString) : DataManager.instance.retrieveSavedSearchTermResults(term: searchString)
+        didGetRecipes.value = true
     }
     
     /// Function for RecipeTableVC to save a new search term

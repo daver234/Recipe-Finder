@@ -87,7 +87,6 @@ class SaveRecipes {
                     recipe.setValue(item.sourceUrl , forKey: Constants.MSOURCE_URL)
                     recipe.setValue(item.title , forKey: Constants.MTITLE)
                     recipe.setValue(item.url , forKey: Constants.MURL)
-                    // recipePageToSave.setValue(recipe, forKey: Constants.MRECIPES)
                     recipePageToSave.setValue((NSSet(object: recipe)), forKey: Constants.MRECIPES)
 //                    let itemToAdd = recipePageToSave.mutableSetValue(forKey: Constants.MRECIPES)
 //                    itemToAdd.add(recipe)
