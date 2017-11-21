@@ -87,6 +87,7 @@ class SaveRecipes {
                     recipe.setValue(item.sourceUrl , forKey: Constants.MSOURCE_URL)
                     recipe.setValue(item.title , forKey: Constants.MTITLE)
                     recipe.setValue(item.url , forKey: Constants.MURL)
+                    //recipePageToSave.setValue(recipePage, forKey: Constants.MRECIPES)
                     recipePageToSave.setValue((NSSet(object: recipe)), forKey: Constants.MRECIPES)
 //                    let itemToAdd = recipePageToSave.mutableSetValue(forKey: Constants.MRECIPES)
 //                    itemToAdd.add(recipe)
@@ -112,6 +113,8 @@ class SaveRecipes {
             }
         }
     }
+    
+    
     
     func saveRecipeDetailCoreData(recipeDetail: RecipeDetail) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
