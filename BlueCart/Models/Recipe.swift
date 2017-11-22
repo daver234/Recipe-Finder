@@ -12,6 +12,9 @@ import Foundation
 struct RecipePage: Codable {
     var count: Int?
     var recipes: [Recipe]?
+    var pageNumber: Int?
+    var createdAt: Date?
+    var searchTerm: String?
 }
 
 struct Recipe: Codable {

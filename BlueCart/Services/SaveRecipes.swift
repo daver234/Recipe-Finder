@@ -13,7 +13,7 @@ import CoreData
 /// Saving recipe lists and recipe detail for retrieval when device is offline
 /// Using Disk 3rd party framework.
 class SaveRecipes {
-    /// Save RecipePage for use in offline
+    /// Save RecipePage for use in offline using the Disk framework.
     /// - Parameter searchString. The recipes being searched for.
     /// - Parameter data. The data returned from the server.  Decoded when retrived
     func saveRecipePageForOffline(searchString: String, data: Data) {
@@ -89,7 +89,6 @@ class SaveRecipes {
                     recipe.setValue(item.sourceUrl , forKey: Constants.MSOURCE_URL)
                     recipe.setValue(item.title , forKey: Constants.MTITLE)
                     recipe.setValue(item.url , forKey: Constants.MURL)
-                    //recipePageToSave.setValue(recipePage, forKey: Constants.MRECIPES)
                     recipePageToSave.setValue((NSSet(object: recipe)), forKey: Constants.MRECIPES)
 //                    let itemToAdd = recipePageToSave.mutableSetValue(forKey: Constants.MRECIPES)
 //                    itemToAdd.add(recipe)

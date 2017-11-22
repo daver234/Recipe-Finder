@@ -80,7 +80,8 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         viewModel.loadSearchTerms()
         startSpinner(term: "you")
         let recipes = RetrieveRecipes()
-        recipes.retrievedSavedRecipePages()
+        let result = recipes.retrievedSavedRecipePages(pageNumber: 1, searchTerm: Constants.TOP_RATED)
+        print("result is: ", result)
 //        for item in result {
 //            if let createdAt = item.value(forKey: Constants.MCREATED_AT_PAGE), let searchTerm = item.value(forKey: Constants.MSEARCH_TERM) {
 //                print("here is createdAt:\(createdAt) and then searchTerm \(searchTerm)")
@@ -356,7 +357,6 @@ extension RecipeTableVC: UISearchBarDelegate {
             guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return }
             searchTerms.append(searchTermString)
         }
-        // filteredSearchTerms = searchTerms
         print("filteredSearchTerms: ", filteredSearchTerms)
     }
     
