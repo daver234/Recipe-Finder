@@ -155,6 +155,6 @@ class RetrieveRecipes {
     
     /// Retrieve specific recipe for display in RecipeDetailVC
     func retrieveSpecificRecipe(recipeID: String) -> Recipe? {
-        
+        return Recipe()
     }
 }
