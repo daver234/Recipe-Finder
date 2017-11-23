@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 
-/// Retrieve saved recipe pages from CoreData model
+/// Retrieve saved recipe pages and specific recipe from CoreData
 class RetrieveRecipes {
 
     /// Retrieved saved recipes from Core Data
@@ -37,6 +37,7 @@ class RetrieveRecipes {
                         let publisherUrl = item.value(forKey: Constants.MPUBLISER_URL),
                         let socialRank = item.value(forKey: Constants.MSOCIAL_RANK),
                         let url = item.value(forKey: Constants.MURL),
+                        let ingredients = item.value(forKey: Constants.MINGREDIENTS),
                         let sourceUrl = item.value(forKey: Constants.MSOURCE_URL)  else { return nil}
                     recipe.title = title as? String
                     recipe.recipeID = recipeID as? String
@@ -46,21 +47,19 @@ class RetrieveRecipes {
                     recipe.socialRank = socialRank as? Double
                     recipe.url = url as? String
                     recipe.sourceUrl = sourceUrl as? String
+                    recipe.ingredients = ingredients as? [String]
                     recipesToReturn.append(recipe)
                     recipesAddedCounter += 1
                 }
                return recipesToReturn 
             } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
+                print("Could not fetch saved recipe pages from core data. \(error), \(error.userInfo)")
                 return nil
             }
             
         } else {
             // Fallback on earlier versions of iOS
             let managedContext = appDelegate.managedObjectContext
-            //let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.MRECIPE_PAGE)
-            //let entityDesc = NSEntityDescription.entity(forEntityName: Constants.MRECIPE_PAGE, in: managedContext)
-            //fetchRequest.entity = entityDesc
             do {
                 let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
                 let sortDescriptor = NSSortDescriptor(key: Constants.MCREATED_AT_RECIPE, ascending: true)
@@ -90,13 +89,15 @@ class RetrieveRecipes {
                 }
                 return recipesToReturn
             } catch {
-                print("Could not fetch. \(error)")
+                print("Could not fetch saved recipe pages from core data. \(error)")
                 return nil
             }
         }
     }
     
     /// Function to check if the recipe page results have already been saved
+    /// Need this not save same recipe page twice.  When saving recipe page the first time,
+    /// that function checks this function first.
     /// - Parameter pageNumber: See if this page number has been stored
     /// - Parameter searchTerm: See if this search term on the above page number has been stored
     /// - Return bool:  True if it exists.  False if it does not exist.
@@ -152,4 +153,8 @@ class RetrieveRecipes {
         }
     }
     
+    /// Retrieve specific recipe for display in RecipeDetailVC
+    func retrieveSpecificRecipe(recipeID: String) -> Recipe? {
+        
+    }
 }

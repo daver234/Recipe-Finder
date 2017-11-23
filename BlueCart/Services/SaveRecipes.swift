@@ -104,37 +104,38 @@ class SaveRecipes {
     /// When retrieving the original recipe from the page of recipes, the ingredient list is not included.
     /// A second call needs to be made to get the recipe detail that includes the ingredients.
     /// - Parameter recipeDetail: Pass in an existing recipe
-    func saveIngredietsToRecipe(recipeDetail: RecipeDetail) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        if #available(iOS 10.0, *) {
-            let managedContext = appDelegate.persistentContainer.viewContext
-            let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
-            guard let recipeID = recipeDetail.recipeID else { return }
-            newFetchRequest.predicate = NSPredicate(format: "recipeID == @%", recipeID)
-            do {
-                let newResult = try managedContext.fetch(newFetchRequest)
-                guard newResult.count != 0 else { return }  // if recipeID does not exist then exit
-                guard let first = newResult.first else { return }
-                first.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)
-                try managedContext.save()
-            } catch let error as NSError {
-                print("Could not update and save ingredients. \(error), \(error.userInfo)")
-            }
-        } else {
-            // Fallback on earlier versions of iOS
-            let managedContext = appDelegate.managedObjectContext
-            let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
-            guard let recipeID = recipeDetail.recipeID else { return }
-            newFetchRequest.predicate = NSPredicate(format: "recipeID == @%", recipeID)
-            do {
-                let newResult = try managedContext.fetch(newFetchRequest)
-                guard newResult.count != 0 else { return }  // if recipeID does not exist then exit
-                guard let first = newResult.first else { return }
-                first.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)
-                try managedContext.save()
-                try managedContext.save()
-            } catch let error as NSError {
-                print("Could not update and save ingredients. \(error), \(error.userInfo)")
+    func saveIngredietsToRecipe(ingredients: [String], recipeID: String) {
+        DispatchQueue.main.async {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            if #available(iOS 10.0, *) {
+                let managedContext = appDelegate.persistentContainer.viewContext
+                let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
+                newFetchRequest.predicate = NSPredicate(format: "mRecipeID == \(recipeID)")
+                do {
+                    let newResult = try managedContext.fetch(newFetchRequest)
+                    guard newResult.count != 0 else { return }  // if recipeID does not exist then exit
+                    guard let first = newResult.first else { return }
+                    first.setValue(ingredients , forKey: Constants.MINGREDIENTS)
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not update and save ingredients. \(error), \(error.userInfo)")
+                }
+            } else {
+                // Fallback on earlier versions of iOS
+                let managedContext = appDelegate.managedObjectContext
+                let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
+                // guard let recipeID = recipeDetail.recipeID else { return }
+                newFetchRequest.predicate = NSPredicate(format: "mRecipeID == \(recipeID)")
+                do {
+                    let newResult = try managedContext.fetch(newFetchRequest)
+                    guard newResult.count != 0 else { return }  // if recipeID does not exist then exit
+                    guard let first = newResult.first else { return }
+                    first.setValue(ingredients , forKey: Constants.MINGREDIENTS)
+                    try managedContext.save()
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not update and save ingredients. \(error), \(error.userInfo)")
+                }
             }
         }
     }

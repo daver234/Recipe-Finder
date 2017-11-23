@@ -46,6 +46,8 @@ class DataManager {
     func decodeDataForDetail(data: Data, completion: @escaping CompletionHandlerWithData) {
         do {
             let result = try JSONDecoder().decode([String: RecipeDetail].self, from: data)
+            guard let ingredients = result["recipe"]?.ingredients, let recipeID = result["recipe"]?.recipeID else { return }
+            SaveRecipes().saveIngredietsToRecipe(ingredients: ingredients, recipeID: recipeID)
             completion(result, nil)
         } catch let jsonError {
             print("Error decoding JSON from server", jsonError)

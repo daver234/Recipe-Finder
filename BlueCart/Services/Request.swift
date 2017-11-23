@@ -58,7 +58,6 @@ class Request: AbstractRequestClient {
                     completion(nil, error)
                     return
                 }
-                // self.saveDetailForOffline(recipeId: recipeId, data: data)
                 self.saveRecipes.saveDetailForOffline(recipeId: recipeId, data: data)
                 DataManager.instance.decodeDataForDetail(data: data, completion: completion)
             }

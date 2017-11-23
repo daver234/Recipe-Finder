@@ -73,7 +73,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
     func monitorProperties() {
         viewModel.theRecipe.bind { [unowned self] (value) in
             DispatchQueue.main.async {
-                //self.tableView.reloadData()
                 self.tableView.setNeedsLayout()
                 self.tableView.layoutIfNeeded()
                 self.tableView.reloadData()

@@ -32,6 +32,19 @@ extension RecipeDetailViewModel {
     func isNetworkReachable(reachable: Bool) {
         networkReachable = reachable
     }
+    
+    /// Get a specific recipe.  Changes retrieval function based on online or offline
+    /// - Parameter pageToGet: The specific page to get the recipe from
+    /// - Parameter recipeToGet: The index of the recipe to get
+    /// - Parameter index: The cell index that needs the recipe.  Used for offline.
+    func getRecipeDetail(recipeID: String) {
+        if networkReachable {
+           loadDetailRecipe(recipeId: recipeID)
+        } else {
+            // recipeToReturn = RetrieveRecipes().retrievedSavedRecipes(searchTerm: <#T##String#>)
+        }
+        
+    }
 }
 
 /// Functions to access DataManager Singleton
