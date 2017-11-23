@@ -11,30 +11,29 @@ import Disk
 import CoreData
 
 /// Saving recipe lists and recipe detail for retrieval when device is offline
-/// Using Disk 3rd party framework.
 class SaveRecipes {
     /// Save RecipePage for use in offline using the Disk framework.
     /// - Parameter searchString. The recipes being searched for.
     /// - Parameter data. The data returned from the server.  Decoded when retrived
-    func saveRecipePageForOffline(searchString: String, data: Data) {
-        let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
-        do {
-            if Disk.exists("\(termTrimmed)", in: .caches) {
-                try Disk.append(data, to: "Recipe/", in: .caches)
-            } else {
-                try Disk.save(data, to: .caches, as: "Recipe/\(termTrimmed)")
-            }
-            
-        } catch let error as NSError  {
-            fatalError("""
-                Domain: \(error.domain)
-                Code: \(error.code)
-                Description: \(error.localizedDescription)
-                Failure Reason: \(error.localizedFailureReason ?? "")
-                Suggestions: \(error.localizedRecoverySuggestion ?? "")
-                """)
-        }
-    }
+//    func saveRecipePageForOffline(searchString: String, data: Data) {
+//        let termTrimmed = searchString.lowercased().replacingOccurrences(of: " ", with: "")
+//        do {
+//            if Disk.exists("\(termTrimmed)", in: .caches) {
+//                try Disk.append(data, to: "Recipe/", in: .caches)
+//            } else {
+//                try Disk.save(data, to: .caches, as: "Recipe/\(termTrimmed)")
+//            }
+//            
+//        } catch let error as NSError  {
+//            fatalError("""
+//                Domain: \(error.domain)
+//                Code: \(error.code)
+//                Description: \(error.localizedDescription)
+//                Failure Reason: \(error.localizedFailureReason ?? "")
+//                Suggestions: \(error.localizedRecoverySuggestion ?? "")
+//                """)
+//        }
+//    }
     
     /// Save RecipeDetail (using Disk framework) for use in offline. This file contains the ingredients.
     /// - Parameter recipeId: This id becomes the file name to retrive later.
@@ -59,7 +58,9 @@ class SaveRecipes {
     
     /// Saving RecipePage to Core Data
     /// Handles iOS 10 and above one way and iOS 9 and below another
+    /// - Parameter searchTerm: The recipe search term the user entered.
     /// - Parameter pageNumber: The page number, from the server, that is being saved.  Starts at 1.
+    /// - Parameter recipePage: The RecipePage that was decoded from the JSON recieved from the server.
     func saveRecipePageCoreData(searchTerm: String, pageNumber: Int, recipePage: RecipePage) {
         DispatchQueue.main.async {
             guard let alreadySaved = RetrieveRecipes().retrievePageNumberAndSearchTerm(pageNumber: pageNumber, searchTerm: searchTerm) else { return }
@@ -74,9 +75,6 @@ class SaveRecipes {
                 recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
                 recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
                 recipePageToSave.setValue(searchTerm, forKey: Constants.MSEARCH_TERM)
-                // let recipes = recipePageToSave.mutableSetValue(forKey: "recipes")
-                // if let recipe = createRecordForEntity
-                // recipePageToSave.setValue(recipePage.recipes, forKey: )
                 for item in recipePage.recipes! {
                     let recipe = NSEntityDescription.insertNewObject(forEntityName: Constants.MRECIPE_DETAIL, into: managedContext)
                     recipe.setValue(Date(), forKey: Constants.MCREATED_AT_RECIPE)
@@ -90,8 +88,6 @@ class SaveRecipes {
                     recipe.setValue(item.title , forKey: Constants.MTITLE)
                     recipe.setValue(item.url , forKey: Constants.MURL)
                     recipePageToSave.setValue((NSSet(object: recipe)), forKey: Constants.MRECIPES)
-//                    let itemToAdd = recipePageToSave.mutableSetValue(forKey: Constants.MRECIPES)
-//                    itemToAdd.add(recipe)
                 }
                 do {
                     try managedContext.save()
@@ -106,6 +102,21 @@ class SaveRecipes {
                 recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
                 recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)
                 recipePageToSave.setValue(recipePage.count, forKey: Constants.MCOUNT)
+                recipePageToSave.setValue(searchTerm, forKey: Constants.MSEARCH_TERM)
+                for item in recipePage.recipes! {
+                    let recipe = NSEntityDescription.insertNewObject(forEntityName: Constants.MRECIPE_DETAIL, into: managedContext)
+                    recipe.setValue(Date(), forKey: Constants.MCREATED_AT_RECIPE)
+                    recipe.setValue(item.imageUrl, forKey: Constants.MIMAGE_URL)
+                    // recipe.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)  /// need to change this
+                    recipe.setValue(item.publisher , forKey: Constants.MPUBLISHER)
+                    recipe.setValue(item.publisherUrl , forKey: Constants.MPUBLISER_URL)
+                    recipe.setValue(item.recipeID , forKey: Constants.MRECIPE_ID)
+                    recipe.setValue(item.socialRank , forKey: Constants.MSOCIAL_RANK)
+                    recipe.setValue(item.sourceUrl , forKey: Constants.MSOURCE_URL)
+                    recipe.setValue(item.title , forKey: Constants.MTITLE)
+                    recipe.setValue(item.url , forKey: Constants.MURL)
+                    recipePageToSave.setValue((NSSet(object: recipe)), forKey: Constants.MRECIPES)
+                }
                 do {
                     try managedContext.save()
                 } catch let error as NSError {

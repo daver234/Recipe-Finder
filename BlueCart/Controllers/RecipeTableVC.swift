@@ -79,14 +79,6 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         /// Load search terms from Core Data for use when user is searching terms
         viewModel.loadSearchTerms()
         startSpinner(term: "you")
-        let recipes = RetrieveRecipes()
-        let result = recipes.retrievedSavedRecipePages(pageNumber: 1, searchTerm: Constants.TOP_RATED)
-        print("result is: ", result)
-//        for item in result {
-//            if let createdAt = item.value(forKey: Constants.MCREATED_AT_PAGE), let searchTerm = item.value(forKey: Constants.MSEARCH_TERM) {
-//                print("here is createdAt:\(createdAt) and then searchTerm \(searchTerm)")
-//            }
-//        }
     }
     
     func setupSearchBar() {
@@ -164,7 +156,10 @@ extension RecipeTableVC {
     /// Here we prefetch the images for the tableview using Kingfisher.
     /// And, prefetch more data if the user is getting to the end of the tableview.
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        
+        /// If offline, don't do prefetching of data
+        if reachability.connection == .none {
+            return
+        }
         /// First get the images
         let currentPage = viewModel.getPagesRetrieved()
         let recipes = viewModel.getRecipes(pageNumber: currentPage)
@@ -273,7 +268,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         /// the modulus of row to page size
         let recipeToGet = index % Constants.PAGE_SIZE
         
-        recipe = viewModel.getRecipe(pageToGet: pageToGet, recipeToGet: recipeToGet)
+        recipe = viewModel.getRecipe(pageToGet: pageToGet, recipeToGet: recipeToGet, index: index)
         return recipe
     }
 }

@@ -58,7 +58,7 @@ class DataManager {
 /// MARK: - Supporting Functions
 extension DataManager {
     
-    /// Update count of individual recipes retrieved
+    /// Update count of individual recipes retrieved from a RecipePage
     func updateNewRecipesRetrieved(result: RecipePage) {
         guard let newRecipesRetrieved = result.recipes?.count else { return }
         self.totalRecipesRetrieved += newRecipesRetrieved
@@ -75,6 +75,16 @@ extension DataManager {
         }
     }
     
+    /// Update all variables after retrieving recipes from Core Data.
+    /// Used when device is offline.
+    func updateAllVariablesWhenOffline(searchTerm: String, completion: @escaping CompletionHandler) {
+        guard let recipes = RetrieveRecipes().retrievedSavedRecipes(searchTerm: searchTerm) else { return }
+        totalRecipesRetrieved = recipes.count
+        allRecipesWithoutPages = recipes
+        numberOfPagesRetrieved += 1
+        totalRecipesRetrieved > 0 ? completion(true) : completion(false)
+    }
+    
     /// Used when a specific search term has been entered
     /// Allows re-use of RecipeTableVC
     func resetDataManagerVariables() {
@@ -87,28 +97,28 @@ extension DataManager {
 
 /// Retrive recent searches to disk for use in offline situations.
 extension DataManager {
-    func retrieveSavedSearchTermResults(term: String, completion: @escaping CompletionHandler) {
-        resetDataManagerVariables()
-        var termTrimmed = term.lowercased().replacingOccurrences(of: " ", with: "")
-        termTrimmed == "" ? (termTrimmed = Constants.TOP_RATED_FILE) : (termTrimmed = termTrimmed)
-        if Disk.exists("Recipe/\(termTrimmed)", in: .caches) {
-            print("file exists", termTrimmed)
-        }
-        do {
-            let retrieveSearch = try Disk.retrieve("Recipe/\(termTrimmed)", from: .caches, as: RecipePage.self)
-            updateAllVariables(result: retrieveSearch)
-            completion(true)
-        } catch let error as NSError {
-            completion(false)
-            fatalError("""
-                Domain: \(error.domain)
-                Code: \(error.code)
-                Description: \(error.localizedDescription)
-                Failure Reason: \(error.localizedFailureReason ?? "")
-                Suggestions: \(error.localizedRecoverySuggestion ?? "")
-                """)
-        }
-    }
+//    func retrieveSavedSearchTermResults(term: String, completion: @escaping CompletionHandler) {
+//        resetDataManagerVariables()
+//        var termTrimmed = term.lowercased().replacingOccurrences(of: " ", with: "")
+//        termTrimmed == "" ? (termTrimmed = Constants.TOP_RATED_FILE) : (termTrimmed = termTrimmed)
+//        if Disk.exists("Recipe/\(termTrimmed)", in: .caches) {
+//            print("file exists", termTrimmed)
+//        }
+//        do {
+//            let retrieveSearch = try Disk.retrieve("Recipe/\(termTrimmed)", from: .caches, as: RecipePage.self)
+//            updateAllVariables(result: retrieveSearch)
+//            completion(true)
+//        } catch let error as NSError {
+//            completion(false)
+//            fatalError("""
+//                Domain: \(error.domain)
+//                Code: \(error.code)
+//                Description: \(error.localizedDescription)
+//                Failure Reason: \(error.localizedFailureReason ?? "")
+//                Suggestions: \(error.localizedRecoverySuggestion ?? "")
+//                """)
+//        }
+//    }
     
     func retrieveSavedDetailedRecipeWithIngredients(recipeId: String, completion: @escaping CompletionHandlerWithData) {
         if Disk.exists("\(recipeId)", in: .caches) {

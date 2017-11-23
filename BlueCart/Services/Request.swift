@@ -38,7 +38,7 @@ class Request: AbstractRequestClient {
             var searchStringForFileName = ""
             searchString == "" ? (searchStringForFileName = Constants.TOP_RATED) : (searchStringForFileName = searchString)
             // self.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
-            self.saveRecipes.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
+            // self.saveRecipes.saveRecipePageForOffline(searchString: searchStringForFileName, data: data)
             DataManager.instance.decodeDataForPage(searchString: searchStringForFileName, data: data, completion: completion)
         }
         task.resume()

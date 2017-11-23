@@ -29,11 +29,21 @@ extension RecipeTableViewModel {
         return DataManager.instance.totalRecipesRetrieved
     }
     
-    func getRecipe(pageToGet: Int, recipeToGet: Int) -> Recipe {
-        guard let recipe = DataManager.instance.allRecipes[pageToGet].recipes?[recipeToGet] else {
-            return Recipe()
+    /// Get a specific recipe.  Changes retrieval function based on online or offline
+    /// - Parameter pageToGet: The specific page to get the recipe from
+    /// - Parameter recipeToGet: The index of the recipe to get
+    /// - Parameter index: The cell index that needs the recipe.  Used for offline.
+    func getRecipe(pageToGet: Int, recipeToGet: Int, index: Int) -> Recipe {
+        var recipeToReturn = Recipe()
+        if networkReachable {
+            guard let recipe = DataManager.instance.allRecipes[pageToGet].recipes?[recipeToGet] else {
+                return recipeToReturn
+            }
+            recipeToReturn = recipe
+        } else {
+            recipeToReturn = DataManager.instance.allRecipesWithoutPages[index]
         }
-        return recipe
+        return recipeToReturn
     }
     
     func getPagesRetrieved() -> Int {
@@ -62,15 +72,13 @@ extension RecipeTableViewModel {
     }
     
     /// This function loads different recipes based on whether or not the device is online or offline.
-    /// If offline, then retrieve saved recipes.  If online, do search.
+    /// If offline, then retrieve saved recipes.  If online, do a search.
     func loadRecipesBasedOnSearchTerm(searchString: String) {
         if networkReachable {
             loadRecipes(pageNumber: recipePageNumber.value, searchString: searchString) 
         } else {
-            DataManager.instance.retrieveSavedSearchTermResults(term: searchString) { [weak self] success in
-                if success {
-                    self?.didGetRecipes.value = true
-                }
+            DataManager.instance.updateAllVariablesWhenOffline(searchTerm: searchString) { [weak self] success in
+                success ? self?.didGetRecipes.value = true : print("Did not get recipes from Core Data for offline use.")
             }
         }
         
@@ -80,7 +88,7 @@ extension RecipeTableViewModel {
     /// Then go get those recipes to display in table view
     /// - Parameter term:  The search term to save and find recipes
     func saveSearchTerm(term: String) {
-        saveSearchTermToCoreData(term: term)
+        SearchTerms().saveSearchTermToCoreData(term: term)
         loadRecipesBasedOnSearchTerm(searchString: term)
     }
 }
@@ -92,33 +100,33 @@ extension RecipeTableViewModel {
     /// Saving search terms to CoreData
     /// Handles iOS 10 and above one way and iOS 9 and below another
     /// - Parameter term: The search term to save
-    fileprivate func saveSearchTermToCoreData(term: String) {
-        let termLowercase = term.lowercased()
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        if #available(iOS 10.0, *) {
-            let managedContext = appDelegate.persistentContainer.viewContext
-            guard let entity = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
-            let searchTerm = NSManagedObject(entity: entity, insertInto: managedContext)
-            searchTerm.setValue(Date(), forKey: Constants.SEARCH_DATE)
-            searchTerm.setValue(termLowercase, forKey: Constants.SEARCH_TERMS)
-            do {
-                try managedContext.save()
-            } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
-            }
-        } else {
-            // Fallback on earlier versions of iOS
-            let managedContext = appDelegate.managedObjectContext
-            guard let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
-            let searchTerm = NSManagedObject(entity: entityDesc, insertInto: managedContext)
-            searchTerm.setValue(term, forKey: Constants.SEARCH_TERMS)
-            do {
-                try managedContext.save()
-            } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
-            }
-        }
-    }
+//    fileprivate func saveSearchTermToCoreData(term: String) {
+//        let termLowercase = term.lowercased()
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+//        if #available(iOS 10.0, *) {
+//            let managedContext = appDelegate.persistentContainer.viewContext
+//            guard let entity = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
+//            let searchTerm = NSManagedObject(entity: entity, insertInto: managedContext)
+//            searchTerm.setValue(Date(), forKey: Constants.SEARCH_DATE)
+//            searchTerm.setValue(termLowercase, forKey: Constants.SEARCH_TERMS)
+//            do {
+//                try managedContext.save()
+//            } catch let error as NSError {
+//                print("Could not save. \(error), \(error.userInfo)")
+//            }
+//        } else {
+//            // Fallback on earlier versions of iOS
+//            let managedContext = appDelegate.managedObjectContext
+//            guard let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
+//            let searchTerm = NSManagedObject(entity: entityDesc, insertInto: managedContext)
+//            searchTerm.setValue(term, forKey: Constants.SEARCH_TERMS)
+//            do {
+//                try managedContext.save()
+//            } catch let error as NSError {
+//                print("Could not save. \(error), \(error.userInfo)")
+//            }
+//        }
+//    }
     
     /// Retrieve saved search terms from CoreData model
     fileprivate func retrievedSavedSearchTerms() {
