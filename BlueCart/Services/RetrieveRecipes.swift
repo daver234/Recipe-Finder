@@ -22,9 +22,6 @@ class RetrieveRecipes {
         var recipesToReturn = [Recipe]()
         if #available(iOS 10.0, *) {
             let managedContext = appDelegate.persistentContainer.viewContext
-//            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_PAGE)
-//            let sort = NSSortDescriptor(key: Constants.MCREATED_AT_PAGE, ascending: false)
-//            fetchRequest.sortDescriptors = [sort]
             do {
                 let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
                 let sortDescriptor = NSSortDescriptor(key: Constants.MCREATED_AT_RECIPE, ascending: true)

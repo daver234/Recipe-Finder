@@ -63,7 +63,9 @@ extension RecipeTableViewModel {
     /// Load search terms for accessing recipe pages
     /// RecipeTableVC then gets individual search terms from view model
     func loadSearchTerms() {
-        retrievedSavedSearchTerms()
+        searchTerms.value = []
+        guard let result = SearchTerms().retrievedSavedSearchTerms() else { return }
+        searchTerms.value = result
     }
     
     /// This function loads more recipes for the existing search term as the user scrolls the table view
@@ -90,72 +92,6 @@ extension RecipeTableViewModel {
     func saveSearchTerm(term: String) {
         SearchTerms().saveSearchTermToCoreData(term: term)
         loadRecipesBasedOnSearchTerm(searchString: term)
-    }
-}
-
-
-// MARK: - CoreData Functions
-extension RecipeTableViewModel {
-    
-    /// Saving search terms to CoreData
-    /// Handles iOS 10 and above one way and iOS 9 and below another
-    /// - Parameter term: The search term to save
-//    fileprivate func saveSearchTermToCoreData(term: String) {
-//        let termLowercase = term.lowercased()
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-//        if #available(iOS 10.0, *) {
-//            let managedContext = appDelegate.persistentContainer.viewContext
-//            guard let entity = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
-//            let searchTerm = NSManagedObject(entity: entity, insertInto: managedContext)
-//            searchTerm.setValue(Date(), forKey: Constants.SEARCH_DATE)
-//            searchTerm.setValue(termLowercase, forKey: Constants.SEARCH_TERMS)
-//            do {
-//                try managedContext.save()
-//            } catch let error as NSError {
-//                print("Could not save. \(error), \(error.userInfo)")
-//            }
-//        } else {
-//            // Fallback on earlier versions of iOS
-//            let managedContext = appDelegate.managedObjectContext
-//            guard let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
-//            let searchTerm = NSManagedObject(entity: entityDesc, insertInto: managedContext)
-//            searchTerm.setValue(term, forKey: Constants.SEARCH_TERMS)
-//            do {
-//                try managedContext.save()
-//            } catch let error as NSError {
-//                print("Could not save. \(error), \(error.userInfo)")
-//            }
-//        }
-//    }
-    
-    /// Retrieve saved search terms from CoreData model
-    fileprivate func retrievedSavedSearchTerms() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        if #available(iOS 10.0, *) {
-            let managedContext = appDelegate.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
-            let sort = NSSortDescriptor(key: Constants.SEARCH_DATE, ascending: false)
-            fetchRequest.sortDescriptors = [sort]
-            do {
-                searchTerms.value = []
-                searchTerms.value = try managedContext.fetch(fetchRequest)
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
-            }
-            
-        } else {
-            // Fallback on earlier versions of iOS
-            let managedContext = appDelegate.managedObjectContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.SEARCH_ENTITY) //<NSManagedObject>(entityName: Constants.SEARCH_ENTITY)
-            let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext)
-            fetchRequest.entity = entityDesc
-            do {
-                guard let tempSearchTerms = try managedContext.fetch(fetchRequest) as? [NSManagedObject] else { return  }
-                searchTerms.value = tempSearchTerms
-            } catch {
-                print("Could not fetch. \(error)")
-            }
-        }
     }
 }
 

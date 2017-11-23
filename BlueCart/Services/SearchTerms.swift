@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
+/// Functions to manage search terms entered by user
 class SearchTerms {
     /// Saving search terms to CoreData
     /// Handles iOS 10 and above one way and iOS 9 and below another
@@ -43,7 +44,8 @@ class SearchTerms {
     }
     
     /// Retrieve saved search terms from CoreData model
-    fileprivate func retrievedSavedSearchTerms() ->[NSManagedObject]? {
+    /// - Returns [NSManagedObject]: Returns array of managed objects...search terms.
+    func retrievedSavedSearchTerms() ->[NSManagedObject]? {
         var result = [NSManagedObject]()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         if #available(iOS 10.0, *) {
@@ -59,7 +61,6 @@ class SearchTerms {
                 print("Could not fetch. \(error), \(error.userInfo)")
                 return nil
             }
-            
         } else {
             // Fallback on earlier versions of iOS
             let managedContext = appDelegate.managedObjectContext

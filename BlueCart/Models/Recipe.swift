@@ -53,6 +53,8 @@ extension Recipe {
         imageUrl = try container.decode(String.self, forKey: .imageUrl)
         socialRank = try container.decode(Double?.self, forKey: .socialRank)
         publisherUrl = try container.decode(String.self, forKey: .publisherUrl)
+        /// Note decodeIfPresent ... adds nil if empty. Needs this for initial recipe as it does not have ingredients.
+        /// Ingredients added after user taps on a recipe picture.
         ingredients = try container.decodeIfPresent([String].self, forKey: .ingredients)
     }
 }
