@@ -79,7 +79,7 @@ class SaveRecipes {
                     let recipe = NSEntityDescription.insertNewObject(forEntityName: Constants.MRECIPE_DETAIL, into: managedContext)
                     recipe.setValue(Date(), forKey: Constants.MCREATED_AT_RECIPE)
                     recipe.setValue(item.imageUrl, forKey: Constants.MIMAGE_URL)
-                    // recipe.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)  /// need to change this
+                    recipe.setValue(item.ingredients , forKey: Constants.MINGREDIENTS)  
                     recipe.setValue(item.publisher , forKey: Constants.MPUBLISHER)
                     recipe.setValue(item.publisherUrl , forKey: Constants.MPUBLISER_URL)
                     recipe.setValue(item.recipeID , forKey: Constants.MRECIPE_ID)
@@ -107,7 +107,7 @@ class SaveRecipes {
                     let recipe = NSEntityDescription.insertNewObject(forEntityName: Constants.MRECIPE_DETAIL, into: managedContext)
                     recipe.setValue(Date(), forKey: Constants.MCREATED_AT_RECIPE)
                     recipe.setValue(item.imageUrl, forKey: Constants.MIMAGE_URL)
-                    // recipe.setValue(recipeDetail.ingredients , forKey: Constants.MINGREDIENTS)  /// need to change this
+                    recipe.setValue(item.ingredients , forKey: Constants.MINGREDIENTS)  /// need to change this
                     recipe.setValue(item.publisher , forKey: Constants.MPUBLISHER)
                     recipe.setValue(item.publisherUrl , forKey: Constants.MPUBLISER_URL)
                     recipe.setValue(item.recipeID , forKey: Constants.MRECIPE_ID)

@@ -2,24 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MRecipeDetail+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:MRecipeDetail+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:MRecipePage+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:MRecipePage+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Search+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Search+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:BlueCart.xcodeproj">
    </FileRef>
    <FileRef

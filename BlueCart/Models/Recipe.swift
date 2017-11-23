@@ -29,6 +29,7 @@ struct Recipe: Codable {
         case imageUrl = "image_url"
         case socialRank = "social_rank"
         case publisherUrl = "publisher_url"
+        case ingredients
     }
     var publisher: String?
     var url: String?
@@ -38,6 +39,7 @@ struct Recipe: Codable {
     var imageUrl: String?
     var socialRank: Double?
     var publisherUrl: String?
+    var ingredients: [String]?
 }
 
 extension Recipe {
@@ -51,7 +53,7 @@ extension Recipe {
         imageUrl = try container.decode(String.self, forKey: .imageUrl)
         socialRank = try container.decode(Double?.self, forKey: .socialRank)
         publisherUrl = try container.decode(String.self, forKey: .publisherUrl)
-        
+        ingredients = try container.decodeIfPresent([String].self, forKey: .ingredients)
     }
 }
 

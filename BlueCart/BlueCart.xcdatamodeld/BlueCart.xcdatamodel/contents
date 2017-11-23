@@ -7,6 +7,11 @@
                 <entry key="mImageUrl" value="image_url"/>
             </userInfo>
         </attribute>
+        <attribute name="mIngredients" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES">
+            <userInfo>
+                <entry key="mIngredients" value="ingredients"/>
+            </userInfo>
+        </attribute>
         <attribute name="mPublisher" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="mPublisher" value="publisher"/>
@@ -59,7 +64,7 @@
         <attribute name="searchTerms" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MRecipeDetail" positionX="-272" positionY="-126" width="128" height="193"/>
+        <element name="MRecipeDetail" positionX="-272" positionY="-126" width="128" height="210"/>
         <element name="MRecipePage" positionX="-549" positionY="-144" width="128" height="118"/>
         <element name="Search" positionX="-423" positionY="-300" width="128" height="75"/>
     </elements>
