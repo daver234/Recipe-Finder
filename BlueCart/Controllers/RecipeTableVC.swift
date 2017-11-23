@@ -8,7 +8,6 @@
 
 import UIKit
 import Kingfisher
-import CoreData
 import SwiftSpinner
 import Reachability
 
@@ -352,7 +351,6 @@ extension RecipeTableVC: UISearchBarDelegate {
             guard let searchTermString = term.value(forKey: Constants.SEARCH_TERMS) as? String else { return }
             searchTerms.append(searchTermString)
         }
-        print("filteredSearchTerms: ", filteredSearchTerms)
     }
     
     /// Save search text to CoreData

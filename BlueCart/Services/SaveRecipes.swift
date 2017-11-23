@@ -101,6 +101,8 @@ class SaveRecipes {
     
     
     /// Function to take existing recipe and add the ingredients string array
+    /// When retrieving the original recipe from the page of recipes, the ingredient list is not included.
+    /// A second call needs to be made to get the recipe detail that includes the ingredients.
     /// - Parameter recipeDetail: Pass in an existing recipe
     func saveIngredietsToRecipe(recipeDetail: RecipeDetail) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
