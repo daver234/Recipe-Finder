@@ -10,7 +10,7 @@ import Foundation
 
 // Typealias
 typealias CompletionHandler = (_ Success: Bool) -> ()
-typealias CompletionHandlerWithData = (_ recipeDetail: [String: RecipeDetail]?, _ error: Error?) -> ()
+typealias CompletionHandlerWithData = (_ recipeDetail: [String: Recipe]?, _ error: Error?) -> ()
 
 struct Constants {
     

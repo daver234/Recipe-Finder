@@ -9,8 +9,8 @@
 import Foundation
 
 class RecipeDetailViewModel {
-    fileprivate(set) var newRecipe = [String: RecipeDetail]()
-    fileprivate(set) var theRecipe: Box<[String: RecipeDetail]>  = Box([String: RecipeDetail]())
+    fileprivate(set) var newRecipe = [String: Recipe]()
+    fileprivate(set) var theRecipe: Box<[String: Recipe]>  = Box([String: Recipe]())
     fileprivate(set) var viewRecipe: Box<Recipe> = Box(Recipe())
     var networkReachable = true
 }
@@ -18,7 +18,7 @@ class RecipeDetailViewModel {
 
 /// Functions to access the DataManager Singleton
 extension RecipeDetailViewModel {
-    func getRecipe() -> [String: RecipeDetail] {
+    func getRecipe() -> [String: Recipe] {
         return newRecipe
     }
     
@@ -34,9 +34,7 @@ extension RecipeDetailViewModel {
     }
     
     /// Get a specific recipe.  Changes retrieval function based on online or offline
-    /// - Parameter pageToGet: The specific page to get the recipe from
-    /// - Parameter recipeToGet: The index of the recipe to get
-    /// - Parameter index: The cell index that needs the recipe.  Used for offline.
+    /// - Parameter recipeID: The ID of the recipe to retrieve.
     func getRecipeDetail(recipeID: String) {
         if networkReachable {
            loadDetailRecipe(recipeId: recipeID)
