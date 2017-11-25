@@ -198,7 +198,8 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
 
-    /// Load different data sets depending on status of search bar and if text has been entered
+    /// Load different data sets depending on status of search bar and if text has been entered.
+    /// The + 1 is for offline as the Top Rated is inserted as the first search term.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch isSearchBarActive() {
         case true:
@@ -286,6 +287,8 @@ extension RecipeTableVC {
         }
     }
     
+    /// Function to either take the search term and go get the related recipes.  Or,
+    /// go to the detailed recipe view if the row is tapped in the RecipeTableVC.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch isSearchBarActive() {
         case true:
@@ -296,8 +299,9 @@ extension RecipeTableVC {
             /// Set the active search term in the view model
             let newString : String
             term == Constants.TOP_RATED ? (newString = "") : (newString = term)
+            print("here is term:", term)
             viewModel.searchString.value = newString
-            viewModel.recipePageNumber.value = 0
+            viewModel.recipePageNumber.value = 1
             if term == Constants.TOP_RATED {
                 viewModel.loadRecipesBasedOnSearchTerm(searchString: "")
             } else {
@@ -350,6 +354,7 @@ extension RecipeTableVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchText = searchController.searchBar.text else { return }
+        viewModel.recipePageNumber.value = 1
         viewModel.saveSearchTerm(term: searchText)
         startSpinner(term: searchText)
     }

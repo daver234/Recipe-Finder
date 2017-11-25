@@ -92,6 +92,7 @@ extension DataManager {
     
     /// Update all variables after retrieving recipes from Core Data.
     /// Used when device is offline.
+    /// First up, need to get the stored recipes from core data.
     func updateAllVariablesWhenOffline(searchTerm: String, completion: @escaping CompletionHandler) {
         RetrieveRecipes().retrievedSavedRecipes(searchTerm: searchTerm) { [weak self] (result, error) in
             if error == nil {
