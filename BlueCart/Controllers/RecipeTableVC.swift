@@ -19,6 +19,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     private var viewModel = RecipeTableViewModel()
     var filteredSearchTerms = [String]()
     var searchTerms = [String]()
+    let isAppStart = true
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -106,13 +107,24 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         }
         
         /// Bool to indicate if new recipes were retrieved.  If so, reload data.
+        /// Also, start spinner if this is first app launch. 
         viewModel.didGetRecipes.bind { [unowned self] (isNewRecipe) in
-            if isNewRecipe {
-                DispatchQueue.main.async {
-                    self.setupNavBarTitle()
-                    SwiftSpinner.hide()
-                    self.tableView.reloadData()
-                }
+            guard !isNewRecipe else {
+                reloadAfterRecipesChanged()
+                return
+            }
+            guard self.isAppStart else {
+                reloadAfterRecipesChanged()
+                return
+            }
+            self.startSpinner(term: "you")
+        }
+        
+        func reloadAfterRecipesChanged() {
+            DispatchQueue.main.async {
+                self.setupNavBarTitle()
+                SwiftSpinner.hide()
+                self.tableView.reloadData()
             }
         }
     }

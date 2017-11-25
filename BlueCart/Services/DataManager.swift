@@ -104,8 +104,6 @@ extension DataManager {
                 self?.totalRecipesRetrieved = recipes.count
                 self?.allRecipesWithoutPages = recipes
                 self?.numberOfPagesRetrieved += 1
-                
-                print("totalRecipesRetrieved", self?.totalRecipesRetrieved ?? "no recipes")
                 (self?.totalRecipesRetrieved ?? 0) > 0 ? completion(true) : completion(false)
             } else {
                 print("Error retrieving saved recipes.")

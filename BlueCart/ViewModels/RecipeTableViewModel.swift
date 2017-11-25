@@ -64,7 +64,6 @@ extension RecipeTableViewModel {
     
     /// This function loads more recipes for the existing search term as the user scrolls the table view
     func loadRecipesForExistingSearchTerm(pageNumber: Int) {
-        print("pageNumber in viewModel", pageNumber)
         currentPageNumber.value = pageNumber
         loadRecipes(pageNumber: pageNumber, searchString: searchString.value)
     }
@@ -76,7 +75,12 @@ extension RecipeTableViewModel {
             loadRecipes(pageNumber: recipePageNumber.value, searchString: searchString) 
         } else {
             DataManager.instance.updateAllVariablesWhenOffline(searchTerm: searchString) { [weak self] success in
-                success ? self?.didGetRecipes.value = true : print("Did not get recipes from Core Data for offline use.")
+                if success {
+                    self?.didGetRecipes.value = true
+                } else {
+                    print("Did not get recipes from Core Data for offline use.")
+                    self?.didGetRecipes.value = false
+                }
             }
         }
         

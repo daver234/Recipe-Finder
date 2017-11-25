@@ -30,6 +30,7 @@ struct Recipe: Codable {
         case socialRank = "social_rank"
         case publisherUrl = "publisher_url"
         case ingredients
+        case searchTerm
     }
     var publisher: String?
     var url: String?
@@ -40,6 +41,7 @@ struct Recipe: Codable {
     var socialRank: Double?
     var publisherUrl: String?
     var ingredients: [String]?
+    var searchTerm: String?
 }
 
 extension Recipe {
@@ -56,6 +58,7 @@ extension Recipe {
         /// Note decodeIfPresent ... adds nil if empty. Needs this for initial recipe as it does not have ingredients.
         /// Ingredients added after user taps on a recipe picture.
         ingredients = try container.decodeIfPresent([String].self, forKey: .ingredients)
+        searchTerm = try container.decodeIfPresent(String.self, forKey: .searchTerm)
     }
 }
 

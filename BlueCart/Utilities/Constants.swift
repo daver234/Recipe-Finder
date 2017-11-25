@@ -67,6 +67,7 @@ struct Constants {
     static let MSOURCE_URL = "mSourceUrl"
     static let MTITLE = "mTitle"
     static let MURL = "mUrl"
+    static let MSEARCH_TERM_DETAIL = "mSearchTerm"
     
     // Controllers
     static let SEARCH_VC = "SearchBarVC"

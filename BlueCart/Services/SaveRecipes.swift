@@ -44,6 +44,7 @@ class SaveRecipes {
                     recipe.mSourceUrl = item.sourceUrl
                     recipe.mTitle = item.title
                     recipe.mUrl = item.url
+                    recipe.mSearchTerm = searchTerm.lowercased()
                     page.addToMRecipes(recipe)
                 }
                 do {

@@ -25,7 +25,6 @@ class APIManager {
     func getRecipesForPage(pageNumber: Int, searchString: String, completion: @escaping CompletionHandler) {
         guard let encodedSearchTerm = searchString.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         let urlString = "\(Constants.SEARCH_URL)\(APIKeyService.API_KEY)&q=\(encodedSearchTerm)&page=\(pageNumber)&sort=r"
-        print("here is urlString", urlString)
         guard let url = URL(string: urlString) else { return }
         request.callAPIForPage(searchString: searchString, url: url, completion: completion)
     }

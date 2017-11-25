@@ -20,12 +20,16 @@ class RetrieveRecipes {
     func retrievedSavedRecipes(searchTerm: String, completion: @escaping CompletionHandlerWithRecipes) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { completion(nil, nil); return }
         var recipesToReturn = [Recipe]()
+        // Need to check if the search is for Top Rated which means searchTerm is ""
+        var revisedSearchTerm = ""
+        searchTerm == "" ? (revisedSearchTerm = Constants.TOP_RATED) : (revisedSearchTerm = searchTerm)
         if #available(iOS 10.0, *) {
             let managedContext = appDelegate.persistentContainer.viewContext
             do {
                 let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
                 let sortDescriptor = NSSortDescriptor(key: Constants.MCREATED_AT_RECIPE, ascending: true)
                 newFetchRequest.sortDescriptors = [sortDescriptor]
+                newFetchRequest.predicate = NSPredicate(format: "mSearchTerm == %@", revisedSearchTerm.lowercased())
                 let newResult = try managedContext.fetch(newFetchRequest)
                 var recipesAddedCounter = 0
                 for item in newResult {
@@ -68,6 +72,7 @@ class RetrieveRecipes {
                 let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
                 let sortDescriptor = NSSortDescriptor(key: Constants.MCREATED_AT_RECIPE, ascending: true)
                 newFetchRequest.sortDescriptors = [sortDescriptor]
+                newFetchRequest.predicate = NSPredicate(format: "mSearchTerm == %@", revisedSearchTerm)
                 let newResult = try managedContext.fetch(newFetchRequest)
                 var recipesAddedCounter = 0
                 for item in newResult {
@@ -117,7 +122,6 @@ class RetrieveRecipes {
                     guard let storedPageNumber = item.value(forKey: Constants.MPAGE_NUMBER), let storedSearchTerm = item.value(forKey: Constants.MSEARCH_TERM) else { return nil }
                     let intStoredPageNumber = storedPageNumber as! Int
                     let stringStoredSearchTerm = storedSearchTerm as! String
-                    //print("here is createdAt:\(pageNumber) and then searchTerm \(searchTerm)")
                     if (intStoredPageNumber == pageNumber) && (stringStoredSearchTerm == searchTerm) {
                         responseBool = true
                     }
@@ -164,7 +168,6 @@ class RetrieveRecipes {
             let managedContext = appDelegate.persistentContainer.viewContext
             let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
             newFetchRequest.predicate = NSPredicate(format: "mRecipeID == %@", recipeID)
-            print("about to get recipeID", recipeID)
             do {
                 let newResult = try managedContext.fetch(newFetchRequest)
                 
@@ -217,7 +220,7 @@ class RetrieveRecipes {
         }
     }
     
-    /// Might use this general function for fetchr requests
+    /// Might use this general function for fetch requests - not in use now.
     private func fetchRecordsForEntity(_ entity: String, inManagedObjectContext managedObjectContext: NSManagedObjectContext) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         var result = [NSManagedObject]()
