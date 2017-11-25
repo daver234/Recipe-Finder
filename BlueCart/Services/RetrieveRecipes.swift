@@ -16,9 +16,9 @@ class RetrieveRecipes {
 
     /// Retrieved saved recipes from Core Data
     /// - Parameter searchTerm: The type of recipes the user wants to retrieve
-    /// - Returns [Recipe]: All the recipes saved for the search term
-    func retrievedSavedRecipes(searchTerm: String) -> [Recipe]? {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil}
+    /// - Parameter completion:  The completion handler returns the array of recipes that was stored.
+    func retrievedSavedRecipes(searchTerm: String, completion: @escaping CompletionHandlerWithRecipes) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { completion(nil, nil); return }
         var recipesToReturn = [Recipe]()
         if #available(iOS 10.0, *) {
             let managedContext = appDelegate.persistentContainer.viewContext
@@ -37,8 +37,7 @@ class RetrieveRecipes {
                         let publisherUrl = item.value(forKey: Constants.MPUBLISER_URL),
                         let socialRank = item.value(forKey: Constants.MSOCIAL_RANK),
                         let url = item.value(forKey: Constants.MURL),
-                        let ingredients = item.value(forKey: Constants.MINGREDIENTS),
-                        let sourceUrl = item.value(forKey: Constants.MSOURCE_URL)  else { return nil}
+                        let sourceUrl = item.value(forKey: Constants.MSOURCE_URL)  else { print("In continue"); continue }
                     recipe.title = title as? String
                     recipe.recipeID = recipeID as? String
                     recipe.imageUrl = imageUrl as? String
@@ -47,14 +46,19 @@ class RetrieveRecipes {
                     recipe.socialRank = socialRank as? Double
                     recipe.url = url as? String
                     recipe.sourceUrl = sourceUrl as? String
+                    
+                    /// If recipe detail was not viewed while online, then ingredients are nil.
+                    /// If this case, swap in a emtpy string array so that all recipes are returned.
+                    /// Ingredients attribute is updated when user views the particular recipe detail.
+                    let ingredients = item.value(forKey: Constants.MINGREDIENTS) ?? [""]
                     recipe.ingredients = ingredients as? [String]
                     recipesToReturn.append(recipe)
                     recipesAddedCounter += 1
                 }
-               return recipesToReturn 
-            } catch let error as NSError {
-                print("Could not fetch saved recipe pages from core data. \(error), \(error.userInfo)")
-                return nil
+               completion(recipesToReturn, nil)
+            } catch {
+                print("Could not fetch saved recipe pages from core data. \(error.localizedDescription)")
+                completion(nil, error)
             }
             
         } else {
@@ -75,7 +79,7 @@ class RetrieveRecipes {
                         let publisherUrl = item.value(forKey: Constants.MPUBLISER_URL),
                         let socialRank = item.value(forKey: Constants.MSOCIAL_RANK),
                         let url = item.value(forKey: Constants.MURL),
-                        let sourceUrl = item.value(forKey: Constants.MSOURCE_URL)  else { return nil}
+                        let sourceUrl = item.value(forKey: Constants.MSOURCE_URL)  else { continue }
                     recipe.title = title as? String
                     recipe.recipeID = recipeID as? String
                     recipe.imageUrl = imageUrl as? String
@@ -87,10 +91,10 @@ class RetrieveRecipes {
                     recipesToReturn.append(recipe)
                     recipesAddedCounter += 1
                 }
-                return recipesToReturn
+                completion(recipesToReturn, nil)
             } catch {
                 print("Could not fetch saved recipe pages from core data. \(error)")
-                return nil
+                completion(nil, error)
             }
         }
     }
@@ -154,7 +158,77 @@ class RetrieveRecipes {
     }
     
     /// Retrieve specific recipe for display in RecipeDetailVC
-//    func retrieveSpecificRecipe(recipeID: String) -> Recipe? {
-//        return Recipe()
-//    }
+    func retrieveSpecificRecipe(recipeID: String) -> Recipe? {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
+        if #available(iOS 10.0, *) {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
+            newFetchRequest.predicate = NSPredicate(format: "mRecipeID == %@", recipeID)
+            print("about to get recipeID", recipeID)
+            do {
+                let newResult = try managedContext.fetch(newFetchRequest)
+                
+                // If recipeID does not exist then exit
+                guard newResult.count != 0 else { print("recipeID does not seem to exist so zero?.", newResult.count);  return nil }
+                guard let first = newResult.first as? MRecipeDetail else { return nil }
+
+                var recipe = Recipe()
+                recipe.publisher = first.mPublisher
+                recipe.url = first.mUrl
+                recipe.title = first.mTitle
+                recipe.sourceUrl = first.mSourceUrl
+                recipe.recipeID = first.mRecipeID
+                recipe.imageUrl = first.mImageUrl
+                recipe.socialRank = first.mSocialRank
+                recipe.publisherUrl = first.mPublisherUrl
+                recipe.ingredients = first.mIngredients
+                return recipe
+            } catch let error as NSError {
+                print("Could not retrieve recipe for recipeID. \(error), \(error.userInfo)")
+                return nil
+            }
+        } else {
+            // Fallback on earlier versions of iOS
+            let managedContext = appDelegate.managedObjectContext
+            let newFetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.MRECIPE_DETAIL)
+            newFetchRequest.predicate = NSPredicate(format: "mRecipeID == %@", recipeID)
+            do {
+                let newResult = try managedContext.fetch(newFetchRequest)
+                
+                // If recipeID does not exist then exit
+                guard newResult.count != 0 else { print("recipeID does not seem to exist so zero?.", newResult.count);  return nil }
+                guard let first = newResult.first as? MRecipeDetail else { return nil }
+                
+                var recipe = Recipe()
+                recipe.publisher = first.mPublisher
+                recipe.url = first.mUrl
+                recipe.title = first.mTitle
+                recipe.sourceUrl = first.mSourceUrl
+                recipe.recipeID = first.mRecipeID
+                recipe.imageUrl = first.mImageUrl
+                recipe.socialRank = first.mSocialRank
+                recipe.publisherUrl = first.mPublisherUrl
+                recipe.ingredients = first.mIngredients
+                return recipe
+            } catch let error as NSError {
+                print("Could not retrieve recipe for recipeID. \(error), \(error.userInfo)")
+                return nil
+            }
+        }
+    }
+    
+    /// Might use this general function for fetchr requests
+    private func fetchRecordsForEntity(_ entity: String, inManagedObjectContext managedObjectContext: NSManagedObjectContext) -> [NSManagedObject] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        var result = [NSManagedObject]()
+        do {
+            let records = try managedObjectContext.fetch(fetchRequest)
+            if let records = records as? [NSManagedObject] {
+                result = records
+            }
+        } catch {
+            print("Unable to fetch managed objects for entity \(entity).")
+        }
+        return result
+    }
 }

@@ -23,6 +23,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -155,20 +156,12 @@ extension RecipeTableVC {
     /// Here we prefetch the images for the tableview using Kingfisher.
     /// And, prefetch more data if the user is getting to the end of the tableview.
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
         /// If offline, don't do prefetching of data
         if reachability.connection == .none {
             return
         }
-        /// First get the images
-        let currentPage = viewModel.getPagesRetrieved()
-        let recipes = viewModel.getRecipes(pageNumber: currentPage)
-        var stringToUrl = [URL]()
-        for item in recipes {
-            guard let stringUrl = item.imageUrl, let url = URL(string: stringUrl) else { return }
-            stringToUrl.append(url)
-        }
-        let urls = stringToUrl.flatMap { $0 }
-        ImagePrefetcher(urls: urls).start()
+        let currentPage = viewModel.currentPageNumber.value
         
         /// This section is for prefetching more data before the user gets to the end of the tableview with the current data
         /// First, build an array of all the upcoming rows.

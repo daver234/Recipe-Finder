@@ -43,10 +43,12 @@ Overall Design
 
 
 ## Offline
-If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of 30 recipes from that search term will appear.  It is limited to 30 right now.  Tap the search bar again and load one of the other search terms and those 30 recipes will all appear offline.  Images are stored offline as well using Kingfisher. Individual receipe details that have been viewed from search terms are available offline.  If a individual recipe from a search term was not viewed when the device was online, then only the image, recipe social rank and recipe id will display (e.g. no ingredients). Top rated recipes are  available offline.
+If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of recipes from that search term will appear.   Tap the search bar again and load one of the other search terms and those  recipes will all appear offline.  Images are stored offline as well using Kingfisher.  If a individual recipe from a search term was not viewed when the device was online, then only the image, recipe social rank and recipe id will display (e.g. no ingredients). Top rated recipes are  available offline.
 
 ## Use Of CoreData
-The search terms are store and retrieved in CoreData.  Support is there for CoreData in iOS9 and above.  Apple changed how CoreData works in iOS 10 (maybe iOS 9.1?).  The offline list of 30 recipes is stored using the Disk framework into the local cache storage.  With further work, perhaps this could be stored in CoreData.  Right now, the CoreData stack code is in the AppDelegate but probably should be moved out into a separate class. Migrations are not supported at this time.
+The search terms are store and retrieved in CoreData.  CoreData for iOS9 and above is supported.  Apple changed how CoreData works in iOS 10.  Any recipe pages that were loaded into the RecipeTableVC are available offline.   For example, if the prefetching function loaded 90 recipes in the RecipeTableVC, then 90 would be available offline.  The recipe detail is available for all 90 but the ingredients are only available for the recipes that the user tapped on to view.  That's because the ingredients list requires another call to the backend since it's not provided on the initial search request.
+
+Migrations are not supported at this time.
 
 ## Requriements for Building and Using
 
@@ -65,7 +67,6 @@ The search terms are store and retrieved in CoreData.  Support is there for Core
 2. Kingfisher - for image downloading, caching and management. https://github.com/onevcat/Kingfisher
 3. Reachability by Ashley Mills - to handle checking for a network connection and if not there redirecting the user to Settings. https://github.com/ashleymills/Reachability.swift
 4. SwiftSpinner - A very nice spinner.  I use it here for to let the user know the data is still loading.  A much nicer approach than the activity indicator in iOS. https://github.com/icanzilb/SwiftSpinner
-5. Disk - A framework to persist structs, images and data.  https://github.com/saoudrizwan/Disk
 
 No need to run the Podfile as the pods are checkin.  As of November 12, the M13Checkbox pod has a bug in the M13Checkbox.swift file.  Without changing a line of code, you will only see one check box needs to one of the list of ingredients.  The fix is in the checked in Pod.  The fix is to change line 218 in the M13Checkbox.swift file like this:
 ```
@@ -85,31 +86,30 @@ fileprivate var controller: M13CheckboxController = M13CheckboxStrokeController(
 * Caching of images for better performance.  Loading of a default image while network requests underway.
 * Separate utilities for colors, constants and reachability.
 * Cell configuration in cell class not view controller.
+* CoreData is used to store and retrieve data for use when the app is offline.
 * MVVM architecture for shrinking size of ViewControllers and separating data management from the view controllers into the views.
-* ...
+
 
 ---
 
 Additional Work To Do
 * Add more unit and UI tests - a few included now.
 * Continue working on documentation
-* Improve offline. Perhaps store more than 30
 * Delete search terms from table view
 * Further testing
 * Consider converting struct Recipe data model to all core data
-* Consider dropping RecipeDetail and update Recipe for ingredients
+* Consider adding fetchedResultsController instead of in-memory data structures
 * Testing on iOS 9 and iOS 10
 * CoreData testing on iOS 9
-* More testing on offline , recipe detail loading and scrolling
 * Fetch more recipe pages for iOS 9.  Now only iOS 10 and above
 * Test and adjust for iPad, landscape and different screen sizes. Development was done primarily on a iPhone 7 Plus device and simulator and a iPhone 6 device. All other variants need testing.
 * Look for refactoring and code clean up opportunities
 * Additional inline code documentation
 * More work on error handling
 * Better logging of debug and error messages
-* Checks for odd search strings for searching and file saving
+* Checks for odd search strings for searching.
+* Filter and adjust for bad recipe titles...seen a few with special characters.
 * Review offline storage limits and add checks for hitting limits
-* ...
 
 
 Copyright Dave Rothschild November 2017. Not for commercial use.

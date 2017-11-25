@@ -58,12 +58,14 @@ class Request: AbstractRequestClient {
                     completion(nil, error)
                     return
                 }
-                // self.saveRecipes.saveDetailForOffline(recipeId: recipeId, data: data)
                 DataManager.instance.decodeDataForDetail(data: data, completion: completion)
             }
             task.resume()
         case false:
-            DataManager.instance.retrieveSavedDetailedRecipeWithIngredients(recipeId: recipeId, completion: completion)
+            let result = RetrieveRecipes().retrieveSpecificRecipe(recipeID: recipeId)
+            guard let resultToReturn = result else { return }
+            let dictionary = ["recipe" : resultToReturn]
+            completion(dictionary, nil)
         }
     }
 }

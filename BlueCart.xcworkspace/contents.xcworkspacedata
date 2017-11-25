@@ -2,6 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:BlueCart/Models/CoreData/MRecipeDetail+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BlueCart/Models/CoreData/MRecipeDetail+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BlueCart/Models/CoreData/MRecipePage+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BlueCart/Models/CoreData/MRecipePage+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BlueCart/Models/CoreData/Search+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BlueCart/Models/CoreData/Search+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:BlueCart.xcodeproj">
    </FileRef>
    <FileRef

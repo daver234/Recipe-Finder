@@ -19,6 +19,7 @@ class RecipeTableViewModel {
     var recipePageNumber: Box<Int> = Box(0)
     var searchString: Box<String> = Box("")
     fileprivate(set) var searchTerms: Box<[NSManagedObject]> = Box([])
+    fileprivate(set) var currentPageNumber: Box<Int> = Box(1)
     var networkReachable = true
 }
 
@@ -50,11 +51,6 @@ extension RecipeTableViewModel {
         return DataManager.instance.numberOfPagesRetrieved
     }
     
-    func getRecipes(pageNumber: Int) -> [Recipe] {
-        guard let recipes = DataManager.instance.allRecipes[pageNumber - 1].recipes else { return [Recipe]() }
-        return recipes
-    }
-    
     /// Change network reachable status
     func isNetworkReachable(reachable: Bool) {
         networkReachable = reachable
@@ -70,6 +66,8 @@ extension RecipeTableViewModel {
     
     /// This function loads more recipes for the existing search term as the user scrolls the table view
     func loadRecipesForExistingSearchTerm(pageNumber: Int) {
+        print("pageNumber in viewModel", pageNumber)
+        currentPageNumber.value = pageNumber
         loadRecipes(pageNumber: pageNumber, searchString: searchString.value)
     }
     

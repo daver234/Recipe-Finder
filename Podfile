@@ -10,7 +10,6 @@ target 'BlueCart' do
   pod 'M13Checkbox'
   pod 'SwiftSpinner'
   pod 'ReachabilitySwift'
-  pod 'Disk', '~> 0.3.2'
  
 
   target 'BlueCartTests' do

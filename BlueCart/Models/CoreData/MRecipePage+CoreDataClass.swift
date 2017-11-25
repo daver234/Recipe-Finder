@@ -2,7 +2,7 @@
 //  MRecipePage+CoreDataClass.swift
 //  
 //
-//  Created by David Rothschild on 11/23/17.
+//  Created by David Rothschild on 11/24/17.
 //
 //
 
