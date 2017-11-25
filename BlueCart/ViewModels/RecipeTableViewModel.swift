@@ -8,8 +8,6 @@
 
 import UIKit
 import CoreData
-import Disk
-
 
 /// ViewModel to support RecipeTableVC
 class RecipeTableViewModel {

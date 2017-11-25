@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Disk
 
 protocol AbstractRequestClient {
     func callAPIForPage(searchString: String, url: URL, completion: @escaping CompletionHandler)
