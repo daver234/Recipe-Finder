@@ -26,6 +26,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
     var recipeFromTable: Recipe?
     var viewModel = RecipeDetailViewModel()
     var isReachable : Bool?
+    var indexPathsToReload = [IndexPath]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,8 +77,20 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
                 self.tableView.setNeedsLayout()
                 self.tableView.layoutIfNeeded()
                 self.tableView.reloadData()
+                self.reloadRows()
             }
         }
+    }
+    
+    /// Adds an animation to have rows slide in from the right
+    /// when the ingredients data returns from the server.
+    func reloadRows() {
+        guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else { return }
+        for index in ingredients.indices {
+            let indexPath = IndexPath(item: index, section: 0)
+            indexPathsToReload.append(indexPath)
+        }
+        tableView.reloadRows(at: indexPathsToReload, with: .left)
     }
 }
 
@@ -98,6 +111,11 @@ extension RecipeDetailVC:  UITableViewDataSource {
             return 0
         }
         tableView.backgroundView = UIView(frame: .zero)
+        for index in ingredients.indices {
+            let indexPath = IndexPath(item: index, section: 0)
+            indexPathsToReload.append(indexPath)
+        }
+        // tableView.reloadRows(at: indexPathsToReload, with: .right)
         return  ingredients.count
     }
     
