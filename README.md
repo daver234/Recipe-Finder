@@ -39,16 +39,17 @@ The app is written in Swift 4.
 CoreData is used to store the search terms. The Disk framework is used to store recipe searches for retrieval when the device is offline.  More work is needed to support offline viewing of individual recipes.
 
 Overall Design
-![alt text](ReadMeImages/Design.jpg "Search term history")
+![alt text](ReadMeImages/Design.jpg "App Architecture")
 
 
 ## Offline
 If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of recipes from that search term will appear.   Tap the search bar again and load one of the other search terms and those  recipes will all appear offline.  Images are stored offline as well using Kingfisher.  If a individual recipe from a search term was not viewed when the device was online, then only the image, recipe social rank and recipe id will display (e.g. no ingredients). Top rated recipes are  available offline.
 
 ## Use Of CoreData
-The search terms are store and retrieved in CoreData.  CoreData for iOS9 and above is supported.  Apple changed how CoreData works in iOS 10.  Any recipe pages that were loaded into the RecipeTableVC are available offline.   For example, if the prefetching function loaded 90 recipes in the RecipeTableVC, then 90 would be available offline.  The recipe detail is available for all 90 but the ingredients are only available for the recipes that the user tapped on to view.  That's because the ingredients list requires another call to the backend since it's not provided on the initial search request.
+The search terms are store and retrieved in CoreData.  CoreData for iOS9 and above is supported.  Apple changed how CoreData works in iOS 10.  Any recipe pages that were loaded into the RecipeTableVC are available offline.   For example, if the prefetching function loaded 90 recipes in the RecipeTableVC, then 90 would be available offline.  The recipe detail is available for all 90 but the ingredients are only available for the recipes that the user tapped on to view.  That's because the ingredients list requires another call to the backend since it's not provided on the initial search request. Migrations are not supported at this time.
 
-Migrations are not supported at this time.
+Here is the CoreData schema:
+![alt text](ReadMeImages/coreData.jpg "CoreData Schema")
 
 ## Requriements for Building and Using
 
