@@ -14,11 +14,11 @@ class RecipeTableViewModel {
     
     // MARK: - Properties
     var didGetRecipes: Box<Bool> = Box(false)
-    var recipePageNumber: Box<Int> = Box(0)
-    var searchString: Box<String> = Box("")
+    var currentSearchString: Box<String> = Box("")
     fileprivate(set) var searchTerms: Box<[NSManagedObject]> = Box([])
-    fileprivate(set) var currentPageNumber: Box<Int> = Box(1)
+    fileprivate(set) var currentPageNumber: Box<Int> = Box(0)
     var networkReachable = true
+    fileprivate(set) var isSearching = false
 }
 
 
@@ -63,17 +63,25 @@ extension RecipeTableViewModel {
     }
     
     /// This function loads more recipes for the existing search term as the user scrolls the table view
-    func loadRecipesForExistingSearchTerm(pageNumber: Int) {
-        currentPageNumber.value = pageNumber
-        loadRecipes(pageNumber: pageNumber, searchString: searchString.value)
+    func loadRecipesForExistingSearchTerm() {
+        if !isSearching {
+            isSearching = true
+            loadRecipes(pageNumber: currentPageNumber.value + 1, searchString: currentSearchString.value)
+        }
     }
     
     /// This function loads different recipes based on whether or not the device is online or offline.
     /// If offline, then retrieve saved recipes.  If online, do a search.
     func loadRecipesBasedOnSearchTerm(searchString: String) {
         if networkReachable {
-            loadRecipes(pageNumber: recipePageNumber.value, searchString: searchString) 
+            isSearching = true
+            currentPageNumber.value = 0
+            currentSearchString.value = searchString
+            loadRecipes(pageNumber: 1, searchString: searchString) 
         } else {
+            /// pageNumber is not needed when offline since loading all saved recipes at once, not pages.
+            /// So 4 pages would produce 120 recipes (30 per page), then 120 recipes will load if device
+            /// is offline.
             DataManager.instance.updateAllVariablesWhenOffline(searchTerm: searchString) { [weak self] success in
                 if success {
                     self?.didGetRecipes.value = true
@@ -104,8 +112,9 @@ extension RecipeTableViewModel {
         let apiManager = getAPIManagerInstance()
         apiManager.getRecipesForPage(pageNumber: pageNumber, searchString: searchString) { [weak self] success in
             if success {
-                self?.recipePageNumber.value += 1
+                self?.currentPageNumber.value += 1
                 self?.didGetRecipes.value = true
+                self?.isSearching = false
             }
         }
     }

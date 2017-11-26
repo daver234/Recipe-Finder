@@ -73,9 +73,8 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         /// the API to load Top Rated recipes....per API docs.
         /// And we always start by loading page 1.  When scrolling (iOS 10 and above) more pages load
         /// via the prefetching API
-        viewModel.searchString.value = ""
-        viewModel.recipePageNumber.value = 1
-        viewModel.loadRecipesBasedOnSearchTerm(searchString: viewModel.searchString.value)
+        viewModel.currentSearchString.value = ""
+        viewModel.loadRecipesBasedOnSearchTerm(searchString: viewModel.currentSearchString.value)
         
         /// Load search terms from Core Data for use when user is searching terms
         viewModel.loadSearchTerms()
@@ -98,37 +97,33 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         definesPresentationContext = true
     }
     
+    /// Monitor any required properties from view model and perform actions on change.
     func monitorProperties() {
-        /// When page number increments, more data is available so reload the tableView
-        viewModel.recipePageNumber.bind { [unowned self] (value) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        
         /// Bool to indicate if new recipes were retrieved.  If so, reload data.
         /// Also, start spinner if this is first app launch. 
         viewModel.didGetRecipes.bind { [unowned self] (isNewRecipe) in
             guard !isNewRecipe else {
-                reloadAfterRecipesChanged()
+                self.reloadAfterRecipesChanged()
                 return
             }
             guard self.isAppStart else {
-                reloadAfterRecipesChanged()
+                self.reloadAfterRecipesChanged()
                 return
             }
             self.startSpinner(term: "you")
         }
-        
-        func reloadAfterRecipesChanged() {
-            DispatchQueue.main.async {
-                self.setupNavBarTitle()
-                SwiftSpinner.hide()
-                self.tableView.reloadData()
-            }
+    }
+    
+    /// Reset these items when new recipes arrive.
+    func reloadAfterRecipesChanged() {
+        DispatchQueue.main.async {
+            self.setupNavBarTitle()
+            SwiftSpinner.hide()
+            self.tableView.reloadData()
         }
     }
     
+    /// Set up navigation bar
     func setupNavBarTitle() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 240, height: 44))
         label.backgroundColor = UIColor.clear
@@ -170,7 +165,8 @@ extension RecipeTableVC {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         
         /// If offline, don't do prefetching of data
-        if reachability.connection == .none {
+        if reachability.connection == .none || viewModel.isSearching == true {
+            print("isSearching")
             return
         }
         let currentPage = viewModel.currentPageNumber.value
@@ -197,8 +193,7 @@ extension RecipeTableVC {
         /// the user gets to the end of the table. The active search string is also included so that
         /// the right set of recipes load.
         if nextPage > currentPage {
-            // viewModel.loadRecipes(pageNumber: nextPage, searchString: viewModel.searchString.value)
-            viewModel.loadRecipesForExistingSearchTerm(pageNumber: nextPage)
+            viewModel.loadRecipesForExistingSearchTerm()
         }
     }
 }
@@ -311,9 +306,7 @@ extension RecipeTableVC {
             /// Set the active search term in the view model
             let newString : String
             term == Constants.TOP_RATED ? (newString = "") : (newString = term)
-            print("here is term:", term)
-            viewModel.searchString.value = newString
-            viewModel.recipePageNumber.value = 1
+            viewModel.currentSearchString.value = newString
             if term == Constants.TOP_RATED {
                 viewModel.loadRecipesBasedOnSearchTerm(searchString: "")
             } else {
@@ -366,7 +359,6 @@ extension RecipeTableVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchText = searchController.searchBar.text else { return }
-        viewModel.recipePageNumber.value = 1
         viewModel.saveSearchTerm(term: searchText)
         startSpinner(term: searchText)
     }
