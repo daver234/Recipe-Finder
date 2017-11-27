@@ -54,6 +54,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
     }
     
     func configureView() {
+        tableView.tableFooterView = UIView()
         guard let newRecipe = recipeFromTable else { return }
         guard let rank = newRecipe.socialRank,
             let recipeID = newRecipe.recipeID,
