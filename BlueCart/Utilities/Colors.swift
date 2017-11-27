@@ -17,13 +17,18 @@ struct ColorPalette {
         let exampleMedium = #colorLiteral(red: 0, green: 0.3294117647, blue: 0.6235294118, alpha: 1)
         static let Light = UIColor(netHex: 0x007AC9)
         let exampleLight = #colorLiteral(red: 0, green: 0.4784313725, blue: 0.7882352941, alpha: 1)
+        static let Lighter = UIColor(netHex: 0x007AC9)
+        let exampleLighter = #colorLiteral(red: 0.4620226622, green: 0.8382837176, blue: 1, alpha: 1)
+        
     }
     
     struct Green {
         static let Medium = UIColor(netHex: 0x5B8F22)
         let exampleMedium = #colorLiteral(red: 0.3568627451, green: 0.5607843137, blue: 0.1333333333, alpha: 1)
         static let Light = UIColor(netHex: 0x95D26B)
-        let exampleLight = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        let exampleLight = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 0.5)
+        static let SuperLight = UIColor(white: 0x95D26B, alpha: 0.2)
+        static let exampleSuperLight = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     struct Orange {

@@ -61,7 +61,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         } catch {
             print("could not start reachability notifier")
         }
-        
+
         /// Allows user to see what cell they came from after returning from ReceiptDetailVC
         /// This uses the UITableView extension in Extensions.swift
         self.tableView.deselectSelectedRow(animated: true)
@@ -95,6 +95,13 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         searchController.searchBar.sizeToFit()
         self.tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
+        searchController.searchBar.barTintColor = ColorPalette.Green.Light
+        
+        /// To get Cancel button to be black when search bar is present
+        let cancelButtonAttributes: [NSAttributedStringKey: UIColor] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.black]
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+        searchController.searchBar.borderWidth = 1
+        searchController.searchBar.borderColor = ColorPalette.Green.Light
     }
     
     /// Monitor any required properties from view model and perform actions on change.
@@ -133,6 +140,10 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         let results = DataManager.instance.totalRecipesRetrieved
         label.text = "Search For Recipes\nFound \(results) Results"
         self.navigationItem.titleView = label
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = ColorPalette.Green.Light
+        navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color: ColorPalette.Green.Light), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: ColorPalette.Green.Light)
     }
     
     /// Check for what state changed for connectivity
@@ -386,4 +397,5 @@ extension RecipeTableVC: UISearchBarDelegate {
             return text.contains(searchText.lowercased())
         })
     }
+
 }

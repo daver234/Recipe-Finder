@@ -31,6 +31,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = Constants.RECIPE_TITLE
+        self.navigationController?.navigationBar.tintColor = ColorPalette.Black.Medium
         tableView.dataSource = self
         guard let reach = isReachable else { return }
         viewModel.networkReachable = reach
