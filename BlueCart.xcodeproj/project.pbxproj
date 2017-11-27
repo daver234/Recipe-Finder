@@ -66,6 +66,7 @@
 		1D2A05528EA7A9939F80C036 /* Pods-BlueCartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartUITests/Pods-BlueCartUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1FB0D0D0DD2A62CC70A404B6 /* Pods-BlueCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCart/Pods-BlueCart.debug.xcconfig"; sourceTree = "<group>"; };
 		50351834EDB0CC0BFBF258A2 /* Pods-BlueCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCart/Pods-BlueCart.release.xcconfig"; sourceTree = "<group>"; };
+		5551AAEA1FCC9B9A0034499B /* Recipes1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Recipes1.jpg; path = "/Users/Dave/Documents/Google Drive/iOS-files/BlueCart/ReadMeImages/Recipes1.jpg"; sourceTree = "<absolute>"; };
 		557FB5DC1FBE5B7F00A1FB1E /* SaveRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecipes.swift; sourceTree = "<group>"; };
 		5588F7991FC3D04100212121 /* RetrieveRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveRecipes.swift; sourceTree = "<group>"; };
 		5588F7A71FC66C0500212121 /* SearchTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTerms.swift; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 		552DBC4F1FBB6B13003394D3 /* ReadMeImages */ = {
 			isa = PBXGroup;
 			children = (
+				5551AAEA1FCC9B9A0034499B /* Recipes1.jpg */,
 				55CE458B1FBA64C000E4ED1E /* Design.jpg */,
 				55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */,
 				55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */,
