@@ -54,7 +54,7 @@ class SaveRecipes {
                 }
             } else {
                 let managedContext = appDelegate.managedObjectContext
-                guard let entityDesc = NSEntityDescription.entity(forEntityName: Constants.SEARCH_ENTITY, in: managedContext) else { return }
+                guard let entityDesc = NSEntityDescription.entity(forEntityName: Constants.MRECIPE_PAGE, in: managedContext) else { return }
                 let recipePageToSave = NSManagedObject(entity: entityDesc, insertInto: managedContext)
                 recipePageToSave.setValue(Date(), forKey: Constants.MCREATED_AT_PAGE)
                 recipePageToSave.setValue(pageNumber, forKey: Constants.MPAGE_NUMBER)

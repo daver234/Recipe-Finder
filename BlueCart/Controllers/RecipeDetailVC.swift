@@ -54,7 +54,9 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
     }
     
     func configureView() {
+        // To eliminate the un-used rows in the tableView
         tableView.tableFooterView = UIView()
+        
         guard let newRecipe = recipeFromTable else { return }
         guard let rank = newRecipe.socialRank,
             let recipeID = newRecipe.recipeID,

@@ -23,6 +23,12 @@ class RecipeTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        //self.recipeTitleLabel.layer.backgroundColor = ColorPalette.White.Medium.cgColor
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        //self.recipeTitleLabel.layer.backgroundColor = ColorPalette.Green.Light.cgColor
     }
 
     func setupView(recipe: Recipe) {
@@ -44,7 +50,6 @@ class RecipeTableViewCell: UITableViewCell {
     /// Hides image and changes cell height for just saved search text string
     func setupViewIfCoreData(searchTerm: String) {
         recipeImage.isHidden = true
-        //recipeImageHeight.constant = 35
         recipeTitleLabel.font = UIFont(name: Constants.AVENIR_HEAVY, size: 18)
         recipeTitleLabel.textColor = ColorPalette.Black.Light
         recipeTitleLabel.text = searchTerm
@@ -52,7 +57,6 @@ class RecipeTableViewCell: UITableViewCell {
     
     func setupViewForIndexZero(searchTerm: String) {
         recipeImage.isHidden = true
-        // recipeImageHeight.constant = 35
         recipeTitleLabel.font = UIFont(name: Constants.AVENIR_HEAVY, size: 20)
         recipeTitleLabel.text = searchTerm
         recipeTitleLabel.textColor = ColorPalette.Black.Medium

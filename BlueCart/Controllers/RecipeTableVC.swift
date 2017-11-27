@@ -142,6 +142,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         self.navigationItem.titleView = label
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = ColorPalette.Green.Light
+        
         ///  The following is to get rid of the 1px line at the bottom of the Navigation Bar
         navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color: ColorPalette.Green.Light), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: ColorPalette.Green.Light)

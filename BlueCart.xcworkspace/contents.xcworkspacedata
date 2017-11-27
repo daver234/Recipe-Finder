@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ReadMeImages/Recipes1.jpg">
+   </FileRef>
+   <FileRef
       location = "group:BlueCart/Models/CoreData/MRecipeDetail+CoreDataClass.swift">
    </FileRef>
    <FileRef

@@ -37,7 +37,6 @@
 		55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB401FB1855D00CE4AB8 /* Recipe.swift */; };
 		55CE457A1FB8F31500E4ED1E /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */; };
 		55CE457C1FB918B200E4ED1E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55CE457B1FB918B200E4ED1E /* README.md */; };
-		55CE45861FB97EDA00E4ED1E /* Recipes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45831FB97ED900E4ED1E /* Recipes.jpg */; };
 		55CE45881FB97EDA00E4ED1E /* recipeDetail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */; };
 		55CE458A1FBA5BF400E4ED1E /* searchTerms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */; };
 		55CE458C1FBA64C000E4ED1E /* Design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE458B1FBA64C000E4ED1E /* Design.jpg */; };
@@ -102,7 +101,6 @@
 		55BDEB401FB1855D00CE4AB8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 		55CE457B1FB918B200E4ED1E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		55CE45831FB97ED900E4ED1E /* Recipes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Recipes.jpg; sourceTree = "<group>"; };
 		55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recipeDetail.jpg; sourceTree = "<group>"; };
 		55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = searchTerms.jpg; sourceTree = "<group>"; };
 		55CE458B1FBA64C000E4ED1E /* Design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Design.jpg; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				55CE458B1FBA64C000E4ED1E /* Design.jpg */,
-				55CE45831FB97ED900E4ED1E /* Recipes.jpg */,
 				55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */,
 				55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */,
 			);
@@ -442,7 +439,6 @@
 				55CE457C1FB918B200E4ED1E /* README.md in Resources */,
 				55CE458C1FBA64C000E4ED1E /* Design.jpg in Resources */,
 				55CE458A1FBA5BF400E4ED1E /* searchTerms.jpg in Resources */,
-				55CE45861FB97EDA00E4ED1E /* Recipes.jpg in Resources */,
 				5590296F1FB4AC320055E9D9 /* recipes.json in Resources */,
 				55BDEB3A1FB169E300CE4AB8 /* .gitignore in Resources */,
 				55CE45881FB97EDA00E4ED1E /* recipeDetail.jpg in Resources */,
