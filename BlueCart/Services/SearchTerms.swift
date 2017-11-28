@@ -77,4 +77,14 @@ class SearchTerms {
             }
         }
     }
+    
+    func deleteSearchTerm(searchTerm: NSManagedObject) {
+        guard let managedContext = RetrieveRecipes().getManagedContext() else { return }
+        managedContext.delete(searchTerm)
+        do {
+            try managedContext.save()
+        } catch let saveErr {
+            print("Failed to delete search term", saveErr)
+        }
+    }
 }

@@ -91,7 +91,7 @@ class RetrieveRecipes {
         }
     }
     
-    fileprivate func getManagedContext() -> NSManagedObjectContext? {
+    func getManagedContext() -> NSManagedObjectContext? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil}
         if #available(iOS 10.0, *) {
             return appDelegate.persistentContainer.viewContext

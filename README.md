@@ -94,16 +94,13 @@ fileprivate var controller: M13CheckboxController = M13CheckboxStrokeController(
 ---
 
 Additional Work To Do
-* Add more unit and UI tests - a few included now.
-* Continue working on documentation.
-* Delete search terms from table view.
-* Further testing.
+* Add more unit and UI tests - some included now.
 * Consider converting struct Recipe data model to all core data.
 * Consider adding fetchedResultsController instead of in-memory data structures.
-* Testing on iOS 9 and iOS 10.
+* Further testing on iOS 9 and iOS 10.
 * CoreData testing on iOS 9.
 * Add migration for CoreData.
-* Add refreshing of data in CoreData.
+* Add refreshing of data in CoreData from server.
 * Fetch more recipe pages for iOS 9.  Now only iOS 10 and above.
 * Test and adjust for iPad, landscape and different screen sizes. Development was done primarily on a iPhone 7 Plus device and simulator and a iPhone 6 device. All other variants need testing.
 * Look for refactoring and code clean up opportunities.

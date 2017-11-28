@@ -148,7 +148,8 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: ColorPalette.Green.Light)
     }
     
-    /// Check for what state changed for connectivity
+    /// Check for device online or offline.
+    /// If offline, get data from local CoreData rather than server.
     @objc func reachabilityChanged(note: Notification) {
         let reachability = note.object as! Reachability
         switch reachability.connection {
@@ -268,6 +269,25 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
             return 35
         } else {
             return 150
+        }
+    }
+    
+    /// Function to delete saved search terms.
+    /// Put up "Not Available" notice in table view when recipes are showing.
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if searchController.isActive {
+            let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (action, indexPath) in
+                self?.searchTerms.remove(at: indexPath.row - 1)
+                self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+                guard let searchTerm = self?.viewModel.searchTerms.value[indexPath.row - 1] else { return }
+                SearchTerms().deleteSearchTerm(searchTerm: searchTerm)
+            }
+            return [deleteAction]
+        } else {
+            let noAction = UITableViewRowAction(style: .normal, title: "Not Available") { (_, indexPath) in
+                print("Delete not available for recipes")
+            }
+            return [noAction]
         }
     }
     
