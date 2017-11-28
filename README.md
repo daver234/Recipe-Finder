@@ -14,7 +14,7 @@ Key Features:
 - Show details of recipe including ingredients and button to view details on how to make the recipe.
 - Check mark next to each ingredient to check off after use when making recipe.
 - Find new recipes based on search terms.
-- View history of previous search terms, tap to view them.
+- View history of previous search terms, tap to view them. Swipe left to delete a term.
 - Check for network connection (WiFi or cellular).  If no network, displays message and suggests tapping search bar to see search terms get view offline data.
 - Automatically stores previous search terms and shows in searchbar controller when active.
 - View previous recipe search results offline. Recipe details, including ingredients for viewed recipes from search terms, are available offline.
