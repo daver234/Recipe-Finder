@@ -10,6 +10,8 @@ import UIKit
 import Kingfisher
 import SwiftSpinner
 import Reachability
+import ModalStatus
+
 
 class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearchResultsUpdating {
     
@@ -281,6 +283,7 @@ extension RecipeTableVC: UITableViewDataSource, UITableViewDelegate {
                 self?.tableView.deleteRows(at: [indexPath], with: .automatic)
                 guard let searchTerm = self?.viewModel.searchTerms.value[indexPath.row - 1] else { return }
                 SearchTerms().deleteSearchTerm(searchTerm: searchTerm)
+                self?.presentModalStatusView(headLine: "Deleted", subHead: "search term")
             }
             return [deleteAction]
         } else {
@@ -335,8 +338,8 @@ extension RecipeTableVC {
         case true:
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let currentCell = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell,
-                let term = currentCell.recipeTitleLabel.text
-            else { return }
+                let term = currentCell.recipeTitleLabel.text else { return }
+            
             /// Set the active search term in the view model
             let newString : String
             term == Constants.TOP_RATED ? (newString = "") : (newString = term)
@@ -349,7 +352,7 @@ extension RecipeTableVC {
             startSpinner(term: term)
            
         case false:
-            print("would segue here if needed by prepare function handles it.")
+            print("Would segue here if needed by prepare function handles it.")
         }
     }
     
@@ -394,6 +397,7 @@ extension RecipeTableVC: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         guard let searchText = searchController.searchBar.text else { return }
         viewModel.saveSearchTerm(term: searchText)
+        presentModalStatusView(headLine: "Saved", subHead: "search term")
         startSpinner(term: searchText)
     }
     
@@ -419,6 +423,16 @@ extension RecipeTableVC: UISearchBarDelegate {
         filteredSearchTerms = searchTerms.filter( { (text: String) -> Bool in
             return text.contains(searchText.lowercased())
         })
+    }
+    
+    /// Presents Apple style blur modal status view
+    func presentModalStatusView(headLine: String, subHead: String) {
+        let modalView = ModalStatusView(frame: self.view.bounds)
+        let saveImage = UIImage(named: Constants.CHECKMARK) ?? UIImage()
+        modalView.set(image: saveImage)
+        modalView.set(headline: headLine)
+        modalView.set(subheading: subHead)
+        view.addSubview(modalView)
     }
 
 }

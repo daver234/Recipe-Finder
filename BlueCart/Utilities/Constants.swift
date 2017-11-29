@@ -95,4 +95,10 @@ struct Constants {
     
     // Accessability Identifiers for UI Testing
     static let RECIPE_TVC_UITEST = "recipeTableVC"
+    
+    // Images
+    static let CHECKMARK = "checkMark"
+    
+    // XIB Names
+    static let MODAL_STATUS_VIEW = "ModalStatusView"
 }

@@ -42,6 +42,8 @@
 		55CE45881FB97EDA00E4ED1E /* recipeDetail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */; };
 		55CE458A1FBA5BF400E4ED1E /* searchTerms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */; };
 		55CE458C1FBA64C000E4ED1E /* Design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE458B1FBA64C000E4ED1E /* Design.jpg */; };
+		55E9FF031FCF7548005F62DF /* ModalStatus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E9FF021FCF751B005F62DF /* ModalStatus.framework */; };
+		55E9FF041FCF7548005F62DF /* ModalStatus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55E9FF021FCF751B005F62DF /* ModalStatus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A8FE30BCE827352DDDAD25FE /* Pods_BlueCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */; };
 		D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */; };
 /* End PBXBuildFile section */
@@ -61,7 +63,35 @@
 			remoteGlobalIDString = 55BDEAEF1FB1357D00CE4AB8;
 			remoteInfo = BlueCart;
 		};
+		55E9FF011FCF751B005F62DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55E9FEFD1FCF751B005F62DF /* ModalStatus.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5542EC5C1FA03B0E006C0A73;
+			remoteInfo = ModalStatus;
+		};
+		55E9FF051FCF7548005F62DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55E9FEFD1FCF751B005F62DF /* ModalStatus.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5542EC5B1FA03B0E006C0A73;
+			remoteInfo = ModalStatus;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55E9FF071FCF7548005F62DF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				55E9FF041FCF7548005F62DF /* ModalStatus.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +140,7 @@
 		55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recipeDetail.jpg; sourceTree = "<group>"; };
 		55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = searchTerms.jpg; sourceTree = "<group>"; };
 		55CE458B1FBA64C000E4ED1E /* Design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Design.jpg; sourceTree = "<group>"; };
+		55E9FEFD1FCF751B005F62DF /* ModalStatus.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ModalStatus.xcodeproj; path = ModalStatus/ModalStatus.xcodeproj; sourceTree = "<group>"; };
 		63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
 		80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E9FF031FCF7548005F62DF /* ModalStatus.framework in Frameworks */,
 				D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +219,7 @@
 		55BDEAE71FB1357D00CE4AB8 = {
 			isa = PBXGroup;
 			children = (
+				55E9FEFD1FCF751B005F62DF /* ModalStatus.xcodeproj */,
 				55CE457B1FB918B200E4ED1E /* README.md */,
 				552DBC4F1FBB6B13003394D3 /* ReadMeImages */,
 				5590296E1FB4AC320055E9D9 /* recipes.json */,
@@ -307,6 +340,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		55E9FEFE1FCF751B005F62DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55E9FF021FCF751B005F62DF /* ModalStatus.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AD5A8696731471876C5CA045 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,10 +384,12 @@
 				55BDEAEE1FB1357D00CE4AB8 /* Resources */,
 				147082850AE2AEAB7EC14D3D /* [CP] Embed Pods Frameworks */,
 				2B4BF7B3D99C6E4EFF1A0CDC /* [CP] Copy Pods Resources */,
+				55E9FF071FCF7548005F62DF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				55E9FF061FCF7548005F62DF /* PBXTargetDependency */,
 			);
 			name = BlueCart;
 			productName = BlueCart;
@@ -432,6 +475,12 @@
 			mainGroup = 55BDEAE71FB1357D00CE4AB8;
 			productRefGroup = 55BDEAF11FB1357D00CE4AB8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 55E9FEFE1FCF751B005F62DF /* Products */;
+					ProjectRef = 55E9FEFD1FCF751B005F62DF /* ModalStatus.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				55BDEAEF1FB1357D00CE4AB8 /* BlueCart */,
@@ -440,6 +489,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		55E9FF021FCF751B005F62DF /* ModalStatus.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ModalStatus.framework;
+			remoteRef = 55E9FF011FCF751B005F62DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		55BDEAEE1FB1357D00CE4AB8 /* Resources */ = {
@@ -689,6 +748,11 @@
 			isa = PBXTargetDependency;
 			target = 55BDEAEF1FB1357D00CE4AB8 /* BlueCart */;
 			targetProxy = 55BDEB131FB1357D00CE4AB8 /* PBXContainerItemProxy */;
+		};
+		55E9FF061FCF7548005F62DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ModalStatus;
+			targetProxy = 55E9FF051FCF7548005F62DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
