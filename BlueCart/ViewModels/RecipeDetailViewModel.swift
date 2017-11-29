@@ -39,9 +39,33 @@ extension RecipeDetailViewModel {
         if networkReachable {
            loadDetailRecipe(recipeId: recipeID)
         } else {
-            // recipeToReturn = RetrieveRecipes().retrievedSavedRecipes(searchTerm: <#T##String#>)
+           // no action
         }
-        
+    }
+    
+    /// Get count of total recipes retrieved.
+    func getTotalRecipesRetrieved() -> Int? {
+        return DataManager.instance.totalRecipesRetrieved
+    }
+    
+    /// This function loads more recipes for the existing search term as the user scrolls the table view
+    func loadRecipesForExistingSearchTerm() {
+        var term = ""
+        DataManager.instance.lastSearchTerm == "Top Rated" ? (term = "") : (term = DataManager.instance.lastSearchTerm)
+        loadRecipes(pageNumber: DataManager.instance.numberOfPagesRetrieved + 1, searchString: term)
+    }
+    
+    /// Get number of pages retrieved.
+    /// This is the same as the last page retrieved.
+    /// Use this number to check if need another page of recipes
+    /// while using the DetailPageViewController.
+    func getPagesRetrieved() -> Int? {
+        return DataManager.instance.numberOfPagesRetrieved
+    }
+    
+    /// Get all the recipes retrievd so far
+    func getAllRecipes() -> [Recipe]? {
+        return DataManager.instance.allRecipesWithoutPages
     }
 }
 
@@ -62,5 +86,21 @@ extension RecipeDetailViewModel {
             self.newRecipe = recipe
             self.theRecipe.value = recipe
         }
+    }
+    
+    /// Primary function to get RecipePage from backend
+    /// Used on app launch, search terms, and prefetching more table rows
+    fileprivate func loadRecipes(pageNumber: Int, searchString: String) {
+        let apiManager = getAPIManagerInstance()
+        apiManager.getRecipesForPage(pageNumber: pageNumber, searchString: searchString) { success in
+            if success {
+                print("Got another page of data", success)
+            }
+        }
+    }
+    
+    fileprivate func getAPIManagerInstance() -> APIManager {
+        let request = Request()
+        return APIManager(request: request)
     }
 }

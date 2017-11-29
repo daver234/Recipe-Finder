@@ -27,6 +27,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
     var viewModel = RecipeDetailViewModel()
     var isReachable : Bool?
     var indexPathsToReload = [IndexPath]()
+    var indexForRecipe: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +79,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
     func monitorProperties() {
         viewModel.theRecipe.bind { [unowned self] (value) in
             DispatchQueue.main.async {
-                self.tableView.setNeedsLayout()
-                self.tableView.layoutIfNeeded()
                 self.tableView.reloadData()
                 self.reloadRows()
             }
@@ -119,14 +118,11 @@ extension RecipeDetailVC:  UITableViewDataSource {
             let indexPath = IndexPath(item: index, section: 0)
             indexPathsToReload.append(indexPath)
         }
-        // tableView.reloadRows(at: indexPathsToReload, with: .right)
         return  ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.INGREDIENTS, for: indexPath) as? IngredientsTableViewCell else {
-            return UITableViewCell()
-        }
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.INGREDIENTS, for: indexPath) as? IngredientsTableViewCell else { return UITableViewCell() }
         guard let ingredients = viewModel.newRecipe["recipe"]?.ingredients else { return UITableViewCell() }
         cell.setupView(ingredient: ingredients[indexPath.row])
         return cell

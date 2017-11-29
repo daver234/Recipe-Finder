@@ -112,7 +112,7 @@ extension RecipeTableViewModel {
         let apiManager = getAPIManagerInstance()
         apiManager.getRecipesForPage(pageNumber: pageNumber, searchString: searchString) { [weak self] success in
             if success {
-                self?.currentPageNumber.value += 1
+                self?.currentPageNumber.value = DataManager.instance.numberOfPagesRetrieved   //currentPageNumber.value += 1
                 self?.didGetRecipes.value = true
                 self?.isSearching = false
             }

@@ -11,7 +11,7 @@ Upon starting the app, you are presented with a table of top rated recipes in de
 
 Key Features:
 - Show top rated recipes both online and offline.
-- Show details of recipe including ingredients and button to view details on how to make the recipe.
+- Show details of recipe including ingredients and button to view details on how to make the recipe. Swipe left and right on detailed recipe to page thru recipes.
 - Check mark next to each ingredient to check off after use when making recipe.
 - Find new recipes based on search terms.
 - View history of previous search terms, tap to view them. Swipe left to delete a term.
@@ -40,6 +40,8 @@ CoreData is used to store the search terms. The Disk framework is used to store 
 
 Overall Design
 ![alt text](ReadMeImages/Design.jpg "App Architecture")
+
+View Layout
 
 
 ## Offline
@@ -89,6 +91,7 @@ fileprivate var controller: M13CheckboxController = M13CheckboxStrokeController(
 * Cell configuration in cell class not view controller.
 * CoreData is used to store and retrieve data for use when the app is offline.
 * MVVM architecture for shrinking size of ViewControllers and separating data management from the view controllers into the views.
+* Use of PageViewController to allow swipping to next detail recipe without having to go back to the table view.
 
 
 ---

@@ -314,15 +314,16 @@ extension RecipeTableVC {
         case true:
             print("Don't segue since the search terms are displaying.")
         case false:
-            if segue.identifier == Constants.TO_RECIPE_DETAIL {
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    let sendRecipe = getRecipe(index: indexPath.row)
-                
-                    // Send selected recipe to the RecipeDetailVC
-                    guard let destination = segue.destination as? RecipeDetailVC else { return }
-                    destination.recipeFromTable = sendRecipe
-                    destination.isReachable = viewModel.networkReachable
-                }
+            switch segue.destination {
+            case is DetailPageViewController:
+                guard let destination = segue.destination as? DetailPageViewController else { return }
+                guard let indexPath = tableView.indexPathForSelectedRow?.row else { return }
+                let sendRecipe = getRecipe(index: indexPath)
+                destination.recipeFromTable = sendRecipe
+                destination.isReachable = viewModel.networkReachable
+                destination.indexFromAllRecipesWithoutPages = indexPath
+            default:
+                break
             }
         }
     }
@@ -348,7 +349,7 @@ extension RecipeTableVC {
             startSpinner(term: term)
            
         case false:
-            self.performSegue(withIdentifier: Constants.TO_RECIPE_DETAIL, sender: self)
+            print("would segue here if needed by prepare function handles it.")
         }
     }
     

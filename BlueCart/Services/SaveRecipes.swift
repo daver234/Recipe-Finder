@@ -100,7 +100,7 @@ class SaveRecipes {
                 newFetchRequest.predicate = NSPredicate(format: "mRecipeID == %@", recipeID)
                 do {
                     let newResult = try managedContext.fetch(newFetchRequest)
-                    guard newResult.count != 0 else { print("recipeID does not seem to exist so zero?.", newResult.count);  return }  // if recipeID does not exist then exit
+                    guard newResult.count != 0 else { print("recipeID does not seem to exist so zero?", newResult.count);  return }  // if recipeID does not exist then exit
                     guard let first = newResult.first else { return }
                     first.setValue(ingredients , forKey: Constants.MINGREDIENTS)
                     try managedContext.save()

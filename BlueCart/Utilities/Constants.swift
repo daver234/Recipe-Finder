@@ -35,6 +35,10 @@ struct Constants {
     
     // Segues
     static let TO_RECIPE_DETAIL = "toRecipeDetail"
+    static let TO_PAGE_CONTROLLER = "toPageController"
+    
+    // Storyboard identifiers
+    static let RECIPE_DETAIL_SB = "RecipeDetail"
     
     // Other
     static let PAGE_SIZE = 30

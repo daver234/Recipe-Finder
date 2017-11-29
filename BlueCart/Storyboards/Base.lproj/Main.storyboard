@@ -64,6 +64,7 @@
                                         <connections>
                                             <outlet property="recipeImage" destination="R37-ZM-XAw" id="jMz-H7-u9V"/>
                                             <outlet property="recipeTitleLabel" destination="ZRI-62-myN" id="A0a-4E-y6q"/>
+                                            <segue destination="ALc-Yz-s7S" kind="show" identifier="toPageController" id="dl2-f0-WAJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -81,7 +82,6 @@
                     <navigationItem key="navigationItem" id="opy-pb-qAn"/>
                     <connections>
                         <outlet property="tableView" destination="jOC-n6-vmp" id="KKt-Rh-XVC"/>
-                        <segue destination="63h-3A-Ql1" kind="show" identifier="toRecipeDetail" id="0QP-T5-xvH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tj-TR-URp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,7 +91,7 @@
         <!--Recipe DetailVC-->
         <scene sceneID="YF9-a2-kkY">
             <objects>
-                <viewController id="63h-3A-Ql1" customClass="RecipeDetailVC" customModule="Recipe_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeDetail" id="63h-3A-Ql1" customClass="RecipeDetailVC" customModule="Recipe_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HP8-9r-twz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,7 +250,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tid-NO-jzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736.8" y="-54.422788605697157"/>
+            <point key="canvasLocation" x="2655" y="-54"/>
+        </scene>
+        <!--Detail Page View Controller-->
+        <scene sceneID="fF2-ci-1S8">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="2" navigationOrientation="horizontal" spineLocation="none" id="ALc-Yz-s7S" customClass="DetailPageViewController" customModule="Recipe_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="63h-3A-Ql1" kind="show" identifier="toRecipeDetail" id="aUk-Ie-Kfj"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgO-Ng-95P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727" y="-54"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bpd-nX-YBq">
