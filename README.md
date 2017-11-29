@@ -16,7 +16,7 @@ Key Features:
 - Find new recipes based on search terms.
 - View history of previous search terms, tap to view them. Swipe left to delete a term.
 - Check for network connection (WiFi or cellular).  If no network, displays message and suggests tapping search bar to see search terms get view offline data.
-- Automatically stores previous search terms and shows in searchbar controller when active.
+- Automatically stores previous search terms and shows in searchbar controller when active. Shows Apple style blurred HUD when saving or deleting search terms.
 - View previous recipe search results offline. Recipe details, including ingredients for viewed recipes from search terms, are available offline.
 - View count of total number of loaded recipes in navigation bar.  Updated as more recipes load while scrolling (iOS 10 and above).
 - Support for iOS 9 and above.
@@ -70,6 +70,7 @@ Here is the CoreData schema:
 2. Kingfisher - for image downloading, caching and management. https://github.com/onevcat/Kingfisher
 3. Reachability by Ashley Mills - to handle checking for a network connection and if not there redirecting the user to Settings. https://github.com/ashleymills/Reachability.swift
 4. SwiftSpinner - A very nice spinner.  I use it here for to let the user know the data is still loading.  A much nicer approach than the activity indicator in iOS. https://github.com/icanzilb/SwiftSpinner
+5. ModalStatusView - Not a Pod.  Embedded framework that shows Apple style blured alerts (HUDS).  Currently using for notification that  a serch term was saved or deleted based on a user action in the search bar.
 
 No need to run the Podfile as the pods are checkin.  As of November 12, the M13Checkbox pod has a bug in the M13Checkbox.swift file.  Without changing a line of code, you will only see one check box needs to one of the list of ingredients.  The fix is in the checked in Pod.  The fix is to change line 218 in the M13Checkbox.swift file like this:
 ```
