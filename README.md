@@ -42,7 +42,7 @@ Overall Design
 ![alt text](ReadMeImages/Design.jpg "App Architecture")
 
 View Layout
-
+![alt text](ReadMeImages/views.jpg "App Views")
 
 ## Offline
 If no cellular or WiFi is detected, no results will be shown on launch but a message will appear asking the user to tap in the search bar to get a list of previous searches.  Then by tapping on any of those search terms, a list of recipes from that search term will appear.   Tap the search bar again and load one of the other search terms and those  recipes will all appear offline.  Images are stored offline as well using Kingfisher.  If a individual recipe from a search term was not viewed when the device was online, then only the image, recipe social rank and recipe id will display (e.g. no ingredients). Top rated recipes are  available offline.
