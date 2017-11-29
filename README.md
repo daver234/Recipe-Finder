@@ -38,10 +38,10 @@ The app is written in Swift 4.
 
 CoreData is used to store the search terms. The Disk framework is used to store recipe searches for retrieval when the device is offline.  More work is needed to support offline viewing of individual recipes.
 
-Overall Design
+**Overall Design**
 ![alt text](ReadMeImages/Design.jpg "App Architecture")
 
-View Layout
+**View Layout**
 ![alt text](ReadMeImages/views.jpg "App Views")
 
 ## Offline
