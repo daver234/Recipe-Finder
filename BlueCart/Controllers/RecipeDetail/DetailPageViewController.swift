@@ -13,7 +13,7 @@ class DetailPageViewController: UIPageViewController, UIPageViewControllerDataSo
     // MARK: - Properties
     var isReachable : Bool?
     var indexFromAllRecipesWithoutPages: Int?
-    var viewModel = RecipeDetailViewModel()
+    fileprivate var viewModel = RecipeDetailViewModel()
     var recipeFromTable: Recipe?
 
     override func viewDidLoad() {
@@ -21,7 +21,12 @@ class DetailPageViewController: UIPageViewController, UIPageViewControllerDataSo
         self.dataSource = self
         self.delegate = self
         self.navigationController?.navigationBar.tintColor = ColorPalette.Black.Medium
-  
+        
+        guard indexFromAllRecipesWithoutPages != nil else {
+            // self.navigationController?.popViewController(animated: true)
+            return
+        }
+        
         if let viewController = getViewControllerAtIndex(index: indexFromAllRecipesWithoutPages ?? 0) {
             let viewControllers = [viewController]
             setViewControllers(

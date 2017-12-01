@@ -44,6 +44,8 @@
 		55CE458C1FBA64C000E4ED1E /* Design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE458B1FBA64C000E4ED1E /* Design.jpg */; };
 		55E9FF031FCF7548005F62DF /* ModalStatus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E9FF021FCF751B005F62DF /* ModalStatus.framework */; };
 		55E9FF041FCF7548005F62DF /* ModalStatus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55E9FF021FCF751B005F62DF /* ModalStatus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55E9FF1B1FD12974005F62DF /* RecipeTableVC+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9FF1A1FD12974005F62DF /* RecipeTableVC+UISearchBar.swift */; };
+		55E9FF241FD1F9DC005F62DF /* RecipeTableVC+TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9FF231FD1F9DC005F62DF /* RecipeTableVC+TableDataSource.swift */; };
 		A8FE30BCE827352DDDAD25FE /* Pods_BlueCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0240F110D031172D3A07E793 /* Pods_BlueCartTests.framework */; };
 		D599158940DA425634219BE1 /* Pods_BlueCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */; };
 /* End PBXBuildFile section */
@@ -141,6 +143,8 @@
 		55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = searchTerms.jpg; sourceTree = "<group>"; };
 		55CE458B1FBA64C000E4ED1E /* Design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Design.jpg; sourceTree = "<group>"; };
 		55E9FEFD1FCF751B005F62DF /* ModalStatus.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ModalStatus.xcodeproj; path = ModalStatus/ModalStatus.xcodeproj; sourceTree = "<group>"; };
+		55E9FF1A1FD12974005F62DF /* RecipeTableVC+UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeTableVC+UISearchBar.swift"; sourceTree = "<group>"; };
+		55E9FF231FD1F9DC005F62DF /* RecipeTableVC+TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeTableVC+TableDataSource.swift"; sourceTree = "<group>"; };
 		63EA46D0CC5213E74F715433 /* Pods-BlueCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.release.xcconfig"; sourceTree = "<group>"; };
 		80874B56565B03C2309010A3 /* Pods-BlueCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueCartTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueCartTests/Pods-BlueCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86F2FFB4503284ABB54E967F /* Pods_BlueCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,9 +286,8 @@
 		55BDEB241FB1358A00CE4AB8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				550CCE091FCDF2F1000DD6DA /* DetailPageViewController.swift */,
-				55BDEB3B1FB17C7000CE4AB8 /* RecipeDetailVC.swift */,
-				55BDEB2E1FB13D6700CE4AB8 /* RecipeTableVC.swift */,
+				55E9FF1F1FD1B33D005F62DF /* RecipeDetail */,
+				55E9FF211FD1F80D005F62DF /* RecipeTable */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -346,6 +349,25 @@
 				55E9FF021FCF751B005F62DF /* ModalStatus.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		55E9FF1F1FD1B33D005F62DF /* RecipeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				550CCE091FCDF2F1000DD6DA /* DetailPageViewController.swift */,
+				55BDEB3B1FB17C7000CE4AB8 /* RecipeDetailVC.swift */,
+			);
+			path = RecipeDetail;
+			sourceTree = "<group>";
+		};
+		55E9FF211FD1F80D005F62DF /* RecipeTable */ = {
+			isa = PBXGroup;
+			children = (
+				55BDEB2E1FB13D6700CE4AB8 /* RecipeTableVC.swift */,
+				55E9FF1A1FD12974005F62DF /* RecipeTableVC+UISearchBar.swift */,
+				55E9FF231FD1F9DC005F62DF /* RecipeTableVC+TableDataSource.swift */,
+			);
+			path = RecipeTable;
 			sourceTree = "<group>";
 		};
 		AD5A8696731471876C5CA045 /* Frameworks */ = {
@@ -701,6 +723,7 @@
 				559029651FB41A0E0055E9D9 /* DataManager.swift in Sources */,
 				550CCE0A1FCDF2F1000DD6DA /* DetailPageViewController.swift in Sources */,
 				5590296D1FB41FFB0055E9D9 /* RecipeTableViewModel.swift in Sources */,
+				55E9FF1B1FD12974005F62DF /* RecipeTableVC+UISearchBar.swift in Sources */,
 				55BDEB381FB1649C00CE4AB8 /* Colors.swift in Sources */,
 				55BDEAFC1FB1357D00CE4AB8 /* BlueCart.xcdatamodeld in Sources */,
 				55CE457A1FB8F31500E4ED1E /* NoNetworkView.swift in Sources */,
@@ -715,6 +738,7 @@
 				557FB5DD1FBE5B7F00A1FB1E /* SaveRecipes.swift in Sources */,
 				55B35E231FB573DA00061C11 /* RecipeDetailViewModel.swift in Sources */,
 				55BDEB2D1FB1368100CE4AB8 /* Request.swift in Sources */,
+				55E9FF241FD1F9DC005F62DF /* RecipeTableVC+TableDataSource.swift in Sources */,
 				55BDEB3F1FB183FB00CE4AB8 /* Extensions.swift in Sources */,
 				55BDEAF41FB1357D00CE4AB8 /* AppDelegate.swift in Sources */,
 			);

@@ -64,7 +64,7 @@
                                         <connections>
                                             <outlet property="recipeImage" destination="R37-ZM-XAw" id="jMz-H7-u9V"/>
                                             <outlet property="recipeTitleLabel" destination="ZRI-62-myN" id="A0a-4E-y6q"/>
-                                            <segue destination="ALc-Yz-s7S" kind="show" identifier="toPageController" id="dl2-f0-WAJ"/>
+                                            <segue destination="ALc-Yz-s7S" kind="show" identifier="toPageController" id="mwn-tj-1N1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -255,7 +255,7 @@
         <!--Detail Page View Controller-->
         <scene sceneID="fF2-ci-1S8">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="2" navigationOrientation="horizontal" spineLocation="none" id="ALc-Yz-s7S" customClass="DetailPageViewController" customModule="Recipe_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="DetailPageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="2" navigationOrientation="horizontal" spineLocation="none" id="ALc-Yz-s7S" customClass="DetailPageViewController" customModule="Recipe_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="63h-3A-Ql1" kind="show" identifier="toRecipeDetail" id="aUk-Ie-Kfj"/>
                     </connections>
