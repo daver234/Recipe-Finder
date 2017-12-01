@@ -195,7 +195,6 @@ extension RecipeTableVC {
             }
             startSpinner(term: term)
         case false:
-            print("here is segue", segue.destination.title ?? "title")
             switch segue.destination {
             case is DetailPageViewController:
                 guard let destination = segue.destination as? DetailPageViewController else { return }
