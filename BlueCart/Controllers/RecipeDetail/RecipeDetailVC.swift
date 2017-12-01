@@ -77,10 +77,10 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, SFSafariViewControl
     }
     
     func monitorProperties() {
-        viewModel.theRecipe.bind { [unowned self] (value) in
+        viewModel.theRecipe.bind { [weak self] (value) in
             DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.reloadRows()
+                self?.tableView.reloadData()
+                self?.reloadRows()
             }
         }
     }
