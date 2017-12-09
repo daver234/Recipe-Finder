@@ -21,11 +21,8 @@ class DetailPageViewController: UIPageViewController, UIPageViewControllerDataSo
         self.dataSource = self
         self.delegate = self
         self.navigationController?.navigationBar.tintColor = ColorPalette.Black.Medium
-        
-        guard indexFromAllRecipesWithoutPages != nil else {
-            // self.navigationController?.popViewController(animated: true)
-            return
-        }
+        navigationItem.title = Constants.RECIPE_TITLE
+        guard indexFromAllRecipesWithoutPages != nil else { return }
         
         if let viewController = getViewControllerAtIndex(index: indexFromAllRecipesWithoutPages ?? 0) {
             let viewControllers = [viewController]
@@ -46,7 +43,7 @@ class DetailPageViewController: UIPageViewController, UIPageViewControllerDataSo
         }
         return nil
     }
-    // , let recipesRetrieved = viewModel.getTotalRecipesRetrieved(), (index + 1) < recipesRetrieved
+   
     /// Set up next view controller with correct content
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let viewController = viewController as? RecipeDetailVC, var index = viewController.indexForRecipe else  { return nil }

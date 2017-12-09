@@ -57,7 +57,7 @@ Here is the CoreData schema:
 
 * You need iOS 9 or above.  
 * The pods are checked into to the master repo.  This is because of a pending bug in the M13Checkbox Pod.  So do not run:  Pod Install.
-* You need a API Key from Food2Fork.com.  Implement a globally accessible struct similar to this:
+* You need a API Key from http://food2fork.com/about/api.  Implement a globally accessible struct similar to this:
 ```
   struct APIKeyService {
     static let API_KEY = "your api key"
@@ -110,6 +110,7 @@ Additional Work To Do
 * Look for refactoring and code clean up opportunities.
 * Additional inline code documentation.
 * More work on error handling.
+* Add checking for network connection while app is running and adjust accordingly.
 * Better logging of debug and error messages.
 * Checks for odd search strings for searching.
 * Filter and adjust for bad recipe titles...seen a few with special characters.

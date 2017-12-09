@@ -21,7 +21,7 @@ class BlueCartTests: XCTestCase {
         do {
             guard let file = Bundle.main.url(forResource: "recipes", withExtension: "json") else { return }
             let data = try Data(contentsOf: file)
-            DataManager.instance.decodeDataForPage(data: data) { (response) in
+            DataManager.instance.decodeDataForPage(searchString: "Test", data: data) { (response) in
                 guard response else {
                     print("Error in APIManager response in testCheckMockJsonData")
                     return
