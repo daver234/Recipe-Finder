@@ -10,6 +10,7 @@
 		43E8978CCEB45EB7D7CE6286 /* Pods_BlueCartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7EEE5721A81F42A4F3603CB /* Pods_BlueCartUITests.framework */; };
 		550CCE0A1FCDF2F1000DD6DA /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550CCE091FCDF2F1000DD6DA /* DetailPageViewController.swift */; };
 		550CCE0E1FCE8879000DD6DA /* views.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550CCE0D1FCE8879000DD6DA /* views.jpg */; };
+		552151281FE774EA009E5C2C /* recipeDetail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 552151271FE774EA009E5C2C /* recipeDetail.jpg */; };
 		557FB5DD1FBE5B7F00A1FB1E /* SaveRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557FB5DC1FBE5B7F00A1FB1E /* SaveRecipes.swift */; };
 		5588F79A1FC3D04100212121 /* RetrieveRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588F7991FC3D04100212121 /* RetrieveRecipes.swift */; };
 		5588F7A81FC66C0500212121 /* SearchTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588F7A71FC66C0500212121 /* SearchTerms.swift */; };
@@ -39,7 +40,6 @@
 		55BDEB411FB1855D00CE4AB8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEB401FB1855D00CE4AB8 /* Recipe.swift */; };
 		55CE457A1FB8F31500E4ED1E /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */; };
 		55CE457C1FB918B200E4ED1E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55CE457B1FB918B200E4ED1E /* README.md */; };
-		55CE45881FB97EDA00E4ED1E /* recipeDetail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */; };
 		55CE458A1FBA5BF400E4ED1E /* searchTerms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */; };
 		55CE458C1FBA64C000E4ED1E /* Design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55CE458B1FBA64C000E4ED1E /* Design.jpg */; };
 		55E9FF031FCF7548005F62DF /* ModalStatus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E9FF021FCF751B005F62DF /* ModalStatus.framework */; };
@@ -103,6 +103,7 @@
 		550CCE091FCDF2F1000DD6DA /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		550CCE0D1FCE8879000DD6DA /* views.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = views.jpg; path = ReadMeImages/views.jpg; sourceTree = SOURCE_ROOT; };
 		550CCE0F1FCE88AD000DD6DA /* coreData.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coreData.jpg; path = "/Users/Dave/Documents/Google Drive/iOS-files/BlueCart/ReadMeImages/coreData.jpg"; sourceTree = "<absolute>"; };
+		552151271FE774EA009E5C2C /* recipeDetail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recipeDetail.jpg; sourceTree = "<group>"; };
 		5551AAEA1FCC9B9A0034499B /* Recipes1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Recipes1.jpg; path = "/Users/Dave/Documents/Google Drive/iOS-files/BlueCart/ReadMeImages/Recipes1.jpg"; sourceTree = "<absolute>"; };
 		557FB5DC1FBE5B7F00A1FB1E /* SaveRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecipes.swift; sourceTree = "<group>"; };
 		5588F7991FC3D04100212121 /* RetrieveRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveRecipes.swift; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 		55BDEB401FB1855D00CE4AB8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 		55CE457B1FB918B200E4ED1E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recipeDetail.jpg; sourceTree = "<group>"; };
 		55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = searchTerms.jpg; sourceTree = "<group>"; };
 		55CE458B1FBA64C000E4ED1E /* Design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Design.jpg; sourceTree = "<group>"; };
 		55E9FEFD1FCF751B005F62DF /* ModalStatus.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ModalStatus.xcodeproj; path = ModalStatus/ModalStatus.xcodeproj; sourceTree = "<group>"; };
@@ -184,10 +184,10 @@
 		552DBC4F1FBB6B13003394D3 /* ReadMeImages */ = {
 			isa = PBXGroup;
 			children = (
+				552151271FE774EA009E5C2C /* recipeDetail.jpg */,
 				550CCE0F1FCE88AD000DD6DA /* coreData.jpg */,
 				5551AAEA1FCC9B9A0034499B /* Recipes1.jpg */,
 				55CE458B1FBA64C000E4ED1E /* Design.jpg */,
-				55CE45851FB97EDA00E4ED1E /* recipeDetail.jpg */,
 				55CE45891FBA5BF400E4ED1E /* searchTerms.jpg */,
 			);
 			path = ReadMeImages;
@@ -529,11 +529,11 @@
 			files = (
 				550CCE0E1FCE8879000DD6DA /* views.jpg in Resources */,
 				55CE457C1FB918B200E4ED1E /* README.md in Resources */,
+				552151281FE774EA009E5C2C /* recipeDetail.jpg in Resources */,
 				55CE458C1FBA64C000E4ED1E /* Design.jpg in Resources */,
 				55CE458A1FBA5BF400E4ED1E /* searchTerms.jpg in Resources */,
 				5590296F1FB4AC320055E9D9 /* recipes.json in Resources */,
 				55BDEB3A1FB169E300CE4AB8 /* .gitignore in Resources */,
-				55CE45881FB97EDA00E4ED1E /* recipeDetail.jpg in Resources */,
 				55BDEB011FB1357D00CE4AB8 /* LaunchScreen.storyboard in Resources */,
 				55BDEAFE1FB1357D00CE4AB8 /* Assets.xcassets in Resources */,
 				55BDEAF91FB1357D00CE4AB8 /* Main.storyboard in Resources */,
