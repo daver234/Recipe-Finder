@@ -5,7 +5,7 @@
 
 ## Overview
 
-The purpose of this app is to help someone find a recipe.
+The purpose of this app is to help someone find a food recipe and have it available for offline use. 
 
 Upon starting the app, you are presented with a table of top rated recipes in descending order.  As you scroll, the table loads more recipes.  Tapping on a recipe cell segues to the detail of the recipe.  Tapping on the search bar, allows searching for new recipes based on the search terms entered.
 
