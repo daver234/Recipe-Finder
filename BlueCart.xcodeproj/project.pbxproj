@@ -11,6 +11,7 @@
 		550CCE0A1FCDF2F1000DD6DA /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550CCE091FCDF2F1000DD6DA /* DetailPageViewController.swift */; };
 		550CCE0E1FCE8879000DD6DA /* views.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550CCE0D1FCE8879000DD6DA /* views.jpg */; };
 		552151281FE774EA009E5C2C /* recipeDetail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 552151271FE774EA009E5C2C /* recipeDetail.jpg */; };
+		557B0046238B37BF00F75905 /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B0045238B37BF00F75905 /* UISearchBarExtension.swift */; };
 		557FB5DD1FBE5B7F00A1FB1E /* SaveRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557FB5DC1FBE5B7F00A1FB1E /* SaveRecipes.swift */; };
 		5588F79A1FC3D04100212121 /* RetrieveRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588F7991FC3D04100212121 /* RetrieveRecipes.swift */; };
 		5588F7A81FC66C0500212121 /* SearchTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588F7A71FC66C0500212121 /* SearchTerms.swift */; };
@@ -105,6 +106,7 @@
 		550CCE0F1FCE88AD000DD6DA /* coreData.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coreData.jpg; path = "/Users/Dave/Documents/Google Drive/iOS-files/BlueCart/ReadMeImages/coreData.jpg"; sourceTree = "<absolute>"; };
 		552151271FE774EA009E5C2C /* recipeDetail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recipeDetail.jpg; sourceTree = "<group>"; };
 		5551AAEA1FCC9B9A0034499B /* Recipes1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Recipes1.jpg; path = "/Users/Dave/Documents/Google Drive/iOS-files/BlueCart/ReadMeImages/Recipes1.jpg"; sourceTree = "<absolute>"; };
+		557B0045238B37BF00F75905 /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
 		557FB5DC1FBE5B7F00A1FB1E /* SaveRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecipes.swift; sourceTree = "<group>"; };
 		5588F7991FC3D04100212121 /* RetrieveRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveRecipes.swift; sourceTree = "<group>"; };
 		5588F7A71FC66C0500212121 /* SearchTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTerms.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				55BDEB331FB145DF00CE4AB8 /* Constants.swift */,
 				55BDEB3E1FB183FB00CE4AB8 /* Extensions.swift */,
 				55CE45791FB8F31500E4ED1E /* NoNetworkView.swift */,
+				557B0045238B37BF00F75905 /* UISearchBarExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				559029711FB4B0520055E9D9 /* APIKey.swift in Sources */,
 				559029651FB41A0E0055E9D9 /* DataManager.swift in Sources */,
 				550CCE0A1FCDF2F1000DD6DA /* DetailPageViewController.swift in Sources */,
+				557B0046238B37BF00F75905 /* UISearchBarExtension.swift in Sources */,
 				5590296D1FB41FFB0055E9D9 /* RecipeTableViewModel.swift in Sources */,
 				55E9FF1B1FD12974005F62DF /* RecipeTableVC+UISearchBar.swift in Sources */,
 				55BDEB381FB1649C00CE4AB8 /* Colors.swift in Sources */,

@@ -99,6 +99,11 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
             searchController.dimsBackgroundDuringPresentation = false
         }
         searchController.searchBar.placeholder = Constants.SEARCHBAR_PLACEHOLDER
+        searchController.searchBar.setTextField(color: .white)
+        searchController.searchBar.setPlaceholder(textColor: .darkGray)
+        searchController.searchBar.setSearchImage(color: .darkGray)
+        searchController.searchBar.setClearButton(color: .red)
+//        searchController.searchBar.set(textColor: .white)
         searchController.searchBar.sizeToFit()
         self.tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
