@@ -17,7 +17,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
     
     // MARK: - Properties
     let searchController = UISearchController(searchResultsController: nil)
-    let reachability = Reachability()!
+    var reachability: Reachability?
     var viewModel = RecipeTableViewModel()
     var filteredSearchTerms = [String]()
     var searchTerms = [String]()
@@ -41,6 +41,11 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         if #available(iOS 10.0, *) {
             self.tableView.prefetchDataSource = self
         }
+        do {
+            try reachability = Reachability()
+        } catch let error as NSError {
+            print("error creating reachabily.  Error is: \(error)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,7 +64,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         /// Watch for connectivity being turned off
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
-            try reachability.startNotifier()
+            try reachability?.startNotifier()
         } catch {
             print("could not start reachability notifier")
         }
@@ -100,7 +105,7 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
         searchController.searchBar.barTintColor = ColorPalette.Green.Light
         
         /// To get Cancel button to be black when search bar is present
-        let cancelButtonAttributes: [NSAttributedStringKey: UIColor] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.black]
+        let cancelButtonAttributes: [NSAttributedString.Key: UIColor] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.black]
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
         searchController.searchBar.borderWidth = 1
         searchController.searchBar.borderColor = ColorPalette.Green.Light
@@ -168,6 +173,8 @@ class RecipeTableVC: UIViewController, UITableViewDataSourcePrefetching, UISearc
             print("Network not reachable")
             viewModel.isNetworkReachable(reachable: false)
             loadInitialRecipePage()
+        default:
+            print("No reachability selected in switch")
         }
     }
 }
@@ -212,7 +219,7 @@ extension RecipeTableVC {
     /// Start spinner to cover for time to make network requests
     func startSpinner(term: String) {
         SwiftSpinner.setTitleFont(UIFont(name: "Avenir-Heavy", size: 22.0))
-        SwiftSpinner.sharedInstance.innerColor = UIColor.green.withAlphaComponent(0.5)
+        SwiftSpinner.shared.innerColor = UIColor.green.withAlphaComponent(0.5)
         SwiftSpinner.show("Getting recipes\nfor \(term)...")
         searchController.isActive = false
     }

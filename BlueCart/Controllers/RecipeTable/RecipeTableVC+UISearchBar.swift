@@ -18,7 +18,7 @@ extension RecipeTableVC: UISearchBarDelegate {
         searchTerms = []
         convertManagedSearchTermsToArray()
         tableView.backgroundView = UIView(frame: .zero)
-        if reachability.connection == .none {
+        if reachability?.connection == Optional.none {
             searchBar.enablesReturnKeyAutomatically = false
         }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in

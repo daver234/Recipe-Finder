@@ -16,7 +16,7 @@ extension RecipeTableVC {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         
         /// If offline, don't do prefetching of data
-        if reachability.connection == .none || viewModel.isSearching == true {
+        if reachability?.connection == Optional.none || viewModel.isSearching == true {
             print("isSearching")
             return
         }
